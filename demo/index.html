@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Live Demo — Golden State Signal</title>
-<meta name="description" content="Explore real California state purchasing data — search, filter, and see confirmed renewal signals for two live departments.">
+<meta name="description" content="Explore real California state purchasing data — search, filter, and see confirmed renewal signals across two live departments.">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -29,31 +29,89 @@
     <div class="eyebrow">Live Demo · Real Data</div>
     <h1>Two departments. Every figure below is real.</h1>
     <p>This is unmodified California purchasing data — the same pipeline that powers every
-      Golden State Signal engagement. Switch departments, search, filter by category, and
-      look at confirmed renewal signals exactly as a customer would see them.</p>
-    <div class="live-badge"><span class="live-dot"></span> Live purchase-order data, refreshed periodically</div>
+      Golden State Signal engagement. Filter it however you like: every chart, total and
+      table on this page recomputes from your selection, exactly as it does in the tool.</p>
+    <div class="live-badge"><span class="live-dot"></span> 9,458 purchase orders · complete filed record, not a sample</div>
   </div>
 </div>
 
 <main class="wrap">
 
-  <div class="dept-switch">
-    <button data-key="dmv" class="active">Department of Motor Vehicles</button>
-    <button data-key="cdt">Department of Technology</button>
-  </div>
-
   <div class="locked-note">
-    🔒 This demo is read-only. Contacts, buyer-of-record details, downloadable briefs, and the
-    strategy generator are part of the paid engagement —
+    🔒 This demo is read-only. Contacts, buyer-of-record details, lifecycle overlays,
+    downloadable briefs, and the strategy generator are part of the paid engagement —
     <a href="sample-brief.html">see a real sample brief</a> or
     <a href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Briefing%20Request">request a briefing</a>.
   </div>
 
+  <form class="panel filterpanel" id="filters" onsubmit="return false">
+    <div class="picks">
+      <div class="pickset">
+        <div class="hd"><span class="lab">Departments</span>
+          <span class="acts"><a href="#" data-all="dept">all</a><a href="#" data-none="dept">none</a></span>
+        </div>
+        <div class="opts" id="dept-opts"></div>
+        <div class="hint">Leave all unticked to search across both.</div>
+      </div>
+
+      <div class="pickset">
+        <div class="hd"><span class="lab">Product categories</span>
+          <span class="acts"><a href="#" data-all="cat">all</a><a href="#" data-none="cat">none</a></span>
+        </div>
+        <div class="opts cols" id="cat-opts"></div>
+        <div class="hint">Categories are assigned by the pipeline, not by the state's filing.</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div><label for="kind">Goods / services</label>
+        <select id="kind"><option value="">Both</option></select></div>
+      <div><label for="supplier">Supplier contains</label>
+        <input type="text" id="supplier" placeholder="e.g. Presidio" autocomplete="off"></div>
+      <div class="wide"><label for="keyword">Keyword</label>
+        <input type="text" id="keyword" placeholder="Vendor, product, PO number…" autocomplete="off"></div>
+      <div><label for="date-from">Start date from</label><input type="date" id="date-from"></div>
+      <div><label for="date-to">Start date to</label><input type="date" id="date-to"></div>
+      <div><label for="amt-min">Min amount</label>
+        <input type="text" id="amt-min" placeholder="50000" inputmode="numeric" autocomplete="off"></div>
+      <div><label for="amt-max">Max amount</label>
+        <input type="text" id="amt-max" inputmode="numeric" autocomplete="off"></div>
+      <div><label for="sort">Sort</label>
+        <select id="sort">
+          <option value="amount">Amount (high to low)</option>
+          <option value="amount_asc">Amount (low to high)</option>
+          <option value="newest">Start date (newest)</option>
+          <option value="oldest">Start date (oldest)</option>
+          <option value="ending">Term ending soonest</option>
+          <option value="supplier">Supplier (A–Z)</option>
+        </select></div>
+    </div>
+
+    <div class="actions">
+      <label class="chk"><input type="checkbox" id="future-only">
+        Only terms still running (ends in the future)</label>
+      <span class="spacer"></span>
+      <span class="matchcount" id="matchcount"></span>
+      <button type="button" class="clear" id="clear">Clear all filters</button>
+    </div>
+  </form>
+
   <div id="stats" class="stat-row"></div>
 
-  <div class="panel">
-    <div class="sub">Where the money goes</div>
-    <div id="category-chart" class="bar-chart"></div>
+  <div class="twocol">
+    <div class="panel">
+      <div class="sub">Where the money goes</div>
+      <div id="category-chart" class="bar-chart"></div>
+    </div>
+    <div class="panel">
+      <div class="sub">Top suppliers in this view</div>
+      <div class="scroll">
+        <table id="supplier-table">
+          <thead><tr><th>Supplier</th><th class="num">POs</th><th class="num">Spend</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <div class="panel">
@@ -62,54 +120,46 @@
   </div>
 
   <div class="panel">
-    <div class="sub">Top suppliers</div>
-    <div class="scroll">
-      <table id="supplier-table">
-        <thead><tr><th>Supplier</th><th class="num">POs</th><th class="num">Spend</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="panel" id="workforce-panel">
-    <div class="sub">What they say they run — from public job postings</div>
-    <p style="font-size:13px">Technologies named in this department's own CalCareers job
-      postings, independent of the purchase record. Every line links to the source.</p>
-    <div id="workforce-list"></div>
-  </div>
-
-  <div class="panel">
-    <div class="sub">Confirmed renewal signals</div>
-    <p style="font-size:13px">A dated term sitting directly on the purchase filing — including
-      terms recovered from line-item text the state itself buried a real date inside.
-      <span class="tier-badge confirmed">Confirmed</span> only. No guesses, no inferred dates.</p>
+    <div class="sub">Renewal signals — dated terms in this view</div>
+    <p style="font-size:13px">A dated term sitting directly on the purchase filing.
+      <span class="tier-badge confirmed">Confirmed</span> only — no guesses, no inferred dates.
+      Tick <em>Only terms still running</em> above to see just what has not lapsed.</p>
     <div class="scroll">
       <table id="tier-table">
         <thead><tr><th>Status</th><th>Ends</th><th>Supplier</th><th>Description</th><th class="num">Amount</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
+    <div class="rowcount" id="tier-count"></div>
   </div>
 
   <div class="panel">
-    <div class="sub">Search the purchase record</div>
-    <div class="filters">
-      <input type="text" id="keyword" placeholder="Search by keyword — vendor, product, PO number…">
-      <select id="category-filter"><option value="all">All categories</option></select>
-    </div>
+    <div class="sub">The purchase record</div>
     <div class="scroll">
       <table id="search-table">
-        <thead><tr><th>PO #</th><th>Supplier</th><th>Description</th><th>Category</th><th>Date</th><th class="num">Amount</th></tr></thead>
+        <thead><tr>
+          <th>PO #</th><th>Dept</th><th>Supplier</th><th>Description</th>
+          <th>Category</th><th>Start</th><th class="num">Amount</th>
+        </tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <div class="rowcount" id="search-count"></div>
   </div>
 
+  <div class="panel" id="workforce-panel">
+    <div class="sub">What they say they run — from public job postings</div>
+    <p style="font-size:13px">Technologies named in these departments' own CalCareers job
+      postings, independent of the purchase record. Every line links to the source.
+      Follows the department filter above.</p>
+    <div id="workforce-list"></div>
+  </div>
+
   <div class="gate">
-    <h3>This is two departments out of fifteen.</h3>
+    <h3>This is two departments out of 160.</h3>
     <p>The full platform covers every department loaded, named buyer-of-record contacts,
-      an account-strategy generator, and downloadable briefs built for your seat at the table.</p>
+      End-of-Life overlays, an account-strategy generator, and downloadable briefs built
+      for your seat at the table.</p>
     <a class="cta" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Briefing%20Request">Request a Briefing</a>
   </div>
 

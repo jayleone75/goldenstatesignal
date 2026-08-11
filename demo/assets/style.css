@@ -90,12 +90,80 @@ main { padding: 28px 0 60px; }
 .panel .sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
              color: var(--muted-dark); margin-bottom: 12px; }
 
-.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
-.filters input, .filters select {
-  font: inherit; font-size: 13.5px; padding: 9px 12px; border-radius: 8px;
+/* ---------------------------------------------------------- filter panel
+   Mirrors the real tool's search page: multi-select picksets for the two
+   dimensions you combine most (department x category), then scalar inputs.
+   Every control is live — there is no submit button, because nothing is
+   submitted anywhere. All filtering happens in the browser. */
+.filterpanel { padding: 18px 20px; }
+.filterpanel label { display: block; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--muted-dark); font-weight: 700; margin-bottom: 4px; }
+.filterpanel input[type="text"], .filterpanel input[type="date"], .filterpanel select {
+  font: inherit; font-size: 13.5px; width: 100%; padding: 8px 11px; border-radius: 8px;
   border: 1px solid var(--line-dark); background: var(--paper); color: var(--ink);
 }
-.filters input[type="text"] { flex: 1; min-width: 220px; }
+.filterpanel input:focus, .filterpanel select:focus {
+  outline: 2px solid var(--gold); outline-offset: -1px; background: #fff; }
+
+/* align-items:start matters: without it the two-option Departments box is
+   stretched to match the 16-option Categories box and the panel grows ~100px
+   of dead space, pushing every result below the fold. */
+.picks { display: grid; grid-template-columns: 1fr 2.1fr; gap: 14px; margin-bottom: 12px;
+  align-items: start; }
+.pickset { border: 1px solid var(--line-dark); border-radius: 10px; background: var(--paper);
+  padding: 9px 12px; }
+.pickset .hd { display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px; }
+.pickset .lab { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted-dark); font-weight: 700; }
+.pickset .acts a { font-size: 11px; margin-left: 9px; text-decoration: none; }
+.pickset .acts a:hover { text-decoration: underline; }
+/* Two columns, not three. At three the column is ~229px and the longest
+   category ("Physical Security & Surveillance") wraps, which makes every row
+   40px instead of 19px and leaves the box TALLER than at two columns.
+   nowrap on .nm is belt-and-braces so a future long label truncates instead
+   of silently re-inflating the panel. */
+.pickset .opts.cols { columns: 2; column-gap: 18px; }
+@media (max-width: 640px) { .pickset .opts.cols { columns: 1; } }
+.pickset .opt { display: flex; gap: 6px; align-items: baseline; font-size: 12px;
+  padding: 1.5px 0; cursor: pointer; break-inside: avoid; }
+.pickset .opt .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pickset .opt input { width: auto; margin: 0; accent-color: var(--gold-deep); flex-shrink: 0; }
+.pickset .opt .nm { flex: 1; }
+.pickset .opt .ct { color: var(--muted-dark); font-size: 11px; flex-shrink: 0;
+  font-variant-numeric: tabular-nums; }
+.pickset .opt.empty .nm, .pickset .opt.empty .ct { opacity: 0.4; }
+.pickset .hint { font-size: 10.5px; color: var(--muted-dark); margin-top: 7px; }
+
+.filterpanel .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 10px; }
+.filterpanel .grid .wide { grid-column: span 2; }
+@media (max-width: 900px) {
+  .picks { grid-template-columns: 1fr; }
+  .filterpanel .grid { grid-template-columns: repeat(2, 1fr); }
+  .filterpanel .grid .wide { grid-column: span 2; }
+}
+
+.filterpanel .actions { display: flex; align-items: center; gap: 12px; margin-top: 13px;
+  padding-top: 12px; border-top: 1px solid var(--line-dark); flex-wrap: wrap; }
+.filterpanel .actions .spacer { flex: 1; }
+.filterpanel .chk { display: flex; align-items: center; gap: 6px; font-size: 12.5px;
+  text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink);
+  margin: 0; cursor: pointer; }
+.filterpanel .chk input { width: auto; accent-color: var(--gold-deep); }
+.matchcount { font-size: 12.5px; color: var(--muted-dark); font-variant-numeric: tabular-nums; }
+.matchcount b { color: var(--ink); font-weight: 700; }
+.filterpanel .clear { font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  background: none; border: 1px solid var(--line-dark); border-radius: 7px;
+  padding: 6px 12px; color: var(--muted-dark); }
+.filterpanel .clear:hover { background: var(--paper); color: var(--ink); }
+
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
+  align-items: start; }
+.twocol .panel { margin-bottom: 0; }
+@media (max-width: 900px) { .twocol { grid-template-columns: 1fr; } }
+
+.empty-state { font-size: 13px; color: var(--muted-dark); padding: 14px 0; }
+.stale { color: var(--muted-dark); }
 
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line-dark); }

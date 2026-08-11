@@ -40,6 +40,22 @@ if (-not $SkipRefresh) {
         Copy-Item (Join-Path $Project "demo\$item") (Join-Path $Site "demo") `
                   -Recurse -Force
     }
+
+    # Copy alone never REMOVES anything, so a data file the generator stopped
+    # producing would sit on the live site forever - still fetchable by URL
+    # even with nothing linking to it. That is exactly how a superseded copy
+    # of the demo data outlives the redaction that was applied to its
+    # replacement. Mirror the data directory so deletions propagate.
+    $srcData = Join-Path $Project "demo\data"
+    $dstData = Join-Path $Site "demo\data"
+    if (Test-Path $srcData) {
+        $keep = Get-ChildItem $srcData -File | ForEach-Object { $_.Name }
+        Get-ChildItem $dstData -File | Where-Object { $keep -notcontains $_.Name } |
+          ForEach-Object {
+              Write-Host "   removing superseded $($_.Name)" -ForegroundColor Yellow
+              Remove-Item $_.FullName -Force
+          }
+    }
 }
 
 # -------------------------------------------------------- safety tripwire
