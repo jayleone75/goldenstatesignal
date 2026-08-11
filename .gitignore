@@ -1,0 +1,12 @@
+# Office lock/temp artifacts - these got committed once already (demo/~$README.md)
+~$*
+*.tmp
+
+# Nothing from the data project belongs in this public repo.
+*.db
+*.sqlite
+*.bak*
+*.csv
+*.xlsx
+contacts/
+output/
