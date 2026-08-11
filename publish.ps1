@@ -93,6 +93,22 @@ if ($bad.Count -gt 0) {
     $bad | Sort-Object -Unique | ForEach-Object { Write-Host "   $_" -ForegroundColor Red }
     exit 1
 }
+
+# The site root holds a known, small set of files. Anything else that turns up
+# there is almost certainly a stray - a scratch download, an editor backup, a
+# debug artifact - and `git add -A` will happily publish it. That is exactly
+# how a curl output file called live.js ended up in a commit. Warn rather than
+# block: a genuinely new root file is legitimate, it just deserves a look.
+$expectedRoot = @('index.html', 'index_v1.html', 'indexv2.html', 'CNAME',
+                  'README.md', 'publish.ps1', '.gitignore', 'gss-og-card.png')
+$strays = Get-ChildItem -Path $Site -File |
+    Where-Object { $expectedRoot -notcontains $_.Name } |
+    ForEach-Object { $_.Name }
+if ($strays.Count -gt 0) {
+    Write-Host "   NOTE - unexpected files in the site root:" -ForegroundColor Yellow
+    $strays | ForEach-Object { Write-Host "      $_" -ForegroundColor Yellow }
+    Write-Host "   If any of those are scratch files, delete them before publishing." -ForegroundColor Yellow
+}
 Write-Host "   clean" -ForegroundColor Green
 
 # ---------------------------------------------------------------------- git
