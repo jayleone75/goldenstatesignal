@@ -15,7 +15,7 @@
 (function () {
   "use strict";
 
-  var ENDPOINT = "";  // e.g. "https://gss-chat.<your-subdomain>.workers.dev"
+  var ENDPOINT = "https://gss-chat.bitter-violet-c86f.workers.dev";
   var MODEL = "claude-sonnet-5";
   var MAX_TOKENS = 400;
 
