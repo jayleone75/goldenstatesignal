@@ -188,6 +188,43 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .harvested-flag { font-size: 10.5px; color: var(--muted-dark); margin-left: 6px; }
 .harvested-flag::before { content: "read from PO text"; }
 
+/* ------------------------------------------------------- record pagination
+   The record table is the longest thing on the page and used to push the
+   workforce panel far below it. Cap it and give it its own scroll: the
+   pointer inside the box scrolls rows, outside it scrolls the page.
+   overscroll-behavior:contain stops the page from lurching onward when the
+   inner list hits its end. */
+.tablebox { max-height: 430px; overflow: auto; overscroll-behavior: contain;
+  border: 1px solid var(--line-dark); border-radius: 8px; }
+.tablebox table { margin: 0; }
+.tablebox thead th { position: sticky; top: 0; z-index: 1; background: #fff;
+  box-shadow: inset 0 -1px 0 var(--line-dark); }
+.tablebox td:first-child, .tablebox th:first-child { padding-left: 12px; }
+
+.pager { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.pager .rowcount { margin: 0; flex: 1; }
+.pgbtns { display: flex; align-items: center; gap: 8px; font-size: 12.5px;
+  color: var(--muted-dark); font-variant-numeric: tabular-nums; }
+.pgbtns button { font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  background: #fff; border: 1px solid var(--line-dark); border-radius: 7px;
+  padding: 5px 11px; color: var(--ink); }
+.pgbtns button:hover:not(:disabled) { background: var(--paper); }
+.pgbtns button:disabled { opacity: 0.4; cursor: default; }
+
+/* ------------------------------------------------- workforce signal legend */
+.signal-key { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin: 14px 0 16px; }
+@media (max-width: 820px) { .signal-key { grid-template-columns: 1fr; } }
+.signal-key .sk { background: var(--paper); border: 1px solid var(--line-dark);
+  border-radius: 10px; padding: 12px 14px; }
+.signal-key .sk-h { font-size: 12px; font-weight: 800; letter-spacing: 0.02em;
+  margin-bottom: 5px; color: var(--ink); }
+.signal-key .sk:nth-child(2) { border-color: rgba(201,150,43,0.45);
+  background: var(--gold-bg); }
+.signal-key .sk p { font-size: 12.5px; margin: 0; line-height: 1.5; }
+
+.wf-role { font-size: 12px; color: var(--muted-dark); margin-top: 3px; }
+.wf-role b { color: var(--ink); font-weight: 600; }
 .wf-row { border-bottom: 1px solid var(--line-dark); padding: 12px 0; }
 .wf-row:last-child { border-bottom: 0; }
 .wf-tech { font-weight: 700; font-size: 14px; }

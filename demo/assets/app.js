@@ -22,7 +22,8 @@
   var state = {
     depts: {}, cats: {}, kind: "", supplier: "", keyword: "",
     dateFrom: "", dateTo: "", amtMin: "", amtMax: "",
-    futureOnly: false, sort: "amount"
+    futureOnly: false, sort: "amount",
+    page: 0, idx: []   // idx is cached so paging does not re-filter 9,458 rows
   };
 
   /* ------------------------------------------------------------- helpers */
@@ -115,13 +116,17 @@
   /* -------------------------------------------------------------- render */
   function render() {
     var idx = select(null);
+    state.idx = idx;
+    // Any filter change invalidates the page you were on - page 7 of the old
+    // result set is meaningless against a new one.
+    state.page = 0;
     renderFacets();
     renderStats(idx);
     renderCategoryChart(idx);
     renderSuppliers(idx);
     renderYearChart(idx);
     renderTerms(idx);
-    renderRecord(idx);
+    renderRecord();
     renderWorkforce();
 
     $("matchcount").innerHTML = "<b>" + idx.length.toLocaleString() + "</b> of " +
@@ -274,16 +279,34 @@
       " dated terms in this view · " + running.length.toLocaleString() + " still running.";
   }
 
-  var RECORD_CAP = 250;
-  function renderRecord(idx) {
-    var sorted = sortRows(idx).slice(0, RECORD_CAP);
+  // Paged rather than capped. The old build rendered the first 250 and told
+  // you to narrow the filters to reach anything beyond that, which meant a
+  // chunk of the record was simply unreachable.
+  var PAGE_SIZE = 100;
+
+  function pageCount() {
+    return Math.max(1, Math.ceil(state.idx.length / PAGE_SIZE));
+  }
+
+  function renderRecord() {
+    var idx = state.idx;
+    var pages = pageCount();
+    if (state.page > pages - 1) state.page = pages - 1;
+    if (state.page < 0) state.page = 0;
+
+    var start = state.page * PAGE_SIZE;
+    var slice = sortRows(idx).slice(start, start + PAGE_SIZE);
     var tb = document.querySelector("#search-table tbody");
-    if (!sorted.length) {
+
+    if (!slice.length) {
       tb.innerHTML = '<tr><td colspan="7" class="empty-state">Nothing matches these filters. Try clearing one.</td></tr>';
       $("search-count").textContent = "";
+      $("pg-label").textContent = "";
+      $("pg-prev").disabled = $("pg-next").disabled = true;
       return;
     }
-    tb.innerHTML = sorted.map(function (i) {
+
+    tb.innerHTML = slice.map(function (i) {
       var r = ROWS[i];
       return "<tr><td>" + esc(r[IX.po]) + "</td>" +
         "<td>" + esc(DATA.departments[r[IX.dept]].key.toUpperCase()) + "</td>" +
@@ -293,25 +316,49 @@
         "<td>" + esc(r[IX.start]) + "</td>" +
         "<td class='num'>" + fullMoney(r[IX.amount]) + "</td></tr>";
     }).join("");
-    $("search-count").textContent = idx.length > RECORD_CAP
-      ? "Showing the first " + RECORD_CAP + " of " + idx.length.toLocaleString() +
-        " matching purchase orders — narrow the filters to see the rest."
-      : "Showing all " + idx.length.toLocaleString() + " matching purchase orders.";
+
+    $("search-count").textContent = "Showing " + (start + 1).toLocaleString() + "–" +
+      (start + slice.length).toLocaleString() + " of " + idx.length.toLocaleString() +
+      " matching purchase orders.";
+    $("pg-label").textContent = "Page " + (state.page + 1).toLocaleString() +
+      " of " + pages.toLocaleString();
+    $("pg-prev").disabled = state.page === 0;
+    $("pg-next").disabled = state.page >= pages - 1;
+  }
+
+  function goPage(delta) {
+    state.page += delta;
+    renderRecord();
+    // Return to the top of the rows rather than leaving the reader mid-list.
+    var box = document.querySelector(".tablebox");
+    if (box) box.scrollTop = 0;
   }
 
   function renderWorkforce() {
     var wrap = $("workforce-list"), panel = $("workforce-panel");
-    var out = [];
+
+    // Round-robin across departments rather than concatenating them. DMV has
+    // 13 signals and CDT 17, so a flat list plus a 10-row cap showed DMV's
+    // only — CDT's were unreachable unless you filtered down to CDT alone.
+    var lists = [];
     DATA.departments.forEach(function (d, di) {
       if (anyTicked(state.depts) && !state.depts[d.key]) return;
-      (DATA.workforce[di] || []).forEach(function (w) { out.push([d, w]); });
+      lists.push({ dept: d, sigs: (DATA.workforce[di] || []).slice() });
     });
+    var out = [], added = true;
+    for (var n = 0; added; n++) {
+      added = false;
+      for (var li = 0; li < lists.length; li++) {
+        if (lists[li].sigs[n]) { out.push([lists[li].dept, lists[li].sigs[n]]); added = true; }
+      }
+    }
     if (!out.length) { panel.style.display = "none"; return; }
     panel.style.display = "";
     wrap.innerHTML = out.slice(0, 10).map(function (p) {
       var d = p[0], w = p[1];
       return '<div class="wf-row"><span class="wf-tech">' + esc(w.technology) + "</span>" +
         '<span class="confidence-tag ' + esc(w.confidence) + '">' + esc(w.confidence) + "</span>" +
+        (w.role ? '<div class="wf-role">named in a posting for <b>' + esc(w.role) + "</b></div>" : "") +
         '<div class="wf-evidence">“' + esc((w.evidence || "").slice(0, 150)) + '”</div>' +
         '<div class="wf-source">' + esc(d.name) + ' · <a href="' + esc(w.url) +
         '" target="_blank" rel="noopener">source posting ↗</a></div></div>';
@@ -359,6 +406,8 @@
 
     $("kind").addEventListener("change", function (e) { state.kind = e.target.value; render(); });
     $("sort").addEventListener("change", function (e) { state.sort = e.target.value; render(); });
+    $("pg-prev").addEventListener("click", function () { goPage(-1); });
+    $("pg-next").addEventListener("click", function () { goPage(1); });
     $("future-only").addEventListener("change", function (e) {
       state.futureOnly = e.target.checked; render();
     });

@@ -135,7 +135,7 @@
 
   <div class="panel">
     <div class="sub">The purchase record</div>
-    <div class="scroll">
+    <div class="tablebox">
       <table id="search-table">
         <thead><tr>
           <th>PO #</th><th>Dept</th><th>Supplier</th><th>Description</th>
@@ -144,14 +144,50 @@
         <tbody></tbody>
       </table>
     </div>
-    <div class="rowcount" id="search-count"></div>
+    <div class="pager">
+      <div class="rowcount" id="search-count"></div>
+      <div class="pgbtns">
+        <button type="button" id="pg-prev">‹ Prev</button>
+        <span id="pg-label"></span>
+        <button type="button" id="pg-next">Next ›</button>
+      </div>
+    </div>
   </div>
 
   <div class="panel" id="workforce-panel">
     <div class="sub">What they say they run — from public job postings</div>
-    <p style="font-size:13px">Technologies named in these departments' own CalCareers job
-      postings, independent of the purchase record. Every line links to the source.
-      Follows the department filter above.</p>
+    <p style="font-size:13px">A purchase order tells you what a department <em>bought</em>.
+      It doesn't tell you what survived, what's actually in production, or who owns it.
+      Their own CalCareers job postings do — a department hiring someone to administer a
+      platform is telling you that platform is running, staffed, and load-bearing. This is a
+      second, independent source: nothing below comes from the purchase record, and every
+      line links to the posting it came from.</p>
+
+    <div class="signal-key">
+      <div class="sk">
+        <div class="sk-h">Named <em>and</em> bought</div>
+        <p>Corroboration. DMV staffs for Salesforce and has filed 94 purchase orders naming
+          it — that install base is real, and you can reference it in a meeting without
+          hedging.</p>
+      </div>
+      <div class="sk">
+        <div class="sk-h">Named but <em>never</em> bought</div>
+        <p>The interesting one. DMV hires for LoadRunner and Jama with no purchase order
+          behind either — so it arrived inside a reseller bundle, on another agency's
+          vehicle, or on a contract that lapsed. Each is a different conversation, and a
+          question their own posting earns you.</p>
+      </div>
+      <div class="sk">
+        <div class="sk-h">Read it honestly</div>
+        <p>Some gaps mean nothing: CDT staffs for Python and DMV for JMeter, and both are
+          free. Absence of a purchase order is only a lead where the product costs money.</p>
+      </div>
+    </div>
+
+    <p style="font-size:12.5px"><span class="confidence-tag explicit">explicit</span> the
+      posting names the product outright.
+      <span class="confidence-tag implied">implied</span> the posting describes the function
+      unmistakably without naming a vendor. Follows the department filter above.</p>
     <div id="workforce-list"></div>
   </div>
 
