@@ -127,9 +127,22 @@
     }).then(function (r) {
       typing.remove();
       var d = r.data;
-      if (d && d.content && d.content[0] && d.content[0].text) {
-        history.push({ role: "assistant", content: d.content[0].text });
-        addMessage(d.content[0].text, "ai");
+      // The response may contain a `thinking` block before the text, so
+      // content[0] is not reliably the answer. Take the first text block.
+      // Assuming index 0 made the widget report a connection failure on a
+      // perfectly successful reply.
+      var reply = null;
+      if (d && Array.isArray(d.content)) {
+        for (var i = 0; i < d.content.length; i++) {
+          if (d.content[i] && d.content[i].type === "text" && d.content[i].text) {
+            reply = d.content[i].text;
+            break;
+          }
+        }
+      }
+      if (reply) {
+        history.push({ role: "assistant", content: reply });
+        addMessage(reply, "ai");
       } else {
         console.error("[gs-chat] no content from proxy.",
           "\n  HTTP:", r.res.status, r.res.statusText,
