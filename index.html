@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden State Signal — California State Government Procurement Intelligence</title>
-<meta name="description" content="Golden State Signal turns California's public purchasing filings into dated, defensible openings for technology vendors and resellers.">
+<meta name="description" content="Golden State Signal turns California's public purchasing filings into the Account Runbook — one department, one rep, every number carrying the filing it came from. $49.52B of state spend across 176 departments.">
 <link rel="canonical" href="https://goldenstatesignal.com/">
 
 <!-- Open Graph / social preview -->
@@ -13,17 +13,17 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://goldenstatesignal.com/">
 <meta property="og:title" content="Golden State Signal — California Procurement Intelligence">
-<meta property="og:description" content="Dated, defensible openings from California's public purchasing filings. $40.8B in state IT spend across 160 departments.">
+<meta property="og:description" content="The Account Runbook: dated, defensible openings from California's public purchasing filings. $49.52B of state spend across 176 departments.">
 <meta property="og:image" content="https://goldenstatesignal.com/gss-og-card.png">
 <meta property="og:image:secure_url" content="https://goldenstatesignal.com/gss-og-card.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Golden State Signal — California procurement intelligence. $40.8B in state IT spend, 160 departments, 202,232 purchase orders.">
+<meta property="og:image:alt" content="Golden State Signal — California procurement intelligence. $49.52B of state spend, 176 departments, 267,288 purchase orders.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Golden State Signal — California Procurement Intelligence">
-<meta name="twitter:description" content="Dated, defensible openings from California's public purchasing filings. $40.8B in state IT spend across 160 departments.">
+<meta name="twitter:description" content="The Account Runbook: dated, defensible openings from California's public purchasing filings. $49.52B of state spend across 176 departments.">
 <meta name="twitter:image" content="https://goldenstatesignal.com/gss-og-card.png">
 <meta name="twitter:image:alt" content="Golden State Signal — California procurement intelligence.">
 
@@ -216,6 +216,43 @@
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
   .reveal.in-view{opacity:1;transform:translateY(0);}
   .reveal-stagger.in-view{transition-delay:var(--d,0ms);}
+
+  /* --- 2026-08-25 additions --- */
+  .integrity{
+    margin-top:30px;text-align:center;font-size:13.5px;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:22px;line-height:1.8;
+  }
+  .integrity b{color:var(--gold);font-weight:600;}
+
+  .runbook-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;}
+  @media (max-width:860px){ .runbook-inner{grid-template-columns:1fr;} }
+
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;}
+  .feat{background:#fff;border:1px solid var(--line-dark);border-radius:14px;padding:22px 22px;}
+  .feat h4{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:16.5px;margin-bottom:8px;color:var(--navy);}
+  .feat p{font-size:14.5px;color:var(--muted-dark);}
+  @media (max-width:860px){ .feat-grid{grid-template-columns:1fr;} }
+
+  .pit{
+    margin-top:28px;padding:20px 24px;background:var(--navy);color:var(--muted);
+    border-radius:12px;font-size:14.5px;border-left:4px solid var(--gold);
+  }
+  .pit b{color:var(--gold);}
+
+  .claim-card{border-top:4px solid var(--gold-deep);}
+  .claim-n{
+    font-family:'Fraunces',Georgia,serif;color:var(--gold-deep);font-size:13px;font-weight:600;
+    letter-spacing:.08em;display:block;margin-bottom:12px;
+  }
+
+  .src-line{
+    font:600 11.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:var(--muted-dark);margin-top:12px;letter-spacing:.01em;
+  }
+  .rev-stamp{
+    display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    background:#E6F4EC;color:#2E7D5B;padding:4px 9px;border-radius:5px;margin-top:12px;
+  }
 </style>
 </head>
 <body>
@@ -230,12 +267,12 @@
       Golden State Signal
     </a>
     <div class="nav-links">
-      <a href="#how-it-works">How It Works</a>
+      <a href="#runbook">The Runbook</a>
+      <a href="#why">Why It Holds</a>
       <a href="#who-its-for">Who It's For</a>
-      <a href="/demo/">Live Demo</a>
       <a href="#about">About</a>
     </div>
-    <a class="nav-cta" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20—%20Briefing%20Request">Request a Briefing</a>
+    <a class="nav-cta" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
   </nav>
 </header>
 
@@ -247,10 +284,10 @@
     <span class="eyebrow">California State Government Procurement Intelligence</span>
     <h1>Golden State Signal</h1>
     <div class="tagline">Cut through the noise. Define the signal.</div>
-    <p class="sub">We turn California's public purchasing filings into dated, defensible openings — so technology vendors and resellers know exactly where to focus before an opportunity becomes obvious.</p>
+    <p class="sub">California publishes its purchasing record. We turn it into an Account Runbook &mdash; one department, one named rep, and every number carrying the filing it came from.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20—%20Briefing%20Request">Request a Briefing</a>
-      <a class="btn btn-ghost" href="#how-it-works">See How It Works</a>
+      <a class="btn btn-primary" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
+      <a class="btn btn-ghost" href="#runbook">See What's Inside</a>
     </div>
   </div>
   <svg class="wave-svg" viewBox="0 0 1200 140" preserveAspectRatio="none">
@@ -259,11 +296,16 @@
 </section>
 
 <section class="stats">
-  <div class="wrap stats-grid">
-    <div class="reveal"><div class="stat-num" data-target="202232" data-format="int">202,232</div><div class="stat-label">Purchase Orders Tracked</div></div>
-    <div class="reveal"><div class="stat-num" data-target="40.8" data-format="billion">$40.8B</div><div class="stat-label">Public IT Spend Analyzed</div></div>
-    <div class="reveal"><div class="stat-num" data-target="160" data-format="int">160</div><div class="stat-label">State Departments Covered</div></div>
-    <div class="reveal"><div class="stat-num" data-target="8793" data-format="int">8,793</div><div class="stat-label">Distinct Suppliers Mapped</div></div>
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num" data-target="267288" data-format="int">267,288</div><div class="stat-label">Purchase Orders Tracked</div></div>
+      <div class="reveal"><div class="stat-num" data-target="49.52" data-format="billion" data-decimals="2">$49.52B</div><div class="stat-label">State Spend Analyzed</div></div>
+      <div class="reveal"><div class="stat-num" data-target="176" data-format="int">176</div><div class="stat-label">State Departments Covered</div></div>
+      <div class="reveal"><div class="stat-num" data-target="11087" data-format="int">11,087</div><div class="stat-label">Distinct Suppliers Mapped</div></div>
+    </div>
+    <div class="integrity reveal">
+      <b>957,965</b> line items &nbsp;·&nbsp; <b>0</b> uncategorised purchase orders &nbsp;·&nbsp; <b>0</b> duplicates &nbsp;·&nbsp; filings from <b>2005 through 2026</b>, at full density from 2016
+    </div>
   </div>
 </section>
 
@@ -272,8 +314,8 @@
     <div class="reveal">
       <span class="eyebrow">The Problem</span>
       <h2>Public data. Private insight.</h2>
-      <p>California publishes its purchasing records. That doesn't make them useful. Tens of thousands of filings, inconsistent formats, and no built-in way to tell a live opportunity from a closed one.</p>
-      <p>Raw access isn't the hard part anymore — knowing what a filing actually means for your pipeline is.</p>
+      <p>California publishes its purchasing records. That doesn't make them useful. Hundreds of thousands of filings, inconsistent formats, and no built-in way to tell a live opportunity from a closed one.</p>
+      <p>Raw access stopped being the hard part. Knowing what a filing means for your pipeline &mdash; and being able to prove it at the table &mdash; is the work.</p>
     </div>
     <div class="problem-card reveal">
       A supplier name on a purchase order tells you <span class="accent">who got paid</span>. It doesn't tell you <span class="accent">who's buying next</span>, <span class="accent">when</span>, or <span class="accent">why</span>. That's the gap Golden State Signal is built to close.
@@ -281,10 +323,97 @@
   </div>
 </section>
 
+<section class="pad paper" id="runbook">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Product</span>
+      <h2>The Account Runbook</h2>
+      <p>One runbook is one California department, owned by one named rep, behind a login, with an advisor inside it that answers from the filings.</p>
+    </div>
+
+    <div class="runbook-inner">
+      <div class="reveal">
+        <p style="font-size:18px;color:#3A4152;margin-bottom:14px;">It is not a document that gets emailed. It is a live account workspace a rep marks up &mdash; and the marks are the part a competitor cannot copy.</p>
+
+        <div class="feat-grid">
+          <div class="feat">
+            <h4>Hosted and gated</h4>
+            <p>Per-user identity, verified against the signing keys. Not a shared password. A change to a play is traceable to the rep who caused it.</p>
+          </div>
+          <div class="feat">
+            <h4>An advisor grounded in the filings</h4>
+            <p>It answers from the runbook's own snapshot and can query the department's full purchase record. It refuses rather than estimates &mdash; and when it can't answer, that refusal is recorded.</p>
+          </div>
+          <div class="feat">
+            <h4>A revision loop</h4>
+            <p>A rep says what they learned in the field and the play rewrites itself, re-tiered honestly in both directions. What the rep said is stored beside what changed, and the history stays on the page.</p>
+          </div>
+          <div class="feat">
+            <h4>A rep home page</h4>
+            <p>Every account a rep owns, and every open action across all of them, rolled up by due date.</p>
+          </div>
+        </div>
+
+        <div class="pit reveal">Every runbook shows the date it was built and the date it will next refresh. <b>Point-in-time is a feature, not a caveat</b> &mdash; a rep who is told the date trusts the number.</div>
+      </div>
+
+      <div class="brief-mock reveal">
+        <div class="brief-mock-head"><span>DEPARTMENT OF MOTOR VEHICLES</span><span>as of 25 Aug 2026</span></div>
+        <div class="brief-mock-body">
+          <div class="brief-chip chip-green">Act Now</div>
+          <div style="height:14px;"></div>
+          <div class="brief-line w80" style="background:var(--gold);opacity:.4;height:14px;"></div>
+          <div style="height:12px;"></div>
+          <div class="brief-line w95"></div>
+          <div class="brief-line w80"></div>
+          <div class="brief-line w45"></div>
+          <div class="src-line">PO 0000123456 &nbsp;·&nbsp; filed 14 Mar 2026</div>
+          <div class="rev-stamp">Revised &mdash; field intel</div>
+          <div style="height:22px;border-top:1px solid var(--line-dark);margin-top:20px;"></div>
+          <div class="brief-chip chip-gold">One Call Away</div>
+          <div style="height:14px;"></div>
+          <div class="brief-line w60" style="background:var(--gold);opacity:.4;height:14px;"></div>
+          <div style="height:12px;"></div>
+          <div class="brief-line w95"></div>
+          <div class="brief-line w60"></div>
+          <div class="src-line">PO 0000987654 &nbsp;·&nbsp; filed 02 Feb 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad light" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why It Holds</span>
+      <h2>Three claims, and how each one is enforced.</h2>
+      <p>These are the things a technical buyer checks. Each is a property of the system, not a promise on a website.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:0ms">
+        <span class="claim-n">01</span>
+        <h3>Every number carries its filing</h3>
+        <p>The purchase order number and its filed date sit next to the figure, on the page, so it can be checked without leaving the sentence. Generation fails outright if a fact has no source attached. That is enforced in code, not by policy.</p>
+      </div>
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:120ms">
+        <span class="claim-n">02</span>
+        <h3>It refuses rather than approximates</h3>
+        <p>The advisor does not estimate, and does not invent a number, date, name or title. Asked something the filings do not hold, it says so &mdash; and the refusal is logged, because the gap between what reps ask and what the data holds is the roadmap.</p>
+      </div>
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:240ms">
+        <span class="claim-n">03</span>
+        <h3>The corrections are the product</h3>
+        <p>Every reseller can read the same public filings. What they cannot copy is a document corrected by the people who were in the room. When a rep says the renewal already moved, the play changes and the reason is kept.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="pad paper" id="how-it-works">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">How It Works</span>
+      <span class="eyebrow">The Evidence Rule</span>
       <h2>Three tiers. One rule.</h2>
       <p>A guess never wears the badge of a fact. Every finding is labeled by how certain it actually is.</p>
     </div>
@@ -292,17 +421,17 @@
       <div class="tier-card confirmed reveal reveal-stagger" style="--d:0ms">
         <span class="tier-badge">Confirmed</span>
         <h3>On the record</h3>
-        <p>A dated term sits directly on the purchase filing itself. No inference required — it's already written down.</p>
+        <p>A dated term sits directly on the purchase filing itself. No inference required &mdash; it's already written down.</p>
       </div>
       <div class="tier-card publicized reveal reveal-stagger" style="--d:120ms">
         <span class="tier-badge">Publicized</span>
         <h3>Vendor-confirmed</h3>
-        <p>A manufacturer's own end-of-life or end-of-support bulletin, sourced and dated — even when it's not in the filing.</p>
+        <p>A manufacturer's own end-of-life or end-of-support bulletin, sourced and dated &mdash; even when it's not in the filing.</p>
       </div>
       <div class="tier-card inferred reveal reveal-stagger" style="--d:240ms">
         <span class="tier-badge">Inferred</span>
         <h3>Worth asking about</h3>
-        <p>Old enough to warrant a question. We hand you the question — never a date we can't stand behind.</p>
+        <p>An absent purchase order is a question, not a finding. Old enough to warrant a call &mdash; and we hand you the question, never a date we can't stand behind.</p>
       </div>
     </div>
     <div class="rule-line reveal">"Never presented as a date. Always presented as a reason to call."</div>
@@ -318,17 +447,17 @@
     </div>
     <div class="seat-grid">
       <div class="seat-card reveal reveal-stagger" style="--d:0ms">
-        <span class="seat-num">01 · OEM</span>
+        <span class="seat-num">01 &middot; Channel</span>
+        <h3>Regional Sales Leadership</h3>
+        <p>See which accounts on your team's book have gone quiet, which statewide contracts you already hold paper on, and where you have relationship but no revenue yet.</p>
+      </div>
+      <div class="seat-card reveal reveal-stagger" style="--d:120ms">
+        <span class="seat-num">02 &middot; OEM</span>
         <h3>Regional &amp; SLED Sales Directors</h3>
         <p>See which accounts in your category are due for a refresh, and which incumbent you're actually displacing.</p>
       </div>
-      <div class="seat-card reveal reveal-stagger" style="--d:120ms">
-        <span class="seat-num">02 · Channel</span>
-        <h3>Reseller &amp; VAR Practice Leads</h3>
-        <p>Know which statewide contracts you already hold paper on — and where you have relationship but no revenue yet.</p>
-      </div>
       <div class="seat-card reveal reveal-stagger" style="--d:240ms">
-        <span class="seat-num">03 · Independent</span>
+        <span class="seat-num">03 &middot; Independent</span>
         <h3>Independent Consultants</h3>
         <p>Open a first conversation with an account-specific angle and a named buyer of record, not a cold pitch.</p>
       </div>
@@ -336,56 +465,27 @@
   </div>
 </section>
 
-<section class="pad paper">
-  <div class="wrap sample-inner">
-    <div class="reveal">
-      <span class="eyebrow">See It In Action</span>
-      <h2 style="font-size:clamp(26px,3.2vw,34px);margin-bottom:16px;">What a Golden State Signal brief looks like</h2>
-      <p style="color:var(--muted-dark);font-size:16.5px;margin-bottom:28px;">Every engagement starts with a real, account-specific brief — the angle, the timing, who to call, and the route to market. Request a sample built around your category.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" style="background:var(--navy);color:#fff;" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20—%20Sample%20Brief%20Request">Request a Sample Brief</a>
-        <a class="btn" style="border:1px solid var(--line-dark);color:var(--ink);" href="/demo/sample-brief.html">View a Live Sample →</a>
-      </div>
-    </div>
-    <div class="brief-mock reveal">
-      <div class="brief-mock-head"><span>ACCOUNT BRIEF</span><span>Golden State Signal</span></div>
-      <div class="brief-mock-body">
-        <div class="brief-line w60" style="background:var(--gold);opacity:.4;height:14px;"></div>
-        <div style="height:14px;"></div>
-        <div class="brief-line w95"></div>
-        <div class="brief-line w80"></div>
-        <div class="brief-line w45"></div>
-        <div class="brief-chip chip-green">Confirmed Renewal</div>
-        <div class="brief-chip chip-gold">Publicized EOL</div>
-        <div class="brief-chip chip-poppy">Inferred Opening</div>
-        <div style="height:18px;"></div>
-        <div class="brief-line w80"></div>
-        <div class="brief-line w60"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad light" id="about">
+<section class="pad paper" id="about">
   <div class="wrap about-inner reveal">
     <span class="eyebrow">Who's Behind It</span>
     <h2 style="margin-bottom:20px;">Built by someone who's carried the number.</h2>
-    <p>Golden State Signal was founded by a 20+ year enterprise infrastructure and technology sales veteran — built independently, and not affiliated with any OEM or vendor.</p>
-    <p>Every dataset comes from public filings only: Cal eProcure, eSCPRS, and FI$Cal. No proprietary vendor materials, no confidential partner data.</p>
+    <p>Golden State Signal is an independent consultancy, founded by a 20+ year enterprise infrastructure and technology sales veteran. Not affiliated with any manufacturer or vendor.</p>
+    <p>Public sources only: Cal eProcure, eSCPRS, FI$Cal, DGS bulletins, the Governor's Budget, and the California Department of Technology. No proprietary vendor materials, no confidential partner data.</p>
+    <p>And the limits are stated, not buried. This is a purchase record, not an install base. Supplier means the reseller on the paperwork, not the manufacturer. Named contacts are held for 157 of the 176 departments. The public record covers state departments &mdash; counties, cities, school districts and universities buy through vehicles that produce no state filing at all, so the total is a floor rather than a ceiling.</p>
   </div>
 </section>
 
 <section class="cta-band">
   <div class="wrap">
     <h2 class="reveal">Know where California's about to buy again.</h2>
-    <p class="reveal">One conversation, one account brief — see what's actually in the filings.</p>
-    <a class="btn btn-primary reveal" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20—%20Briefing%20Request">Request a Briefing</a>
+    <p class="reveal">One conversation, one department, one runbook &mdash; see what's actually in the filings.</p>
+    <a class="btn btn-primary reveal" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
-    <div>© 2026 Golden State Signal. Built on public data only.</div>
+    <div>&copy; 2026 Golden State Signal. Independent. Public sources only.</div>
     <a href="mailto:jay@goldenstatesignal.com">jay@goldenstatesignal.com</a>
   </div>
 </footer>
@@ -402,8 +502,8 @@
 
   // Count-up stats
   const statEls = document.querySelectorAll('.stat-num');
-  function formatVal(v, fmt){
-    if(fmt==='billion') return '$' + v.toFixed(1) + 'B';
+  function formatVal(v, fmt, dec){
+    if(fmt==='billion') return '$' + v.toFixed(dec) + 'B';
     return Math.round(v).toLocaleString();
   }
   const statIO = new IntersectionObserver((entries)=>{
@@ -412,8 +512,9 @@
       const el = entry.target;
       const target = parseFloat(el.dataset.target);
       const fmt = el.dataset.format;
+      const dec = parseInt(el.dataset.decimals || '1', 10);
       if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        el.textContent = formatVal(target, fmt);
+        el.textContent = formatVal(target, fmt, dec);
         statIO.unobserve(el);
         return;
       }
@@ -422,7 +523,7 @@
       function tick(now){
         const p = Math.min((now-start)/dur, 1);
         const eased = 1 - Math.pow(1-p, 3);
-        el.textContent = formatVal(target*eased, fmt);
+        el.textContent = formatVal(target*eased, fmt, dec);
         if(p<1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
