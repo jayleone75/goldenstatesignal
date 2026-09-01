@@ -1,2325 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jay Leone — Enterprise Technology Sales · AI-Native Builder</title>
-<meta name="description" content="Two decades in enterprise infrastructure. Now independent — founder of Golden State Signal, and a daily builder of AI-native software." />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Jay Leone" />
-<meta property="og:title" content="Jay Leone — Enterprise Sales &amp; AI-Native Builder" />
-<meta property="og:description" content="Two decades in enterprise infrastructure. Now independent, building the tools I used to have to wait for." />
-<meta property="og:url" content="https://jayleone.ai/" />
-<meta property="og:image" content="https://jayleone.ai/images/og-jayleone.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Two decades of infrastructure. A new decade of building." />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Jay Leone — Enterprise Sales &amp; AI-Native Builder" />
-<meta name="twitter:description" content="Two decades in enterprise infrastructure. Now independent, building the tools I used to have to wait for." />
-<meta name="twitter:image" content="https://jayleone.ai/images/og-jayleone.jpg" />
-<meta name="theme-color" content="#0a0a0a" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden State Signal — California State Government Procurement Intelligence</title>
+<meta name="description" content="Golden State Signal turns California's public purchasing filings into the Account Runbook — one department, one rep, every number carrying the filing it came from. $49.43B of state spend across 176 departments.">
+<link rel="canonical" href="https://goldenstatesignal.com/">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Golden State Signal">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://goldenstatesignal.com/">
+<meta property="og:title" content="Golden State Signal — California Procurement Intelligence">
+<meta property="og:description" content="The Account Runbook: dated, defensible openings from California's public purchasing filings. $49.43B of state spend across 176 departments.">
+<meta property="og:image" content="https://goldenstatesignal.com/gss-og-card.png">
+<meta property="og:image:secure_url" content="https://goldenstatesignal.com/gss-og-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Golden State Signal — California procurement intelligence. $49.43B of state spend, 176 departments, 267,267 purchase orders.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Golden State Signal — California Procurement Intelligence">
+<meta name="twitter:description" content="The Account Runbook: dated, defensible openings from California's public purchasing filings. $49.43B of state spend across 176 departments.">
+<meta name="twitter:image" content="https://goldenstatesignal.com/gss-og-card.png">
+<meta name="twitter:image:alt" content="Golden State Signal — California procurement intelligence.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-base: #0a0a0a;
-    --bg-raised: #141414;
-    --bg-elevated: #1a1a1a;
-    --bg-inset: #080808;
-    --text-primary: #f5f2ec;
-    --text-secondary: #b8b4aa;
-    --text-muted: #6e6a62;
-    --text-dim: #4a4640;
-    --rule: #262624;
-    --rule-strong: #333330;
-    --accent: #e8a863;
-    --accent-bright: #f5b878;
-    --accent-dim: rgba(232, 168, 99, 0.12);
-    --accent-soft: rgba(232, 168, 99, 0.25);
-    --cool: #7aa7d9;
-    --cool-dim: rgba(122, 167, 217, 0.12);
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Inter Tight', -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', 'Menlo', monospace;
+  :root{
+    --navy:#0B1220;
+    --navy-2:#121B31;
+    --navy-3:#1A2740;
+    --cream:#FAF6ED;
+    --cream-2:#F2ECDD;
+    --gold:#E3B341;
+    --gold-deep:#C9962B;
+    --poppy:#E4572E;
+    --ink:#1B1F27;
+    --paper:#F5F3EC;
+    --muted:#9AA6BC;
+    --muted-dark:#6B7280;
+    --line:rgba(255,255,255,0.08);
+    --line-dark:rgba(27,31,39,0.10);
+    --maxw:1120px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; background: var(--bg-base); }
-  body { font-family: var(--sans); background: var(--bg-base); color: var(--text-primary); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
-  body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 800px 600px at 85% 10%, rgba(232, 168, 99, 0.04), transparent 60%), radial-gradient(ellipse 1000px 800px at 10% 90%, rgba(122, 167, 217, 0.03), transparent 60%); pointer-events: none; z-index: 1; }
-  body::after { content: ''; position: fixed; inset: 0; background-image: radial-gradient(circle at 25% 35%, rgba(255,255,255,0.012) 0px, transparent 1px), radial-gradient(circle at 65% 75%, rgba(255,255,255,0.008) 0px, transparent 1px); background-size: 4px 4px, 6px 6px; pointer-events: none; z-index: 1; opacity: 0.5; }
-  a { color: inherit; text-decoration: none; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--gold-deep);margin-bottom:14px;display:inline-block;
+  }
+  section .eyebrow.on-dark{color:var(--gold);}
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10, 10, 10, 0.72); backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-bottom: 1px solid transparent; transition: border-color 0.3s ease, background 0.3s ease; }
-  nav.scrolled { border-bottom-color: var(--rule); background: rgba(10, 10, 10, 0.88); }
-  .nav-logo { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; letter-spacing: -0.02em; font-style: italic; color: var(--text-primary); }
-  .nav-links { display: flex; gap: 2.25rem; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .nav-links a { position: relative; padding: 0.25rem 0; color: var(--text-secondary); transition: color 0.2s ease; }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease; }
-  .nav-links a:hover::after { width: 100%; }
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(11,18,32,0.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--paper);font-size:16.5px;}
+  .logo-mark{width:26px;height:26px;flex:none;}
+  .nav-links{display:flex;gap:32px;font-size:14.5px;font-weight:500;color:var(--muted);}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{
+    background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;
+    padding:10px 18px;border-radius:7px;transition:background .2s, transform .2s;white-space:nowrap;
+  }
+  .nav-cta:hover{background:#f0c257;transform:translateY(-1px);}
+  @media (max-width:760px){ .nav-links{display:none;} }
 
-  .hero { min-height: 100vh; padding: 10rem 3rem 6rem; position: relative; display: grid; grid-template-columns: 1fr; align-items: center; max-width: 1400px; margin: 0 auto; z-index: 2; }
-  .hero-meta { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-meta::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
-  .hero h1 { font-family: var(--serif); font-size: clamp(3rem, 8vw, 7.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.035em; margin-bottom: 2.5rem; max-width: 16ch; color: var(--text-primary); }
-  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
-  .hero-sub { font-size: 1.25rem; max-width: 44ch; color: var(--text-secondary); line-height: 1.55; font-weight: 400; }
-  .hero-sub strong { color: var(--text-primary); font-weight: 500; }
-  .hero-scroll { position: absolute; bottom: 2rem; right: 3rem; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); writing-mode: vertical-rl; transform: rotate(180deg); }
+  /* HERO */
+  .hero{
+    position:relative;background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:var(--paper);padding:168px 0 120px;overflow:hidden;
+  }
+  .hero-bg-shape{position:absolute;top:-10%;right:-8%;width:640px;height:640px;opacity:0.07;pointer-events:none;}
+  .hero-inner{position:relative;z-index:2;max-width:760px;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero h1{font-size:clamp(40px,6vw,64px);line-height:1.05;margin-bottom:20px;color:#fff;}
+  .hero .tagline{
+    font-size:clamp(19px,2.4vw,24px);color:var(--gold);font-weight:600;
+    font-family:'Fraunces',serif;margin-bottom:26px;
+  }
+  .hero p.sub{font-size:17.5px;color:var(--muted);max-width:600px;margin-bottom:38px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:8px;
+    font-weight:700;font-size:15px;transition:all .2s;
+  }
+  .btn-primary{background:var(--gold);color:var(--navy);}
+  .btn-primary:hover{background:#f0c257;transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
 
-  section { padding: 7rem 3rem; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
-  .section-label { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
-  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
-  .section-title { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 3.5rem; max-width: 22ch; color: var(--text-primary); }
-  .section-title em { font-style: italic; color: var(--accent); }
-
-  .about { border-top: 1px solid var(--rule); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
-
-  /* About — left column: portrait + stat panel */
-  .about-portrait {
-    display: flex; flex-direction: column;
-    gap: 2.5rem;
-    align-self: start;
-    position: sticky;
-    top: 6rem;
-  }
-  .portrait-frame {
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    background: var(--bg-raised);
-    border: 1px solid var(--rule);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-  }
-  .portrait-frame img {
-    display: block; width: 100%; height: auto;
-    filter: saturate(0.92) contrast(1.02);
-  }
-  .portrait-frame::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(10, 10, 10, 0.18) 100%);
-    pointer-events: none;
-  }
-  .about-stats {
-    display: flex; flex-direction: column;
-    gap: 1.25rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-  }
-  .about-stat {
-    display: flex; flex-direction: column;
-    gap: 0.2rem;
-  }
-  .about-stat-value {
-    font-family: var(--serif);
-    font-size: 1.75rem;
-    font-weight: 500;
-    color: var(--accent);
-    line-height: 1;
-    letter-spacing: -0.01em;
-  }
-  .about-stat-label {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-  }
-  .about-body p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.65; }
-  .about-body p:first-child { font-size: 1.3rem; color: var(--text-primary); font-family: var(--serif); font-weight: 400; line-height: 1.45; letter-spacing: -0.01em; }
-  .about-body p:first-child::first-letter { font-size: 3.5rem; font-weight: 500; float: left; line-height: 0.9; padding: 0.5rem 0.6rem 0 0; color: var(--accent); font-style: italic; }
-  .about-body em { color: var(--text-primary); font-style: italic; }
-  .about-body strong { color: var(--text-primary); font-weight: 500; }
-
-  /* Highlight strip below the about prose */
-  .highlights {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--rule);
-  }
-  .highlight-item h4 {
-    font-family: var(--mono); font-size: 0.72rem;
-    text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--accent); margin-bottom: 0.75rem;
-  }
-  .highlight-item p {
-    font-size: 0.92rem; color: var(--text-secondary);
-    line-height: 1.55;
+  /* signal wave */
+  .wave-svg{position:absolute;bottom:0;left:0;width:100%;height:140px;z-index:1;opacity:0.9;}
+  .wave-path{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:6 2000;animation:draw 5.5s ease-in-out infinite;}
+  @keyframes draw{
+    0%{stroke-dashoffset:2000;opacity:.15;}
+    45%{stroke-dashoffset:0;opacity:.9;}
+    55%{stroke-dashoffset:0;opacity:.9;}
+    100%{stroke-dashoffset:-2000;opacity:.15;}
   }
 
-  .practice { border-top: 1px solid var(--rule); }
-  .practice-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-bottom: 5rem; align-items: start; }
-  .practice-intro p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1.25rem; }
-  .practice-intro p:last-child { margin-bottom: 0; }
-  .practice-stats { display: flex; flex-direction: column; gap: 1.5rem; padding-left: 2rem; border-left: 1px solid var(--rule); }
-  .stat-line { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 0.82rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--rule); }
-  .stat-line:last-child { border-bottom: none; padding-bottom: 0; }
-  .stat-label { text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
-  .stat-value { font-family: var(--serif); font-size: 1.4rem; color: var(--accent); font-weight: 500; }
+  /* STATS */
+  .stats{background:var(--navy-3);color:var(--paper);padding:52px 0;border-bottom:1px solid var(--line);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  .stat-num{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,38px);font-weight:600;color:var(--gold);}
+  .stat-label{font-size:13px;color:var(--muted);margin-top:6px;letter-spacing:.02em;}
+  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;} }
 
-  .featured-case { background: var(--bg-raised); border: 1px solid var(--rule); padding: 3.5rem; margin-bottom: 3rem; position: relative; overflow: hidden; transition: border-color 0.3s ease; }
-  .featured-case:hover { border-color: var(--rule-strong); }
-  .featured-case::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--accent), rgba(232, 168, 99, 0.3)); }
-  .featured-badge { display: inline-block; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-soft); padding: 0.35rem 0.75rem; border-radius: 2px; margin-bottom: 1.5rem; }
-  .featured-title { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.1; color: var(--text-primary); }
-  .featured-context { font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-  .featured-context span { position: relative; padding-right: 1rem; }
-  .featured-context span:not(:last-child)::after { content: '·'; position: absolute; right: 0; color: var(--rule-strong); }
+  /* GENERIC SECTION */
+  section.pad{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,38px);color:var(--ink);line-height:1.15;}
+  .section-head p{color:var(--muted-dark);font-size:16.5px;margin-top:16px;}
+  .light{background:var(--cream);}
+  .paper{background:var(--paper);}
 
-  .screenshot-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 1rem 0 2.5rem; padding: 2.25rem 1rem; background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(232, 168, 99, 0.05), transparent 70%), var(--bg-inset); border: 1px solid var(--rule); border-radius: 4px; }
-  .phone-frame { position: relative; padding: 8px; background: linear-gradient(145deg, #2a2a28, #1a1a18); border-radius: 28px; border: 1px solid var(--rule-strong); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s; }
-  .phone-frame:hover { transform: translateY(-6px); box-shadow: 0 16px 60px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(232, 168, 99, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
-  .phone-frame img { display: block; width: 100%; height: auto; border-radius: 20px; }
-  .phone-caption { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); text-align: center; margin-top: 1rem; }
-  .phone-caption strong { color: var(--accent); font-weight: 500; display: block; margin-bottom: 0.2rem; font-size: 0.72rem; }
+  /* PROBLEM */
+  .problem-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .problem-inner p{font-size:18px;color:#3A4152;}
+  .problem-inner p + p{margin-top:18px;}
+  .problem-card{
+    background:var(--navy);color:var(--paper);border-radius:16px;padding:36px;
+    font-family:'Fraunces',serif;font-size:20px;line-height:1.5;
+  }
+  .problem-card .accent{color:var(--gold);}
+  @media (max-width:860px){ .problem-inner{grid-template-columns:1fr;} }
 
-  /* WEB FRAME - for desktop browser screenshots */
-  .web-gallery { display: flex; flex-direction: column; gap: 1.5rem; margin: 1rem 0 2.5rem; padding: 2.25rem; background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(232, 168, 99, 0.05), transparent 70%), var(--bg-inset); border: 1px solid var(--rule); border-radius: 4px; }
-  .web-frame { background: linear-gradient(145deg, #2a2a28, #1a1a18); border-radius: 8px; border: 1px solid var(--rule-strong); padding: 0; overflow: hidden; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .web-frame:hover { transform: translateY(-4px); }
-  .web-frame-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1rem; background: #1a1a18; border-bottom: 1px solid var(--rule); }
-  .web-frame-bar span { width: 10px; height: 10px; border-radius: 50%; background: #3a3a38; }
-  .web-frame img { display: block; width: 100%; height: auto; }
-  .web-caption { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); text-align: left; padding: 1rem 0.25rem 0; }
-  .web-caption strong { color: var(--accent); font-weight: 500; display: block; margin-bottom: 0.2rem; font-size: 0.74rem; }
+  /* TIER CARDS */
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tier-card{
+    border-radius:16px;padding:32px 28px;background:#fff;border:1px solid var(--line-dark);
+    box-shadow:0 1px 2px rgba(20,20,30,0.04);
+  }
+  .tier-card.confirmed{border-top:4px solid #2E7D5B;}
+  .tier-card.publicized{border-top:4px solid var(--gold-deep);}
+  .tier-card.inferred{border-top:4px dashed var(--poppy);}
+  .tier-badge{
+    font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:16px;
+  }
+  .tier-card.confirmed .tier-badge{background:#E6F4EC;color:#2E7D5B;}
+  .tier-card.publicized .tier-badge{background:#FBF1DC;color:var(--gold-deep);}
+  .tier-card.inferred .tier-badge{background:#FCE9E2;color:var(--poppy);}
+  .tier-card h3{font-size:19px;margin-bottom:10px;}
+  .tier-card p{font-size:15px;color:var(--muted-dark);}
+  .rule-line{
+    margin-top:44px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    font-size:18px;color:var(--muted-dark);
+  }
+  @media (max-width:860px){ .tier-grid{grid-template-columns:1fr;} }
 
-  .featured-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; margin-top: 2rem; }
-  .featured-body h4 { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.75rem; margin-top: 1.75rem; }
-  .featured-body h4:first-child { margin-top: 0; }
-  .featured-body p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; line-height: 1.65; }
-  .featured-body p:last-child { margin-bottom: 0; }
-  .featured-body strong { color: var(--text-primary); font-weight: 500; }
-  .featured-body em { color: var(--text-primary); font-style: italic; }
-  .featured-body a { color: var(--cool); border-bottom: 1px dotted var(--cool); }
-  .featured-body a:hover { border-bottom-style: solid; }
-  .featured-body code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-elevated); border: 1px solid var(--rule); padding: 0.1em 0.45em; border-radius: 3px; color: var(--accent-bright); }
-  .featured-sidebar { background: var(--bg-inset); border: 1px solid var(--rule); padding: 1.75rem; align-self: start; }
-  .sidebar-section { margin-bottom: 1.75rem; }
-  .sidebar-section:last-child { margin-bottom: 0; }
-  .sidebar-section h5 { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
-  .sidebar-list { list-style: none; padding: 0; }
-  .sidebar-list li { font-family: var(--mono); font-size: 0.82rem; color: var(--text-secondary); padding: 0.3rem 0; line-height: 1.4; }
-  .featured-takeaway { margin-top: 2.5rem; padding: 1.75rem 2rem; background: linear-gradient(135deg, rgba(232, 168, 99, 0.05), transparent 70%), var(--bg-inset); border-left: 3px solid var(--accent); font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.55; color: var(--text-primary); }
-  .featured-takeaway strong { font-family: var(--sans); font-style: normal; font-weight: 500; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); display: block; margin-bottom: 0.75rem; }
-  .featured-takeaway em { color: var(--accent); font-style: italic; }
-  .live-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-left: 0.5rem; padding: 0.2rem 0.6rem; background: var(--accent-dim); border: 1px solid var(--accent-soft) !important; border-radius: 2px; color: var(--accent) !important; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s ease; }
-  .live-link:hover { background: var(--accent-soft); }
+  /* SEATS */
+  .seat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .seat-card{
+    background:var(--navy);color:var(--paper);border-radius:16px;padding:32px 28px;
+    transition:transform .25s;
+  }
+  .seat-card:hover{transform:translateY(-4px);}
+  .seat-num{color:var(--gold);font-family:'Fraunces',serif;font-size:14px;font-weight:600;margin-bottom:14px;display:block;}
+  .seat-card h3{font-size:19px;color:#fff;margin-bottom:10px;}
+  .seat-card p{font-size:15px;color:var(--muted);}
+  @media (max-width:860px){ .seat-grid{grid-template-columns:1fr;} }
 
-  /* CASE JUMP BAR */
-  #case-01, #case-02, #case-03, #case-04, #case-05, #case-06, #case-07 { scroll-margin-top: 90px; }
-  .case-jump { display: flex; flex-wrap: wrap; border: 1px solid var(--rule); background: var(--bg-inset); margin-bottom: 3rem; }
-  .case-jump a { flex: 1 1 0; min-width: 0; display: flex; align-items: baseline; gap: 0.6rem; padding: 1rem 1.25rem; border-right: 1px solid var(--rule); transition: background 0.2s ease, color 0.2s ease; }
-  .case-jump a:last-child { border-right: none; }
-  .case-jump a:hover { background: var(--bg-raised); }
-  .case-jump .cj-num { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text-muted); flex-shrink: 0; transition: color 0.2s ease; }
-  .case-jump .cj-label { font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color 0.2s ease; }
-  .case-jump a:hover .cj-num,
-  .case-jump a:hover .cj-label { color: var(--accent); }
+  /* SAMPLE BRIEF */
+  .sample-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .brief-mock{
+    background:#fff;border-radius:14px;box-shadow:0 20px 60px rgba(20,25,40,0.14);
+    border:1px solid var(--line-dark);overflow:hidden;
+  }
+  .brief-mock-head{background:var(--navy);color:var(--paper);padding:18px 22px;font-size:13px;font-weight:600;display:flex;justify-content:space-between;}
+  .brief-mock-head span{color:var(--gold);}
+  .brief-mock-body{padding:24px;}
+  .brief-line{height:10px;border-radius:5px;background:var(--cream-2);margin-bottom:12px;}
+  .brief-line.w80{width:80%;} .brief-line.w60{width:60%;} .brief-line.w95{width:95%;} .brief-line.w45{width:45%;}
+  .brief-chip{display:inline-block;font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;margin:14px 6px 0 0;}
+  .chip-green{background:#E6F4EC;color:#2E7D5B;} .chip-gold{background:#FBF1DC;color:var(--gold-deep);} .chip-poppy{background:#FCE9E2;color:var(--poppy);}
+  @media (max-width:860px){ .sample-inner{grid-template-columns:1fr;} }
 
-  .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-  .app-card { background: var(--bg-raised); border: 1px solid var(--rule); padding: 2.5rem; position: relative; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, background 0.3s; overflow: hidden; }
-  .app-card:hover { transform: translateY(-4px); border-color: var(--accent-soft); background: var(--bg-elevated); }
-  .app-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--accent); transition: height 0.4s ease; }
-  .app-card:hover::before { height: 100%; }
-  .app-number { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.15em; margin-bottom: 1rem; }
-  .app-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.15; color: var(--text-primary); }
-  .app-context { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1.5rem; }
-  .app-desc { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.75rem; line-height: 1.6; }
-  .app-takeaway { padding-top: 1.5rem; border-top: 1px solid var(--rule); font-family: var(--serif); font-style: italic; font-size: 0.98rem; color: var(--text-primary); line-height: 1.5; }
-  .app-takeaway::before { content: '→ '; color: var(--accent); font-style: normal; font-weight: 500; }
-  .app-card a.app-link { color: var(--accent); border-bottom: 1px dotted var(--accent); font-family: var(--mono); font-size: 0.85rem; }
-  .app-card a.app-link:hover { border-bottom-style: solid; }
+  /* ABOUT */
+  .about-inner{max-width:720px;}
+  .about-inner p{font-size:18px;color:#3A4152;}
+  .about-inner p + p{margin-top:16px;}
 
-  /* CLIENTS */
-  .clients { border-top: 1px solid var(--rule); }
-  .clients-grid {
-    display: flex; flex-wrap: wrap; gap: 0.75rem;
-    margin-top: 1rem;
-  }
-  .client-pill {
-    font-family: var(--mono); font-size: 0.85rem;
-    color: var(--text-secondary);
-    padding: 0.55rem 1.1rem;
-    background: var(--bg-raised);
-    border: 1px solid var(--rule);
-    border-radius: 100px;
-    letter-spacing: 0.02em;
-    transition: all 0.25s ease;
-  }
-  .client-pill:hover {
-    border-color: var(--accent-soft);
-    color: var(--accent);
-    background: var(--bg-elevated);
-  }
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);color:#fff;padding:90px 0;text-align:center;}
+  .cta-band h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:16px;}
+  .cta-band p{color:var(--muted);margin-bottom:32px;font-size:16.5px;}
 
-  /* EXPERIENCE TIMELINE */
-  .experience { border-top: 1px solid var(--rule); }
-  .timeline {
-    display: flex; flex-direction: column;
+  /* FOOTER */
+  footer{background:var(--navy);color:var(--muted);padding:44px 0;border-top:1px solid var(--line);}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13.5px;}
+  .footer-inner a{color:var(--gold);font-weight:600;}
+
+  /* REVEAL ANIM */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .reveal-stagger.in-view{transition-delay:var(--d,0ms);}
+
+  /* --- 2026-08-25 additions --- */
+  .integrity{
+    margin-top:30px;text-align:center;font-size:13.5px;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:22px;line-height:1.8;
   }
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 3rem;
-    padding: 2.25rem 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: start;
-    transition: padding-left 0.3s ease;
+  .integrity b{color:var(--gold);font-weight:600;}
+
+  .runbook-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;}
+  @media (max-width:860px){ .runbook-inner{grid-template-columns:1fr;} }
+
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;}
+  .feat{background:#fff;border:1px solid var(--line-dark);border-radius:14px;padding:22px 22px;}
+  .feat h4{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:16.5px;margin-bottom:8px;color:var(--navy);}
+  .feat p{font-size:14.5px;color:var(--muted-dark);}
+  @media (max-width:860px){ .feat-grid{grid-template-columns:1fr;} }
+
+  .pit{
+    margin-top:28px;padding:20px 24px;background:var(--navy);color:var(--muted);
+    border-radius:12px;font-size:14.5px;border-left:4px solid var(--gold);
   }
-  .timeline-item:hover { padding-left: 1rem; }
-  .timeline-left {
-    display: flex; flex-direction: column;
-    gap: 0.4rem;
-  }
-  .timeline-company {
-    font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
-    color: var(--text-primary); letter-spacing: -0.01em;
-    line-height: 1.2;
-  }
-  .timeline-period {
-    font-family: var(--mono); font-size: 0.72rem;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--accent);
-  }
-  .timeline-right h3 {
-    font-family: var(--sans); font-size: 1.05rem; font-weight: 500;
-    color: var(--text-primary); margin-bottom: 0.65rem;
-    letter-spacing: -0.005em;
-  }
-  .timeline-right p {
-    color: var(--text-secondary); font-size: 0.95rem;
-    line-height: 1.6; margin-bottom: 0.85rem;
-  }
-  .timeline-badges {
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
-  }
-  .timeline-badge {
-    font-family: var(--mono); font-size: 0.7rem;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    background: var(--bg-elevated);
-    border: 1px solid var(--rule);
-    padding: 0.25rem 0.65rem;
-    border-radius: 2px;
+  .pit b{color:var(--gold);}
+
+  .claim-card{border-top:4px solid var(--gold-deep);}
+  .claim-n{
+    font-family:'Fraunces',Georgia,serif;color:var(--gold-deep);font-size:13px;font-weight:600;
+    letter-spacing:.08em;display:block;margin-bottom:12px;
   }
 
-  /* EXPERTISE */
-  .expertise { border-top: 1px solid var(--rule); }
-  .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .expertise-card {
-    background: var(--bg-raised);
-    border: 1px solid var(--rule);
-    padding: 2rem;
-    transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  .src-line{
+    font:600 11.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:var(--muted-dark);margin-top:12px;letter-spacing:.01em;
   }
-  .expertise-card:hover {
-    border-color: var(--accent-soft);
-    transform: translateY(-3px);
+  .rev-stamp{
+    display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    background:#E6F4EC;color:#2E7D5B;padding:4px 9px;border-radius:5px;margin-top:12px;
   }
-  .expertise-card h3 {
-    font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
-    letter-spacing: -0.01em; margin-bottom: 0.75rem;
-    color: var(--text-primary);
-  }
-  .expertise-card p {
-    color: var(--text-secondary); font-size: 0.92rem;
-    line-height: 1.55; margin-bottom: 1.25rem;
-  }
-  .expertise-tags {
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-  }
-  .tag {
-    font-family: var(--mono); font-size: 0.7rem;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid var(--accent-soft);
-    padding: 0.2rem 0.55rem;
-    border-radius: 2px;
-    letter-spacing: 0.03em;
-  }
-
-  /* CONTACT */
-  .contact { border-top: 1px solid var(--rule); padding: 9rem 3rem; text-align: left; max-width: 1400px; margin: 0 auto; }
-  .contact-title { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 400; line-height: 1; letter-spacing: -0.03em; margin-bottom: 2rem; max-width: 14ch; color: var(--text-primary); }
-  .contact-title em { font-style: italic; color: var(--accent); }
-  .contact p { color: var(--text-secondary); }
-  .contact-links { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 2rem; }
-  .contact-link { font-family: var(--mono); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.1em; padding-bottom: 0.5rem; color: var(--text-primary); border-bottom: 1px solid var(--text-primary); transition: color 0.25s ease, border-color 0.25s ease; display: inline-flex; align-items: center; gap: 0.5rem; }
-  .contact-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-  footer { border-top: 1px solid var(--rule); padding: 2rem 3rem; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero, section, .contact, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .hero { padding-top: 7rem; padding-bottom: 3rem; }
-    section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
-    .about-grid, .practice-intro, .expertise-grid, .apps-grid, .featured-grid, .highlights { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-portrait { position: static; max-width: 320px; margin: 0 auto; }
-    .practice-stats { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 2rem; }
-    .featured-case { padding: 2rem; }
-    .case-jump { flex-direction: column; }
-    .case-jump a { border-right: none; border-bottom: 1px solid var(--rule); }
-    .case-jump a:last-child { border-bottom: none; }
-    .screenshot-gallery { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem 1rem; }
-    .web-gallery { padding: 1.25rem; gap: 1.25rem; }
-    .phone-frame { max-width: 280px; margin: 0 auto; }
-    .timeline-item { grid-template-columns: 1fr; gap: 0.75rem; padding: 1.75rem 0; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
-  }
-
-  .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.9s ease, transform 0.9s ease; }
-  html.js-anim .reveal:not(.visible) { opacity: 0; transform: translateY(20px); }
-  html.js-anim .reveal.visible { opacity: 1; transform: translateY(0); }
-  .hero h1 { animation: fadeUp 1.1s ease forwards; opacity: 0; }
-  .hero-meta { animation: fadeUp 0.9s ease 0.1s forwards; opacity: 0; }
-  .hero-sub { animation: fadeUp 1s ease 0.3s forwards; opacity: 0; }
-  .hero-scroll { animation: fadeUp 1s ease 0.6s forwards; opacity: 0; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  ::selection { background: var(--accent-soft); color: var(--text-primary); }
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <div class="nav-logo">Jay Leone</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#practice">Practice</a>
-    <a href="#experience">Experience</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#contact">Connect</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div>
-    <div class="hero-meta">Enterprise Sales · Founder · AI-Native Builder · Greater Sacramento</div>
-    <h1>Two decades of <em>infrastructure</em>. A new decade of <em>building</em>.</h1>
-    <p class="hero-sub">
-      I spent two decades selling enterprise data infrastructure. I now run
-      <strong>Golden State Signal</strong>, an independent procurement intelligence business
-      I architected end to end — and I design and ship the AI-native software behind it.
-      Same problem-solving instinct, different medium.
-    </p>
-  </div>
-  <div class="hero-scroll">Scroll ↓</div>
-</header>
-
-<section class="about reveal" id="about">
-  <div class="section-label">01 — About</div>
-  <h2 class="section-title">Where technical depth meets <em>executive presence</em>.</h2>
-  <div class="about-grid">
-    <div class="about-portrait">
-      <figure class="portrait-frame">
-        <img src="images/jay-headshot.jpg" alt="Jay Leone, standing in an office, wearing a charcoal vest over a light blue button-down — looking directly at the camera.">
-      </figure>
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="about-stat-value">24 yrs</div>
-          <div class="about-stat-label">Enterprise Infrastructure</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-value">150–200%</div>
-          <div class="about-stat-label">Quota Attainment</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-value">10 yrs</div>
-          <div class="about-stat-label">Buyer-side at Avaya</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-value">7+ apps</div>
-          <div class="about-stat-label">Shipped 2024–2026</div>
-        </div>
-      </div>
-    </div>
-    <div class="about-body">
-      <p>
-        I've spent over two decades at the intersection of enterprise technology and strategic
-        sales — building relationships with CIOs, CTOs, CFOs, and procurement leaders at
-        organizations ranging from <strong>Apple, Netflix, and Cisco</strong> to state government
-        agencies and public universities.
-      </p>
-      <p>
-        What sets me apart is a decade I spent on <em>the other side of the table</em>. As an
-        enterprise technology buyer and infrastructure architect at Avaya, I evaluated, selected,
-        and negotiated multi-million-dollar infrastructure investments. I directed three datacenter
-        build-outs and managed multiple $1M+ projects. I know what buying committees look for,
-        what kills deals, and what earns lasting trust.
-      </p>
-      <p>
-        I combine that buyer-side empathy with a relentless drive for results — consistently
-        achieving 150–200% of quota — and an early, deep adoption of AI tools that gives me
-        measurable productivity advantages in research, pipeline development, and executive
-        communication. The portfolio below shows what that looks like in practice — a
-        procurement intelligence business tracking $49.43B of California state spend, a
-        workout tracker I use daily,
-        a real-time road trip companion app, a personal family archive built by browser
-        automation, and a live van rental business.
-      </p>
-    </div>
-  </div>
-
-  <div class="highlights">
-    <div class="highlight-item">
-      <h4>◆ Buyer-Side Credibility</h4>
-      <p>10 years as an enterprise technology buyer at Avaya — evaluating vendors, running RFPs, managing $1M+ infrastructure projects. I sell the way customers want to buy.</p>
-    </div>
-    <div class="highlight-item">
-      <h4>◆ SLED &amp; Public Sector</h4>
-      <p>Deep knowledge of government procurement vehicles — CMAS, ETC, SIR, NASPO — and FedRAMP/StateRAMP compliance navigation in regulated environments.</p>
-    </div>
-    <div class="highlight-item">
-      <h4>◆ AI-Augmented Execution</h4>
-      <p>Daily practitioner of Claude, GPT, and Gemini — integrated into prospecting, account research, proposal generation, and competitive intelligence workflows.</p>
-    </div>
-    <div class="highlight-item">
-      <h4>◆ Methodology-Driven</h4>
-      <p>MEDDPIC/MEDDPICC certified. Challenger Sale, Value Selling, and Consultative Selling frameworks applied to complex multi-stakeholder enterprise cycles.</p>
-    </div>
-  </div>
-</section>
-
-<section class="practice reveal" id="practice">
-  <div class="section-label">02 — Practice</div>
-  <h2 class="section-title">How I work <em>with AI</em>, every day.</h2>
-
-  <div class="practice-intro">
-    <div>
-      <p>
-        I use AI the way a carpenter uses power tools — constantly, competently, and without
-        ceremony. Claude, Claude Code, and Cursor are open most hours of most days. I use them
-        to draft customer communications, research accounts, model deal strategy, and build the
-        software that used to be impossible for someone in my role to build alone.
-      </p>
-      <p>
-        What's changed is the last part. The work below isn't demos. It's working tools I
-        actually use — each solving a problem I had and couldn't wait for someone else to solve.
-      </p>
-    </div>
-    <div class="practice-stats">
-      <div class="stat-line">
-        <span class="stat-label">Apps shipped</span>
-        <span class="stat-value">7+</span>
-      </div>
-      <div class="stat-line">
-        <span class="stat-label">Stack</span>
-        <span class="stat-value" style="font-size: 0.95rem; font-family: var(--mono);">Claude · Cowork · HTML/JS</span>
-      </div>
-      <div class="stat-line">
-        <span class="stat-label">Approach</span>
-        <span class="stat-value" style="font-size: 0.95rem; font-family: var(--mono);">Ship · Learn · Iterate</span>
-      </div>
-      <div class="stat-line">
-        <span class="stat-label">Since</span>
-        <span class="stat-value">2024</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CASE JUMP BAR -->
-  <nav class="case-jump" aria-label="Jump to a project">
-    <a href="#case-01"><span class="cj-num">01</span><span class="cj-label">Golden State Signal</span></a>
-    <a href="#case-02"><span class="cj-num">02</span><span class="cj-label">IronLog</span></a>
-    <a href="#case-03"><span class="cj-num">03</span><span class="cj-label">Road Trip App</span></a>
-    <a href="#case-04"><span class="cj-num">04</span><span class="cj-label">Travelogue</span></a>
-    <a href="#case-05"><span class="cj-num">05</span><span class="cj-label">Family Memories</span></a>
-    <a href="#case-06"><span class="cj-num">06</span><span class="cj-label">Pet Watcher</span></a>
-    <a href="#case-07"><span class="cj-num">07</span><span class="cj-label">Furgone</span></a>
-  </nav>
-
-  <!-- CASE STUDY 01: CA PROCUREMENT -->
-  <article class="featured-case" id="case-01">
-    <div class="featured-badge">◆ Case Study 01</div>
-    <h3 class="featured-title">Golden State Signal</h3>
-    <div class="featured-context">
-      <span>Productized Service</span>
-      <span>Python / SQLite / Flask / Anthropic API / Cloudflare (Pages, Functions, D1, R2, Access)</span>
-      <span>267,267 purchase orders · $49.43B tracked</span>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          Any vendor or reseller selling infrastructure into a state agency wants to know three
-          things: what does this department already own, when does it come up for renewal, and
-          who currently sells to them. California publishes the data that answers all three, and
-          none of it is usable as shipped. Two incompatible export formats arrive under the same
-          file extension. There is no product taxonomy. Contract terms are buried in free-text
-          line descriptions. The same supplier is spelled three different ways in one file.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A local Python pipeline — ingest, normalise, categorise, analyse — that reconciles the
-          raw state exports into one schema with full provenance, classifies every purchase into a
-          product taxonomy, overlays contract-renewal timing and statewide reseller authorizations,
-          and emits a validated JSON snapshot per department. A Cloudflare stack serves it: Pages,
-          Pages Functions, D1, R2, and Zero Trust Access. Currently <strong>267,267 purchase
-          orders, 957,847 line items, and $49.43B in spend across 176 California departments</strong>,
-          with every order carrying a category label and zero duplicates — scaled from a nine-department,
-          $17.2B pilot to statewide coverage without a schema rewrite, and shipped as an
-          independent business at <a href="https://goldenstatesignal.com">goldenstatesignal.com</a>.
-        </p>
-        <p>
-          It is not built for one territory or one manufacturer. The taxonomy, the lifecycle
-          overlay, and the generation step all generalize — every state, county, and large
-          municipality publishes procurement data with exactly the same characteristics.
-        </p>
-
-        <h4>What it is now</h4>
-        <p>
-          The deliverable stopped being a document. It is the <strong>Account Runbook</strong>: one
-          California department, owned by one named salesperson, hosted behind per-user identity,
-          with an advisor inside it that answers only from that department's filings. It refuses
-          rather than estimates — and when it cannot answer, the refusal is recorded, because the
-          gap between what users ask and what the data holds is the roadmap.
-        </p>
-        <p>
-          The part that compounds is the revision loop. A salesperson says what they learned on a
-          call and the recommendation rewrites itself, re-tiered honestly in both directions, with
-          what they said stored beside what changed. Everyone can read the same public filings.
-          Nobody else has the corrections.
-        </p>
-
-        <h4>Choices I'd defend in an interview</h4>
-        <p>
-          <strong>SQLite locally, D1 in production.</strong> Same shape, same query language,
-          nothing to learn twice. <strong>Generation stays local</strong> — nothing generates in
-          production, so there is no pipeline to keep alive and no 3am failure mode. The publish
-          command pushes finished artifacts up and then verifies the live result.
-        </p>
-        <p>
-          <strong>The snapshot is the single source.</strong> The same JSON renders the page and
-          grounds the advisor, so the two cannot drift apart and tell a customer different things.
-          <strong>Multi-tenant from the first commit</strong> — a tenant id on every row and every
-          query including read-only ones, because customer two may be customer one's competitor,
-          and retrofitting that later costs a rewrite.
-        </p>
-        <p>
-          <strong>The model is narrative only.</strong> Ingest, join and ranking work correctly with
-          zero model calls. The model turns already-correct structured output into prose, or reasons
-          over a snapshot it cannot add to.
-        </p>
-
-        <h4>The decision that mattered</h4>
-        <p>
-          I ran an LLM pass to improve product descriptions, then measured it instead of assuming
-          it helped. <strong>7,575 enriched rows carried only 681 distinct texts, and 74% of rows
-          had dropped a model number or SKU that was in the original.</strong> I killed the
-          approach, salvaged the one component that worked, and documented the negative result so
-          it would not be tried again.
-        </p>
-        <p>
-          That set the architectural rule the whole system runs on: <strong>the pipeline works with
-          zero AI calls.</strong> Ingest, normalization, joins, ranking, and aggregation are ordinary
-          deterministic code. The model is confined to turning already-correct structured output
-          into prose. The brief generator makes two model calls and neither one produces a number.
-        </p>
-
-        <h4>What scaling actually tested</h4>
-        <p>
-          Going from nine departments to statewide was the real audit of the design. It ran without a
-          schema rewrite, but it surfaced two data-quality defects that a smaller dataset had been
-          hiding. A mislabeled duplicate export would have double-counted <strong>$439.5M</strong>.
-          A fuzzy-matching rule misattributed <strong>$517M</strong> of dark-fiber spend to the
-          wrong manufacturer. Both were caught before anything reached a client, and both were
-          fixed at the methodology level rather than patched case by case.
-        </p>
-        <p>
-          Scale also forced an entity-classification layer. A supplier name on a California
-          purchase order is usually a reseller, but not always — sometimes it is a manufacturer
-          selling direct, a consultancy, or one state agency billing another. Separating those
-          cut the unattributable bucket from <strong>39% to 18.5%</strong> of enterprise-relevant
-          spend, which is the difference between a competitive map you can act on and one you
-          have to caveat.
-        </p>
-
-        <h4>Four bugs that make the point</h4>
-        <p>
-          Each of these reported success while being wrong. That is the category worth talking
-          about, because nothing in the logs asks you to look.
-        </p>
-        <p>
-          <strong>Purchase orders were being silently deleted.</strong> Rows were grouped into
-          orders by purchase order number alone — but those numbers are only unique <em>within</em>
-          a department. Orders sharing a number across departments merged, the first department won,
-          and every other one vanished with its line items reattached to the survivor. One file
-          collapsed 5,452 real orders into 4,914. Recovering them across the corpus restored 8,695
-          purchase orders. Nothing had ever errored.
-        </p>
-        <p>
-          <strong>A revision system that had never once run.</strong> The write called a method the
-          database wrapper does not have, so it threw on every request. It looked healthy because
-          the telemetry a few lines above logged the model's <em>intention</em> to revise rather
-          than the outcome — the dashboard showed successful revisions against an empty table. The
-          fix included making that flag report what actually happened.
-        </p>
-        <p>
-          <strong>Identity conflated with rank.</strong> Recommendations were keyed
-          <code>play-1</code> through <code>play-N</code> in generation order, and the schema
-          enforced it. A refresh that dropped one would shift every id and silently relayer a
-          salesperson's field notes onto a different recommendation. Caught while the table was
-          still empty, which made it free; a month later it would have needed a migration and a
-          guess.
-        </p>
-        <p>
-          <strong>A deploy that shipped nothing and reported success.</strong> Run from the wrong
-          directory, the tool found no functions directory, uploaded the static assets, and shipped
-          no server code. The site answered 404 rather than the middleware's 403, so it read as a
-          missing file rather than a missing application. Fixed by making the deploy command verify
-          the live result instead of trusting its own exit code.
-        </p>
-        <p>
-          The through-line: <strong>the interesting failures are the quiet ones</strong>, and the
-          fix is almost never the patch. It is changing what the system is willing to call success.
-        </p>
-
-        <h4>Where it came from, and where it goes</h4>
-        <p>
-          Version one was a 450-record HTML dashboard I built for my own territory. This is what it
-          became once the question changed from <em>what do I need</em> to <em>what would a vendor
-          pay for</em>. It now runs as its own business under the name
-          <a href="https://goldenstatesignal.com">Golden State Signal</a>, with a public site, a
-          live read-only demo, and per-account runbooks behind a login, each carrying an advisor
-          scoped to what it is allowed to answer from. The multi-tenancy the architecture was built
-          toward is now in place rather than pending, and the first customer runbooks are in test.
-        </p>
-        <p>
-          <a href="golden-state-signal.html">Read the full engineering breakdown →</a>
-          <br><span style="font-size:0.9rem;color:var(--text-muted)">The seven-source demand chain, where the model is and deliberately isn't, cost engineering, and the honest limits.</span>
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>Scale</h5>
-          <ul class="sidebar-list">
-            <li>→ 267,267 purchase orders</li>
-            <li>→ 957,847 line items</li>
-            <li>→ $49.43B tracked spend</li>
-            <li>→ 11,087 suppliers</li>
-            <li>→ 176 departments</li>
-            <li>→ 94 statewide awards</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Stack</h5>
-          <ul class="sidebar-list">
-            <li>→ Python / pandas / SQLite</li>
-            <li>→ Cloudflare Pages + Functions</li>
-            <li>→ D1, R2, Zero Trust Access</li>
-            <li>→ Anthropic API, tool use</li>
-            <li>→ Streaming + prompt caching</li>
-            <li>→ 32,769 lines Python, 65 modules</li>
-            <li>→ 4,198 lines Functions, 2,616 of tests</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Results</h5>
-          <ul class="sidebar-list">
-            <li>→ Every order carries a category label</li>
-            <li>→ 0 duplicate orders</li>
-            <li>→ 89.3% of orders skip paid inference</li>
-            <li>→ Attribution gap 39% → 18.5%</li>
-            <li>→ $439.5M double-count caught</li>
-            <li>→ $517M misattribution caught</li>
-            <li>→ 17 test suites, 655 assertions, deploys gated</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>How it was built</h5>
-          <ul class="sidebar-list">
-            <li>→ Architected end to end</li>
-            <li>→ Every design call mine</li>
-            <li>→ Implementation directed</li>
-            <li>→ via Claude Code</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      Building with AI well is mostly knowing where <em>not</em> to use it. The valuable skill is
-      telling which part of a problem is deterministic and which genuinely needs a model — and
-      then measuring the difference instead of assuming it.
-    </div>
-  </article>
-
-  <!-- CASE STUDY 02: IRONLOG -->
-  <article class="featured-case" id="case-02">
-    <div class="featured-badge">◆ Case Study 02</div>
-    <h3 class="featured-title">IronLog — A Workout Tracker, Built in the Browser</h3>
-    <div class="featured-context">
-      <span>Personal · Fitness</span>
-      <span>Progressive Web App</span>
-      <span>Single-file HTML · ~1,200 lines</span>
-      <span><a href="https://jayleone.ai/ironlog/" target="_blank" rel="noopener" class="live-link">↗ Live Site</a></span>
-    </div>
-
-    <div class="screenshot-gallery">
-      <figure class="phone-frame">
-        <img src="images/ironlog-workout.png" alt="IronLog Workout tab showing a Chest & Triceps session with Dumbbell Press — three sets at 180×8, 220×7, 180×2 — plus a yellow note reading Circuit workout with ab super sets.">
-        <figcaption class="phone-caption">
-          <strong>Workout</strong>
-          Live session with auto-populated last-session data
-        </figcaption>
-      </figure>
-
-      <figure class="phone-frame">
-        <img src="images/ironlog-insights.png" alt="IronLog Insights tab showing a Personal Records panel with multiple lifts flagged in green with PR markers.">
-        <figcaption class="phone-caption">
-          <strong>Insights</strong>
-          Client-side PR detection and progression analysis
-        </figcaption>
-      </figure>
-
-      <figure class="phone-frame">
-        <img src="images/ironlog-log.png" alt="IronLog Log tab showing lifetime stats — 20 total sessions, 3 this week, 293 total sets, 359.7K total volume.">
-        <figcaption class="phone-caption">
-          <strong>Log</strong>
-          Lifetime history — 20 sessions, 293 sets, 359.7K volume
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          Existing fitness apps don't track the specific style of high-intensity training I follow —
-          minimal sets, maximal effort, careful tracking of progressive overload across a four-day
-          split. I also didn't want another account, another subscription, another app store
-          dependency. I wanted something I could open on my phone in the gym and trust to remember
-          everything.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A mobile-first <strong>Progressive Web App</strong> that runs entirely in the browser —
-          no backend, no app store, no account. It installs to the Android home screen from a
-          GitHub Pages URL and behaves like a native app. The full product includes a four-day
-          split tracker pre-loaded with specific exercises, a rest timer, a workout history log,
-          and an AI-powered insights engine — all in a single self-contained HTML file with
-          zero dependencies and zero build step.
-        </p>
-
-        <h4>The interesting technical challenges</h4>
-        <p>
-          <strong>Mobile storage reliability.</strong> The first version, opened from a file
-          manager, caused Android Chrome to treat each session as a new origin — wiping
-          localStorage every time. The fix was hosting at a stable URL. A seemingly trivial
-          problem that required understanding how mobile browsers actually scope storage.
-        </p>
-        <p>
-          <strong>Autosave and crash recovery.</strong> I kept losing workouts by forgetting to
-          tap "Finish." The fix was a dual-key storage architecture: completed sessions write to
-          one key, while an in-progress session continuously autosaves to a second key on every
-          input event. On page load, the app checks for orphaned autosaves, de-dupes against
-          completed sessions, and offers a one-tap recovery prompt if unfinished work is found.
-        </p>
-        <p>
-          <strong>Last-session pre-population.</strong> Rather than starting blank, every
-          workout pre-fills with the most recent session's exact weights, reps, and notes for
-          the same split — with the prior notes flagged in orange so they're impossible to miss
-          (visible in the Workout screenshot above). Required a clean history data model keyed
-          by split and exercise name.
-        </p>
-
-        <h4>The AI-native piece</h4>
-        <p>
-          The Insights engine runs entirely client-side with no API calls — detecting personal
-          records, flagging stalls, calculating volume trends, surfacing contextual coaching tips.
-          A separate <strong>"Analyze with Claude"</strong> button formats the full workout
-          history into a structured prompt, copies it to the clipboard, and opens Claude.ai —
-          giving deep on-demand analysis without requiring an API key in the app itself.
-          Cheap, simple, and surprisingly powerful.
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>Stack</h5>
-          <ul class="sidebar-list">
-            <li>→ Vanilla HTML / CSS / JS</li>
-            <li>→ CSS custom properties</li>
-            <li>→ localStorage persistence</li>
-            <li>→ GitHub Pages hosting</li>
-            <li>→ Zero dependencies</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Key features</h5>
-          <ul class="sidebar-list">
-            <li>→ PWA installable</li>
-            <li>→ Dual-key autosave</li>
-            <li>→ Session pre-population</li>
-            <li>→ Client-side insights</li>
-            <li>→ Claude handoff prompt</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Built with</h5>
-          <ul class="sidebar-list">
-            <li>→ Claude (full build)</li>
-            <li>→ Natural-language only</li>
-            <li>→ No manual coding</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      The transferable skill isn't writing code with AI. It's <em>directing</em> it — describing
-      a real problem, evaluating the output, catching what's wrong, iterating. The autosave came
-      from actually losing data. The previous-notes feature came from a real training need. The
-      mobile hosting fix came from trying to use the app in the gym. Every meaningful product
-      decision started with friction I'd actually felt.
-    </div>
-  </article>
-
-  <!-- CASE STUDY 03: LEONE FAMILY ADVENTURE -->
-  <article class="featured-case" id="case-03">
-    <div class="featured-badge">◆ Case Study 03</div>
-    <h3 class="featured-title">The Leone Family Adventure — A Road Trip Companion</h3>
-    <div class="featured-context">
-      <span>Personal · Family</span>
-      <span>Real-time Web App</span>
-      <span>9 days · 3 states · 5 people</span>
-      <span><a href="https://roadtrip.jayleone.ai" target="_blank" rel="noopener" class="live-link">↗ Live Site</a></span>
-    </div>
-
-    <div class="screenshot-gallery">
-      <figure class="phone-frame">
-        <img src="images/roadtrip-schedule.png" alt="Roadtrip Schedule view showing Day 1 of 8 — El Dorado Hills to Paso Robles — with leave time, arrival estimate, recalculate button, and trip stats.">
-        <figcaption class="phone-caption">
-          <strong>Schedule</strong>
-          Day-by-day plan with live recalculation when delayed
-        </figcaption>
-      </figure>
-
-      <figure class="phone-frame">
-        <img src="images/roadtrip-livemap.png" alt="Roadtrip Live Map view showing eight numbered trip stops pinned across California, Nevada, Utah, and Arizona.">
-        <figcaption class="phone-caption">
-          <strong>Live Map</strong>
-          Real-time van tracking synced across the family's phones
-        </figcaption>
-      </figure>
-
-      <figure class="phone-frame">
-        <img src="images/roadtrip-checklist.png" alt="Roadtrip Checklist view with park pass, hotel reservations, and pre-departure tasks.">
-        <figcaption class="phone-caption">
-          <strong>Checklist</strong>
-          Park passes, six booked hotels, pre-departure tasks
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          Planning a 9-day family road trip across California, Arizona, and Utah meant juggling
-          itinerary, reservations, drive times, kids' attention spans, photo coordination across
-          five phones, and a partner who reasonably wanted to know where the Sprinter van was at
-          any given moment. Existing tools handled <em>parts</em> of that — but nothing handled
-          the whole job for a specific family on a specific trip with specific quirks.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A custom single-page web application — <strong>roadtrip.jayleone.ai</strong> — designed
-          to plan, navigate, and capture the trip as it happened. Five tabs: <strong>Schedule</strong>
-          (day-by-day itinerary with drive times, stops, reservations), <strong>Live Map</strong>
-          (real-time GPS tracking of the van pushed from my phone), <strong>Overview</strong>
-          (trip stats and big-picture context), <strong>Checklist</strong> (packing and
-          pre-departure tasks), and <strong>Photos</strong> (on-the-road uploads from everyone's
-          phones, pinned to locations). Designed to work seamlessly from the passenger seat of a
-          moving vehicle on spotty rural cell signal.
-        </p>
-
-        <h4>The interesting technical challenges</h4>
-        <p>
-          <strong>Live GPS tracking in a browser.</strong> Browsers aggressively sleep the
-          Geolocation API when a tab backgrounds or signal drops. After evaluating heavier
-          self-hosted solutions, I built a purpose-made <code>gps.html</code> page that stays
-          foregrounded, polls location on an interval, and writes coordinates directly to
-          Supabase. The Live Map tab renders the result with a moving van icon — so my wife and
-          kids could watch the van's progress in real time from the back seat.
-        </p>
-        <p>
-          <strong>Photo uploads under real conditions.</strong> Uploading from a moving vehicle
-          on bad 3G is its own discipline. I used direct-to-Supabase Storage uploads with
-          client-side compression and graceful retry behavior. Added per-photo delete controls
-          using event delegation on data attributes — critical after one family member uploaded
-          forty near-duplicates of the same canyon.
-        </p>
-        <p>
-          <strong>The auto-refresh bug that wiped uploads in progress.</strong> Early Photos tab
-          refreshed every 30 seconds to pull new images. Unfortunately, that also wiped the
-          in-progress file picker state mid-upload. Disabled auto-refresh on that tab specifically
-          and added a manual button. Small bug, large UX impact.
-        </p>
-        <p>
-          <strong>Offline-ish operation.</strong> Much of the route had no signal — Grand Canyon
-          rim, Zion back roads, long stretches of Utah. The app degrades gracefully: cached
-          itinerary, checklist works without backend, photos queue locally until reconnection.
-        </p>
-        <p>
-          <strong>Schedule reflow when delayed.</strong> If we left a stop late, the app
-          recalculated the day — surfacing how much time we'd lost, which downstream stops were
-          at risk, and what we might want to drop or shorten (the "Running late? Tap to
-          recalculate" control is visible in the Schedule screenshot above).
-        </p>
-
-        <h4>The AI-native piece</h4>
-        <p>
-          The whole app — frontend, backend integration, real-time sync, geolocation handling,
-          deployment scripts — was built through natural-language conversation with Claude.
-          What's noteworthy isn't that AI wrote the code. It's that the architecture decisions
-          (Supabase over self-hosting, dedicated GPS page over service workers, no auth over a
-          login system) all came from real tradeoffs I could reason about and Claude could
-          implement. The build felt less like coding and more like leading a very fast,
-          very competent contractor.
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>Stack</h5>
-          <ul class="sidebar-list">
-            <li>→ Vanilla HTML / CSS / JS</li>
-            <li>→ Supabase (Postgres)</li>
-            <li>→ Supabase Storage</li>
-            <li>→ Supabase Realtime</li>
-            <li>→ Geolocation API</li>
-            <li>→ GitHub Pages + custom domain</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Key features</h5>
-          <ul class="sidebar-list">
-            <li>→ 5-tab single-page app</li>
-            <li>→ Live GPS van tracking</li>
-            <li>→ Multi-user photo uploads</li>
-            <li>→ Location-pinned gallery</li>
-            <li>→ Schedule reflow on delay</li>
-            <li>→ Offline-tolerant design</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Built with</h5>
-          <ul class="sidebar-list">
-            <li>→ Claude (full build)</li>
-            <li>→ Iterative pair-building</li>
-            <li>→ Custom deploy script</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      Most consumer software is built for a generic user and optimized for ad revenue. This one
-      was built for exactly five people, had zero ads, zero logins, and was tuned to the
-      realities of a specific van, a specific route, and specific phones. Building software for
-      a known audience of five is a different kind of fun than building for millions — and
-      it's the part of the AI-native shift most people haven't internalized yet. The economics
-      of "software built for one family" used to be zero. They aren't anymore.
-    </div>
-  </article>
-
-  <!-- CASE STUDY 04: ROAD TRIP TRAVELOGUE -->
-  <article class="featured-case" id="case-04">
-    <div class="featured-badge">◆ Case Study 04</div>
-    <h3 class="featured-title">The Leone Family Adventure, Retold — A Narrated Travelogue</h3>
-    <div class="featured-context">
-      <span>Personal · Family</span>
-      <span>Multi-Tool AI Pipeline</span>
-      <span>6 chapters · narrated · location-tied photos</span>
-      <span><a href="https://roadtrip.jayleone.ai/memories" target="_blank" rel="noopener" class="live-link">↗ Live Site</a></span>
-    </div>
-
-    <div class="web-gallery">
-      <figure class="web-frame">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/travelogue-route.png" alt="The travelogue 'Where We Went' route section showing an illustrated Western US Road Trip Loop map with seven numbered stops, followed by a legend listing El Dorado Hills home base, Paso Robles wine country, Sedona, Buckeye, the Grand Canyon, Zion, and Pismo Beach, then the start of the day-by-day 'Our Story' narrative.">
-      </figure>
-      <div class="web-caption">
-        <strong>The route</strong>
-        The actual nine-day loop across California, Arizona, and Utah, with each stop tied to the chapter that tells its story.
-      </div>
-
-      <figure class="web-frame" style="margin-top: 1rem;">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/travelogue-chapter.png" alt="A travelogue chapter titled 'Paso Robles and The Allegretto' showing narrative text about the first night of the trip, a row of theme tags, an embedded 'Narrated Story' audio player with a waveform, and a large photo of Dana standing beside an ancient sequoia cross-section at the resort.">
-      </figure>
-      <div class="web-caption">
-        <strong>A chapter</strong>
-        Each chapter pairs the written story with its own ElevenLabs voice narration and the photos from that exact place. The audio player is the part people remember.
-      </div>
-
-      <figure class="web-frame" style="margin-top: 1rem;">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/travelogue-highlights.png" alt="A 'Things We'll Never Forget' highlights grid with eight cards including People at the Edge, The YouTube Apocalypse, The Easter Weekend Hunt, Birthday at the Beach, Zion Wins, The Allegretto, The Guy Fieri Experiment, and Dad at the Wheel, each with an emoji and a short caption.">
-      </figure>
-      <div class="web-caption">
-        <strong>The list</strong>
-        A highlights reel of the running jokes and small disasters that make a family trip what it actually was.
-      </div>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          The trip ended in April. The photos went where all family photos go, into a camera
-          roll nobody scrolls back through. Nine days across three states, six places worth
-          remembering, and the whole thing was about to dissolve into a thousand unsorted images.
-        </p>
-        <p>
-          I wanted something my kids would actually open in twenty years. Not an album. A story,
-          with the route, the places, the photos, and a voice to read it.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A narrated travelogue at <strong>roadtrip.jayleone.ai/memories</strong>. Six chapters
-          following the real route, from the departure through Paso Robles, Sedona, the Grand
-          Canyon, Zion, and Dana's birthday on Pismo Beach. Each chapter carries its own written
-          story, the photos from that specific place, a set of theme tags, and a full
-          <strong>audio narration generated with ElevenLabs</strong> so the whole thing can be
-          listened to, not just read. It opens on an illustrated route map and closes with a
-          highlights grid of the moments nobody wanted to forget.
-        </p>
-
-        <h4>The interesting part, and why this one matters most</h4>
-        <p>
-          This is not one app. It is a <strong>chain of tools composed into a pipeline.</strong>
-          The raw material did not come from a camera roll. It came from the road trip app I had
-          already built with Claude, the one that ran live GPS, collected photos from five
-          different phones, and logged the schedule as we went. That app captured structured data
-          while we traveled.
-        </p>
-        <p>
-          After we got home, I took that same data, the route, the stops, the photos, the
-          timeline, and worked with Claude to write the story and ElevenLabs to give it a voice.
-          Build the system. Capture the data. Compose the data into something nobody had to
-          assemble by hand.
-        </p>
-
-        <h4>The AI-native piece</h4>
-        <p>
-          The skill on display here is not "I used an AI tool." It is composition. Claude built
-          the app. The app captured and structured the data. Then Claude and ElevenLabs turned
-          that data into a narrated, chaptered artifact that did not exist before. AI writes code,
-          AI structures data, AI generates media, and the value shows up when you string those
-          together into a workflow with a real output at the end.
-        </p>
-        <p>
-          That is the capability enterprises are scrambling to find right now. Not operators of a
-          single tool, but people who can chain several into a pipeline that produces something
-          new. A pile of vacation photos became a permanent family document. The same instinct
-          applies to a pile of customer data, or a quarter of deal activity, or a backlog of
-          support tickets.
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>The pipeline</h5>
-          <ul class="sidebar-list">
-            <li>→ Road trip app (Claude-built)</li>
-            <li>→ Live data captured on the road</li>
-            <li>→ Claude (narrative writing)</li>
-            <li>→ ElevenLabs (voice narration)</li>
-            <li>→ Static site (vanilla HTML/JS)</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Key features</h5>
-          <ul class="sidebar-list">
-            <li>→ Six narrative chapters</li>
-            <li>→ Per-chapter audio narration</li>
-            <li>→ Illustrated route map</li>
-            <li>→ Location-tied photo sets</li>
-            <li>→ Highlights grid finale</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Built with</h5>
-          <ul class="sidebar-list">
-            <li>→ Claude (app + narrative)</li>
-            <li>→ ElevenLabs (narration)</li>
-            <li>→ Composed, not one-shot</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      The tools to do this are sitting in front of everyone right now. The gap is not access, it
-      is imagination. Most people have not connected the dots between "AI can write code," "AI can
-      capture and structure data," and "AI can generate media." Put those together and a weekend
-      of photos becomes something my family will still be opening in twenty years.
-    </div>
-  </article>
-
-  <!-- CASE STUDY 05: LEONE FAMILY MEMORIES -->
-  <article class="featured-case" id="case-05">
-    <div class="featured-badge">◆ Case Study 05</div>
-    <h3 class="featured-title">Leone Family Memories — A Personal Archive Built by Browser Automation</h3>
-    <div class="featured-context">
-      <span>Personal · Legacy</span>
-      <span>Static Site + Browser-Driven Workflow</span>
-      <span>Hundreds of items · 20 years of memories</span>
-    </div>
-
-    <div class="web-gallery">
-      <figure class="web-frame">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/leone-memories-header.jpg" alt="Leone Family Memories archive header reading 'The things we let go of — and the stories we keep forever' with a search bar and filter pills for person (Capri, Vinni, Perrisi) and type (School, Toys, Milestone, Clothes, Sports).">
-      </figure>
-      <div class="web-caption">
-        <strong>The archive</strong>
-        Searchable by name, year, or keyword — filterable by child and category.
-      </div>
-
-      <figure class="web-frame" style="margin-top: 1rem;">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/leone-memories-capri-chair.jpg" alt="A memory entry for a personalized pink toddler armchair embroidered with a child's name in white script, paired with a photo of the child sitting in the chair as a toddler. Tagged Milestone, dated March 2017, with a quote about the child already having her own named chair days after her first birthday.">
-      </figure>
-      <div class="web-caption">
-        <strong>One memory</strong>
-        Item photo + a real moment with the child + a quote, a date, a tag — paired and preserved before the item leaves the house.
-      </div>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          Three kids and twenty years of accumulated stuff — clothes worn once, toys
-          loved to death, school projects nobody could quite throw away. My wife didn't want
-          to let go of any of it. Not because of the things, but because of what the things
-          represented: first steps, first day of school, the random Tuesday that turned out
-          to be a moment worth keeping. Storage has limits. The purge was coming. The
-          question was how to make it feel okay.
-        </p>
-        <p>
-          A photo of a onesie is just a photo of a onesie. Without the story attached, it's
-          inventory. So the goal became: for every item we let go, capture not just the
-          object — but the memory. The item, paired with a real photo of the kid actually
-          using it. A few sentences about why it mattered. A quote if we had one. A
-          timestamp. A name. That's what this app does.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A static archive site — clean HTML, CSS, and vanilla JavaScript with no framework,
-          no build step, no server. Memory data lives in a single structured
-          <code>memories.js</code> file, separated from the presentation layer so the site
-          stays maintainable by anyone, not just a developer. Hosted on GitHub Pages so it's
-          free, versioned, and accessible to the whole family from any device. Adding a
-          memory is one object appended to an array — and one git commit.
-        </p>
-
-        <h4>The interesting part — and why this one is different</h4>
-        <p>
-          The site is the easy half. The hard half — and the part that makes this project
-          a different category from the others on this page — is that the photos of the
-          kids actually using the items live in <strong>Google Photos</strong>, which has
-          no public API for programmatic search and download. The only way in is through
-          the browser, as a logged-in user.
-        </p>
-        <p>
-          That's exactly how this works. <strong>Claude takes direct control of the local
-          Chrome browser</strong>, navigates to Google Photos, and runs intelligent searches —
-          not just keyword lookups, but contextual queries calibrated to the item, the
-          child, and the approximate time period. It evaluates the visual results the
-          same way a human would, and selects the photo that actually matches the memory.
-        </p>
-        <p>
-          When the right moment is buried inside a video clip — which happens constantly,
-          because parents capture a lot of video — Claude injects JavaScript directly into
-          the page to locate the authenticated image frame Google Photos is already
-          rendering, fetches it with full session credentials, and triggers a download as
-          a JPEG. <strong>No API key. No OAuth flow. No third-party integration.</strong>
-          Just the live, logged-in browser session doing what a human would do — at a speed
-          and consistency a human couldn't sustain across hundreds of items.
-        </p>
-
-        <h4>The AI-native piece</h4>
-        <p>
-          This is the project where the boundary between "AI as coding tool" and "AI as
-          operator" disappears. The other apps in this portfolio were built with Claude
-          writing code I asked for. This one is built with Claude <em>doing the work</em> —
-          operating a real browser, evaluating real search results, making judgment calls
-          about which photo matches which memory, downloading the right frame from a
-          video, writing the description, and updating the data file. The whole pipeline
-          runs on natural-language instruction, not custom integration code.
-        </p>
-        <p>
-          And that scale is the actual reason this needed to exist. Manually searching
-          Google Photos for every donated item is feasible for ten things. It is not
-          feasible for hundreds. You'd give up, and the memories would go with the items.
-          Automation is what makes the project completable — and what turns a good idea
-          into something that ships.
-        </p>
-
-        <h4>Why it has to run locally</h4>
-        <p>
-          This isn't a cloud app and can't be. Taking control of an authenticated browser
-          session requires local execution — <strong>Claude Cowork</strong> runs on my
-          own machine, with access to my local Chrome instance and my already-logged-in
-          Google account. No credentials are ever handed to a remote service. The photos
-          never leave my environment until I choose to publish them.
-        </p>
-        <p>
-          That architecture is also why this is genuinely replicable. Anyone running
-          Claude Cowork on their own PC could run this exact workflow for their own
-          family. The website template is portable. The data format is simple. The
-          automation logic is driven by natural language, not custom code that has to
-          be maintained. <strong>It's a shippable pattern, not a one-off project.</strong>
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>Stack</h5>
-          <ul class="sidebar-list">
-            <li>→ Vanilla HTML / CSS / JS</li>
-            <li>→ Single-file data model</li>
-            <li>→ GitHub Pages hosting</li>
-            <li>→ Claude Cowork (local)</li>
-            <li>→ Live Chrome session</li>
-            <li>→ Injected JavaScript</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Key features</h5>
-          <ul class="sidebar-list">
-            <li>→ Search by name, year, keyword</li>
-            <li>→ Filter by child and category</li>
-            <li>→ Item + memory photo pairing</li>
-            <li>→ Quote, date, and tag per entry</li>
-            <li>→ Family-readable timeline</li>
-            <li>→ Trivially extensible data file</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Built with</h5>
-          <ul class="sidebar-list">
-            <li>→ Claude Cowork (browser control)</li>
-            <li>→ Claude (site + data generation)</li>
-            <li>→ Natural-language workflow</li>
-            <li>→ No custom integration code</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      The interesting frontier isn't AI that writes code for you. It's AI that <em>operates
-      your tools</em> — the same logged-in browser, the same accounts, the same files —
-      and does the part of the work that was previously labor-bound. This project
-      couldn't have been built two years ago. Not because the website is hard, but because
-      no human was going to manually search a 20-year photo library, item by item, to
-      rescue the memories before the donation truck came. With browser automation driven
-      by natural language, that work becomes possible — and a project that would have
-      quietly never happened becomes a permanent family archive instead.
-    </div>
-  </article>
-
-  <!-- CASE STUDY 06: PET WATCHER -->
-  <article class="featured-case" id="case-06">
-    <div class="featured-badge">◆ Case Study 06</div>
-    <h3 class="featured-title">Pet Watcher — A Real-Time Pet-Sitting Dashboard</h3>
-    <div class="featured-context">
-      <span>Personal · Household Utility</span>
-      <span>Supabase Realtime · Vanilla JS</span>
-      <span>Weekend handoff workflow</span>
-      <span><a href="https://petwatcher.jayleone.ai" target="_blank" rel="noopener" class="live-link">↗ Live Site</a></span>
-    </div>
-
-    <div class="web-gallery">
-      <figure class="web-frame">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/petwatcher-profiles.png" alt="Pet Watcher 'Pets and home' profiles view for the Leone House — four animal cards showing Rocket the Staffordshire Terrier, Lola the pug, Tater Tot the axolotl, and Queso the bearded dragon, each with a photo, care notes, and quick-reference tags.">
-      </figure>
-      <div class="web-caption">
-        <strong>Profiles</strong>
-        Every animal in one place — photo, care notes, and quick-reference tags so the sitter never has to guess.
-      </div>
-
-      <figure class="web-frame" style="margin-top: 1rem;">
-        <div class="web-frame-bar"><span></span><span></span><span></span></div>
-        <img src="images/petwatcher-checklist.png" alt="Pet Watcher care checklist for the Leone House with Friday, Saturday, and Sunday tabs, a sitter note about the dogs having a dog door, evening feeding tasks for Rocket and Lola, a water check, and a live completion progress ring at 0 percent.">
-      </figure>
-      <div class="web-caption">
-        <strong>Care checklist</strong>
-        Tasks by day and time of day, with a live completion ring that updates on the owner's device the moment the sitter checks something off.
-      </div>
-    </div>
-
-    <div class="featured-grid">
-      <div class="featured-body">
-        <h4>The problem</h4>
-        <p>
-          Leaving town for a weekend sounds simple until you try to hand off the details of a
-          multi-animal household. In our case: Rocket, a Staffordshire Terrier; Lola, a pug;
-          Tater Tot, the axolotl; and Queso, the bearded dragon — each with their own feeding
-          schedule and care quirks.
-        </p>
-        <p>
-          None of it is complicated. But it's exactly the kind of thing that gets scattered
-          across text messages, forgotten in a note, or followed up with anxious "Did this get
-          done?" messages while you're three states away.
-        </p>
-
-        <h4>What I built</h4>
-        <p>
-          A mobile-first web app for a single pet-sitting workflow. Individual animal profiles
-          with photos, care notes, and feeding instructions. A weekend checklist organized by
-          day and time of day. When the sitter checks off a task, the update writes to Supabase
-          and <strong>appears on the owner's device in real time.</strong>
-        </p>
-        <p>
-          The first version was fully static — HTML, CSS, JavaScript, and
-          <code>localStorage</code>. From there I added Supabase for real-time sync and separate
-          owner and sitter passcodes. Completed tasks are immutable, so they can't be accidentally
-          unchecked, and the owner can reset the checklist for a future trip. No app store, no
-          install, no account required.
-        </p>
-
-        <h4>The product decision worth noting</h4>
-        <p>
-          I initially built a proper authentication flow using Supabase magic links. It worked,
-          and it was wrong. Email delays, rate limits, and redirect behavior introduced too much
-          uncertainty for a neighbor who just needs to check in on the animals.
-        </p>
-        <p>
-          So I backed out of the "more correct" solution and replaced it with a simple passcode
-          gate. Owner passcode opens owner mode. Sitter passcode opens sitter mode. That isn't
-          enterprise-grade auth, and it's not pretending to be. It's the right trust model for a
-          private link shared with a known person. Product quality often comes from removing
-          sophistication, not adding it.
-        </p>
-
-        <h4>The AI-native piece</h4>
-        <p>
-          Built through conversational iteration in Codex. Describe the household, add the
-          animals, upload the photos, refine the checklist, test the real-time behavior, adjust
-          the auth, simplify the UX. The magic-link reversal — implement, test, find it wrong,
-          replace it — took an afternoon. In traditional development, that kind of reversal feels
-          expensive. In an AI-native workflow, it's just product discovery.
-        </p>
-      </div>
-
-      <aside class="featured-sidebar">
-        <div class="sidebar-section">
-          <h5>Stack</h5>
-          <ul class="sidebar-list">
-            <li>→ Vanilla HTML / CSS / JS</li>
-            <li>→ Supabase Realtime</li>
-            <li>→ Supabase Postgres</li>
-            <li>→ GitHub Pages hosting</li>
-            <li>→ localStorage (local state)</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Key features</h5>
-          <ul class="sidebar-list">
-            <li>→ Pet profiles with photos</li>
-            <li>→ Weekend checklist by day</li>
-            <li>→ Real-time cross-device sync</li>
-            <li>→ Owner + sitter passcodes</li>
-            <li>→ Immutable completed tasks</li>
-            <li>→ Owner-only reset</li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h5>Built with</h5>
-          <ul class="sidebar-list">
-            <li>→ Codex (AI-assisted build)</li>
-            <li>→ Conversational iteration</li>
-            <li>→ Product-driven reversals</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="featured-takeaway">
-      <strong>What it taught me</strong>
-      The most interesting software opportunities are often small, specific, and previously
-      uneconomical. A custom app for one family and one pet sitter would never have made sense in
-      the old model — too much overhead, too much ceremony. The threshold has moved. When the
-      audience is specific, the workflow is clear, and the stakes are real enough to matter,
-      custom software can now be practical at a household scale.
-    </div>
-  </article>
-
-  <!-- LIGHTER PROJECTS -->
-  <div class="apps-grid">
-
-    <article class="app-card" id="case-07">
-      <div class="app-number">/ 07</div>
-      <h3 class="app-title">Furgone Avventura</h3>
-      <div class="app-context">Side Venture · Live Business</div>
-      <p class="app-desc">
-        A premium van rental business — a custom 2019 Mercedes-Benz Sprinter 4×4 listed on
-        Turo for families, golf groups, and adventure travelers. The booking website was
-        designed and built end-to-end with Claude as the primary development partner.
-        Same van, incidentally, that powered the Leone Family Adventure trip above.
-        <br><br>
-        <a href="https://jayleone75.github.io/furgone-avventura" target="_blank" rel="noopener" class="app-link">↗ furgone-avventura</a>
-      </p>
-      <div class="app-takeaway">
-        Real customers, real bookings, real revenue — built by a sales guy with Claude.
-        This is what AI-to-production looks like.
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section class="clients reveal" id="clients">
-  <div class="section-label">03 — Selected Clients</div>
-  <h2 class="section-title">The companies that shape <em>the industry</em>.</h2>
-  <p style="max-width: 60ch; color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem;">
-    A partial list of enterprise accounts engaged across two decades — from Fortune 500
-    technology companies to large public-sector organizations.
-  </p>
-  <div class="clients-grid">
-    <span class="client-pill">Apple</span>
-    <span class="client-pill">Netflix</span>
-    <span class="client-pill">Cisco</span>
-    <span class="client-pill">Intel</span>
-    <span class="client-pill">Siemens</span>
-    <span class="client-pill">Autodesk</span>
-    <span class="client-pill">Dropbox</span>
-    <span class="client-pill">GE Digital</span>
-    <span class="client-pill">Verizon Wireless</span>
-    <span class="client-pill">VMware</span>
-    <span class="client-pill">Salesforce</span>
-    <span class="client-pill">Starbucks</span>
-    <span class="client-pill">StubHub / eBay</span>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="experience reveal" id="experience">
-  <div class="section-label">04 — Career Timeline</div>
-  <h2 class="section-title">Two decades of <em>consistent performance</em>.</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Golden State Signal</div>
-        <div class="timeline-period">2025 — Present</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Founder &amp; Principal Architect</h3>
-        <p>Founded and architected an independent procurement intelligence business built on California's published purchasing filings. Tracks $49.43B of state spend across 267,267 purchase orders and 176 departments, joined against 94 statewide contract awards to map which resellers are authorized, which actually transact, and which hold paper but no business. Now shipped as the Account Runbook — a hosted, per-account workspace with a grounded advisor and a field-revision loop. Every scoping, data model, and design decision mine, with implementation directed using AI coding tools. Built on public data only, with no OEM or vendor affiliation.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">$49.43B Tracked</span>
-          <span class="timeline-badge">176 Departments</span>
-          <span class="timeline-badge">Architected End to End</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">ExaGrid Systems</div>
-        <div class="timeline-period">Jan 2025 — 2026</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Territory Sales Manager — Enterprise &amp; Public Sector</h3>
-        <p>Led strategic new-business acquisition across Northern California SLED and enterprise accounts. Engaged CIOs, infrastructure directors, and security stakeholders in architecture-led, value-based sales conversations. Navigated complex public-sector procurement via CMAS, ETC, and SIR contract vehicles. Used AI/LLM tools daily for prospect research, competitive analysis, meeting preparation, and proposal generation.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">Northern CA Territory</span>
-          <span class="timeline-badge">SLED Focus</span>
-          <span class="timeline-badge">AI-Augmented Workflows</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri (DDN)</div>
-        <div class="timeline-period">Mar 2021 — Jan 2025</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Strategic Enterprise Account Executive</h3>
-        <p>Exceeded $5M–$7M annual quota by 150%, 180%, and 200% over three consecutive years across Fortune 500 technology accounts. Drove net-new logo acquisition while expanding revenue within strategic accounts including Siemens, Autodesk, Apple, Cisco, Dropbox, Netflix, GE Digital, and Intel. Displaced incumbent platforms (NetApp, Pure Storage, Dell EMC) with compelling ROI/TCO business cases.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">150–200% Quota</span>
-          <span class="timeline-badge">Fortune 500 Accounts</span>
-          <span class="timeline-badge">Platform Displacement</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri</div>
-        <div class="timeline-period">Jan 2020 — Mar 2021</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Senior Director, Strategic Alliances &amp; Partnerships</h3>
-        <p>Spearheaded strategic alliance and partnership initiatives across Tintri's technology ecosystem. Built co-sell programs and joint go-to-market motions with complementary infrastructure vendors. Championed AIOps-driven datacenter vision by aligning with technology partners that enhanced Tintri's product offering and expanded cross-portfolio addressability.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">Alliance Building</span>
-          <span class="timeline-badge">Co-Sell GTM</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri</div>
-        <div class="timeline-period">Dec 2018 — Jan 2020</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Western Area Sales Director</h3>
-        <p>Led a team of regional sales representatives and systems engineers, driving a 25% year-over-year revenue increase to $20M annual run rate across the Western U.S. Developed territory acquisition strategies focused on net-new logo growth. Championed channel partner success through joint account mapping, co-marketing, and technical training.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">$20M ARR</span>
-          <span class="timeline-badge">+25% YoY Growth</span>
-          <span class="timeline-badge">Team Leadership</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri</div>
-        <div class="timeline-period">Sep 2017 — Dec 2018</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Senior Director, Systems Engineering — Americas &amp; Federal</h3>
-        <p>Led and mentored a team of 40 Systems Engineers supporting enterprise, Federal, and SLED sales cycles across the Americas. Implemented CHAMP/MEDDPIC-aligned qualification and POC frameworks, increasing win rates and shortening deal cycles. Developed comprehensive playbooks for Cloud, DevOps, VDI, Data Protection, and DR use cases.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">40-Person SE Team</span>
-          <span class="timeline-badge">Federal &amp; SLED</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri</div>
-        <div class="timeline-period">Dec 2014 — Sep 2017</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Western Area Director, Systems Engineering</h3>
-        <p>Led a high-performing team of 10 senior sales engineers supporting enterprise and strategic accounts across the Western U.S. Achieved recognition as the top revenue-generating region company-wide, consistently surpassing aggressive financial goals. Forged strategic alignment between engineering and sales to drive substantial revenue growth.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">#1 Region Nationwide</span>
-          <span class="timeline-badge">10-Person SE Team</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Tintri</div>
-        <div class="timeline-period">Apr 2013 — Dec 2014</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Senior Sales Engineer</h3>
-        <p>Lead pre-sales engineer in the Western U.S., conducting technical discovery, product demonstrations, POC deployments, and systems installations for enterprise accounts. Applied BANT and MEDDPIC qualification criteria to ensure strategic opportunity management and high conversion rates.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Oracle</div>
-        <div class="timeline-period">Nov 2012 — Apr 2013</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Principal Sales Consultant — Enterprise Accounts</h3>
-        <p>Supported Oracle's enterprise sales teams selling platform and infrastructure solutions into large commercial and public-sector organizations. Specialized in datacenter fabrics, virtualization, storage, and database strategies. Architected custom datacenter fabric and storage solutions for Oracle's top-tier clients.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Xsigo Systems / Oracle</div>
-        <div class="timeline-period">Jan 2011 — Nov 2012</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Solutions Architect — Enterprise Infrastructure Platforms</h3>
-        <p>Partnered with Senior Sales Executives to drive virtualized I/O and infrastructure solution sales across Telecom, Healthcare, SaaS, and Corporate IT verticals. Targeted key accounts including Autodesk, Verizon Wireless, StubHub/eBay, VMware, and Salesforce.com. Specialized in datacenter fabric consolidation and storage connectivity optimization.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-company">Avaya</div>
-        <div class="timeline-period">Apr 2001 — Feb 2011</div>
-      </div>
-      <div class="timeline-right">
-        <h3>Lab Manager / Senior Infrastructure Engineer</h3>
-        <p>Enterprise technology buyer and infrastructure architect responsible for evaluating, selecting, and procuring datacenter infrastructure across multiple Avaya sites. Directed end-to-end design and build-out of three enterprise-class datacenters (two domestic, one international). Achieved 90% reduction in datacenter footprint and 50% reduction in operating costs through virtualization strategy. Managed multiple $1M+ infrastructure projects on time and within budget.</p>
-        <div class="timeline-badges">
-          <span class="timeline-badge">Enterprise Buyer</span>
-          <span class="timeline-badge">3 Datacenter Build-Outs</span>
-          <span class="timeline-badge">90% Footprint Reduction</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EXPERTISE -->
-<section class="expertise reveal" id="expertise">
-  <div class="section-label">05 — Core Capabilities</div>
-  <h2 class="section-title">Built for complex, <em>high-stakes</em> enterprise sales.</h2>
-
-  <div class="expertise-grid">
-    <div class="expertise-card">
-      <h3>C-Suite Engagement</h3>
-      <p>Comfortable and credible in boardrooms with CIOs, CTOs, and CFOs. Translates technical value into executive outcomes — risk reduction, cost optimization, competitive advantage.</p>
-      <div class="expertise-tags">
-        <span class="tag">CIO/CTO/CFO</span>
-        <span class="tag">Executive Briefings</span>
-        <span class="tag">QBRs</span>
-        <span class="tag">ROI/TCO</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <h3>SLED &amp; Public Sector</h3>
-      <p>Expert navigation of state, local, and education procurement. Fluent in CMAS, ETC, SIR, NASPO, and other cooperative contract vehicles. FedRAMP/StateRAMP compliance awareness.</p>
-      <div class="expertise-tags">
-        <span class="tag">CMAS</span>
-        <span class="tag">ETC</span>
-        <span class="tag">SIR</span>
-        <span class="tag">FedRAMP</span>
-        <span class="tag">NASPO</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <h3>Pipeline Development</h3>
-      <p>Disciplined, multi-channel outbound strategy combining LinkedIn Sales Navigator, AI-powered research, targeted messaging, and warm introductions to build consistent territory pipeline.</p>
-      <div class="expertise-tags">
-        <span class="tag">MEDDPIC</span>
-        <span class="tag">Salesforce</span>
-        <span class="tag">HubSpot</span>
-        <span class="tag">Clari</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <h3>Channel &amp; Partner Ecosystem</h3>
-      <p>Expert in indirect channel models — daily co-sell with VARs, distributors, and OEM partners. Joint account mapping, partner enablement, and co-marketing to amplify territory coverage.</p>
-      <div class="expertise-tags">
-        <span class="tag">VAR Co-Sell</span>
-        <span class="tag">OEM Partnerships</span>
-        <span class="tag">SI Ecosystem</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <h3>Enterprise Infrastructure</h3>
-      <p>Deep technical fluency in storage, compute, networking, virtualization, and data protection. Guides customers through datacenter modernization, cloud-hybrid transitions, and AI-readiness planning.</p>
-      <div class="expertise-tags">
-        <span class="tag">NVMe / NVMe-oF</span>
-        <span class="tag">VMware</span>
-        <span class="tag">Data Protection</span>
-        <span class="tag">HCI</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <h3>Platform Displacement</h3>
-      <p>Proven track record displacing incumbent solutions from NetApp, Pure Storage, Dell EMC, Cohesity, Rubrik, and Commvault with compelling ROI-driven narratives and competitive positioning.</p>
-      <div class="expertise-tags">
-        <span class="tag">Competitive Analysis</span>
-        <span class="tag">TCO Modeling</span>
-        <span class="tag">Challenger Sale</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact reveal" id="contact">
-  <div class="section-label">06 — Connect</div>
-  <h2 class="contact-title">Let's <em>talk</em>.</h2>
-  <p style="max-width: 50ch; font-size: 1.1rem;">
-    Whether it's a business opportunity, a collaboration, or just a shared interest in
-    enterprise technology and AI — I'm always open to a good conversation.
-  </p>
-  <div class="contact-links">
-    <a href="mailto:mail@jayleone.com" class="contact-link">
-      Email
-    </a>
-    <a href="https://linkedin.com/in/jaymleone" target="_blank" rel="noopener" class="contact-link">
-      LinkedIn
-    </a>
-    <a href="https://goldenstatesignal.com" target="_blank" rel="noopener" class="contact-link">
+<header>
+  <nav>
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="#E3B341" stroke-width="1.4"/>
+        <path d="M6 18 Q10 10, 13 18 T20 18 T27 14" stroke="#E3B341" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
       Golden State Signal
     </a>
-    <a href="https://jayleone75.github.io/furgone-avventura" target="_blank" rel="noopener" class="contact-link">
-      Furgone Avventura
-    </a>
+    <div class="nav-links">
+      <a href="#runbook">The Runbook</a>
+      <a href="#why">Why It Holds</a>
+      <a href="#who-its-for">Who It's For</a>
+      <a href="/demo/">Live Demo</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="nav-cta" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <svg class="hero-bg-shape" viewBox="0 0 200 200" fill="none">
+    <path d="M60 10 L90 15 L100 40 L130 50 L140 90 L120 130 L100 190 L70 170 L60 120 L40 100 L30 60 Z" fill="#E3B341"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">California State Government Procurement Intelligence</span>
+    <h1>Golden State Signal</h1>
+    <div class="tagline">Cut through the noise. Define the signal.</div>
+    <p class="sub">California publishes its purchasing record. We turn it into an Account Runbook &mdash; one department, one named rep, and every number carrying the filing it came from.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
+      <a class="btn btn-ghost" href="/demo/">Explore the Live Demo</a>
+    </div>
+  </div>
+  <svg class="wave-svg" viewBox="0 0 1200 140" preserveAspectRatio="none">
+    <path class="wave-path" d="M0,90 L150,90 L180,40 L210,120 L240,90 L400,90 L430,60 L460,110 L490,90 L700,90 L730,30 L760,130 L790,90 L1000,90 L1030,55 L1060,105 L1090,90 L1200,90"/>
+  </svg>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num" data-target="267267" data-format="int">267,267</div><div class="stat-label">Purchase Orders Tracked</div></div>
+      <div class="reveal"><div class="stat-num" data-target="49.43" data-format="billion" data-decimals="2">$49.43B</div><div class="stat-label">State Spend Analyzed</div></div>
+      <div class="reveal"><div class="stat-num" data-target="176" data-format="int">176</div><div class="stat-label">State Departments Covered</div></div>
+      <div class="reveal"><div class="stat-num" data-target="11087" data-format="int">11,087</div><div class="stat-label">Distinct Suppliers Mapped</div></div>
+    </div>
+    <div class="integrity reveal">
+      <b>957,847</b> line items &nbsp;·&nbsp; <b>0</b> uncategorised purchase orders &nbsp;·&nbsp; <b>0</b> duplicates &nbsp;·&nbsp; filings from <b>2007 through 2026</b>, at full density from 2016
+    </div>
+  </div>
+</section>
+
+<section class="pad light">
+  <div class="wrap problem-inner">
+    <div class="reveal">
+      <span class="eyebrow">The Problem</span>
+      <h2>Public data. Private insight.</h2>
+      <p>California publishes its purchasing records. That doesn't make them useful. Hundreds of thousands of filings, inconsistent formats, and no built-in way to tell a live opportunity from a closed one.</p>
+      <p>Raw access stopped being the hard part. Knowing what a filing means for your pipeline &mdash; and being able to prove it at the table &mdash; is the work.</p>
+    </div>
+    <div class="problem-card reveal">
+      A supplier name on a purchase order tells you <span class="accent">who got paid</span>. It doesn't tell you <span class="accent">who's buying next</span>, <span class="accent">when</span>, or <span class="accent">why</span>. That's the gap Golden State Signal is built to close.
+    </div>
+  </div>
+</section>
+
+<section class="pad paper" id="runbook">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Product</span>
+      <h2>The Account Runbook</h2>
+      <p>One runbook is one California department, owned by one named rep, behind a login, with an advisor inside it that answers from the filings.</p>
+    </div>
+
+    <div class="runbook-inner">
+      <div class="reveal">
+        <p style="font-size:18px;color:#3A4152;margin-bottom:14px;">It is not a document that gets emailed. It is a live account workspace a rep marks up &mdash; and the marks are the part a competitor cannot copy.</p>
+
+        <div class="feat-grid">
+          <div class="feat">
+            <h4>Hosted and gated</h4>
+            <p>Per-user identity, verified against the signing keys. Not a shared password. A change to a play is traceable to the rep who caused it.</p>
+          </div>
+          <div class="feat">
+            <h4>An advisor grounded in the filings</h4>
+            <p>It answers from the runbook's own snapshot and can query the department's full purchase record. It refuses rather than estimates &mdash; and when it can't answer, that refusal is recorded.</p>
+          </div>
+          <div class="feat">
+            <h4>A revision loop</h4>
+            <p>A rep says what they learned in the field and the play rewrites itself, re-tiered honestly in both directions. What the rep said is stored beside what changed, and the history stays on the page.</p>
+          </div>
+          <div class="feat">
+            <h4>A rep home page</h4>
+            <p>Every account a rep owns, and every open action across all of them, rolled up by due date.</p>
+          </div>
+        </div>
+
+        <div class="pit reveal">Every runbook shows the date it was built and the date it will next refresh. <b>Point-in-time is a feature, not a caveat</b> &mdash; a rep who is told the date trusts the number.</div>
+
+        <p class="reveal" style="margin-top:22px;font-size:15.5px;">
+          Don't take the description's word for it:
+          <a href="/demo/sample-runbook.html" style="color:var(--gold-deep);font-weight:700;">read a real sample Account Runbook</a>
+          &mdash; live filings, real purchase order numbers you can check against eSCPRS &mdash;
+          or <a href="/demo/" style="color:var(--gold-deep);font-weight:700;">explore two full departments in the live demo</a>.
+        </p>
+      </div>
+
+      <div class="brief-mock reveal">
+        <div class="brief-mock-head"><span>DEPARTMENT OF MOTOR VEHICLES</span><span>as of 25 Aug 2026</span></div>
+        <div class="brief-mock-body">
+          <div class="brief-chip chip-green">Act Now</div>
+          <div style="height:14px;"></div>
+          <div class="brief-line w80" style="background:var(--gold);opacity:.4;height:14px;"></div>
+          <div style="height:12px;"></div>
+          <div class="brief-line w95"></div>
+          <div class="brief-line w80"></div>
+          <div class="brief-line w45"></div>
+          <div class="src-line">PO 0000123456 &nbsp;·&nbsp; filed 14 Mar 2026</div>
+          <div class="rev-stamp">Revised &mdash; field intel</div>
+          <div style="height:22px;border-top:1px solid var(--line-dark);margin-top:20px;"></div>
+          <div class="brief-chip chip-gold">One Call Away</div>
+          <div style="height:14px;"></div>
+          <div class="brief-line w60" style="background:var(--gold);opacity:.4;height:14px;"></div>
+          <div style="height:12px;"></div>
+          <div class="brief-line w95"></div>
+          <div class="brief-line w60"></div>
+          <div class="src-line">PO 0000987654 &nbsp;·&nbsp; filed 02 Feb 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad light" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why It Holds</span>
+      <h2>Three claims, and how each one is enforced.</h2>
+      <p>These are the things a technical buyer checks. Each is a property of the system, not a promise on a website.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:0ms">
+        <span class="claim-n">01</span>
+        <h3>Every number carries its filing</h3>
+        <p>The purchase order number and its filed date sit next to the figure, on the page, so it can be checked without leaving the sentence. Generation fails outright if a fact has no source attached. That is enforced in code, not by policy.</p>
+      </div>
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:120ms">
+        <span class="claim-n">02</span>
+        <h3>It refuses rather than approximates</h3>
+        <p>The advisor does not estimate, and does not invent a number, date, name or title. Asked something the filings do not hold, it says so &mdash; and the refusal is logged, because the gap between what reps ask and what the data holds is the roadmap.</p>
+      </div>
+      <div class="tier-card claim-card reveal reveal-stagger" style="--d:240ms">
+        <span class="claim-n">03</span>
+        <h3>The corrections are the product</h3>
+        <p>Every reseller can read the same public filings. What they cannot copy is a document corrected by the people who were in the room. When a rep says the renewal already moved, the play changes and the reason is kept.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad paper" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Evidence Rule</span>
+      <h2>Three tiers. One rule.</h2>
+      <p>A guess never wears the badge of a fact. Every finding is labeled by how certain it actually is.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-card confirmed reveal reveal-stagger" style="--d:0ms">
+        <span class="tier-badge">Confirmed</span>
+        <h3>On the record</h3>
+        <p>A dated term sits directly on the purchase filing itself. No inference required &mdash; it's already written down.</p>
+      </div>
+      <div class="tier-card publicized reveal reveal-stagger" style="--d:120ms">
+        <span class="tier-badge">Publicized</span>
+        <h3>Vendor-confirmed</h3>
+        <p>A manufacturer's own end-of-life or end-of-support bulletin, sourced and dated &mdash; even when it's not in the filing.</p>
+      </div>
+      <div class="tier-card inferred reveal reveal-stagger" style="--d:240ms">
+        <span class="tier-badge">Inferred</span>
+        <h3>Worth asking about</h3>
+        <p>An absent purchase order is a question, not a finding. Old enough to warrant a call &mdash; and we hand you the question, never a date we can't stand behind.</p>
+      </div>
+    </div>
+    <div class="rule-line reveal">"Never presented as a date. Always presented as a reason to call."</div>
+  </div>
+</section>
+
+<section class="pad light" id="who-its-for">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who It's For</span>
+      <h2>Built for whoever's carrying the number.</h2>
+      <p>The same filing means something different depending on who's reading it. Golden State Signal adjusts the angle accordingly.</p>
+    </div>
+    <div class="seat-grid">
+      <div class="seat-card reveal reveal-stagger" style="--d:0ms">
+        <span class="seat-num">01 &middot; Channel</span>
+        <h3>Regional Sales Leadership</h3>
+        <p>See which accounts on your team's book have gone quiet, which statewide contracts you already hold paper on, and where you have relationship but no revenue yet.</p>
+      </div>
+      <div class="seat-card reveal reveal-stagger" style="--d:120ms">
+        <span class="seat-num">02 &middot; OEM</span>
+        <h3>Regional &amp; SLED Sales Directors</h3>
+        <p>See which accounts in your category are due for a refresh, and which incumbent you're actually displacing.</p>
+      </div>
+      <div class="seat-card reveal reveal-stagger" style="--d:240ms">
+        <span class="seat-num">03 &middot; Independent</span>
+        <h3>Independent Consultants</h3>
+        <p>Open a first conversation with an account-specific angle and a named buyer of record, not a cold pitch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad paper" id="about">
+  <div class="wrap about-inner reveal">
+    <span class="eyebrow">Who's Behind It</span>
+    <h2 style="margin-bottom:20px;">Built by someone who's carried the number.</h2>
+    <p>Golden State Signal is an independent consultancy, founded by a 20+ year enterprise infrastructure and technology sales veteran. Not affiliated with any manufacturer or vendor.</p>
+    <p>Public sources only: Cal eProcure, eSCPRS, FI$Cal, DGS bulletins, the Governor's Budget, and the California Department of Technology. No proprietary vendor materials, no confidential partner data.</p>
+    <p>And the limits are stated, not buried. This is a purchase record, not an install base. Supplier means the reseller on the paperwork, not the manufacturer. Named contacts are held for 157 of the 176 departments. The public record covers state departments &mdash; counties, cities, school districts and universities buy through vehicles that produce no state filing at all, so the total is a floor rather than a ceiling.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="reveal">Know where California's about to buy again.</h2>
+    <p class="reveal">One conversation, one department, one runbook &mdash; see what's actually in the filings.</p>
+    <div class="btn-row reveal" style="justify-content:center;">
+      <a class="btn btn-primary" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
+      <a class="btn btn-ghost" href="/demo/">Explore the Live Demo</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div>© 2026 Jay Leone · Greater Sacramento, CA</div>
-  <div>Designed and built with Claude</div>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 Golden State Signal. Independent. Public sources only.</div>
+    <div style="display:flex;gap:22px;">
+      <a href="/demo/">Live Demo</a>
+      <a href="mailto:jay@goldenstatesignal.com">jay@goldenstatesignal.com</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-  // Nav scroll state
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  });
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
 
-  // Reveal-on-scroll animation
-  // Only opt into the hidden-then-fade-in pattern if IntersectionObserver
-  // is actually available. Otherwise the .reveal default keeps content visible.
-  if ('IntersectionObserver' in window) {
-    document.documentElement.classList.add('js-anim');
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
-    reveals.forEach(el => obs.observe(el));
-
-    // Safety net: if for any reason an element is still hidden after 3 seconds,
-    // force-reveal everything. Better visible-without-animation than blank.
-    setTimeout(() => {
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-        el.classList.add('visible');
-      });
-    }, 3000);
+  // Count-up stats
+  const statEls = document.querySelectorAll('.stat-num');
+  function formatVal(v, fmt, dec){
+    if(fmt==='billion') return '$' + v.toFixed(dec) + 'B';
+    return Math.round(v).toLocaleString();
   }
-</script>
-
-<!-- AI CHAT WIDGET -->
-<style>
-  #jl-chat-fab {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 9999;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(232, 168, 99, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  #jl-chat-fab:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 28px rgba(232, 168, 99, 0.5);
-  }
-  #jl-chat-fab svg { transition: opacity 0.2s ease; }
-
-  #jl-chat-window {
-    position: fixed;
-    bottom: 5.5rem;
-    right: 2rem;
-    z-index: 9998;
-    width: 380px;
-    max-width: calc(100vw - 2rem);
-    height: 520px;
-    max-height: calc(100vh - 8rem);
-    background: #141414;
-    border: 1px solid #2a2a28;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    transform: translateY(12px);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
-  }
-  #jl-chat-window.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  #jl-chat-header {
-    padding: 1rem 1.25rem 0.875rem;
-    border-bottom: 1px solid #222220;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-  .jl-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--accent-dim);
-    border: 1px solid var(--accent-soft);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--accent);
-    flex-shrink: 0;
-  }
-  .jl-header-text { flex: 1; min-width: 0; }
-  .jl-header-text strong {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    font-family: var(--sans);
-  }
-  .jl-header-text span {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-family: var(--mono);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  #jl-chat-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-muted);
-    padding: 0.25rem;
-    border-radius: 4px;
-    display: flex;
-    transition: color 0.15s;
-  }
-  #jl-chat-close:hover { color: var(--text-primary); }
-
-  #jl-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-    scrollbar-width: thin;
-    scrollbar-color: #2a2a28 transparent;
-  }
-  #jl-chat-messages::-webkit-scrollbar { width: 4px; }
-  #jl-chat-messages::-webkit-scrollbar-track { background: transparent; }
-  #jl-chat-messages::-webkit-scrollbar-thumb { background: #2a2a28; border-radius: 2px; }
-
-  .jl-msg {
-    max-width: 88%;
-    font-size: 0.875rem;
-    line-height: 1.55;
-    font-family: var(--sans);
-  }
-  .jl-msg-jay {
-    align-self: flex-end;
-    background: var(--accent);
-    color: #0a0a0a;
-    padding: 0.6rem 0.9rem;
-    border-radius: 14px 14px 4px 14px;
-    font-weight: 500;
-  }
-  .jl-msg-ai {
-    align-self: flex-start;
-    background: #1e1e1c;
-    color: var(--text-primary);
-    padding: 0.6rem 0.9rem;
-    border-radius: 4px 14px 14px 14px;
-    border: 1px solid #2a2a28;
-  }
-  .jl-msg-ai a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-
-  .jl-typing {
-    align-self: flex-start;
-    background: #1e1e1c;
-    border: 1px solid #2a2a28;
-    border-radius: 4px 14px 14px 14px;
-    padding: 0.75rem 1rem;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-  .jl-typing span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--text-muted);
-    animation: jlBounce 1.2s infinite;
-  }
-  .jl-typing span:nth-child(2) { animation-delay: 0.2s; }
-  .jl-typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes jlBounce {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
-    30% { transform: translateY(-5px); opacity: 1; }
-  }
-
-  .jl-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.25rem;
-  }
-  .jl-chip {
-    font-size: 0.75rem;
-    font-family: var(--mono);
-    padding: 0.3rem 0.65rem;
-    border-radius: 20px;
-    background: transparent;
-    border: 1px solid #333330;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s;
-    white-space: nowrap;
-  }
-  .jl-chip:hover { border-color: var(--accent); color: var(--accent); }
-
-  #jl-chat-input-row {
-    padding: 0.875rem 1rem;
-    border-top: 1px solid #222220;
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-    align-items: flex-end;
-  }
-  #jl-chat-input {
-    flex: 1;
-    background: #1a1a18;
-    border: 1px solid #2a2a28;
-    border-radius: 10px;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.875rem;
-    font-family: var(--sans);
-    color: var(--text-primary);
-    resize: none;
-    outline: none;
-    line-height: 1.45;
-    max-height: 100px;
-    overflow-y: auto;
-    transition: border-color 0.15s;
-  }
-  #jl-chat-input::placeholder { color: var(--text-dim); }
-  #jl-chat-input:focus { border-color: var(--accent-soft); }
-  #jl-chat-send {
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    background: var(--accent);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: opacity 0.15s, transform 0.15s;
-  }
-  #jl-chat-send:hover { opacity: 0.85; transform: scale(1.05); }
-  #jl-chat-send:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
-  #jl-chat-send svg { color: #0a0a0a; }
-
-  #jl-chat-label {
-    position: fixed;
-    bottom: 2.6rem;
-    right: 5rem;
-    z-index: 9999;
-    background: #1e1e1c;
-    border: 1px solid #333330;
-    color: var(--text-secondary);
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.4rem 0.85rem;
-    border-radius: 20px;
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-  #jl-chat-label.hidden { opacity: 0; }
-
-  @media (max-width: 480px) {
-    #jl-chat-window { right: 1rem; bottom: 5rem; width: calc(100vw - 2rem); }
-    #jl-chat-fab { right: 1rem; bottom: 1rem; }
-    #jl-chat-label { right: 4.5rem; bottom: 1.4rem; font-size: 0.68rem; }
-  }
-</style>
-
-<!-- Chat label -->
-<div id="jl-chat-label">Chat with Jay</div>
-
-<!-- FAB button -->
-<button id="jl-chat-fab" aria-label="Chat with Jay's AI assistant" title="Ask me anything">
-  <svg id="jl-fab-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>
-  <svg id="jl-fab-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" style="display:none;">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-</button>
-
-<!-- Chat window -->
-<div id="jl-chat-window" role="dialog" aria-label="Jay Leone AI assistant">
-  <div id="jl-chat-header">
-    <div class="jl-avatar">JL</div>
-    <div class="jl-header-text">
-      <strong>Ask about Jay</strong>
-      <span>AI · powered by Claude</span>
-    </div>
-    <button id="jl-chat-close" aria-label="Close chat">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-  </div>
-
-  <div id="jl-chat-messages">
-    <div class="jl-msg jl-msg-ai">
-      Hey — I'm an AI that knows Jay's background pretty well. Ask me about his career, the apps he's built, or anything on this site.
-      <div class="jl-chips">
-        <button class="jl-chip" onclick="jlChip(this)">What makes Jay different?</button>
-        <button class="jl-chip" onclick="jlChip(this)">What apps has he built?</button>
-        <button class="jl-chip" onclick="jlChip(this)">What's his background?</button>
-        <button class="jl-chip" onclick="jlChip(this)">Is he open to new roles?</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="jl-chat-input-row">
-    <textarea id="jl-chat-input" placeholder="Ask anything…" rows="1" aria-label="Your message"></textarea>
-    <button id="jl-chat-send" aria-label="Send message">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
-      </svg>
-    </button>
-  </div>
-</div>
-
-<script>
-(function() {
-  const SYSTEM_PROMPT = `You are an AI assistant on Jay Leone's personal website (jayleone.ai). You know Jay's background in depth and answer questions about him warmly, accurately, and concisely — like a knowledgeable colleague, not a corporate bio.
-
-KEY FACTS ABOUT JAY LEONE:
-- Founder and principal architect of Golden State Signal, an independent procurement intelligence business (goldenstatesignal.com). This is what he is doing now. Previously Territory Sales Manager at ExaGrid Systems (Jan 2025 - 2026), covering Northern California's 39-county SLED and enterprise territory. If asked where he works now, say he runs Golden State Signal independently - do not say he is at ExaGrid.
-- 24+ years in enterprise infrastructure sales. Consistently 150–200% of quota.
-- Unique differentiator: spent 10 years as an enterprise technology BUYER at Avaya — network architect and datacenter buyer who evaluated vendors, ran RFPs, directed three datacenter build-outs, managed $1M+ projects. He sells the way customers actually want to buy.
-- B.S. Biology, Michigan State University
-- Past roles: Tintri/DDN (3 consecutive years at 150%, 180%, 200% of $5-7M quota; Fortune 500 accounts including Apple, Netflix, Cisco, Intel, Siemens, Autodesk, GE Digital), Xsigo Systems (sold into Apple — spelled with X not Z), Oracle, Avaya
-- MEDDPIC/MEDDPICC certified. Challenger Sale, Value Selling, Consultative Selling frameworks.
-- Deep SLED/public sector expertise: CMAS, ETC, SIR, NASPO contract vehicles, FedRAMP/StateRAMP navigation
-- Daily practitioner of Claude, GPT, and Gemini — integrated into all workflows
-- Based in El Dorado Hills, California (Greater Sacramento area)
-
-APPS AND PROJECTS HE'S BUILT (all AI-native, built with Claude):
-1. Golden State Signal (goldenstatesignal.com) - an independent procurement intelligence business Jay founded and architected end to end. It turns California's published purchasing filings (Cal eProcure, eSCPRS, FI$Cal, DGS bulletins, the Governor's Budget, CDT) into dated, defensible account openings for infrastructure vendors and resellers. Scale: 267,267 purchase orders, 957,847 line items, 11,087 suppliers, and $49.43B of state spend across 176 California departments, with every order carrying a category label and zero duplicates - scaled from a nine-department, $17.2B pilot without a schema rewrite. It joins 94 statewide contract awards against actual transaction history to show which resellers are authorized to sell each manufacturer, which of them actually transact, and which hold paper but no business. Findings are labeled in three confidence tiers - confirmed (a dated term on the filing itself), publicized (a vendor EOL bulletin with a source), and inferred (old enough to warrant a question, never presented as a date) - so a guess never carries the authority of a fact. THE PRODUCT IS THE ACCOUNT RUNBOOK: one California department, owned by one named salesperson, hosted behind per-user identity (Cloudflare Zero Trust Access), with an advisor inside it grounded in that department's own filings. The advisor refuses rather than estimates, never invents a number or a name, and logs the refusal when it cannot answer. A revision loop lets a salesperson feed back what they learned on a call; the recommendation rewrites itself, re-tiered honestly in both directions, with what they said stored beside what changed. Every number carries the purchase order it came from - generation fails outright if a fact has no source attached. Architecture: a local Python pipeline (ingest, normalise, categorise, analyse) producing a validated JSON snapshot per department, and a Cloudflare stack serving it - Pages, Pages Functions, D1, R2, Zero Trust Access. Nothing generates in production, so there is no pipeline to keep alive. The same snapshot JSON both renders the page and grounds the advisor, so the two cannot drift. Multi-tenant from the first commit - a tenant id on every row and every query, including read-only ones. The data path runs with zero model calls; the model is confined to turning already-correct structured output into prose. Jay also caught data-quality defects before they reached a client - a duplicate file that would have double-counted $439.5M, a fuzzy-match rule that misattributed $517M of dark-fiber spend to the wrong manufacturer, and a grouping bug that was silently deleting purchase orders whose numbers collided across departments. An entity-classification layer separates true resellers from manufacturers selling direct, consultancies, and agencies billing each other, cutting unattributable spend from 39% to 18.5%. Stack: Python, pandas, SQLite, Flask, Cloudflare Pages/Functions/D1/R2/Access, Anthropic API with tool use, streaming, prompt caching, and model tiering. 32,769 lines of Python across 65 modules, 4,198 lines of Pages Functions and 2,616 lines of tests, 17 test suites with 655 assertions that gate every deploy, 16 D1 migrations, 29 tables. Seven joined public data sources: purchase orders, budget change proposals, the CDT project approval pipeline snapshotted weekly, live solicitations, Open FI$Cal vendor payments, DGS awards and vehicles, and CalCareers workforce signals. 89.3% of classification is deterministic; the model sees 9.6% and 1.1% is left honestly unclassified. Built on public data only, with no OEM or vendor affiliation.
-2. IronLog / Racked — workout tracking PWA. Mobile-first, installs from GitHub Pages, dual-key autosave, session pre-population, client-side PR detection. Single HTML file, zero dependencies, zero build step. Live at github.com/jayleone75/ironlog.
-3. Leone Family Adventure (roadtrip.jayleone.ai) — real-time road trip companion app for a 9-day family trip across CA/AZ/UT. Live GPS van tracking via Supabase, multi-user photo uploads, 5-tab SPA with schedule reflow when delayed. Designed for spotty rural cell signal from the passenger seat.
-4. Leone Family Memories — personal archive built with Claude browser automation (Claude Cowork controlling local Chrome to search Google Photos, extract frames from videos, pair items with memories). Static GitHub Pages site with structured JS data file.
-5. Furgone Avventura — live van rental business. Custom 2019 Mercedes-Benz Sprinter 4x4 listed on Turo. Built the booking website with Claude as primary dev partner. Real customers, real revenue.
-6. jayleone.ai — this website, built with Claude in a chat interface.
-
-WHAT JAY GEEKS OUT ON:
-- Data analysis and finding creative answers in complex information — long before AI made it fashionable
-- Using Claude, ChatGPT, and Gemini daily to supercharge that ability — building, analyzing, and thinking about problems in ways that weren't possible before
-- Distilling complicated subjects into something simple and tailored — even tailored to an individual's personality
-- Loves talking to people who are just starting their AI journey as much as people who've been at it a while — always learning, always sharing
-
-PROUDEST PROFESSIONAL MOMENT:
-- Closed a deal everyone told him was impossible — customer said no, partner said no, his own manager said no. He refused to accept it. Believed there was still a knob to turn, a switch to flip, a creative path nobody else saw. He found it. The deal closed, it worked out for everyone. He doesn't talk about it to brag — he talks about it because it captures how he approaches every hard problem.
-
-FURGONE AVVENTURA — SIDE BUSINESS AND PASSION PROJECT:
-- Started as an experiment. Needed a 4WD vehicle for snow and camping but didn't want something conventional like a Tahoe or pickup — too boring. Landed on a custom 2019 Mercedes-Benz Sprinter 4x4.
-- Figured if he wasn't using it, why not put it on Turo? Built out the van himself — TVs, batteries, carpet, sound deadening, refrigerator. Scratched a tinkering itch.
-- Gave it 6 months. Three years later it's booked constantly, a solid tax-advantaged asset, and a genuine business.
-- The bigger lesson: it showed him — and his family — that taking a calculated chance on something new is almost always worth it. His wife is exploring her own business. His son sells homemade ice cream on the corner. The van started something.
-
-HOW CUSTOMERS AND PARTNERS DESCRIBE JAY:
-Thoughtful, creative, reliable, accountable, trustworthy. Someone who fixes problems instead of deflecting them. The person everyone likes — not because he's a pushover, but because he's genuine and you can count on him.
-
-HOW JAY RECHARGES:
-- Weightlifting — as much mental as physical. Clears his head in a way nothing else does.
-- Cooking, on his own terms — when it's a creative project, not a chore
-- Watching a show he's been looking forward to, usually while cooking or doing something else. He rarely fully checks out — he's wired to multitask. But after a day of heavy cognitive work and talking to people, that combination is how he decompresses.
-- Working on the van, building something, solving a problem around the house
-
-PASSIONS AND INTERESTS:
-- Animals — deeply. Has a B.S. in Zoology from Michigan State. Grew up with every reptile imaginable: snakes, lizards, chameleons. In high school he'd bring his collection to schools to teach kids. His dad had exotic fish. Today: a bearded dragon (technically his son's, practically his), an axolotl in his office that he watches all day ("probably my favorite creature — they're just special little animals"), and two dogs — a pug and a Staffordshire terrier.
-- Cars — used to race a Corvette. Had it fully prepped for autocross and high performance driving events. Raced at Laguna Seca until he crashed. That chapter is closed but he loved it.
-- Football — favorite sport to watch and be around. His son plays and Jay often coaches the team.
-- Home projects — hangs TVs, does electrical, plumbing, whatever needs doing. Finds real satisfaction in creative problem solving around the house.
-
-FAMILY AND LIFE IN EL DORADO HILLS:
-- Lives in a tight-knit gated community — not pretentious, just a great neighborhood where kids open the door and run outside. Pickup flag football, wiffle ball, kickball happening constantly.
-- The neighbor group has become their closest friends — people they see every day, who bend over backwards for each other. Happy hour on the court is practically a daily institution.
-- Describes this chapter as one of the most rewarding and one of the hardest simultaneously — raising young kids, maintaining a marriage, building financial security, planning for the future. Real life, not a highlight reel.
-- Feels like the next chapter is approaching as the kids get older and everyone starts venturing into new interests and side projects.
-- Summer means a week in Santa Cruz hitting the beaches. Later in the year, a camping trip to Pinecrest. Down to earth, family-first.
-
-TONE GUIDELINES:
-- Be conversational and direct. No corporate fluff.
-- Keep responses concise — 2-4 sentences for most questions, a short list if needed.
-- If asked if Jay is open to new roles: he's thoughtfully evaluating opportunities where deep enterprise sales expertise and AI-native building combine, particularly in data infrastructure, AI/ML platforms, or companies where the buyer-side background is a real differentiator.
-- Don't make up details not listed above. If you don't know something, say so and suggest they connect via LinkedIn or email.
-- Jay's contact: mail@jayleone.com | linkedin.com/in/jaymleone`;
-
-  const history = [];
-  const messagesEl = document.getElementById('jl-chat-messages');
-  const inputEl = document.getElementById('jl-chat-input');
-  const sendBtn = document.getElementById('jl-chat-send');
-  const fabBtn = document.getElementById('jl-chat-fab');
-  const chatWin = document.getElementById('jl-chat-window');
-  const closeBtn = document.getElementById('jl-chat-close');
-  const fabOpen = document.getElementById('jl-fab-icon-open');
-  const fabClose = document.getElementById('jl-fab-icon-close');
-
-  let isOpen = false;
-  let isLoading = false;
-
-  const chatLabel = document.getElementById('jl-chat-label');
-
-  function toggleChat() {
-    isOpen = !isOpen;
-    chatWin.classList.toggle('open', isOpen);
-    fabOpen.style.display = isOpen ? 'none' : 'block';
-    fabClose.style.display = isOpen ? 'block' : 'none';
-    chatLabel.classList.toggle('hidden', isOpen);
-    if (isOpen) setTimeout(() => inputEl.focus(), 250);
-  }
-
-  fabBtn.addEventListener('click', toggleChat);
-  closeBtn.addEventListener('click', toggleChat);
-
-  function addMessage(text, role) {
-    const div = document.createElement('div');
-    div.className = 'jl-msg ' + (role === 'user' ? 'jl-msg-jay' : 'jl-msg-ai');
-    div.innerHTML = text.replace(/\n/g, '<br>');
-    messagesEl.appendChild(div);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-    return div;
-  }
-
-  function addTyping() {
-    const div = document.createElement('div');
-    div.className = 'jl-typing';
-    div.innerHTML = '<span></span><span></span><span></span>';
-    messagesEl.appendChild(div);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-    return div;
-  }
-
-  function jlChip(btn) {
-    const text = btn.textContent;
-    btn.closest('.jl-chips').querySelectorAll('.jl-chip').forEach(c => c.disabled = true);
-    sendMessage(text);
-  }
-  window.jlChip = jlChip;
-
-  async function sendMessage(text) {
-    if (isLoading || !text.trim()) return;
-    isLoading = true;
-    sendBtn.disabled = true;
-
-    addMessage(text, 'user');
-    history.push({ role: 'user', content: text });
-    inputEl.value = '';
-    inputEl.style.height = 'auto';
-
-    const typing = addTyping();
-
-    try {
-      const response = await fetch('https://jay-chat-proxy.bitter-violet-c86f.workers.dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-5',
-          max_tokens: 400,
-          system: SYSTEM_PROMPT,
-          messages: history
-        })
-      });
-
-      const data = await response.json().catch(() => null);
-      typing.remove();
-
-      if (data && data.content && data.content[0] && data.content[0].text) {
-        const reply = data.content[0].text;
-        history.push({ role: 'assistant', content: reply });
-        addMessage(reply, 'ai');
-      } else {
-        // Surface the real failure in the console so it can actually be diagnosed.
-        console.error(
-          '[jl-chat] proxy did not return message content.',
-          '\n  HTTP status:', response.status, response.statusText,
-          '\n  error type :', data && data.error && data.error.type,
-          '\n  message    :', data && data.error && data.error.message,
-          '\n  raw body   :', data
-        );
-        addMessage("Something went wrong on my end. Try refreshing or reach out to Jay directly at mail@jayleone.com.", 'ai');
+  const statIO = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const fmt = el.dataset.format;
+      const dec = parseInt(el.dataset.decimals || '1', 10);
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        el.textContent = formatVal(target, fmt, dec);
+        statIO.unobserve(el);
+        return;
       }
-    } catch (err) {
-      typing.remove();
-      addMessage("Couldn't reach the AI right now. You can reach Jay directly at mail@jayleone.com or on LinkedIn.", 'ai');
-    }
-
-    isLoading = false;
-    sendBtn.disabled = false;
-    inputEl.focus();
-  }
-
-  sendBtn.addEventListener('click', () => sendMessage(inputEl.value));
-
-  inputEl.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage(inputEl.value);
-    }
-  });
-
-  inputEl.addEventListener('input', () => {
-    inputEl.style.height = 'auto';
-    inputEl.style.height = Math.min(inputEl.scrollHeight, 100) + 'px';
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen) toggleChat();
-  });
-})();
+      const dur = 1400;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now-start)/dur, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        el.textContent = formatVal(target*eased, fmt, dec);
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      statIO.unobserve(el);
+    });
+  }, {threshold:0.5});
+  statEls.forEach(el=>statIO.observe(el));
 </script>
 
 </body>
