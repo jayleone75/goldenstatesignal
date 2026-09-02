@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Department of Public Health — Palo Alto Networks</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--navy:#0B1220;--gold:#E3B341;--cream:#FAF6ED;--ink:#1B1F27;
+      --rule:#D9CDB4;--mute:#6B7280}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+     font:16px/1.6 Georgia,'Iowan Old Style',serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{background:var(--navy);color:var(--cream);padding:26px 0 22px;
+       border-bottom:4px solid var(--gold)}
+.eyebrow{font:600 12px/1 -apple-system,sans-serif;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--gold)}
+header h1{margin:8px 0 12px;font-size:32px}
+.dates{display:flex;flex-wrap:wrap;gap:18px;font:14px/1 -apple-system,sans-serif;
+       color:#C9D2E2;align-items:center}
+.dates b{color:var(--cream)}
+.state{padding:4px 10px;border-radius:11px;background:#1E2A3F;font-weight:600}
+.s-active{background:#1F4030;color:#9FE3BE}
+.s-slipping{background:#4A3A15;color:#F0CE7E}
+.s-dormant,.s-lost{background:#4A1F1F;color:#F0A6A6}
+main{padding:8px 0 60px}
+section{margin:34px 0}
+h2{font-size:21px;color:var(--navy);border-bottom:1px solid var(--rule);
+   padding-bottom:7px;margin:0 0 12px}
+h3{font-size:17px;color:var(--navy);margin:16px 0 6px}
+.lede{color:var(--mute);font-size:14.5px;margin:0 0 14px}
+.big{font-size:20px;line-height:1.45;color:var(--navy);
+     border-left:4px solid var(--gold);padding:8px 0 8px 16px;margin:14px 0}
+.first{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--gold);
+       border-radius:10px;padding:20px 22px;margin-top:26px}
+.first h2{border:0;margin-bottom:4px}
+ol.actions{list-style:none;margin:0;padding:0}
+ol.actions li{border-top:1px solid var(--rule);padding:14px 0}
+ol.actions li:first-child{border-top:0}
+ol.actions label{display:flex;gap:11px;align-items:flex-start;cursor:pointer}
+ol.actions input[type="checkbox"]{margin-top:5px;width:17px;height:17px;flex:0 0 auto}
+.atitle{font-size:17px;color:var(--navy);font-weight:700}
+.ameta{font:13px/1.5 -apple-system,sans-serif;color:var(--mute);
+       margin:3px 0 0 28px}
+.tiles{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.tile{flex:1 1 170px;background:#fff;border:1px solid var(--rule);
+      border-radius:8px;padding:13px 15px}
+.tile .v{font-size:22px;font-weight:700;color:var(--navy)}
+.tile .l{font:11.5px/1.3 -apple-system,sans-serif;text-transform:uppercase;
+         letter-spacing:.06em;color:var(--mute);margin-top:3px}
+.fact{background:#fff;border:1px solid var(--rule);border-radius:7px;
+      padding:11px 14px;margin:9px 0;font-size:15px}
+.plays{display:flex;flex-direction:column;gap:14px}
+.play{background:#fff;border:1px solid var(--rule);border-radius:9px;
+      padding:16px 18px;border-left:5px solid var(--mute)}
+.play.now{border-left-color:#1F7A4D}
+.play.call{border-left-color:var(--gold)}
+.play.unver{border-left-color:#9AA3B2}
+.tier{font:700 11px/1 -apple-system,sans-serif;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--mute)}
+.play.now .tier{color:#1F7A4D}
+.play h3{margin:6px 0 8px}
+.play ul{margin:8px 0;padding-left:20px;font-size:14.5px}
+.week,.ev{font-size:14px;margin-top:8px;color:#333}
+.held{font-size:14px;margin-top:8px;color:#333}
+/* The stale section's two readings, side by side, deliberately equal weight. */
+.twohands{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.twohands{grid-template-columns:1fr}}
+.twohands .hand{border:1px solid #e3e3e3;border-radius:8px;padding:12px}
+.twohands .hand h3{font-size:15px;margin:0 0 8px}
+.rank{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#666;border:1px solid #d5d5d5;border-radius:10px;padding:1px 8px;margin-left:6px}
+/* A competitor-route flag is the finding, not a footnote. */
+.lcnote{font-size:12px;color:#666;font-style:italic}
+.pflag{font-size:13px;color:#8a5a00;background:#fdf6e3;border-radius:6px;padding:4px 8px;margin:4px 0}
+/* Two classes of name, and the page has to show which is which. */
+.who{margin-top:10px;border-top:1px solid #e3e3e3;padding-top:8px}
+.who-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#666;margin-bottom:6px}
+.who .p{font-size:14px;margin:0 0 6px;padding-left:9px;border-left:3px solid #c9c9c9}
+.who .p.on-file{border-left-color:#1f6f43}
+/* Dashed: nothing filed stands behind this one. */
+.who .p.matched{border-left-style:dashed;border-left-color:#9a9a9a}
+.who .p-note{font-size:13px;color:#555;margin-top:2px}
+.who .p-cav{font-size:12px;color:#6b6b6b;margin:0 0 8px;font-style:italic}
+.ev{color:var(--mute)}
+.card{background:#fff;border:1px solid var(--rule);border-radius:8px;
+      padding:13px 15px;margin:10px 0}
+.card .q{font-size:14.5px;margin-top:5px}
+.card .chg,.card .who{font:13px/1.5 -apple-system,sans-serif;
+                      color:var(--mute);margin-top:4px}
+/* A revised play should look revised. The gold rule is the same one the
+   Evidence line uses, because this is evidence too — it is the seller's, and
+   the point of showing the attribution is that a reader can tell the two
+   apart at a glance rather than by reading carefully. */
+.revised{font:13.5px/1.55 -apple-system,sans-serif;color:#3A3222;
+         margin-top:9px;padding:8px 11px;background:#FBF4E4;
+         border-left:3px solid var(--gold);border-radius:0 5px 5px 0}
+.revised b{color:#7A6320}
+.revised .moved{display:inline-block;margin-left:8px;padding:2px 7px;
+                font:11.5px/1.5 ui-monospace,Menlo,monospace;
+                background:#fff;border:1px solid var(--rule);border-radius:4px}
+.history{margin-top:8px;font:13px/1.55 -apple-system,sans-serif}
+.history summary{cursor:pointer;color:var(--mute);font-size:12.5px;
+                 padding:3px 0;user-select:none}
+.history summary:hover{color:var(--ink)}
+.hrow{border-left:2px solid var(--rule);padding:6px 0 6px 10px;margin:6px 0}
+.hhead{font:11.5px/1.5 ui-monospace,Menlo,monospace;color:var(--mute)}
+.hsaid{color:#3A3222;margin-top:3px}
+.hdid{color:var(--mute);margin-top:2px;font-size:12.5px}
+.sources{margin-top:9px;display:flex;flex-wrap:wrap;gap:6px}
+.src{font:11.5px/1 ui-monospace,Menlo,monospace;background:#F0EADC;
+     color:#5A4A28;padding:4px 7px;border-radius:4px;white-space:nowrap;
+     margin-right:6px}
+.src.more{background:transparent;color:var(--mute)}
+/* Filings: one quiet line that opens into the records. The number a reader
+   can type, the supplier and title that say which order it is. */
+details.filings{margin-top:9px;border:1px solid var(--rule);border-radius:6px;
+  background:#FCFAF4}
+details.filings>summary{cursor:pointer;list-style:none;padding:6px 10px;
+  font:11.5px/1.5 ui-monospace,Menlo,monospace;color:#5A4A28;user-select:none}
+details.filings>summary::-webkit-details-marker{display:none}
+details.filings>summary::before{content:"\25B8  ";color:var(--mute)}
+details.filings[open]>summary::before{content:"\25BE  "}
+details.filings>summary:hover{background:#F0EADC}
+.filings-t{margin:0;border:0;border-top:1px solid var(--rule);border-radius:0;
+  font-size:12.5px}
+.filings-t th{font-size:10.5px;padding:6px 10px;background:#F3EEE2;color:var(--navy)}
+.filings-t td{padding:6px 10px;font-size:12.5px}
+.filings-t td.mono{font-family:ui-monospace,Menlo,monospace;white-space:nowrap}
+.filings-note{font:11.5px/1.5 -apple-system,sans-serif;color:var(--mute);
+  padding:7px 10px 8px;border-top:1px solid var(--rule)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;
+      border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 11px;
+   font:600 11.5px/1.3 -apple-system,sans-serif;text-transform:uppercase;
+   letter-spacing:.05em}
+td{padding:10px 11px;border-top:1px solid var(--rule);font-size:14.5px;
+   vertical-align:top}
+th.r,td.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{font-size:14px;color:var(--mute)}
+.sample-note{background:#FBF4E4;border:1px solid var(--gold);border-radius:9px;
+  padding:14px 17px;margin:22px 0 6px;font:14.5px/1.6 -apple-system,sans-serif}
+.sample-note a{color:var(--navy);font-weight:700}
+.rests ul{font-size:14px;color:#333}
+footer{border-top:1px solid var(--rule);padding:18px 0 40px;
+       font:12.5px/1.6 -apple-system,sans-serif;color:var(--mute)}
+code{background:#F0EADC;padding:1px 5px;border-radius:3px}
+@media print{header{background:#fff;color:var(--ink)}
+             header h1,.dates b{color:var(--ink)}
+             .first{break-inside:avoid}.play{break-inside:avoid}}
+
+.adv-web{display:block;padding:7px 14px 0;font:12.5px/1.5 -apple-system,sans-serif;
+  color:var(--mute);cursor:pointer;user-select:none}
+.adv-web input{vertical-align:-2px;margin-right:5px}
+.adv-web-note{color:#9AA3B2}
+/* Armed must be unmissable: a restored tick once hid in plain sight and
+   every question on the page quietly went to the web. */
+.adv-web:has(input:checked){color:#7A2E12;font-weight:700}
+.adv-web:has(input:checked) .adv-web-note{color:#A0522D;font-weight:400}
+.askplay{margin-top:10px;background:none;border:1px solid var(--rule);
+  color:var(--mute);border-radius:6px;padding:5px 10px;cursor:pointer;
+  font:12.5px/1 -apple-system,sans-serif}
+.askplay:hover{border-color:var(--navy);color:var(--navy)}
+.adv-msg.offer{display:flex;gap:10px;align-items:center;background:#EAF3EC;
+  border:1px solid #1F7A4D;font-size:14px}
+.adv-msg.offer span{flex:1}
+.takeit{background:#1F7A4D;color:#fff;border:0;border-radius:6px;
+  padding:6px 12px;cursor:pointer;font:600 13px -apple-system,sans-serif;
+  white-space:nowrap}
+.takeit[disabled]{opacity:.6;cursor:default}
+.flagit{margin-top:10px;margin-left:8px;background:none;
+  border:1px solid var(--rule);color:var(--mute);border-radius:6px;
+  padding:5px 10px;cursor:pointer;font:12.5px/1 -apple-system,sans-serif}
+.flagit:hover{border-color:#C2703B;color:#C2703B}
+.flagit[disabled]{opacity:.6;cursor:default}
+.anote{margin:7px 0 0 28px}
+.notefield{width:100%;max-width:560px;border:1px solid var(--rule);
+  border-radius:6px;padding:6px 9px;font:13.5px/1.4 inherit;background:#fff}
+.addaction{display:flex;gap:8px;margin-top:14px;
+  border-top:1px solid var(--rule);padding-top:14px}
+.addaction input{flex:1;border:1px solid var(--rule);border-radius:6px;
+  padding:7px 10px;font:14px/1.4 inherit}
+.addaction button{background:var(--navy);color:var(--cream);border:0;
+  border-radius:6px;padding:0 16px;cursor:pointer;font:600 14px inherit}
+.savednote{margin-top:9px;font:13px -apple-system,sans-serif;color:#1F7A4D}
+td.rev{white-space:nowrap}
+.reveal{background:none;border:1px solid var(--rule);color:var(--navy);
+  border-radius:6px;padding:4px 10px;cursor:pointer;
+  font:12.5px/1 -apple-system,sans-serif}
+.reveal:hover{border-color:var(--navy);background:#fff}
+.reveal[disabled]{opacity:.6;cursor:default}
+.revealed{font:13px ui-monospace,Menlo,monospace;color:var(--navy)}
+.advisor{position:fixed;right:18px;bottom:18px;z-index:50;
+  font:14px/1.5 -apple-system,system-ui,sans-serif}
+.adv-toggle{background:var(--navy);color:var(--cream);border:0;
+  border-radius:22px;padding:12px 20px;cursor:pointer;font:600 14px inherit;
+  box-shadow:0 3px 14px rgba(11,18,32,.28)}
+/* display:flex beats the UA stylesheet's [hidden]{display:none}, so the
+   panel has to opt back out explicitly or it renders open on load. */
+.adv-panel[hidden]{display:none}
+.adv-panel{width:min(620px,calc(100vw - 36px));height:min(720px,82vh);
+  background:#fff;border:1px solid var(--rule);border-radius:12px;
+  box-shadow:0 10px 40px rgba(11,18,32,.22);display:flex;flex-direction:column;
+  overflow:hidden}
+.adv-head{display:flex;align-items:center;gap:9px;padding:11px 14px;
+  background:var(--navy);color:var(--cream)}
+.adv-scope{font-size:12px;color:var(--gold);flex:1}
+.adv-close{margin-left:auto;background:none;border:0;color:var(--cream);
+  font-size:20px;cursor:pointer;line-height:1}
+.adv-log{flex:1;overflow-y:auto;padding:14px;background:var(--cream)}
+.adv-hint{font-size:12.5px;color:var(--mute);border-left:3px solid var(--gold);
+  padding-left:10px;margin-bottom:12px}
+.adv-msg{margin:9px 0;padding:10px 12px;border-radius:9px;white-space:pre-wrap}
+.adv-msg.me{background:var(--navy);color:var(--cream);margin-left:36px}
+.adv-msg.them{background:#fff;border:1px solid var(--rule)}
+.adv-msg.pending{color:var(--mute);font-style:italic}
+.adv-msg.error{background:#F7E3E3;border-color:#C2703B}
+.adv-msg.note{background:#EAF3EC;border-color:#1F7A4D;font-size:13px}
+.adv-form{display:flex;gap:8px;padding:11px;border-top:1px solid var(--rule)}
+.adv-form textarea{flex:1;resize:none;border:1px solid var(--rule);
+  border-radius:7px;padding:8px 10px;font:14px/1.4 inherit}
+/* A square target for the arrow rather than a word-width pill. align-self:end
+   keeps it on the last line of a textarea that has grown. */
+.adv-form button{background:var(--navy);color:var(--cream);border:0;
+  border-radius:7px;width:38px;height:38px;flex:0 0 38px;align-self:flex-end;
+  cursor:pointer;font:600 17px/1 inherit;display:flex;align-items:center;
+  justify-content:center}
+.adv-form button:hover:not(:disabled){background:#16233A}
+.adv-form button:disabled{opacity:.5;cursor:default}
+.advisor.wide .adv-panel{width:min(1080px,calc(100vw - 36px));height:min(900px,92vh)}
+.adv-size{background:none;border:0;color:var(--cream);cursor:pointer;
+  font:600 12px/1 -apple-system,sans-serif;opacity:.8;padding:4px 6px}
+.adv-size:hover{opacity:1}
+
+/* Replies are prose, not a transcript dump: the figure someone needed should
+   not be buried in the middle of a paragraph. */
+.adv-msg.them p{margin:0 0 9px}
+.adv-msg.them p:last-child{margin-bottom:0}
+.adv-msg.them b{color:var(--navy)}
+.adv-msg.them ul{margin:6px 0 9px;padding-left:20px}
+.adv-msg.them li{margin:3px 0}
+.adv-msg.them code{background:#F0EADC;padding:1px 5px;border-radius:3px;
+  font:12.5px ui-monospace,Menlo,monospace}
+@media print{.advisor,.askplay{display:none}}
+</style>
+</head>
+<body data-runbook="rb_sample_department_of_public_health" data-tenant="sample">
+<header><div class="wrap">
+<div class="eyebrow">OEM Account Runbook · Palo Alto Networks</div>
+<h1>Department of Public Health</h1>
+<div class="dates">
+<span><b>As of</b> 2026-09-01</span>
+<span><b>Next refresh</b> 2026-10-01</span>
+<span class="state s-active">Active</span>
+</div></header></div>
+<main class="wrap">
+<div class="sample-note">This is a real, current runbook — every figure below is a filed California purchase order you can check against eSCPRS by its PO number. The licensed edition adds the people (named buyers of record and technical owners with published addresses), a grounded advisor that answers from these filings and revises plays on your field intelligence, a working action layer, and a 30-day refresh. <a href="/">Request a briefing</a>.</div>
+<section class="first"><h2>This quarter</h2>
+<p class="lede">Three things, dated. Everything else in this runbook exists to support them.</p>
+<ol class="actions">
+<li data-action="act-play-footprint-hold"><label>
+<span class="atitle">Confirm the renewal owner and date for Cortex XDR.</span></label>
+<div class="ameta">Due 2026-11-30 · Your paper here is current — protect it</div>
+<details class="filings"><summary>2 filings · PO 44252, 34590</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000044252">44252</td><td>2025-09-12</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,859,004</td></tr><tr><td class="mono" title="as filed: 0000034590">34590</td><td>2024-01-08</td><td>OPTM WEST</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,375,643</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</li>
+<li data-action="act-play-displace-zscaler"><label>
+<span class="atitle">Find Zscaler&#x27;s renewal window here — that is the date this play happens on.</span></label>
+<div class="ameta">Due 2026-11-30 · Zscaler holds $8,252,810 of Secure service edge / SASE / zero trust access here</div>
+<details class="filings"><summary>2 filings · PO 46070, 41485</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000046070">46070</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced Product Code: ZDX-ADVANCED SKU: ZS-GEN-UNIT Annual subscription to restricted</td><td class="r">$1,944,605</td></tr><tr><td class="mono" title="as filed: 0000041485">41485</td><td>2025-03-28</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced: ZDX Advanced Zscaler, Inc - ZDX-ADVANCED Start Date: 04/19/2025 End Date: 04</td><td class="r">$1,805,725</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</li>
+<li data-action="act-play-displace-tanium"><label>
+<span class="atitle">Find Tanium&#x27;s renewal window here — that is the date this play happens on.</span></label>
+<div class="ameta">Due 2026-11-30 · Tanium holds $5,487,775 of Endpoint protection and EDR here</div>
+<details class="filings"><summary>2 filings · PO 39971, 27677</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000039971">39971</td><td>2024-12-06</td><td>TABORDA SOLUTIONS INC</td><td>Part #200007496: MuleSoft - Anypoint MQ API Requests (500M) - Titanium</td><td class="r">$2,295,339</td></tr><tr><td class="mono" title="as filed: 0000027677">27677</td><td>2022-12-12</td><td>QUALAPPS INC</td><td>Part#100-0004.T Mulesoft - Additional PreProduction Core - Titanium Edition Salesforce.com</td><td class="r">$1,093,708</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</li>
+</ol>
+</section>
+<section><h2>Where you stand</h2>
+<p class="big">Department of Public Health has filed $1,826,154,802 across 5,186 purchase orders. The filings name Palo Alto Networks on 28 orders worth $11,206,571, last 2025-09-12. 17 competing product(s) named on $23,158,064 of paper.</p>
+<div class="tiles">
+<div class="tile"><div class="v">28</div><div class="l">orders naming your product</div></div>
+<div class="tile"><div class="v">$11,206,571</div><div class="l">detected spend (a floor)</div></div>
+<div class="tile"><div class="v">0.6%</div><div class="l">share of department</div></div>
+<div class="tile"><div class="v">2025-09-12</div><div class="l">last order</div></div>
+</div>
+<div class="fact"><b>Your product on the record here:</b> $11,206,571<details class="filings"><summary>5 filings · PO 44252, 34590, 28054, 21843 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000044252">44252</td><td>2025-09-12</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,859,004</td></tr><tr><td class="mono" title="as filed: 0000034590">34590</td><td>2024-01-08</td><td>OPTM WEST</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,375,643</td></tr><tr><td class="mono" title="as filed: 0000028054">28054</td><td>2023-01-09</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$635,336</td></tr><tr><td class="mono" title="as filed: 0000021843">21843</td><td>2022-01-06</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$601,393</td></tr><tr><td class="mono" title="as filed: 0000012715">12715</td><td>2020-07-15</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention Term: 12</td><td class="r">$409,788</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></div>
+<div class="fact"><b>Competing products on the record here:</b> $23,158,065<details class="filings"><summary>5 filings · PO 46070, 41485, 35104, 66078 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000046070">46070</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced Product Code: ZDX-ADVANCED SKU: ZS-GEN-UNIT Annual subscription to restricted</td><td class="r">$1,944,605</td></tr><tr><td class="mono" title="as filed: 0000041485">41485</td><td>2025-03-28</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced: ZDX Advanced Zscaler, Inc - ZDX-ADVANCED Start Date: 04/19/2025 End Date: 04</td><td class="r">$1,805,725</td></tr><tr><td class="mono" title="as filed: 0000035104">35104</td><td>2024-02-13</td><td>SOLUTIONS SIMPLIFIED</td><td>ZIA-BIZ-EDITION: ZIA Business Edition Zscaler, Inc - ZIA-BIZ-EDITION Start Date: 02/29/202</td><td class="r">$1,803,769</td></tr><tr><td class="mono" title="as filed: 0000000000000000000066078">66078</td><td>2022-12-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX AdvancedZscaler, Inc - ZDX-ADVStart Date: 03/31/2023 End Date: 02/28/2024 ZDX-ADV</td><td class="r">$1,186,270</td></tr><tr><td class="mono" title="as filed: 0000028412">28412</td><td>2023-01-31</td><td>SOLUTIONS SIMPLIFIED</td><td>YEAR 1 ZS-DECEPTION-ADV ZSCALER DECPTION ADVANCED ZSCALER, INC - ZS-DECEPTION ADV START: U</td><td class="r">$391,362</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></div>
+</section>
+<section><h2>Your product on the record</h2>
+<p class="lede">Purchase orders whose line text names a Palo Alto Networks product, whatever reseller carried them. A purchase record, not an install base — and a floor, because an order that never names the product cannot be counted.</p>
+<div class="scroll"><table><tr><th>Vendor</th><th>Product</th><th>POs</th><th>Detected spend</th><th>First</th><th>Latest</th><th>Carried by</th><th>Route</th></tr>
+<tr><td>Palo Alto Networks</td><td>Cortex XDR</td><td>7</td><td>$5,128,413</td><td>2020-07-15</td><td>2025-09-12</td><td>ENTERPRISE NETWORKING SOLS INC, OPTM WEST</td><td>Statewide contract · 1-19-70-19P</td></tr>
+<tr><td>Palo Alto Networks</td><td>Palo Alto PA-Series NGFW</td><td>14</td><td>$4,595,398</td><td>2017-07-21</td><td>2025-08-08</td><td>ENTERPRISE NETWORKING SOLS INC, KOVARUS INC</td><td>Statewide contract · 1-19-70-19P</td></tr>
+<tr><td>Palo Alto Networks</td><td>GlobalProtect</td><td>3</td><td>$994,320</td><td>2020-07-23</td><td>2022-02-03</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Statewide contract · 1-19-70-19P</td></tr>
+<tr><td>Palo Alto Networks</td><td>Prisma Cloud</td><td>4</td><td>$488,440</td><td>2021-10-26</td><td>2024-11-01</td><td>ENTERPRISE NETWORKING SOLS INC, SYSTEM SOLUTIONS INC</td><td>Statewide contract · 1-19-70-19P</td></tr>
+</table></div>
+<details class="filings"><summary>5 filings · PO 44252, 34590, 28054, 21843 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000044252">44252</td><td>2025-09-12</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,859,004</td></tr><tr><td class="mono" title="as filed: 0000034590">34590</td><td>2024-01-08</td><td>OPTM WEST</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,375,643</td></tr><tr><td class="mono" title="as filed: 0000028054">28054</td><td>2023-01-09</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$635,336</td></tr><tr><td class="mono" title="as filed: 0000021843">21843</td><td>2022-01-06</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$601,393</td></tr><tr><td class="mono" title="as filed: 0000012715">12715</td><td>2020-07-15</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention Term: 12</td><td class="r">$409,788</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>5 filings · PO 91083-6 PAN ELA, 16975, 25-ITS-0010, 20759 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 91083-6 PAN ELA">91083-6 PAN ELA</td><td>2024-10-11</td><td>KOVARUS INC</td><td>Palo Alto Network - FY 24/25 Year 3: Enterprise License Agreement; Enterprise Support Agre</td><td class="r">$1,161,613</td></tr><tr><td class="mono" title="as filed: 0000016975">16975</td><td>2021-03-22</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Palo Alto Networks PA-820 LAB Unit</td><td class="r">$710,118</td></tr><tr><td class="mono" title="as filed: 25-ITS-0010">25-ITS-0010</td><td>2025-08-08</td><td>INSOURCE-IT</td><td>Task 1 - Azure Services FY 25/26</td><td class="r">$497,778</td></tr><tr><td class="mono" title="as filed: 0000020759">20759</td><td>2021-10-26</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-PA-5250-AC: Palo Alto Networks PA-5250 with redundant AC power supplies</td><td class="r">$427,672</td></tr><tr><td class="mono" title="as filed: 0000029415">29415</td><td>2023-04-05</td><td>KOVARUS INC</td><td>PAN-PA-5250-AC: Palo Alto Networks PA-5250 with redundant AC power supplies</td><td class="r">$403,608</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>3 filings · PO 16975, 22195, 13083</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000016975">16975</td><td>2021-03-22</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Palo Alto Networks PA-820 LAB Unit</td><td class="r">$710,118</td></tr><tr><td class="mono" title="as filed: 0000022195">22195</td><td>2022-02-03</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-PA-220-BND-LAB4-R: PA-220 Lab Unit Renewal Service Bundle (Threat Prevention, DNS, PAN</td><td class="r">$216,842</td></tr><tr><td class="mono" title="as filed: 0000013083">13083</td><td>2020-07-23</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-PA-220-BND-LAB4-R: PA-220 Lab Unit Renewal Service Bundle (Threat Prevention, DNS, PAN</td><td class="r">$67,360</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>4 filings · PO 20759, 39414, 33539, 27667</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000020759">20759</td><td>2021-10-26</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-PA-5250-AC: Palo Alto Networks PA-5250 with redundant AC power supplies</td><td class="r">$427,672</td></tr><tr><td class="mono" title="as filed: 0000039414">39414</td><td>2024-11-01</td><td>SYSTEM SOLUTIONS INC</td><td>PAN-PRISMA-PUBCLOUD-ENT: Prisma Cloud Enterprise Edition includes the complete Cloud Nativ</td><td class="r">$21,343</td></tr><tr><td class="mono" title="as filed: 0000033539">33539</td><td>2023-11-07</td><td>SYSTEM SOLUTIONS INC</td><td>PAN-PRISMA-PUBCLOUD-ENT:I includes the complete Cloud Native Application Protection Platfo</td><td class="r">$20,350</td></tr><tr><td class="mono" title="as filed: 0000027667">27667</td><td>2022-12-12</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>PAN-PRISMA-PUBCLOUD-END: Prisma Cloud Enterprise Edition includes the complete Cloud Nativ</td><td class="r">$19,075</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</section>
+<section><h2>Competing products on the record</h2>
+<p class="lede">Detected the same way, at the layers Palo Alto Networks sells at. Who, when, how much, through whom, on what paper — what to do about any of them is your own material, and this document does not guess at it.</p>
+<div class="scroll"><table><tr><th>Vendor</th><th>Product</th><th>POs</th><th>Detected spend</th><th>First</th><th>Latest</th><th>Carried by</th><th>Route</th></tr>
+<tr><td>Zscaler</td><td>Zscaler Internet Access</td><td>11</td><td>$8,252,810</td><td>2019-02-19</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>Software Licensing Program · SLP-20-70-0181D</td></tr>
+<tr><td>Tanium</td><td>Tanium</td><td>7</td><td>$5,487,776</td><td>2016-08-05</td><td>2024-12-06</td><td>TABORDA SOLUTIONS INC, QUALAPPS INC</td><td>Software Licensing Program · SLP-22-70-0063V</td></tr>
+<tr><td>Splunk</td><td>Splunk Enterprise Security</td><td>16</td><td>$2,569,695</td><td>2017-01-06</td><td>2025-10-22</td><td>NWN SOLUTIONS CORPORATION, SOLUTIONS SIMPLIFIED</td><td>Software Licensing Program · SLP-19-70-0029T</td></tr>
+<tr><td>Delinea</td><td>Delinea Secret Server</td><td>6</td><td>$1,279,824</td><td>2023-03-08</td><td>2025-09-09</td><td>ALLIED NETWORK SOLUTIONS INC, MERGENT SYSTEMS INC</td><td>SB Option</td></tr>
+<tr><td>Microsoft</td><td>Microsoft Entra ID</td><td>8</td><td>$973,214</td><td>2017-08-31</td><td>2025-11-06</td><td>ENS-INC, SYNNETIX SOLUTIONS INC</td><td>CMAS · 3-18-70-0992P</td></tr>
+<tr><td>Splunk</td><td>Splunk Observability Cloud</td><td>7</td><td>$934,976</td><td>2021-08-26</td><td>2025-10-22</td><td>NWN SOLUTIONS CORPORATION, SOLUTIONS SIMPLIFIED</td><td>Emergency</td></tr>
+<tr><td>VMware</td><td>Omnissa Workspace ONE</td><td>3</td><td>$890,330</td><td>2014-07-15</td><td>2018-03-31</td><td>NWN SOLUTIONS CORPORATION, ALLIED NETWORK SOLUTIONS INC</td><td>Software Licensing Program · SLP-14-70-0029Y</td></tr>
+<tr><td>BeyondTrust</td><td>BeyondTrust Privileged Remote Access</td><td>6</td><td>$823,877</td><td>2021-04-28</td><td>2026-05-20</td><td>ALLIED NETWORK SOLUTIONS INC, GRANITE DATA SOLUTIONS</td><td>DVBE Option</td></tr>
+<tr><td>Rapid7</td><td>Rapid7 InsightVM</td><td>6</td><td>$682,757</td><td>2020-03-10</td><td>2026-02-10</td><td>ADVANCED TECHNICAL SOLUTIONS, SOLUTIONS SIMPLIFIED</td><td>SB Option</td></tr>
+<tr><td>Qualys</td><td>Qualys VMDR</td><td>6</td><td>$459,213</td><td>2016-08-05</td><td>2026-04-06</td><td>ADVANCED TECHNICAL SOLUTIONS</td><td>SB Option</td></tr>
+<tr><td>CyberArk</td><td>CyberArk Privileged Access</td><td>2</td><td>$350,310</td><td>2020-08-14</td><td>2021-07-22</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>DVBE Option</td></tr>
+<tr><td>Okta</td><td>Okta Workforce Identity</td><td>6</td><td>$265,770</td><td>2021-01-25</td><td>2025-05-20</td><td>BLUE KARMA SECURITY LLC, THE IFISH GROUP INC</td><td>Software Licensing Program · SLP-22-70-0280D</td></tr>
+<tr><td>AppDynamics</td><td>Cisco AppDynamics</td><td>1</td><td>$130,429</td><td>2021-01-14</td><td>2021-01-14</td><td>ANSURTECH LLC</td><td>SB Option</td></tr>
+<tr><td>SonicWall</td><td>SonicWall</td><td>3</td><td>$24,337</td><td>2024-09-27</td><td>2025-09-04</td><td>ADVANCED TECHNICAL SOLUTIONS</td><td>Fair and Reasonable</td></tr>
+<tr><td>McAfee</td><td>McAfee (legacy enterprise)</td><td>1</td><td>$21,950</td><td>2016-05-12</td><td>2016-05-12</td><td>BRIDGE MICRO</td><td>SB Option</td></tr>
+<tr><td>Quest Software</td><td>Quest KACE / Foglight</td><td>1</td><td>$7,708</td><td>2022-03-11</td><td>2022-03-11</td><td>SUNSTONEIT LLC</td><td>Fair and Reasonable</td></tr>
+<tr><td>Symantec</td><td>Symantec Endpoint Protection</td><td>3</td><td>$3,089</td><td>2016-12-02</td><td>2022-10-19</td><td>ADVANCE COMPUTER SERVICE INC, HSB SOLUTIONS INC</td><td>Fair and Reasonable</td></tr>
+</table></div>
+<details class="filings"><summary>5 filings · PO 46070, 41485, 35104, 66078 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000046070">46070</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced Product Code: ZDX-ADVANCED SKU: ZS-GEN-UNIT Annual subscription to restricted</td><td class="r">$1,944,605</td></tr><tr><td class="mono" title="as filed: 0000041485">41485</td><td>2025-03-28</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced: ZDX Advanced Zscaler, Inc - ZDX-ADVANCED Start Date: 04/19/2025 End Date: 04</td><td class="r">$1,805,725</td></tr><tr><td class="mono" title="as filed: 0000035104">35104</td><td>2024-02-13</td><td>SOLUTIONS SIMPLIFIED</td><td>ZIA-BIZ-EDITION: ZIA Business Edition Zscaler, Inc - ZIA-BIZ-EDITION Start Date: 02/29/202</td><td class="r">$1,803,769</td></tr><tr><td class="mono" title="as filed: 0000000000000000000066078">66078</td><td>2022-12-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX AdvancedZscaler, Inc - ZDX-ADVStart Date: 03/31/2023 End Date: 02/28/2024 ZDX-ADV</td><td class="r">$1,186,270</td></tr><tr><td class="mono" title="as filed: 0000028412">28412</td><td>2023-01-31</td><td>SOLUTIONS SIMPLIFIED</td><td>YEAR 1 ZS-DECEPTION-ADV ZSCALER DECPTION ADVANCED ZSCALER, INC - ZS-DECEPTION ADV START: U</td><td class="r">$391,362</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>5 filings · PO 39971, 27677, 34326, 16395 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000039971">39971</td><td>2024-12-06</td><td>TABORDA SOLUTIONS INC</td><td>Part #200007496: MuleSoft - Anypoint MQ API Requests (500M) - Titanium</td><td class="r">$2,295,339</td></tr><tr><td class="mono" title="as filed: 0000027677">27677</td><td>2022-12-12</td><td>QUALAPPS INC</td><td>Part#100-0004.T Mulesoft - Additional PreProduction Core - Titanium Edition Salesforce.com</td><td class="r">$1,093,708</td></tr><tr><td class="mono" title="as filed: 0000034326">34326</td><td>2023-12-20</td><td>TABORDA SOLUTIONS INC</td><td>Part#200007496 MuleSoft - Anypoint MQ API Requests (500M) - Titanium Edition Salesforce.co</td><td class="r">$1,092,084</td></tr><tr><td class="mono" title="as filed: 0000016395">16395</td><td>2021-02-01</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>405-100-0003 Additional Production Core/vCore 1/25/2021-1/24/2022</td><td class="r">$662,400</td></tr><tr><td class="mono" title="as filed: 0000017469">17469</td><td>2021-05-03</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>100-0001 Anypoint Platform Base Subscription Term: 06/03/2021 - 01/31/2022</td><td class="r">$160,500</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>5 filings · PO 50792, 17-PO-00207, 64641, 28013 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000050792">50792</td><td>2021-08-09</td><td>NWN SOLUTIONS CORPORATION</td><td>Year 3: SE-T-LIC-ST-100+ Splunk Enterprise - Term License with Standard Success Plan - 100</td><td class="r">$508,269</td></tr><tr><td class="mono" title="as filed: 17-PO-00207">17-PO-00207</td><td>2017-08-01</td><td>NWN SOLUTIONS CORPORATION</td><td>Splunk Enterprise Perpetual License</td><td class="r">$369,805</td></tr><tr><td class="mono" title="as filed: 0000000000000000000064641">64641</td><td>2022-05-09</td><td>NWN SOLUTIONS CORPORATION</td><td>FY 21/22 SFXIM-S-ENHOST-64, SignalFx Infrastructure Monitoring Standard Edition - Host - 6</td><td class="r">$259,474</td></tr><tr><td class="mono" title="as filed: 0000000000000000000028013">28013</td><td>2019-08-14</td><td>NWN SOLUTIONS CORPORATION</td><td>Splunk Enterprise Support (SE-P-ESUP) Term Dates: 08/01/2019 - 08/01/2020</td><td class="r">$246,536</td></tr><tr><td class="mono" title="as filed: 0000019063">19063</td><td>2021-08-26</td><td>NWN SOLUTIONS CORPORATION</td><td>PS-DAY-R: Splunk Professional Services Daily Rate (Remote)</td><td class="r">$191,678</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+<details class="filings"><summary>5 filings · PO 44129, 42129, 40842, 35092 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000044129">44129</td><td>2025-09-09</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>SSPLT-1UT5-S-PS Secret Server - Platinum Edition - IT/Admin User OnPrem Sub T4-S Premium S</td><td class="r">$279,196</td></tr><tr><td class="mono" title="as filed: 0000042129">42129</td><td>2025-05-09</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>SSPLT-1UT4-S-PS Secret Server - Platinum Edition - IT/Admin User OnPrem Sub T5-S Premium S</td><td class="r">$241,334</td></tr><tr><td class="mono" title="as filed: 0000040842">40842</td><td>2025-02-19</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>SSPLT-1UT4-S-PS Secret Server - Platinum Edition - IT/Admin User OnPrem Sub T5-S Premium S</td><td class="r">$241,334</td></tr><tr><td class="mono" title="as filed: 0000035092">35092</td><td>2024-02-09</td><td>MERGENT SYSTEMS INC</td><td>SSPLT-1UT4-SSS Secret Server - Platinum Edition - IT/Admin User OnPrem Sub T4-S Standard S</td><td class="r">$224,204</td></tr><tr><td class="mono" title="as filed: 0000028998">28998</td><td>2023-03-08</td><td>MERGENT SYSTEMS INC</td><td>SSPLT-1UT4-S-SS: Secret Server Installed - Subscription User - Platinum T4-S Standard Supp</td><td class="r">$193,033</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</section>
+<section><h2>The channel</h2>
+<p class="lede">Statewide by design: contracts are statewide, so the channel is. This is the movement of your own product, not a ranking of departments.</p>
+<div class="fact"><b>Your paper moves on:</b> Statewide contract 1-19-70-19P ($84,266,280); Statewide contract 1-24-70-19-22 ($39,862,726); Statewide contract 1-24-70-19-19 ($20,451,549)</div>
+<div class="fact"><b>SLP agreements seen on your orders:</b> SLP-26-70-0477G (last 2026-06-23, OUTRIDER TECH LLC); SLP-24-70-0276V (last 2026-06-02, SAVANT SOLUTIONS INC); SLP-25-70-0151F (last 2026-03-20, AHEAD INC, KOVARUS INC); SLP-24-70-0116V (last 2026-03-09, ENTERPRISE NETWORKING SOLS INC); SLP-22-70-0276J (last 2025-09-24, SAVANT SOLUTIONS INC)</div>
+<h3>Who has carried you, statewide</h3>
+<p class="lede">Lapsed reads as lapsed — the date does the talking.</p>
+<div class="scroll"><table><tr><th>Reseller</th><th>POs</th><th>Detected spend</th><th>First</th><th>Latest</th><th>Departments</th></tr><tr><td>ENTERPRISE NETWORKING SOLS INC</td><td>295</td><td>$69,056,304</td><td>2017-02-17</td><td>2026-03-09</td><td>51</td></tr><tr><td>NWN SOLUTIONS CORPORATION</td><td>43</td><td>$55,098,071</td><td>2019-10-17</td><td>2026-07-31</td><td>21</td></tr><tr><td>OPTM WEST</td><td>122</td><td>$25,886,364</td><td>2022-07-01</td><td>2026-03-20</td><td>42</td></tr><tr><td>AHEAD INC</td><td>46</td><td>$20,458,638</td><td>2022-03-23</td><td>2026-07-20</td><td>18</td></tr><tr><td>PALO ALTO NETWORKS INC</td><td>6</td><td>$17,103,011</td><td>2016-03-30</td><td>2018-04-23</td><td>5</td></tr><tr><td>SAVANT SOLUTIONS INC</td><td>52</td><td>$15,377,493</td><td>2016-11-15</td><td>2026-07-15</td><td>16</td></tr><tr><td>KOVARUS INC</td><td>16</td><td>$6,486,476</td><td>2023-03-31</td><td>2026-03-20</td><td>12</td></tr><tr><td>NWN CORPORATION</td><td>19</td><td>$6,180,102</td><td>2020-06-16</td><td>2026-07-27</td><td>8</td></tr><tr><td>OFC TECH &amp; SLTNS INTEGRATION</td><td>4</td><td>$2,477,724</td><td>2025-03-31</td><td>2026-07-30</td><td>3</td></tr><tr><td>EPLUS TECHNOLOGY INC</td><td>12</td><td>$1,845,178</td><td>2015-07-31</td><td>2025-12-23</td><td>7</td></tr></table></div>
+<h3>Partner shortlist for this department</h3>
+<p class="lede">Ranked on one piece of field judgment: a new vendor through a working reseller is the warm path, and a new vendor plus a new reseller at once is the low-percentage one. A partner already carrying a competitor here stays on the list, flagged — the flag is the finding.</p>
+<div class="p on-file"><b>NWN SOLUTIONS CORPORATION</b> <span class="rank">rank 1</span>
+<div class="pflag">Carries Splunk into this account — carried $2,042,585 of it into this department.</div>
+<div class="pflag">Carries Splunk into this account — carried $774,995 of it into this department.</div>
+<div class="pflag">Carries VMware into this account — carried $398,750 of it into this department.</div>
+<div class="p-note">Has carried Palo Alto Networks (43 orders, last 2026-07-31) and is working this department now ($29,852,627 in two years, last 2026-07-16).</div>
+<div class="p-note">Sells here today: End User Computing, Software &amp; Licensing, Servers &amp; Compute</div>
+<details class="filings"><summary>4 filings · PO 127133, 2283, 21-PO-00085, 41395</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000127133">127133</td><td>2026-03-27</td><td>NWN SOLUTIONS CORPORATION</td><td>PAN-PA-3410 with redundant AC power supplies. Includes rack mount kit for installation in </td><td class="r">$16,034,775</td></tr><tr><td class="mono" title="as filed: 0000002283">2283</td><td>2026-07-21</td><td>NWN SOLUTIONS CORPORATION</td><td>GS$mart SFP+ form factor, SR 10Gb optical transceiver, short reach 300m, OM3 MMF, duplex L</td><td class="r">$8,978,314</td></tr><tr><td class="mono" title="as filed: 21-PO-00085">21-PO-00085</td><td>2021-11-30</td><td>NWN SOLUTIONS CORPORATION</td><td>ROK99A: :HPE XP8 All Fflash Storage Array</td><td class="r">$5,018,174</td></tr><tr><td class="mono" title="as filed: 0000041395">41395</td><td>2025-03-24</td><td>NWN SOLUTIONS CORPORATION</td><td>P39531-B21: HPE Synergy 480 Gen11 Configure-to-order Compute Module w/6 480&#x27;s</td><td class="r">$4,952,242</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>KOVARUS INC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (16 orders, last 2026-03-20) and is working this department now ($5,684,838 in two years, last 2025-08-25).</div>
+<div class="p-note">Sells here today: Servers &amp; Compute, Security &amp; Identity, Professional &amp; Managed Services</div>
+<details class="filings"><summary>4 filings · PO 91083-8 PAN ELA, 91083-6 PAN ELA, 23-ITS-1430, 26720</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 91083-8 PAN ELA">91083-8 PAN ELA</td><td>2024-10-10</td><td>KOVARUS INC</td><td>Palo Alto Network - FY 24/25 Year 3: Enterprise License Agreement; Enterprise Support Agre</td><td class="r">$1,540,155</td></tr><tr><td class="mono" title="as filed: 91083-6 PAN ELA">91083-6 PAN ELA</td><td>2024-10-11</td><td>KOVARUS INC</td><td>Palo Alto Network - FY 24/25 Year 3: Enterprise License Agreement; Enterprise Support Agre</td><td class="r">$1,161,613</td></tr><tr><td class="mono" title="as filed: 23-ITS-1430">23-ITS-1430</td><td>2025-08-25</td><td>KOVARUS INC</td><td>FY 25/26 - AC005336: VMWARE-ELA - INCLUDES: VM Cloud Essentials 5304 Cores NSX Advanced - </td><td class="r">$4,110,894</td></tr><tr><td class="mono" title="as filed: 0000026720">26720</td><td>2022-10-25</td><td>KOVARUS INC</td><td>VCS7- STD-P-SSS-C: vCenter Product and Production Support 7x24 - 12.00 MNTHS</td><td class="r">$1,646,538</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>OFC TECH &amp; SLTNS INTEGRATION</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (4 orders, last 2026-07-30) and is working this department now ($4,232,712 in two years, last 2026-03-06).</div>
+<div class="p-note">Sells here today: Professional &amp; Managed Services</div>
+<details class="filings"><summary>4 filings · PO 41-1179, 41-1134, 31855, 17-10046</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 41-1179">41-1179</td><td>2026-07-14</td><td>OFC TECH &amp; SLTNS INTEGRATION</td><td>CalHHS, OTSI shall provide Palo Alto Networks (PAN) Hardware Firewall Professional Service</td><td class="r">$1,813,017</td></tr><tr><td class="mono" title="as filed: 41-1134">41-1134</td><td>2026-07-13</td><td>OFC TECH &amp; SLTNS INTEGRATION</td><td>Palo Alto Cisco Firewall and Support Term: 03/31/2025-03/30/2028</td><td class="r">$526,559</td></tr><tr><td class="mono" title="as filed: 0000000000000000000031855">31855</td><td>2020-09-10</td><td>OFC TECH &amp; SLTNS INTEGRATION</td><td>OSI EBT &amp; MIS 17-10046</td><td class="r">$48,058,557</td></tr><tr><td class="mono" title="as filed: 17-10046">17-10046</td><td>2017-07-01</td><td>OFC TECH &amp; SLTNS INTEGRATION</td><td>Project management services for the replacement of the Management Information System (MIS)</td><td class="r">$28,103,341</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>ENTERPRISE NETWORKING SOLS INC</b> <span class="rank">rank 1</span>
+<div class="pflag">Carries Microsoft into this account — carried $185,674 of it into this department.</div>
+<div class="p-note">Has carried Palo Alto Networks (295 orders, last 2026-03-09) and is working this department now ($3,501,854 in two years, last 2025-10-16).</div>
+<div class="p-note">Sells here today: Security &amp; Identity, Cloud &amp; Hosting</div>
+<details class="filings"><summary>4 filings · PO 4500281373, 53759, 63345, 22683</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 4500281373">4500281373</td><td>2020-06-22</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Palo Alto Networks PA-5260</td><td class="r">$6,475,835</td></tr><tr><td class="mono" title="as filed: 0000000000000000000053759">53759</td><td>2020-10-08</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Consulting Services Palo Alto Networks Resident Engineer</td><td class="r">$3,118,234</td></tr><tr><td class="mono" title="as filed: 0000000000000000000063345">63345</td><td>2024-08-26</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>Contract to provide high level expert technical services to assist the California Departme</td><td class="r">$8,400,000</td></tr><tr><td class="mono" title="as filed: 0000022683">22683</td><td>2022-03-11</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>RBK-R6416S-HW-01: r6416 Appliance, 4-node, 192TB raw HDD, 1.6TB SSD, SFP+ NIC</td><td class="r">$1,950,488</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>SUNSTONEIT LLC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (7 orders, last 2026-07-07) and is working this department now ($1,725,970 in two years, last 2026-07-23).</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Servers &amp; Compute, Non-IT / Facilities</div>
+<details class="filings"><summary>4 filings · PO 129596, 3130, 24-CFH-0118, 85347</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000129596">129596</td><td>2026-07-07</td><td>SUNSTONEIT LLC</td><td>PAN-PRISMA-ACCESS-MU-ENTERPRISE	Prisma Access User Enterprise Edition includes private app</td><td class="r">$102,100</td></tr><tr><td class="mono" title="as filed: 0000003130">3130</td><td>2025-04-24</td><td>SUNSTONEIT LLC</td><td>Palo Alto Network SFP Transceivers SFP+ form factor, SR 10Gb optical transceiver, short re</td><td class="r">$25,182</td></tr><tr><td class="mono" title="as filed: 24-CFH-0118">24-CFH-0118</td><td>2026-07-23</td><td>SUNSTONEIT LLC</td><td>Current HFA User Accounts - Fixed Price for 240 HFA User Accounts for BIH users - Annual U</td><td class="r">$584,062</td></tr><tr><td class="mono" title="as filed: 0000000000000000000085347">85347</td><td>2024-09-30</td><td>SUNSTONEIT LLC</td><td>FY 24 SKU#: ETOImpact Current HFA User Accounts - Fixed Price for 55 HFA User Accounts for</td><td class="r">$379,260</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>AHEAD INC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (46 orders, last 2026-07-20) and is working this department now ($880,341 in two years, last 2026-01-23).</div>
+<div class="p-note">Sells here today: Storage, Support &amp; Maintenance, Software &amp; Licensing</div>
+<details class="filings"><summary>4 filings · PO 4500324759, 4500335114, 46270, 40702</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 4500324759">4500324759</td><td>2025-05-12</td><td>AHEAD INC</td><td>PALO ALTO SW - YEAR 1</td><td class="r">$5,741,815</td></tr><tr><td class="mono" title="as filed: 4500335114">4500335114</td><td>2026-07-20</td><td>AHEAD INC</td><td>QSFP-DD, 400Gb, SR8 optical transceiver,</td><td class="r">$5,633,495</td></tr><tr><td class="mono" title="as filed: 0000046270">46270</td><td>2026-01-23</td><td>AHEAD INC</td><td>829-3102 ISILON A200,IA200-800G-12T ProSupport Plus Mission Critical 4-Hour 7x24 On-Site S</td><td class="r">$587,458</td></tr><tr><td class="mono" title="as filed: 0000040702">40702</td><td>2025-01-31</td><td>AHEAD INC</td><td>829-3160: ProSupport Plus Mission Critical 4-Hour 7x24 On-Site Service with Emergency Disp</td><td class="r">$122,488</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>SYSTEM SOLUTIONS INC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (7 orders, last 2026-04-15) and is working this department now ($742,306 in two years, last 2026-07-23).</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Servers &amp; Compute, Mobility &amp; Telecom</div>
+<details class="filings"><summary>4 filings · PO 4931, 4580, 45998, 41980</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000004931">4931</td><td>2026-01-20</td><td>SYSTEM SOLUTIONS INC</td><td>Palo Alto Networks Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and s</td><td class="r">$53,200</td></tr><tr><td class="mono" title="as filed: 0000004580">4580</td><td>2025-01-09</td><td>SYSTEM SOLUTIONS INC</td><td>Palo Alto Networks Cortex XDR Pro for 1 endpoint. MFR# PAN-XDR-ADV-EP</td><td class="r">$45,147</td></tr><tr><td class="mono" title="as filed: 0000045998">45998</td><td>2025-12-29</td><td>SYSTEM SOLUTIONS INC</td><td>SQL Diagnostic Manager - RM</td><td class="r">$139,849</td></tr><tr><td class="mono" title="as filed: 0000041980">41980</td><td>2025-04-30</td><td>SYSTEM SOLUTIONS INC</td><td>Penelope User Accounts, per user, per year; includes full access to Penelope software with</td><td class="r">$131,908</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>OUTRIDER TECH LLC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (6 orders, last 2026-06-23) and is working this department now ($658,998 in two years, last 2026-06-09).</div>
+<div class="p-note">Sells here today: Software &amp; Licensing</div>
+<details class="filings"><summary>3 filings · PO 34638, P251018156, 47649</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000034638">34638</td><td>2026-06-10</td><td>OUTRIDER TECH LLC</td><td>PAN-SVC-PREM-PRA-100 PA-3410, Prisma Access Agent subscription, for one (1) device in an H</td><td class="r">$209,991</td></tr><tr><td class="mono" title="as filed: P251018156">P251018156</td><td>2026-06-02</td><td>OUTRIDER TECH LLC</td><td>PAN-CORTEXXSOAR-ENTERPRISE FULL XSOAR PLATFORM (XSOAR + TIM, 4 NAMED USERS) FOR ENTERPRISE</td><td class="r">$178,156</td></tr><tr><td class="mono" title="as filed: 0000047649">47649</td><td>2026-06-09</td><td>OUTRIDER TECH LLC</td><td>Mfg Part# 9A92-40AE-8D00 Subscription Agreement for Public Sector - per month over 12 mont</td><td class="r">$658,999</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>NWN CORPORATION</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (19 orders, last 2026-07-27) and is working this department now ($554,828 in two years, last 2026-07-24).</div>
+<div class="p-note">Sells here today: Uncategorized, Print &amp; Imaging, End User Computing</div>
+<details class="filings"><summary>4 filings · PO 106456, 58681, 15-PO-00603, 16959</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000106456">106456</td><td>2025-10-27</td><td>NWN CORPORATION</td><td>Year 2 of 3 See Quote # NWN24-0004CCAPAN-SLP Palo Alto Consolidation Term 7/26/24 - 7/25/2</td><td class="r">$3,988,815</td></tr><tr><td class="mono" title="as filed: 0000058681">58681</td><td>2023-10-20</td><td>NWN CORPORATION</td><td>Palo Alto Networks : Enterprise License Agreement, TP, PANDB URL, WF, GP, 3 year, Tier A</td><td class="r">$545,901</td></tr><tr><td class="mono" title="as filed: 15-PO-00603">15-PO-00603</td><td>2015-09-14</td><td>NWN CORPORATION</td><td>Laptops</td><td class="r">$1,670,128</td></tr><tr><td class="mono" title="as filed: 0000016959">16959</td><td>2021-03-18</td><td>NWN CORPORATION</td><td>2X0W5UP#ABA HP 640 G8 i7 16GB Power NB</td><td class="r">$992,752</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>SYSTEM SOLUTIONS DVBE INC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (7 orders, last 2025-11-21) and is working this department now ($532,683 in two years, last 2025-08-19).</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Servers &amp; Compute</div>
+<details class="filings"><summary>4 filings · PO 4891, 3494, 32562, 26712</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000004891">4891</td><td>2025-11-21</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>Prisma Access User Enterprise Edition Part# PAN-PRISMA-ACCESS-MU-ENTERPRISE</td><td class="r">$191,400</td></tr><tr><td class="mono" title="as filed: 0000003494">3494</td><td>2025-10-14</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>Advanced Threat Prevention subscription for device in an HA pair renewal, PA-3420 S/N: 024</td><td class="r">$179,478</td></tr><tr><td class="mono" title="as filed: 0000032562">32562</td><td>2023-09-20</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>TS-00220;Tableau - Creator (Server);Tableau Software LLC - 200001773;Start Date: 09/30/202</td><td class="r">$799,120</td></tr><tr><td class="mono" title="as filed: 0000026712">26712</td><td>2022-10-25</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>TABOM-1331113.1803 Creator-License-License Renewal 1 Year Tableau Software, LLC-1331113.18</td><td class="r">$746,380</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>INSOURCE-IT</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (1 order, last 2025-08-08) and is working this department now ($497,777 in two years, last 2025-08-08).</div>
+<div class="p-note">Sells here today: Cloud &amp; Hosting</div>
+<details class="filings"><summary>3 filings · PO 25-ITS-0010, 66733, 16-10053</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 25-ITS-0010">25-ITS-0010</td><td>2025-08-08</td><td>INSOURCE-IT</td><td>Task 1 - Azure Services FY 25/26</td><td class="r">$497,778</td></tr><tr><td class="mono" title="as filed: 0000000000000000000066733">66733</td><td>2024-08-07</td><td>INSOURCE-IT</td><td>Contract for COVID19 - 1. Response - Sr. Network Architect</td><td class="r">$1,286,000</td></tr><tr><td class="mono" title="as filed: 16-10053">16-10053</td><td>2016-08-02</td><td>INSOURCE-IT</td><td>SIS Data Center Migration and ADL Projects</td><td class="r">$750,000</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>BLUE KARMA SECURITY LLC</b> <span class="rank">rank 1</span>
+<div class="pflag">Carries Okta into this account — carried $197,678 of it into this department.</div>
+<div class="p-note">Has carried Palo Alto Networks (2 orders, last 2024-12-16) and is working this department now ($172,334 in two years, last 2026-01-13).</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Security &amp; Identity</div>
+<details class="filings"><summary>4 filings · PO 3086, 3190, 46063, 34004</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000003086">3086</td><td>2024-08-07</td><td>BLUE KARMA SECURITY LLC</td><td>PAN-XDR-ADV-EP - Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and sta</td><td class="r">$404,346</td></tr><tr><td class="mono" title="as filed: 0000003190">3190</td><td>2024-12-16</td><td>BLUE KARMA SECURITY LLC</td><td>PAN-LGS-1TB-1YR - Palo Alto Networks Cortex Data Lake with 1TB of storage, 1-year renewal,</td><td class="r">$9,119</td></tr><tr><td class="mono" title="as filed: 0000046063">46063</td><td>2026-01-13</td><td>BLUE KARMA SECURITY LLC</td><td>Sandbox - Preview Sandbox SKU# G009</td><td class="r">$99,573</td></tr><tr><td class="mono" title="as filed: 0000034004">34004</td><td>2023-12-03</td><td>BLUE KARMA SECURITY LLC</td><td>&quot;API Products - Enterprise100,000 MAU per year Okta - P000379 Start Date: 01/29/2024 End D</td><td class="r">$65,477</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p on-file"><b>PITNEY BOWES INC</b> <span class="rank">rank 1</span>
+<div class="p-note">Has carried Palo Alto Networks (1 order, last 2026-05-21) and is working this department now ($4,107 in two years, last 2025-08-06).</div>
+<div class="p-note">Sells here today: Print &amp; Imaging</div>
+<details class="filings"><summary>3 filings · PO 8351, 11252, 2600</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000008351">8351</td><td>2026-05-21</td><td>PITNEY BOWES INC</td><td>ConnectRight Mailer Software (Model: CRM0, Serial#: 000000000000005282)</td><td class="r">$960</td></tr><tr><td class="mono" title="as filed: 0000011252">11252</td><td>2020-04-03</td><td>PITNEY BOWES INC</td><td>SENDPROPSERIES; SENDPRO P SERIES</td><td class="r">$87,722</td></tr><tr><td class="mono" title="as filed: 0000002600">2600</td><td>2018-11-20</td><td>PITNEY BOWES INC</td><td>SendSuite Tracking SST (NO COST)</td><td class="r">$31,798</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>STACKNEXUS INC</b> <span class="rank">rank 2</span>
+<div class="p-note">Working this department now ($24,603,333 in two years, last 2026-05-26) and transacts SLP elsewhere (233 orders). No Palo Alto Networks paper found — cold on the product, warm in the account.</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Servers &amp; Compute</div>
+<details class="filings"><summary>3 filings · PO 40170, 43908, 47530</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000040170">40170</td><td>2024-12-06</td><td>STACKNEXUS INC</td><td>210001811: Salesforce Capped Enterprise Subscription Capped Salesforce Enterprise Subscrip</td><td class="r">$23,365,870</td></tr><tr><td class="mono" title="as filed: 0000043908">43908</td><td>2025-08-27</td><td>STACKNEXUS INC</td><td>200001773-2a - Tableau - Creator (Server)Salesforce.com, Inc. - 200001773Start Date: 09/30</td><td class="r">$732,896</td></tr><tr><td class="mono" title="as filed: 0000047530">47530</td><td>2026-05-26</td><td>STACKNEXUS INC</td><td>Year 1 (Vaccine Management) 205-0144 App Exchange Products 1% List Price / $100 Robotic Te</td><td class="r">$504,568</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>DELL MARKETING LP</b> <span class="rank">rank 2</span>
+<div class="p-note">Working this department now ($11,353,349 in two years, last 2026-05-27). Carried Palo Alto Networks once — 1 order, last 2022-10-27 — so the relationship exists but the paper has lapsed.</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Audio Visual &amp; Conferencing, End User Computing</div>
+<details class="filings"><summary>3 filings · PO 23-ITS-1758, 30492, 28944</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 23-ITS-1758">23-ITS-1758</td><td>2026-05-27</td><td>DELL MARKETING LP</td><td>QEJ-00003: Visual Studio Ent with GitHub ALng SA (Year3)</td><td class="r">$11,331,180</td></tr><tr><td class="mono" title="as filed: 0000030492">30492</td><td>2023-06-22</td><td>DELL MARKETING LP</td><td>Dell Ultrasharp 27 Monitor - U2722D Dell Limited Hardware Warranty Advanced Exchange Servi</td><td class="r">$252,825</td></tr><tr><td class="mono" title="as filed: 0000028944">28944</td><td>2023-03-07</td><td>DELL MARKETING LP</td><td>210-BBCK 814-9380 814-9381 Dell 27 Monitor - P2722H, 68.6cm (27&quot;) Dell Limited Hardware Wa</td><td class="r">$244,250</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>SOLUTIONS SIMPLIFIED</b> <span class="rank">rank 2</span>
+<div class="pflag">Carries Zscaler into this account — carried $8,252,810 of it into this department.</div>
+<div class="pflag">Carries Splunk into this account — carried $239,380 of it into this department.</div>
+<div class="pflag">Carries Splunk into this account — carried $159,980 of it into this department.</div>
+<div class="pflag">Carries Rapid7 into this account — carried $170,820 of it into this department.</div>
+<div class="p-note">Working this department now ($8,102,076 in two years, last 2026-06-03). Carried Palo Alto Networks once — 7 orders, last 2024-01-18 — so the relationship exists but the paper has lapsed.</div>
+<div class="p-note">Sells here today: Security &amp; Identity, Software &amp; Licensing, Servers &amp; Compute</div>
+<details class="filings"><summary>3 filings · PO 27131, 21068, 46070</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000027131">27131</td><td>2022-11-16</td><td>SOLUTIONS SIMPLIFIED</td><td>Azure-West-US-2-BC-Compute Snowflake Data Platform - Business Critical Edition - Compute C</td><td class="r">$1,989,847</td></tr><tr><td class="mono" title="as filed: 0000021068">21068</td><td>2021-11-16</td><td>SOLUTIONS SIMPLIFIED</td><td>*Snowflake Data Platform - Business Critical Edition - Compute Credit - Azure West US 2.</td><td class="r">$1,961,997</td></tr><tr><td class="mono" title="as filed: 0000046070">46070</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced Product Code: ZDX-ADVANCED SKU: ZS-GEN-UNIT Annual subscription to restricted</td><td class="r">$1,944,605</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>OPTM</b> <span class="rank">rank 2</span>
+<div class="p-note">Working this department now ($6,261,640 in two years, last 2025-08-21) and transacts SLP elsewhere (268 orders). No Palo Alto Networks paper found — cold on the product, warm in the account.</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Cloud &amp; Hosting</div>
+<details class="filings"><summary>3 filings · PO 4265-005-ESRI ELA, 42262, 35869</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 4265-005-ESRI ELA">4265-005-ESRI ELA</td><td>2025-08-21</td><td>OPTM</td><td>Esri Software, Maintenance and Support Services for Year 3 (FY 25/26) as described in Exhi</td><td class="r">$2,920,420</td></tr><tr><td class="mono" title="as filed: 0000042262">42262</td><td>2025-05-21</td><td>OPTM</td><td>9A92-40AE-8D00 Enterprise Agreement for Public Sector Subscription - SaaS - Minimum Contra</td><td class="r">$1,999,990</td></tr><tr><td class="mono" title="as filed: 0000035869">35869</td><td>2024-04-18</td><td>OPTM</td><td>9A92-40AE-8D00 Enterprise Agreement for Public Sector Subscription - SaaS - Minimum Contra</td><td class="r">$999,300</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>ABLEGOV INC</b> <span class="rank">rank 2</span>
+<div class="p-note">Working this department now ($6,058,294 in two years, last 2026-07-15). Carried Palo Alto Networks once — 2 orders, last 2017-12-18 — so the relationship exists but the paper has lapsed.</div>
+<div class="p-note">Sells here today: Software &amp; Licensing, Network Infrastructure, Support &amp; Maintenance</div>
+<details class="filings"><summary>3 filings · PO 47462, 41743, 47778</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000047462">47462</td><td>2026-05-19</td><td>ABLEGOV INC</td><td>Microsoft Unified Base Support Term Date: 6/16/2026 - 6/15/2027</td><td class="r">$1,987,250</td></tr><tr><td class="mono" title="as filed: 0000041743">41743</td><td>2025-04-16</td><td>ABLEGOV INC</td><td>Microsoft Unified Base Support</td><td class="r">$1,987,000</td></tr><tr><td class="mono" title="as filed: 0000047778">47778</td><td>2026-07-01</td><td>ABLEGOV INC</td><td>Part #: DSI-0000488 eSignature Enterprise Pro for State and Local Government Envelope eSig</td><td class="r">$725,586</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>COMPUTACENTER UNITED STATES</b> <span class="rank">rank 2</span>
+<div class="p-note">Working this department now ($3,997,320 in two years, last 2026-07-14) and transacts SLP elsewhere (43 orders). No Palo Alto Networks paper found — cold on the product, warm in the account.</div>
+<div class="p-note">Sells here today: Storage</div>
+<details class="filings"><summary>1 filing · PO 47989</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000047989">47989</td><td>2026-07-14</td><td>COMPUTACENTER UNITED STATES</td><td>Site 1</td><td class="r">$3,997,321</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>OPTM WEST</b> <span class="rank">rank 3</span>
+<div class="p-note">Has carried Palo Alto Networks (122 orders across 42 departments, last 2026-03-20) but shows no work at this department in two years — warm on the product, cold in the account.</div>
+<details class="filings"><summary>3 filings · PO 90742, 92287, 32556</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000090742">90742</td><td>2022-07-01</td><td>OPTM WEST</td><td>Palo Alto Software Licensing, Maintenance Renewal and Expansion FY 21/22 $699,565.75 FY 22</td><td class="r">$2,098,697</td></tr><tr><td class="mono" title="as filed: 0000000000000000000092287">92287</td><td>2023-09-14</td><td>OPTM WEST</td><td>Cortex XDR Pro for 1 TB, includes 1TB of Cortex Data Lake and standard success SKU: PAN-XD</td><td class="r">$2,060,614</td></tr><tr><td class="mono" title="as filed: 0000032556">32556</td><td>2023-10-16</td><td>OPTM WEST</td><td>PAN-ENT-SUB-ELA-B-3YR, Enterprise License Agreement, TP, DNS, PANDB URL, WF, GP, 3 year, T</td><td class="r">$2,007,753</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>PALO ALTO NETWORKS INC</b> <span class="rank">rank 3</span>
+<div class="p-note">Has carried Palo Alto Networks (6 orders across 5 departments, last 2018-04-23) but shows no work at this department in two years — warm on the product, cold in the account.</div>
+<details class="filings"><summary>3 filings · PO C8110350, 4500258298, 4500257866</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: C8110350">C8110350</td><td>2018-04-23</td><td>PALO ALTO NETWORKS INC</td><td>PALO ALTO NETWORKS PREMIUM SUPPORT</td><td class="r">$13,999,999</td></tr><tr><td class="mono" title="as filed: 4500258298">4500258298</td><td>2018-04-11</td><td>PALO ALTO NETWORKS INC</td><td>Palo Alto Networks PA-5260 with</td><td class="r">$1,014,213</td></tr><tr><td class="mono" title="as filed: 4500257866">4500257866</td><td>2018-03-27</td><td>PALO ALTO NETWORKS INC</td><td>Palo Alto Networks PA-5260 with</td><td class="r">$988,530</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>SAVANT SOLUTIONS INC</b> <span class="rank">rank 3</span>
+<div class="p-note">Has carried Palo Alto Networks (52 orders across 16 departments, last 2026-07-15) but shows no work at this department in two years — warm on the product, cold in the account.</div>
+<details class="filings"><summary>3 filings · PO 23IT-0203, 44383, 38691</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 23IT-0203">23IT-0203</td><td>2023-09-05</td><td>SAVANT SOLUTIONS INC</td><td>Palo Alto Networks Firewall Renewal Enterprise License Agreement, ATO, DNS,ADV URL, AWF,GP</td><td class="r">$4,488,873</td></tr><tr><td class="mono" title="as filed: 0000044383">44383</td><td>2025-09-24</td><td>SAVANT SOLUTIONS INC</td><td>PAN-ENT-SUB-ELA-C-3YR, Enterprise License Agreement, ATP, ADNS, ADV URL, AWF, GP, SD-WAN, </td><td class="r">$2,365,002</td></tr><tr><td class="mono" title="as filed: 0000038691">38691</td><td>2024-10-24</td><td>SAVANT SOLUTIONS INC</td><td>PAN-ENT-SUB-ELA-C-3YR, Enterprise License Agreement, ATP, ADNS, ADV URL, AWF, GP, SD-WAN, </td><td class="r">$2,250,450</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+<div class="p matched"><b>EPLUS TECHNOLOGY INC</b> <span class="rank">rank 3</span>
+<div class="p-note">Has carried Palo Alto Networks (12 orders across 7 departments, last 2025-12-23) but shows no work at this department in two years — warm on the product, cold in the account.</div>
+<details class="filings"><summary>3 filings · PO PO-202400000163, 15MC-CD016, 3747</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: PO-202400000163">PO-202400000163</td><td>2024-01-30</td><td>EPLUS TECHNOLOGY INC</td><td>PAN-PA-1410 PALO ALTO NETWORKS PA-1410:</td><td class="r">$829,951</td></tr><tr><td class="mono" title="as filed: 15MC-CD016">15MC-CD016</td><td>2015-07-31</td><td>EPLUS TECHNOLOGY INC</td><td>Palo Alto Network&#x27;s Traps Advanced Endpoint Protection and Security Manager</td><td class="r">$254,660</td></tr><tr><td class="mono" title="as filed: 0000003747">3747</td><td>2023-06-02</td><td>EPLUS TECHNOLOGY INC</td><td>Palo Alto Network Firewall</td><td class="r">$231,274</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</div>
+</section>
+<section><h2>Your filed terms here</h2>
+<p class="lede">Orders of yours carrying a real end date on the filing. An end date equal to the start date is a delivery date and is excluded.</p>
+<div class="scroll"><table><tr><th>PO</th><th>Reseller</th><th>Starts</th><th>Ends</th><th>Amount</th><th>Route</th></tr><tr><td>91083-6 PAN ELA</td><td>KOVARUS INC</td><td>2024-10-11</td><td>2026-03-30</td><td>$1,161,613</td><td>SLP-21-70-0151O</td></tr><tr><td>25-ITS-0010</td><td>INSOURCE-IT</td><td>2025-08-08</td><td>2027-06-30</td><td>$497,778</td><td>3-21-70-2405D</td></tr></table></div>
+<p class="note">1 of these terms already ended. An ended term with no successor order on file is the quiet-paper question in one row.</p>
+</section>
+<section><h2>Plays</h2>
+<p class="lede">Ranked. A tier is a claim about evidence, not about enthusiasm — <b>Unverified</b> means the filings raise the question and do not answer it.</p>
+<div class="plays">
+<article class="play call" data-play="play-footprint-hold" data-n="1" data-tier="ONE CALL AWAY">
+<div class="tier">ONE CALL AWAY</div>
+<h3>1. Your paper here is current — protect it</h3>
+<p>Latest order 2025-09-12. No filed term says when it renews, so the renewal date is the unknown standing between this and a calendar entry.</p>
+<ul><li>Confirm the renewal date on the Cortex XDR paper.</li></ul>
+<div class="week"><b>This week:</b> Confirm the renewal owner and date for Cortex XDR.</div>
+<div class="ev"><b>Evidence:</b> Your own filed orders at this department.</div>
+<div class="who"><div class="who-h">Who to call</div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 2 of the 5 orders cited below, most recently 2025-09-12.</div></div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2024-01-08.</div></div><div class="p-cav">A buyer of record processes the paper. They are named on the filing, and they are usually not who chooses the product.</div><div class="p matched"><b>Senior Network Cloud Engineer (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Senior Network Cloud Engineer. Their title in the contact record names this category. That is a directory match, not a filing.</div></div></div>
+<details class="filings"><summary>5 filings · PO 44252, 34590, 28054, 21843 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000044252">44252</td><td>2025-09-12</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,859,004</td></tr><tr><td class="mono" title="as filed: 0000034590">34590</td><td>2024-01-08</td><td>OPTM WEST</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$1,375,643</td></tr><tr><td class="mono" title="as filed: 0000028054">28054</td><td>2023-01-09</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$635,336</td></tr><tr><td class="mono" title="as filed: 0000021843">21843</td><td>2022-01-06</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention and stan</td><td class="r">$601,393</td></tr><tr><td class="mono" title="as filed: 0000012715">12715</td><td>2020-07-15</td><td>ENTERPRISE NETWORKING SOLS INC</td><td>PAN-XDR-ADV-EP: Cortex XDR Pro for 1 endpoint, includes 30 days of data retention Term: 12</td><td class="r">$409,788</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</article>
+<article class="play call" data-play="play-displace-zscaler" data-n="2" data-tier="ONE CALL AWAY">
+<div class="tier">ONE CALL AWAY</div>
+<h3>2. Zscaler holds $8,252,810 of Secure service edge / SASE / zero trust access here</h3>
+<p>First order 2019-02-19, latest 2026-01-07, carried by SOLUTIONS SIMPLIFIED. What the department decided and why is not on any filing — that is the call.</p>
+<ul><li>SOLUTIONS SIMPLIFIED carries it: 11 orders, $8,252,810</li><li>Route on the paper: Software Licensing Program (SLP-20-70-0181D)</li></ul>
+<div class="week"><b>This week:</b> Find Zscaler&#x27;s renewal window here — that is the date this play happens on.</div>
+<div class="ev"><b>Evidence:</b> Filed orders naming Zscaler at this department.</div>
+<div class="who"><div class="who-h">Who to call</div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2026-01-07.</div></div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2025-03-28.</div></div><div class="p-cav">A buyer of record processes the paper. They are named on the filing, and they are usually not who chooses the product.</div></div>
+<details class="filings"><summary>5 filings · PO 46070, 41485, 35104, 66078 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000046070">46070</td><td>2026-01-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced Product Code: ZDX-ADVANCED SKU: ZS-GEN-UNIT Annual subscription to restricted</td><td class="r">$1,944,605</td></tr><tr><td class="mono" title="as filed: 0000041485">41485</td><td>2025-03-28</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX Advanced: ZDX Advanced Zscaler, Inc - ZDX-ADVANCED Start Date: 04/19/2025 End Date: 04</td><td class="r">$1,805,725</td></tr><tr><td class="mono" title="as filed: 0000035104">35104</td><td>2024-02-13</td><td>SOLUTIONS SIMPLIFIED</td><td>ZIA-BIZ-EDITION: ZIA Business Edition Zscaler, Inc - ZIA-BIZ-EDITION Start Date: 02/29/202</td><td class="r">$1,803,769</td></tr><tr><td class="mono" title="as filed: 0000000000000000000066078">66078</td><td>2022-12-07</td><td>SOLUTIONS SIMPLIFIED</td><td>ZDX AdvancedZscaler, Inc - ZDX-ADVStart Date: 03/31/2023 End Date: 02/28/2024 ZDX-ADV</td><td class="r">$1,186,270</td></tr><tr><td class="mono" title="as filed: 0000028412">28412</td><td>2023-01-31</td><td>SOLUTIONS SIMPLIFIED</td><td>YEAR 1 ZS-DECEPTION-ADV ZSCALER DECPTION ADVANCED ZSCALER, INC - ZS-DECEPTION ADV START: U</td><td class="r">$391,362</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</article>
+<article class="play call" data-play="play-displace-tanium" data-n="3" data-tier="ONE CALL AWAY">
+<div class="tier">ONE CALL AWAY</div>
+<h3>3. Tanium holds $5,487,775 of Endpoint protection and EDR here</h3>
+<p>First order 2016-08-05, latest 2024-12-06, carried by TABORDA SOLUTIONS INC. What the department decided and why is not on any filing — that is the call.</p>
+<ul><li>TABORDA SOLUTIONS INC carries it: 7 orders, $5,487,775</li><li>Route on the paper: Software Licensing Program (SLP-22-70-0063V)</li></ul>
+<div class="week"><b>This week:</b> Find Tanium&#x27;s renewal window here — that is the date this play happens on.</div>
+<div class="ev"><b>Evidence:</b> Filed orders naming Tanium at this department.</div>
+<div class="who"><div class="who-h">Who to call</div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2024-12-06.</div></div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2023-12-20.</div></div><div class="p-cav">A buyer of record processes the paper. They are named on the filing, and they are usually not who chooses the product.</div></div>
+<details class="filings"><summary>5 filings · PO 39971, 27677, 34326, 16395 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000039971">39971</td><td>2024-12-06</td><td>TABORDA SOLUTIONS INC</td><td>Part #200007496: MuleSoft - Anypoint MQ API Requests (500M) - Titanium</td><td class="r">$2,295,339</td></tr><tr><td class="mono" title="as filed: 0000027677">27677</td><td>2022-12-12</td><td>QUALAPPS INC</td><td>Part#100-0004.T Mulesoft - Additional PreProduction Core - Titanium Edition Salesforce.com</td><td class="r">$1,093,708</td></tr><tr><td class="mono" title="as filed: 0000034326">34326</td><td>2023-12-20</td><td>TABORDA SOLUTIONS INC</td><td>Part#200007496 MuleSoft - Anypoint MQ API Requests (500M) - Titanium Edition Salesforce.co</td><td class="r">$1,092,084</td></tr><tr><td class="mono" title="as filed: 0000016395">16395</td><td>2021-02-01</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>405-100-0003 Additional Production Core/vCore 1/25/2021-1/24/2022</td><td class="r">$662,400</td></tr><tr><td class="mono" title="as filed: 0000017469">17469</td><td>2021-05-03</td><td>ALLIED NETWORK SOLUTIONS INC</td><td>100-0001 Anypoint Platform Base Subscription Term: 06/03/2021 - 01/31/2022</td><td class="r">$160,500</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</article>
+<article class="play call" data-play="play-route" data-n="4" data-tier="ONE CALL AWAY">
+<div class="tier">ONE CALL AWAY</div>
+<h3>4. Route in: KOVARUS INC already carries you and works this account</h3>
+<p>New vendor through a working reseller is the warm path; new vendor and new reseller at once is the low-percentage one. The shortlist below is ranked on exactly that.</p>
+<ul><li>Has carried Palo Alto Networks (16 orders, last 2026-03-20) and is working this department now ($5,684,838 in two years, last 2025-08-25).</li><li>NWN SOLUTIONS CORPORATION is already Splunk&#x27;s route into this account — know that before ringing them.</li><li>ENTERPRISE NETWORKING SOLS INC is already Microsoft&#x27;s route into this account — know that before ringing them.</li></ul>
+<div class="week"><b>This week:</b> Call KOVARUS INC about carrying you here — they know the building.</div>
+<div class="ev"><b>Evidence:</b> Filed orders: theirs carrying you elsewhere, and theirs at this department.</div>
+
+<details class="filings"><summary>4 filings · PO 91083-8 PAN ELA, 91083-6 PAN ELA, 23-ITS-1430, 26720</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 91083-8 PAN ELA">91083-8 PAN ELA</td><td>2024-10-10</td><td>KOVARUS INC</td><td>Palo Alto Network - FY 24/25 Year 3: Enterprise License Agreement; Enterprise Support Agre</td><td class="r">$1,540,155</td></tr><tr><td class="mono" title="as filed: 91083-6 PAN ELA">91083-6 PAN ELA</td><td>2024-10-11</td><td>KOVARUS INC</td><td>Palo Alto Network - FY 24/25 Year 3: Enterprise License Agreement; Enterprise Support Agre</td><td class="r">$1,161,613</td></tr><tr><td class="mono" title="as filed: 23-ITS-1430">23-ITS-1430</td><td>2025-08-25</td><td>KOVARUS INC</td><td>FY 25/26 - AC005336: VMWARE-ELA - INCLUDES: VM Cloud Essentials 5304 Cores NSX Advanced - </td><td class="r">$4,110,894</td></tr><tr><td class="mono" title="as filed: 0000026720">26720</td><td>2022-10-25</td><td>KOVARUS INC</td><td>VCS7- STD-P-SSS-C: vCenter Product and Production Support 7x24 - 12.00 MNTHS</td><td class="r">$1,646,538</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
+</article>
+</div></section>
+<section><h2>Buyers of record</h2>
+<p class="lede">These are procurement. They process the paper; they do not choose the product and they do not answer cold mail. <b>Email addresses are not published in this runbook</b> — they are released on request and the release is logged.</p>
+<div class="scroll"><table><tr><th>Name</th><th class="r">Purchase orders</th><th class="r">Spend</th><th>Last seen</th></tr><tr><td>Buyer of record 1 (named in the licensed edition)</td><td class="r">27</td><td class="r">$230,338,163</td><td>2026-07-23</td></tr><tr><td>Buyer of record 2 (named in the licensed edition)</td><td class="r">181</td><td class="r">$152,496,234</td><td>2026-07-24</td></tr><tr><td>Buyer of record 3 (named in the licensed edition)</td><td class="r">64</td><td class="r">$143,625,370</td><td>2020-12-23</td></tr><tr><td>Buyer of record 4 (named in the licensed edition)</td><td class="r">14</td><td class="r">$136,864,612</td><td>2026-07-27</td></tr><tr><td>Buyer of record 5 (named in the licensed edition)</td><td class="r">39</td><td class="r">$104,448,362</td><td>2026-07-31</td></tr><tr><td>Buyer of record 6 (named in the licensed edition)</td><td class="r">19</td><td class="r">$95,143,621</td><td>2026-07-30</td></tr><tr><td>Buyer of record 7 (named in the licensed edition)</td><td class="r">383</td><td class="r">$87,824,467</td><td>2025-09-09</td></tr><tr><td>Buyer of record 8 (named in the licensed edition)</td><td class="r">47</td><td class="r">$78,484,681</td><td>2021-09-27</td></tr></table></div>
+</section>
+<section><h2>Forward demand</h2>
+<p class="lede">Budget asked for, not yet spent. Scoped by department and never by category — a budget request predates the purchase that would classify it.</p>
+<div class="scroll"><table><tr><th>Source</th><th>What</th><th>Filed in</th><th>Requested</th><th>Confidence</th></tr><tr><td>Cdt Project</td><td>Future Disease Surveillance System Project (FDSS)</td><td>—</td><td>$45,848,096</td><td>In implementation (Green)</td></tr><tr><td>Cdt Project</td><td>Personnel Action Tracker Hub (PATH) Proof of Concept (POC)</td><td>—</td><td>not stated</td><td>—</td></tr><tr><td>Cdt Project</td><td>California Immunization Registry 3 (CAIR3)</td><td>—</td><td>not stated</td><td>Stage 2</td></tr><tr><td>Cdt Project</td><td>Centralized Application Branch Online Project (CAB Online)</td><td>—</td><td>not stated</td><td>Stage 3</td></tr><tr><td>Cdt Project</td><td>Lead-Based Paint Renovation, Repair, and Painting Certification Program (SB 1076)</td><td>—</td><td>not stated</td><td>Stage 2</td></tr><tr><td>Cdt Project</td><td>California Integrated Vital Records System Enhancement (Cal IVRS)</td><td>—</td><td>not stated</td><td>Stage 2</td></tr><tr><td>Cdt Project</td><td>Assembly Bill (AB) 1264 Pupil Nutrition – Ultra-processed Food (AB 1264)</td><td>—</td><td>not stated</td><td>Stage 1</td></tr><tr><td>Cdt Project</td><td>Grant Enterprise Management Solution (GEMS)</td><td>—</td><td>not stated</td><td>Stage 1</td></tr><tr><td>Bcp</td><td>Online Accreditation and Certification Application System Development (SB 1076)</td><td>2025-26</td><td>$4,989,000</td><td>confirmed</td></tr><tr><td>Bcp</td><td>State Agencies: Collection of Data - Race or Ethnic Origin (AB 532)</td><td>2016-17</td><td>not stated</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Licensing &amp; Certification: Program Quality Improvement Projects</td><td>2016-17</td><td>not stated</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Licensing &amp; Certification: Timely Investigations of Caregivers</td><td>2016-17</td><td>not stated</td><td>confirmed</td></tr></table></div>
+<h3>What the timing means</h3>
+<div class="fact"><b>Future Disease Surveillance System Project (FDSS)</b> — In implementation under independent oversight — the award is done. The windows now are adjacent workloads, M&amp;O and change orders. Rated Green: on track.</div>
+<div class="fact"><b>California Immunization Registry 3 (CAIR3)</b> — Stage 2 — alternatives analysis. THE SHAPING WINDOW: market research, RFIs and cost models happen here, and requirements are still open. This is when to be in the room.</div>
+<div class="fact"><b>Centralized Application Branch Online Project (CAB Online)</b> — Stage 3 — solution analysis. The solicitation is being packaged and requirements are set. Shaping is over; position the reseller response.</div>
+<div class="fact"><b>Lead-Based Paint Renovation, Repair, and Painting Certification Progra</b> — Stage 2 — alternatives analysis. THE SHAPING WINDOW: market research, RFIs and cost models happen here, and requirements are still open. This is when to be in the room.</div>
+<div class="fact"><b>California Integrated Vital Records System Enhancement (Cal IVRS)</b> — Stage 2 — alternatives analysis. THE SHAPING WINDOW: market research, RFIs and cost models happen here, and requirements are still open. This is when to be in the room.</div>
+<div class="fact"><b>Assembly Bill (AB) 1264 Pupil Nutrition – Ultra-processed Food (AB 126</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>Grant Enterprise Management Solution (GEMS)</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>Online Accreditation and Certification Application System Development </b> — Stage 2 — alternatives analysis. THE SHAPING WINDOW: market research, RFIs and cost models happen here, and requirements are still open. This is when to be in the room.</div>
+<p class="note">Stages are gates of <a href="https://cdt.ca.gov/policy/simm/" target="_blank" rel="noopener noreferrer">SIMM 19 — Project Approval Lifecycle (PAL) and GenAI Project Delivery Lifecycle</a>, from CDT's published tracker.</p>
+</section>
+<section><h2>Questions to ask</h2>
+<div class="card"><b>Who owns the Zscaler relationship, and when does it renew?</b><div class="q">$8,252,810 of it on file, latest order 2026-01-07.</div><div class="chg">If answered: Names the incumbent&#x27;s renewal window — the only date a displacement can happen on.</div><div class="who"><div class="who-h">Who to call</div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2026-01-07.</div></div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2025-03-28.</div></div><div class="p-cav">A buyer of record processes the paper. They are named on the filing, and they are usually not who chooses the product.</div></div></div>
+<div class="card"><b>Who owns the Tanium relationship, and when does it renew?</b><div class="q">$5,487,775 of it on file, latest order 2024-12-06.</div><div class="chg">If answered: Names the incumbent&#x27;s renewal window — the only date a displacement can happen on.</div><div class="who"><div class="who-h">Who to call</div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2024-12-06.</div></div><div class="p on-file"><b>Buyer of record (named in the licensed edition)</b> <span class="muted">no address on file</span><div class="p-note">Buyer of record. Signed 1 of the 5 orders cited below, most recently 2023-12-20.</div></div><div class="p-cav">A buyer of record processes the paper. They are named on the filing, and they are usually not who chooses the product.</div></div></div>
+</section>
+<section class="rests"><h2>What this rests on</h2><ul>
+<li>&quot;Yours&quot; means purchase orders whose line text names a Palo Alto Networks product, whatever reseller carried them. The supplier on a California purchase order is the reseller, never the manufacturer.</li>
+<li>Detected figures are floors. A purchase order whose lines say &quot;backup software renewal&quot; with no brand name is invisible to this method, and a product bought through a statewide vehicle may never appear at all.</li>
+<li>Competition is derived from product layer, not from a maintained rival list: two products compete here when they sell into the same budget line, per the reference lexicon.</li>
+<li>Spend is the purchase order grand total, counted once per purchase order. Line items are never summed — they double-count.</li>
+<li>Absence of a purchase order is not absence of the product, and a quiet account is not a lost one. Every apparent lapse here is phrased as a question because the filings cannot answer it.</li>
+</ul><h3>What it does not cover</h3><ul>
+<li>This covers eSCPRS-reported state purchasing. Exempt state entities do not report to it, and business placed through other vehicles — NASPO, CMAS, an OEM&#x27;s own SLP — may never appear.</li>
+<li>All local government is outside this data entirely: counties, cities and school districts do not report to eSCPRS.</li>
+<li>A purchase order&#x27;s value is counted on the date the order currently carries, not as revenue is recognised. A multi-year order lands here in full on day one, so single years read high or low against an accounting system; lifetime totals are far closer.</li>
+<li>Coverage before 2019 is thinner than after it for most departments.</li>
+<li>Product detection reads purchase order line text against a maintained pattern list. Figures for any product are floors: orders that never name it are not counted, and cannot be.</li>
+</ul></section>
+</main>
+<footer><div class="wrap">Golden State Signal · built from public California filings — Cal eProcure, eSCPRS, FI$Cal. Independent, and not affiliated with any manufacturer or reseller. Snapshot <code>rb_sample_department_of_public_health</code>, generated 2026-09-01.</div></footer>
+</body></html>
