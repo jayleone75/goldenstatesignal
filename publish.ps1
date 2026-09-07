@@ -3,20 +3,32 @@
 #   .\publish.ps1                              review changes, then confirm
 #   .\publish.ps1 -Message "new landing copy"  same, with your own commit message
 #   .\publish.ps1 -SkipRefresh                 push what's here, don't re-copy
+#   .\publish.ps1 -Yes                         no prompt: for the scheduled task
 #
 # Copies the site files out of the data project, checks nothing private is
-# about to go public, shows you the diff, and pushes only after you say yes.
+# about to go public, shows you the diff, and pushes. Interactive runs ask
+# first; the scheduled task ("Golden State Signal site publish") runs with -Yes
+# and pushes only when something actually changed, so an unchanged site
+# produces no commit and no noise.
 #
 # This site lives in its own repo deliberately. The data project next door
-# holds 12,800+ real people's contact details and a 260MB database. Nothing in
+# holds 16,000+ real people's contact details and a 500MB database. Nothing in
 # this folder does, so a mistake here cannot disclose any of that.
+#
+# The homepage and the demo were, for a while, uploaded through the GitHub web
+# UI as well as pushed from here, which left this clone sixteen commits behind
+# and the copy paths pointing at a folder the homepage had moved out of. So the
+# script now pulls first (fast-forward only: if the web copy and the local copy
+# have both changed the same file, it stops and says so rather than guess),
+# and every source path is checked before anything is copied.
 #
 # NOTE: keep this file pure ASCII. Windows PowerShell 5.1 reads .ps1 as ANSI
 # unless there is a BOM, and a stray em-dash makes it misparse the whole script.
 
 param(
     [string]$Message = "",
-    [switch]$SkipRefresh
+    [switch]$SkipRefresh,
+    [switch]$Yes
 )
 
 $ErrorActionPreference = "Stop"
@@ -26,26 +38,50 @@ $Project = Join-Path (Split-Path $Site -Parent) "ca-procurement-intel"
 
 Set-Location $Site
 
+function Fail($text) {
+    Write-Host $text -ForegroundColor Red
+    exit 1
+}
+
+# --------------------------------------------------------------- pull first
+if (-not (Test-Path (Join-Path $Site ".git"))) {
+    Fail "No git repo here. This folder should be a clone of github.com/jayleone75/goldenstatesignal."
+}
+git fetch -q origin main
+if ($LASTEXITCODE -ne 0) { Fail "Could not reach GitHub (git fetch failed). Nothing changed." }
+git merge -q --ff-only origin/main
+if ($LASTEXITCODE -ne 0) {
+    Fail "This clone and GitHub have diverged (something was edited on the web and here). Resolve with git before publishing. Nothing changed."
+}
+
 # ------------------------------------------------------------------ refresh
+# What the live site is made of, and where each piece is generated. The
+# homepage is hand-edited in the project; everything under demo/ is written by
+# pipeline scripts (make_demo_data.py, make_sample_runbook.py). demo/worker is
+# the demo chat's Worker source and is maintained in this repo, not copied.
+$homepage = Join-Path $Project "output\site-preview\index.html"
+$demoItems = @("index.html", "sample-brief.html", "sample-runbook.html",
+               "sample-runbook-oem.html", "assets", "data")
+
 if (-not $SkipRefresh) {
     if (-not (Test-Path $Project)) {
-        Write-Host "Can't find the data project at $Project" -ForegroundColor Red
-        Write-Host "Re-run with -SkipRefresh to publish the files already here."
-        exit 1
+        Fail "Can't find the data project at $Project. Re-run with -SkipRefresh to publish the files already here."
+    }
+    if (-not (Test-Path $homepage)) { Fail "Homepage source is missing: $homepage" }
+    foreach ($item in $demoItems) {
+        if (-not (Test-Path (Join-Path $Project "demo\$item"))) { Fail "Demo source is missing: demo\$item" }
     }
     Write-Host "Refreshing site files from the project..." -ForegroundColor Cyan
-    Copy-Item (Join-Path $Project "docs\business\index.html") `
-              (Join-Path $Site "index.html") -Force
-    foreach ($item in @("index.html", "sample-brief.html", "assets", "data")) {
-        Copy-Item (Join-Path $Project "demo\$item") (Join-Path $Site "demo") `
-                  -Recurse -Force
+    Copy-Item $homepage (Join-Path $Site "index.html") -Force
+    if (-not (Test-Path (Join-Path $Site "demo"))) { New-Item -ItemType Directory (Join-Path $Site "demo") | Out-Null }
+    foreach ($item in $demoItems) {
+        Copy-Item (Join-Path $Project "demo\$item") (Join-Path $Site "demo") -Recurse -Force
     }
 
     # Copy alone never REMOVES anything, so a data file the generator stopped
     # producing would sit on the live site forever - still fetchable by URL
-    # even with nothing linking to it. That is exactly how a superseded copy
-    # of the demo data outlives the redaction that was applied to its
-    # replacement. Mirror the data directory so deletions propagate.
+    # even with nothing linking to it. Mirror the data directory so deletions
+    # propagate.
     $srcData = Join-Path $Project "demo\data"
     $dstData = Join-Path $Site "demo\data"
     if (Test-Path $srcData) {
@@ -56,6 +92,9 @@ if (-not $SkipRefresh) {
               Remove-Item $_.FullName -Force
           }
     }
+    # Editor lock files do not belong on the site.
+    Get-ChildItem (Join-Path $Site "demo") -File -Force | Where-Object { $_.Name -like "~$*" } |
+      ForEach-Object { Remove-Item $_.FullName -Force }
 }
 
 # -------------------------------------------------------- safety tripwire
@@ -68,7 +107,7 @@ Write-Host "Checking for anything that shouldn't be published..." -ForegroundCol
 $fieldBuyerName = '"buyer_' + 'name"'
 $fieldBuyerMail = '"buyer_' + 'email"'
 $fieldLinkedIn  = '"linked' + 'in_url"'
-$staffMail      = '@(dmv|doj|cdt|dss|dot|cdcr|wildlife|water|arb|dsh)\.ca\.gov'
+$staffMail      = '@(dmv|doj|cdt|dss|dot|cdcr|wildlife|water|arb|dsh|ftb|edd|cdph|dhcs|parks|fire|calfire|oes|caloes)\.ca\.gov'
 
 $bad = @()
 Get-ChildItem -Path $Site -Recurse -File |
@@ -76,7 +115,7 @@ Get-ChildItem -Path $Site -Recurse -File |
       $_.FullName -notmatch '\\\.git\\' -and $_.Name -ne 'publish.ps1'
   } | ForEach-Object {
       $n = $_.Name
-      if ($n -match '\.(db|sqlite|csv|xlsx)$' -or $n -match '\.bak') {
+      if ($n -match '\.(db|sqlite|csv|xlsx|pst)$' -or $n -match '\.bak') {
           $bad += "$n  (data file - should never be here)"
       }
       $text = Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue
@@ -91,34 +130,31 @@ Get-ChildItem -Path $Site -Recurse -File |
 if ($bad.Count -gt 0) {
     Write-Host "STOPPING - these look like they contain private data:" -ForegroundColor Red
     $bad | Sort-Object -Unique | ForEach-Object { Write-Host "   $_" -ForegroundColor Red }
+    git checkout -q -- . 2>$null
     exit 1
 }
 
 # The site root holds a known, small set of files. Anything else that turns up
-# there is almost certainly a stray - a scratch download, an editor backup, a
-# debug artifact - and `git add -A` will happily publish it. That is exactly
-# how a curl output file called live.js ended up in a commit. Warn rather than
-# block: a genuinely new root file is legitimate, it just deserves a look.
-$expectedRoot = @('index.html', 'index_v1.html', 'indexv2.html', 'CNAME',
-                  'README.md', 'publish.ps1', '.gitignore', 'gss-og-card.png')
+# there is almost certainly a stray, and `git add -A` will happily publish it.
+# Interactive runs are warned; the unattended run refuses, because nobody is
+# there to look.
+$expectedRoot = @('index.html', 'CNAME', 'README.md', 'publish.ps1', '.gitignore',
+                  'gss-og-card.png')
+# Old homepage drafts (index_v1.html, indexv2.html, index_5.html...) were
+# uploaded through the GitHub web UI and are already live; they are not
+# strays, though each one is a public URL and worth pruning by hand.
 $strays = Get-ChildItem -Path $Site -File |
-    Where-Object { $expectedRoot -notcontains $_.Name } |
+    Where-Object { $expectedRoot -notcontains $_.Name -and $_.Name -notmatch '^index[_v0-9]*\.html$' } |
     ForEach-Object { $_.Name }
 if ($strays.Count -gt 0) {
     Write-Host "   NOTE - unexpected files in the site root:" -ForegroundColor Yellow
     $strays | ForEach-Object { Write-Host "      $_" -ForegroundColor Yellow }
+    if ($Yes) { Fail "Unattended run refuses to publish with stray files in the root. Delete or add them to the expected list." }
     Write-Host "   If any of those are scratch files, delete them before publishing." -ForegroundColor Yellow
 }
 Write-Host "   clean" -ForegroundColor Green
 
 # ---------------------------------------------------------------------- git
-if (-not (Test-Path (Join-Path $Site ".git"))) {
-    Write-Host "No git repo here yet. Set one up first:" -ForegroundColor Yellow
-    Write-Host "    git init; git branch -M main"
-    Write-Host "    gh repo create goldenstatesignal-site --public --source=. --remote=origin"
-    exit 1
-}
-
 git add -A | Out-Null
 $staged = git diff --cached --stat
 if (-not $staged) {
@@ -131,42 +167,38 @@ Write-Host "About to publish these changes to the live site:" -ForegroundColor C
 git diff --cached --stat
 Write-Host ""
 
-$answer = Read-Host "Publish to goldenstatesignal.com? (y/N)"
-if ($answer -ne "y") {
-    git reset | Out-Null
-    Write-Host "Cancelled. Nothing pushed." -ForegroundColor Yellow
-    exit 0
+if (-not $Yes) {
+    $answer = Read-Host "Publish to goldenstatesignal.com? (y/N)"
+    if ($answer -ne "y") {
+        git reset | Out-Null
+        Write-Host "Cancelled. Nothing pushed." -ForegroundColor Yellow
+        exit 0
+    }
 }
 
-if (-not $Message) { $Message = "Site update $(Get-Date -Format 'yyyy-MM-dd HH:mm')" }
+if (-not $Message) {
+    $changed = (git diff --cached --name-only) -join ", "
+    if ($changed.Length -gt 70) { $changed = $changed.Substring(0, 67) + "..." }
+    $Message = "Site update $(Get-Date -Format 'yyyy-MM-dd HH:mm'): $changed"
+}
 
 # PowerShell params take ONE dash. Typing --Message binds the literal string
 # "--Message" as the commit message instead of erroring, so catch it here.
 if ($Message -like "-*") {
-    Write-Host "That message looks like a mistyped switch: $Message" -ForegroundColor Yellow
-    Write-Host "PowerShell uses one dash:  .\publish.ps1 -Message ""your text"""
     git reset | Out-Null
-    exit 1
+    Fail "That message looks like a mistyped switch: $Message  (PowerShell uses one dash: -Message ""your text"")"
 }
 
 # $ErrorActionPreference does NOT apply to native commands - git can fail and
 # the script will happily continue. Every git call below is checked explicitly.
-# This was found the hard way: a commit failed for a missing user.email and the
-# script still printed "Published", which is worse than any real failure.
-git commit -m $Message
+git commit -q -m $Message
 if ($LASTEXITCODE -ne 0) {
-    Write-Host ""
-    Write-Host "COMMIT FAILED - nothing was published." -ForegroundColor Red
-    Write-Host "Your changes are still staged; fix the above and re-run."
-    exit 1
+    Fail "COMMIT FAILED - nothing was published. Your changes are still staged; fix the above and re-run."
 }
 
-git push origin main
+git push -q origin main
 if ($LASTEXITCODE -ne 0) {
-    Write-Host ""
-    Write-Host "PUSH FAILED - the commit was made locally but is NOT live." -ForegroundColor Red
-    Write-Host "Fix the above, then: git push origin main"
-    exit 1
+    Fail "PUSH FAILED - the commit was made locally but is NOT live. Fix the above, then: git push origin main"
 }
 
 Write-Host ""
