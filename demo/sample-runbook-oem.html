@@ -635,5 +635,89 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
 <li>Product detection reads purchase order line text against a maintained pattern list. Figures for any product are floors: orders that never name it are not counted, and cannot be.</li>
 </ul></section>
 </main>
+
+<div class="advisor" id="advisor">
+  <button class="adv-toggle" id="advToggle" aria-expanded="false">
+    Ask about Department of Public Health
+  </button>
+  <div class="adv-panel" id="advPanel" hidden>
+    <div class="adv-head">
+      <b>Advisor</b>
+      <span class="adv-scope">licensed edition preview</span>
+      <button class="adv-size" id="advSize" title="Wider">&#8596; Wider</button>
+      <button class="adv-close" id="advClose" title="Close">&times;</button>
+    </div>
+    <div class="adv-log" id="advLog">
+      <div class="adv-hint">
+        In the licensed edition this panel is a grounded advisor for this one
+        runbook. It answers from the filings on this page and cites the
+        purchase order behind every figure; it drafts the email, the call
+        opener or the discovery questions to the people named here, addressed
+        and ready to send; and when you tell it what a buyer or technical
+        owner said, it revises the play and keeps the trail. It never
+        estimates, and it says so when the filings do not hold an answer.
+        Try it: pick a suggestion or type a question.
+      </div>
+    </div>
+    <div class="adv-chips" aria-label="Suggested"><button type="button" class="adv-chip" data-play-id="play-footprint-hold" data-n="1">Draft the note to the buyer of record about Your paper here is current</button><button type="button" class="adv-chip" data-play-id="play-displace-zscaler" data-n="2">Draft the note to the buyer of record about Zscaler holds $8,252,810 of Secure service edge</button><button type="button" class="adv-chip" data-play-id="play-footprint-hold" data-n="1">What should I ask the practitioner about Your paper here is current</button></div>
+    <form class="adv-form" id="advForm">
+      <textarea id="advInput" rows="2"
+                placeholder="Ask a question, or tell it what you heard…"
+                aria-label="Message the advisor"></textarea>
+      <button type="submit" id="advSend" title="Send (Enter)"
+              aria-label="Send">&#8593;</button>
+    </form>
+  </div>
+</div>
+<script>
+(function () {
+  var el = function (id) { return document.getElementById(id); };
+  var panel = el("advPanel"), log = el("advLog"), input = el("advInput");
+  var account = "Department of Public Health";
+  function open() { panel.hidden = false; el("advToggle").setAttribute("aria-expanded", "true"); input.focus(); }
+  el("advToggle").addEventListener("click", open);
+  el("advClose").addEventListener("click", function () { panel.hidden = true; });
+  el("advSize").addEventListener("click", function () { el("advisor").classList.toggle("wide"); });
+  function bubble(cls, html) {
+    var d = document.createElement("div");
+    d.className = "adv-msg " + cls;
+    d.innerHTML = html;
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+  }
+  var LINK = ' <a href="/">Request a briefing</a> to see it answer for real.';
+  function reply(q) {
+    var t = (q || "").toLowerCase();
+    var head = "<b>Available in the licensed edition.</b> ";
+    if (/draft|email|note|write|opener|message/.test(t)) {
+      return head + "Here the advisor writes that note in full: To, Subject and Body, addressed to the person this play names, every fact in it taken from a filing on this page, and an <b>open in mail</b> button that puts it in your mail client to edit before it goes." + LINK;
+    }
+    if (/who|contact|call|owner|cio|ciso|cto|buyer|rep\b/.test(t)) {
+      return head + "Here the advisor names the buyer of record from the purchase order, the likely technical owner from the department’s own directory, and, for the manufacturers you carry, the OEM rep to brief — with published addresses — and says which of those is on a filing and which is a directory match." + LINK;
+    }
+    if (/heard|told|said|they (are|were)|lost|won|moved|switch|budget/.test(t)) {
+      return head + "Here the advisor takes what you heard as field intelligence, revises the play it belongs to, keeps your words beside the change in an append-only trail, and reranks the quarter. What the seller knows and what the filings show stay visibly separate." + LINK;
+    }
+    if (/\?|how much|how many|what|when|which|renew|spend|paper|stack|share/.test(t)) {
+      return head + "Here the advisor answers from the filings on this page, and from the full line-item record behind them when the page does not show enough, citing the purchase order behind every number. If the record does not hold the answer it says so; it never estimates." + LINK;
+    }
+    return head + "Here the advisor reads " + account + "’s filings for that, cites the purchase orders it used, and offers the next action — a note to draft or a question to ask — as one click." + LINK;
+  }
+  function ask(q) {
+    if (!q) return;
+    bubble("me", q.replace(/&/g, "&amp;").replace(/</g, "&lt;"));
+    input.value = "";
+    setTimeout(function () { bubble("them", reply(q)); }, 350);
+  }
+  document.querySelectorAll(".adv-chip").forEach(function (c) {
+    c.addEventListener("click", function () { open(); ask(c.textContent.trim()); });
+  });
+  el("advForm").addEventListener("submit", function (ev) { ev.preventDefault(); ask(input.value.trim()); });
+  input.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); ask(input.value.trim()); }
+  });
+})();
+</script>
+
 <footer><div class="wrap">Golden State Signal · built from public California filings — Cal eProcure, eSCPRS, FI$Cal. Independent, and not affiliated with any manufacturer or reseller. Snapshot <code>rb_sample_department_of_public_health</code>, generated 2026-09-07.</div></footer>
 </body></html>
