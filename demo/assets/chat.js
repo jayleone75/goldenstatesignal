@@ -223,6 +223,14 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !els.win.hidden) toggle(false);
     });
+    // Open on arrival, on a screen wide enough that the panel sits beside
+    // the data rather than over it. A closed button in the corner was not
+    // being found (Jay, 2026-09-07). No focus steal: the page should not
+    // scroll to the box, and the visitor may want to read first.
+    if (window.innerWidth > 900) {
+      els.win.hidden = false;
+      els.fab.setAttribute("aria-expanded", "true");
+    }
   }
 
   document.addEventListener("DOMContentLoaded", build);

@@ -684,6 +684,12 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
   input.addEventListener("keydown", function (ev) {
     if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); ask(input.value.trim()); }
   });
+  // Open on arrival on a wide screen, without stealing focus: the point of
+  // the preview is that the visitor sees the panel and its suggestions.
+  if (window.innerWidth > 900) {
+    panel.hidden = false;
+    el("advToggle").setAttribute("aria-expanded", "true");
+  }
 })();
 </script>
 
