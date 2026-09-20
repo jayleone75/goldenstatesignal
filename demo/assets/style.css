@@ -1,25 +1,33 @@
 /* Golden State Signal — demo styles.
    Tokens copied from the live site's :root so this reads as one product,
    not a bolted-on tool. Keep these in sync if the main site's palette moves. */
+/* The desk's charcoal (site/public/desk/desk.css): the demo, the sample
+   runbooks and the tool now read as one product; the marketing site keeps
+   its own cream and navy for now (Jay, 2026-09-20). Names are the old ones
+   so no rule below changed: navy is now the raised panel, cream the page,
+   gold the mint accent. */
 :root {
-  --navy: #0B1220;
-  --navy-2: #121B31;
-  --navy-3: #1A2740;
-  --cream: #FAF6ED;
-  --cream-2: #F2ECDD;
-  --gold: #E3B341;
-  --gold-deep: #C9962B;
-  --poppy: #E4572E;
-  --ink: #1B1F27;
-  --paper: #F5F3EC;
-  --muted: #9AA6BC;
-  --muted-dark: #6B7280;
-  --line: rgba(255,255,255,0.08);
-  --line-dark: rgba(27,31,39,0.10);
-  --green: #2E7D5B;
-  --green-bg: #E6F4EC;
-  --gold-bg: #FBF1DC;
-  --poppy-bg: #FCE9E2;
+  --navy: #171C22;
+  --navy-2: #1E242C;
+  --navy-3: #232A34;
+  --cream: #101418;
+  --cream-2: #171C22;
+  --gold: #5FD3A6;
+  --gold-deep: #5FD3A6;
+  --poppy: #FF6B5B;
+  --ink: #E6E9EE;
+  --paper: #171C22;
+  --muted: #8E96A3;
+  --muted-dark: #AEB5C0;
+  --line: #262C35;
+  --line-dark: #3A4250;
+  --green: #5FD3A6;
+  --green-bg: #12261E;
+  --gold-bg: #2A2416;
+  --poppy-bg: #2A1B1B;
+  --mint: #5FD3A6;
+  --mintink: #0B1A14;
+  --amber: #F2B35C;
   --maxw: 1120px;
 }
 
@@ -29,10 +37,10 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font: 15px/1.55 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font: 15px/1.55 "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; margin: 0 0 10px; }
+h1, h2, h3 { font-family: "Work Sans", system-ui, sans-serif; font-weight: 600; margin: 0 0 10px; }
 h1 { font-size: 34px; letter-spacing: -0.02em; }
 h2 { font-size: 22px; }
 h3 { font-size: 16px; }
@@ -43,21 +51,21 @@ a { color: var(--gold-deep); }
 
 header.gs {
   background: var(--navy);
-  color: var(--paper);
+  color: var(--ink);
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
 }
 header.gs .bar { display: flex; align-items: center; justify-content: space-between; }
-header.gs .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18px;
-                   color: var(--paper); text-decoration: none; }
+header.gs .brand { font-family: "Work Sans", system-ui, sans-serif; font-weight: 600; font-size: 18px;
+                   color: var(--ink); text-decoration: none; }
 header.gs nav a { color: var(--muted); text-decoration: none; font-size: 13.5px;
                   margin-left: 22px; }
-header.gs nav a:hover { color: var(--paper); }
-header.gs nav a.cta { background: var(--gold); color: var(--navy); font-weight: 700;
+header.gs nav a:hover { color: var(--ink); }
+header.gs nav a.cta { background: var(--gold); color: var(--mintink); font-weight: 700;
                       padding: 8px 14px; border-radius: 7px; }
 
 .banner {
-  background: var(--navy-2); color: var(--paper);
+  background: var(--navy-2); color: var(--ink);
   padding: 34px 0 30px; border-bottom: 1px solid var(--line);
 }
 .banner .eyebrow { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase;
@@ -73,19 +81,19 @@ main { padding: 28px 0 60px; }
 .dept-switch { display: flex; gap: 8px; margin-bottom: 22px; }
 .dept-switch button {
   font: inherit; font-weight: 600; font-size: 13.5px; padding: 9px 16px;
-  border-radius: 8px; border: 1px solid var(--line-dark); background: #fff;
+  border-radius: 8px; border: 1px solid var(--line-dark); background: #171C22;
   color: var(--muted-dark); cursor: pointer;
 }
-.dept-switch button.active { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+.dept-switch button.active { background: var(--mint); color: var(--mintink); border-color: var(--mint); }
 
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
-.stat { background: #fff; border: 1px solid var(--line-dark); border-radius: 12px; padding: 16px 18px; }
-.stat .n { font-family: Fraunces, Georgia, serif; font-size: 25px; font-weight: 600; }
+.stat { background: #171C22; border: 1px solid var(--line-dark); border-radius: 12px; padding: 16px 18px; }
+.stat .n { font-family: "Work Sans", system-ui, sans-serif; font-size: 25px; font-weight: 600; }
 .stat .l { font-size: 11.5px; color: var(--muted-dark); text-transform: uppercase;
           letter-spacing: 0.05em; margin-top: 3px; }
 @media (max-width: 760px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
 
-.panel { background: #fff; border: 1px solid var(--line-dark); border-radius: 14px;
+.panel { background: #171C22; border: 1px solid var(--line-dark); border-radius: 14px;
          padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(20,20,30,0.04); }
 .panel .sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
              color: var(--muted-dark); margin-bottom: 12px; }
@@ -103,7 +111,7 @@ main { padding: 28px 0 60px; }
   border: 1px solid var(--line-dark); background: var(--paper); color: var(--ink);
 }
 .filterpanel input:focus, .filterpanel select:focus {
-  outline: 2px solid var(--gold); outline-offset: -1px; background: #fff; }
+  outline: 2px solid var(--gold); outline-offset: -1px; background: #171C22; }
 
 /* align-items:start matters: without it the two-option Departments box is
    stretched to match the 16-option Categories box and the panel grows ~100px
@@ -197,7 +205,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .tablebox { max-height: 430px; overflow: auto; overscroll-behavior: contain;
   border: 1px solid var(--line-dark); border-radius: 8px; }
 .tablebox table { margin: 0; }
-.tablebox thead th { position: sticky; top: 0; z-index: 1; background: #fff;
+.tablebox thead th { position: sticky; top: 0; z-index: 1; background: #171C22;
   box-shadow: inset 0 -1px 0 var(--line-dark); }
 .tablebox td:first-child, .tablebox th:first-child { padding-left: 12px; }
 
@@ -206,7 +214,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .pgbtns { display: flex; align-items: center; gap: 8px; font-size: 12.5px;
   color: var(--muted-dark); font-variant-numeric: tabular-nums; }
 .pgbtns button { font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
-  background: #fff; border: 1px solid var(--line-dark); border-radius: 7px;
+  background: #171C22; border: 1px solid var(--line-dark); border-radius: 7px;
   padding: 5px 11px; color: var(--ink); }
 .pgbtns button:hover:not(:disabled) { background: var(--paper); }
 .pgbtns button:disabled { opacity: 0.4; cursor: default; }
@@ -236,29 +244,29 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .confidence-tag.implied { background: var(--gold-bg); color: var(--gold-deep); }
 
 .gate {
-  background: var(--navy); color: var(--paper); border-radius: 14px;
+  background: var(--navy); color: var(--ink); border-radius: 14px;
   padding: 26px 28px; text-align: center; margin-top: 8px;
 }
-.gate h3 { color: var(--paper); }
+.gate h3 { color: var(--ink); }
 .gate p { color: var(--muted); max-width: 480px; margin: 0 auto 16px; }
-.gate a.cta { display: inline-block; background: var(--gold); color: var(--navy);
+.gate a.cta { display: inline-block; background: var(--gold); color: var(--mintink);
              font-weight: 700; padding: 11px 22px; border-radius: 8px; text-decoration: none;
              font-size: 14px; }
 
 /* The two sample runbooks are the thing a visitor should open. Buttons, the
    same weight as Request a Briefing, not a sentence with links in it. */
-.runbooks { background: var(--navy); color: var(--paper); border-radius: 14px;
+.runbooks { background: var(--navy); color: var(--ink); border-radius: 14px;
             padding: 20px 24px; margin-bottom: 14px; display: flex; flex-wrap: wrap;
             gap: 14px 24px; align-items: center; justify-content: space-between; }
 .runbooks-text { flex: 1 1 320px; font-size: 14px; line-height: 1.5; color: var(--muted); }
-.runbooks-text b { color: var(--paper); }
+.runbooks-text b { color: var(--ink); }
 .runbooks-btns { display: flex; flex-wrap: wrap; gap: 10px; }
 .runbooks-btns.center { justify-content: center; }
-.runbooks-btns a.btn { display: inline-block; background: var(--gold); color: var(--navy);
+.runbooks-btns a.btn { display: inline-block; background: var(--gold); color: var(--mintink);
                        font-weight: 700; padding: 11px 18px; border-radius: 8px;
                        text-decoration: none; font-size: 14px; }
 .runbooks-btns a.btn:hover { filter: brightness(1.06); }
-.runbooks-btns a.btn.alt { background: transparent; color: var(--paper);
+.runbooks-btns a.btn.alt { background: transparent; color: var(--ink);
                            border: 1px solid var(--muted); font-weight: 600; }
 .locked-note { display: flex; align-items: center; gap: 8px; font-size: 12.5px;
               color: var(--muted-dark); background: var(--paper); border: 1px dashed var(--line-dark);
@@ -273,7 +281,7 @@ footer.gs a { color: var(--gold-deep); }
    footer links on small screens. */
 .gsc-fab { position: fixed; right: 20px; bottom: 20px; z-index: 60;
   display: inline-flex; align-items: center; gap: 8px; font: inherit;
-  font-size: 13.5px; font-weight: 700; color: var(--paper); cursor: pointer;
+  font-size: 13.5px; font-weight: 700; color: var(--ink); cursor: pointer;
   background: var(--navy); border: 1px solid var(--navy); border-radius: 26px;
   padding: 12px 20px; box-shadow: 0 6px 22px rgba(11,18,32,0.28); }
 .gsc-fab:hover { background: var(--navy-2); }
@@ -283,16 +291,16 @@ footer.gs a { color: var(--gold-deep); }
 .gsc-window { position: fixed; right: 20px; bottom: 20px; z-index: 61;
   width: 380px; max-width: calc(100vw - 32px); height: 540px;
   max-height: calc(100vh - 40px); display: flex; flex-direction: column;
-  background: #fff; border: 1px solid var(--line-dark); border-radius: 16px;
+  background: #171C22; border: 1px solid var(--line-dark); border-radius: 16px;
   box-shadow: 0 18px 50px rgba(11,18,32,0.30); overflow: hidden; }
 .gsc-window[hidden] { display: none; }
 .gsc-head { display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 10px; padding: 14px 16px; background: var(--navy); color: var(--paper); }
-.gsc-head strong { font-family: Fraunces, Georgia, serif; font-size: 15px; font-weight: 600; }
+  gap: 10px; padding: 14px 16px; background: var(--navy); color: var(--ink); }
+.gsc-head strong { font-family: "Work Sans", system-ui, sans-serif; font-size: 15px; font-weight: 600; }
 .gsc-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
 .gsc-close { background: none; border: 0; color: var(--muted); font-size: 22px;
   line-height: 1; cursor: pointer; padding: 0 2px; }
-.gsc-close:hover { color: var(--paper); }
+.gsc-close:hover { color: var(--ink); }
 
 .gsc-messages { flex: 1; overflow-y: auto; overscroll-behavior: contain;
   padding: 14px 16px; background: var(--cream); }
@@ -300,9 +308,9 @@ footer.gs a { color: var(--gold-deep); }
 .gsc-msg p { margin: 0 0 8px; }
 .gsc-msg p:last-child { margin-bottom: 0; }
 .gsc-ai { color: var(--ink); }
-.gsc-user { background: var(--navy); color: var(--paper); border-radius: 12px 12px 3px 12px;
+.gsc-user { background: var(--navy); color: var(--ink); border-radius: 12px 12px 3px 12px;
   padding: 9px 13px; margin-left: auto; max-width: 85%; width: fit-content; }
-.gsc-user p { color: var(--paper); }
+.gsc-user p { color: var(--ink); }
 
 .gsc-typing { display: flex; gap: 4px; padding: 4px 0 12px; }
 .gsc-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted-dark);
@@ -314,19 +322,19 @@ footer.gs a { color: var(--gold-deep); }
 
 .gsc-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px;
   background: var(--cream); }
-.gsc-chip { font: inherit; font-size: 12px; cursor: pointer; background: #fff;
+.gsc-chip { font: inherit; font-size: 12px; cursor: pointer; background: #171C22;
   border: 1px solid var(--line-dark); border-radius: 16px; padding: 6px 12px;
   color: var(--ink); text-align: left; }
 .gsc-chip:hover { border-color: var(--gold-deep); color: var(--gold-deep); }
 
 .gsc-input-row { display: flex; gap: 8px; padding: 11px 12px;
-  border-top: 1px solid var(--line-dark); background: #fff; }
+  border-top: 1px solid var(--line-dark); background: #171C22; }
 .gsc-input { flex: 1; font: inherit; font-size: 13.5px; resize: none;
   border: 1px solid var(--line-dark); border-radius: 9px; padding: 9px 11px;
   background: var(--paper); color: var(--ink); max-height: 110px; }
-.gsc-input:focus { outline: 2px solid var(--gold); outline-offset: -1px; background: #fff; }
+.gsc-input:focus { outline: 2px solid var(--gold); outline-offset: -1px; background: #171C22; }
 .gsc-send { font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
-  background: var(--gold); color: var(--navy); border: 0; border-radius: 9px;
+  background: var(--gold); color: var(--mintink); border: 0; border-radius: 9px;
   padding: 0 15px; }
 .gsc-send:disabled { opacity: 0.5; cursor: default; }
 
@@ -334,3 +342,25 @@ footer.gs a { color: var(--gold-deep); }
   .gsc-fab { right: 12px; bottom: 12px; padding: 11px 16px; font-size: 13px; }
   .gsc-window { right: 8px; left: 8px; bottom: 8px; width: auto; height: calc(100vh - 70px); }
 }
+
+
+/* ---- charcoal: what the tokens never reached ---------------------------- */
+html { color-scheme: dark; }
+input, select, textarea { background: var(--cream); color: var(--ink); border: 1px solid var(--line-dark); }
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--mint); box-shadow: 0 0 0 2px rgba(95,211,166,.18); }
+button, .btn, a.cta { background: var(--mint); color: var(--mintink); }
+th { background: var(--navy-2); color: var(--muted); }
+th, td { border-bottom-color: var(--line); }
+code, pre { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; color: var(--amber); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line-dark); border-radius: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+
+/* --paper was two things on the light site: the light text on navy panels and
+   a light surface. In charcoal the surface is a panel and the text is ink, so
+   every `color: var(--paper)` above reads var(--ink); the raised chat pieces
+   get a step of their own so they stand off the window behind them. */
+.gsc-user { background: var(--navy-2); border: 1px solid var(--line-dark); }
+.gsc-fab { background: var(--mint); color: var(--mintink); border-color: var(--mint); }
+.gsc-fab:hover { background: var(--mint); filter: brightness(1.06); }

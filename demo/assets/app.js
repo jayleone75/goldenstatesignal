@@ -236,10 +236,10 @@
       var x = i * slot + (slot - barW) / 2;
       parts.push('<rect x="' + x.toFixed(1) + '" y="' + (svgH - padB - h).toFixed(1) +
         '" width="' + barW.toFixed(1) + '" height="' + Math.max(h, 1).toFixed(1) +
-        '" rx="2" fill="#C9962B" opacity="0.88"><title>' + esc(y) + ": " +
+        '" rx="2" fill="#5FD3A6" opacity="0.88"><title>' + esc(y) + ": " +
         fullMoney(agg[y]) + "</title></rect>");
       parts.push('<text x="' + (x + barW / 2).toFixed(1) + '" y="' + (svgH - padB + 14) +
-        '" text-anchor="middle" fill="#6B7280">' + esc(y) + "</text>");
+        '" text-anchor="middle" fill="#8E96A3">' + esc(y) + "</text>");
     });
     wrap.innerHTML = parts.join("") + "</svg>";
   }

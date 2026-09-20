@@ -3,6 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dept of Parks &amp; Recreation — INSIGHT PUBLIC SECTOR INC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <meta name="robots" content="noindex,nofollow">
 <style>
 :root{--navy:#0B1220;--gold:#E3B341;--cream:#FAF6ED;--ink:#1B1F27;
@@ -17,7 +18,7 @@ header{background:var(--navy);color:var(--cream);padding:26px 0 22px;
          text-transform:uppercase;color:var(--gold)}
 header h1{margin:8px 0 12px;font-size:32px}
 .dates{display:flex;flex-wrap:wrap;gap:18px;font:14px/1 -apple-system,sans-serif;
-       color:#C9D2E2;align-items:center}
+       color:#8E96A3;align-items:center}
 .dates b{color:var(--cream)}
 .state{padding:4px 10px;border-radius:11px;background:#1E2A3F;font-weight:600}
 .s-active{background:#1F4030;color:#9FE3BE}
@@ -31,7 +32,7 @@ h3{font-size:17px;color:var(--navy);margin:16px 0 6px}
 .lede{color:var(--mute);font-size:14.5px;margin:0 0 14px}
 .big{font-size:20px;line-height:1.45;color:var(--navy);
      border-left:4px solid var(--gold);padding:8px 0 8px 16px;margin:14px 0}
-.first{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--gold);
+.first{background:#171C22;border:1px solid var(--rule);border-left:5px solid var(--gold);
        border-radius:10px;padding:20px 22px;margin-top:26px}
 .first h2{border:0;margin-bottom:4px}
 ol.actions{list-style:none;margin:0;padding:0}
@@ -43,30 +44,30 @@ ol.actions input[type="checkbox"]{margin-top:5px;width:17px;height:17px;flex:0 0
 .ameta{font:13px/1.5 -apple-system,sans-serif;color:var(--mute);
        margin:3px 0 0 28px}
 .tiles{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
-.tile{flex:1 1 170px;background:#fff;border:1px solid var(--rule);
+.tile{flex:1 1 170px;background:#171C22;border:1px solid var(--rule);
       border-radius:8px;padding:13px 15px}
 .tile .v{font-size:22px;font-weight:700;color:var(--navy)}
 .tile .l{font:11.5px/1.3 -apple-system,sans-serif;text-transform:uppercase;
          letter-spacing:.06em;color:var(--mute);margin-top:3px}
-.fact{background:#fff;border:1px solid var(--rule);border-radius:7px;
+.fact{background:#171C22;border:1px solid var(--rule);border-radius:7px;
       padding:11px 14px;margin:9px 0;font-size:15px}
 .plays{display:flex;flex-direction:column;gap:14px}
-.play{background:#fff;border:1px solid var(--rule);border-radius:9px;
+.play{background:#171C22;border:1px solid var(--rule);border-radius:9px;
       padding:16px 18px;border-left:5px solid var(--mute)}
-.play.now{border-left-color:#1F7A4D}
+.play.now{border-left-color:#5FD3A6}
 .play.call{border-left-color:var(--gold)}
-.play.unver{border-left-color:#9AA3B2}
+.play.unver{border-left-color:#8E96A3}
 .tier{font:700 11px/1 -apple-system,sans-serif;letter-spacing:.1em;
       text-transform:uppercase;color:var(--mute)}
-.play.now .tier{color:#1F7A4D}
+.play.now .tier{color:#5FD3A6}
 .play h3{margin:6px 0 8px}
 .play ul{margin:8px 0;padding-left:20px;font-size:14.5px}
-.week,.ev{font-size:14px;margin-top:8px;color:#333}
+.week,.ev{font-size:14px;margin-top:8px;color:#E6E9EE}
 /* The one action unit: why now leads, the ask and what it changes follow. */
-.play .why{background:#FBF4E4;border-left:3px solid var(--gold);padding:8px 12px;
+.play .why{background:#1E242C;border-left:3px solid var(--gold);padding:8px 12px;
            margin:8px 0 10px;font-size:15px}
-.play .ask{font-size:14px;margin-top:8px;color:#333}
-.play .chg{font:13px/1.5 -apple-system,sans-serif;color:#555;margin-top:4px}
+.play .ask{font-size:14px;margin-top:8px;color:#E6E9EE}
+.play .chg{font:13px/1.5 -apple-system,sans-serif;color:#8E96A3;margin-top:4px}
 .hint{position:relative;font:600 12px/1 -apple-system,sans-serif;color:var(--navy);
       border-bottom:1px dotted var(--navy);cursor:help;margin-left:8px;white-space:nowrap}
 .hint:hover::after,.hint:focus::after{content:attr(data-tip);position:absolute;left:0;top:1.7em;
@@ -76,11 +77,11 @@ ol.actions input[type="checkbox"]{margin-top:5px;width:17px;height:17px;flex:0 0
 .toplay{color:var(--navy);font-weight:600}
 details.more>summary{cursor:pointer;list-style:none;color:var(--navy);
       font:600 13px/1 -apple-system,sans-serif;padding:8px 10px;margin:6px 0;
-      background:#fff;border:1px solid var(--rule);border-radius:6px;display:inline-block}
+      background:#171C22;border:1px solid var(--rule);border-radius:6px;display:inline-block}
 details.more>summary::-webkit-details-marker{display:none}
 details.more>summary::before{content:"\25B8  ";color:var(--mute)}
 details.more[open]>summary::before{content:"\25BE  "}
-details.more>summary:hover{background:#F0EADC}
+details.more>summary:hover{background:#1E242C}
 .merged{margin-top:22px}
 /* The sticky bar: jump, do not scroll. */
 nav.jump{position:sticky;top:0;z-index:20;background:var(--cream);
@@ -89,30 +90,30 @@ nav.jump .wrap{display:flex;gap:2px;overflow-x:auto;padding:6px 20px;
          font:600 12.5px/1 -apple-system,sans-serif;letter-spacing:.03em}
 nav.jump a{color:var(--navy);text-decoration:none;padding:8px 10px;border-radius:6px;
          white-space:nowrap}
-nav.jump a:hover{background:#F0EADC}
+nav.jump a:hover{background:#1E242C}
 section,.play{scroll-margin-top:52px}
-.held{font-size:14px;margin-top:8px;color:#333}
+.held{font-size:14px;margin-top:8px;color:#E6E9EE}
 /* The stale section's two readings, side by side, deliberately equal weight. */
 .twohands{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:720px){.twohands{grid-template-columns:1fr}}
-.twohands .hand{border:1px solid #e3e3e3;border-radius:8px;padding:12px}
+.twohands .hand{border:1px solid #3A4250;border-radius:8px;padding:12px}
 .twohands .hand h3{font-size:15px;margin:0 0 8px}
-.rank{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#666;border:1px solid #d5d5d5;border-radius:10px;padding:1px 8px;margin-left:6px}
+.rank{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8E96A3;border:1px solid #3A4250;border-radius:10px;padding:1px 8px;margin-left:6px}
 /* A competitor-route flag is the finding, not a footnote. */
-.lcnote{font-size:12px;color:#666;font-style:italic}
-.pflag{font-size:13px;color:#8a5a00;background:#fdf6e3;border-radius:6px;padding:4px 8px;margin:4px 0}
+.lcnote{font-size:12px;color:#8E96A3;font-style:italic}
+.pflag{font-size:13px;color:#F2B35C;background:#1E242C;border-radius:6px;padding:4px 8px;margin:4px 0}
 /* Two classes of name, and the page has to show which is which. */
-.who{margin-top:10px;border-top:1px solid #e3e3e3;padding-top:8px}
-.who-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#666;margin-bottom:6px}
-.who .p{font-size:14px;margin:0 0 6px;padding-left:9px;border-left:3px solid #c9c9c9}
-.who .p.on-file{border-left-color:#1f6f43}
+.who{margin-top:10px;border-top:1px solid #3A4250;padding-top:8px}
+.who-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8E96A3;margin-bottom:6px}
+.who .p{font-size:14px;margin:0 0 6px;padding-left:9px;border-left:3px solid #3A4250}
+.who .p.on-file{border-left-color:#5FD3A6}
 /* Dashed: nothing filed stands behind this one. */
-.who .p.matched{border-left-style:dashed;border-left-color:#9a9a9a}
-.who .p.oem{border-left-style:dotted;border-left-color:#8a4b00}
-.who .p-note{font-size:13px;color:#555;margin-top:2px}
-.who .p-cav{font-size:12px;color:#6b6b6b;margin:0 0 8px;font-style:italic}
+.who .p.matched{border-left-style:dashed;border-left-color:#8E96A3}
+.who .p.oem{border-left-style:dotted;border-left-color:#F2B35C}
+.who .p-note{font-size:13px;color:#8E96A3;margin-top:2px}
+.who .p-cav{font-size:12px;color:#8E96A3;margin:0 0 8px;font-style:italic}
 .ev{color:var(--mute)}
-.card{background:#fff;border:1px solid var(--rule);border-radius:8px;
+.card{background:#171C22;border:1px solid var(--rule);border-radius:8px;
       padding:13px 15px;margin:10px 0}
 .card .q{font-size:14.5px;margin-top:5px}
 .card .chg,.card .who{font:13px/1.5 -apple-system,sans-serif;
@@ -121,45 +122,45 @@ section,.play{scroll-margin-top:52px}
    Evidence line uses, because this is evidence too — it is the seller's, and
    the point of showing the attribution is that a reader can tell the two
    apart at a glance rather than by reading carefully. */
-.revised{font:13.5px/1.55 -apple-system,sans-serif;color:#3A3222;
-         margin-top:9px;padding:8px 11px;background:#FBF4E4;
+.revised{font:13.5px/1.55 -apple-system,sans-serif;color:#E6E9EE;
+         margin-top:9px;padding:8px 11px;background:#1E242C;
          border-left:3px solid var(--gold);border-radius:0 5px 5px 0}
-.revised b{color:#7A6320}
+.revised b{color:#F2B35C}
 .revised .moved{display:inline-block;margin-left:8px;padding:2px 7px;
                 font:11.5px/1.5 ui-monospace,Menlo,monospace;
-                background:#fff;border:1px solid var(--rule);border-radius:4px}
+                background:#171C22;border:1px solid var(--rule);border-radius:4px}
 .history{margin-top:8px;font:13px/1.55 -apple-system,sans-serif}
 .history summary{cursor:pointer;color:var(--mute);font-size:12.5px;
                  padding:3px 0;user-select:none}
 .history summary:hover{color:var(--ink)}
 .hrow{border-left:2px solid var(--rule);padding:6px 0 6px 10px;margin:6px 0}
 .hhead{font:11.5px/1.5 ui-monospace,Menlo,monospace;color:var(--mute)}
-.hsaid{color:#3A3222;margin-top:3px}
+.hsaid{color:#E6E9EE;margin-top:3px}
 .hdid{color:var(--mute);margin-top:2px;font-size:12.5px}
 .sources{margin-top:9px;display:flex;flex-wrap:wrap;gap:6px}
-.src{font:11.5px/1 ui-monospace,Menlo,monospace;background:#F0EADC;
-     color:#5A4A28;padding:4px 7px;border-radius:4px;white-space:nowrap;
+.src{font:11.5px/1 ui-monospace,Menlo,monospace;background:#1E242C;
+     color:#8E96A3;padding:4px 7px;border-radius:4px;white-space:nowrap;
      margin-right:6px}
 .src.more{background:transparent;color:var(--mute)}
 /* Filings: one quiet line that opens into the records. The number a reader
    can type, the supplier and title that say which order it is. */
 details.filings{margin-top:9px;border:1px solid var(--rule);border-radius:6px;
-  background:#FCFAF4}
+  background:#171C22}
 details.filings>summary{cursor:pointer;list-style:none;padding:6px 10px;
-  font:11.5px/1.5 ui-monospace,Menlo,monospace;color:#5A4A28;user-select:none}
+  font:11.5px/1.5 ui-monospace,Menlo,monospace;color:#8E96A3;user-select:none}
 details.filings>summary::-webkit-details-marker{display:none}
 details.filings>summary::before{content:"\25B8  ";color:var(--mute)}
 details.filings[open]>summary::before{content:"\25BE  "}
-details.filings>summary:hover{background:#F0EADC}
+details.filings>summary:hover{background:#1E242C}
 .filings-t{margin:0;border:0;border-top:1px solid var(--rule);border-radius:0;
   font-size:12.5px}
-.filings-t th{font-size:10.5px;padding:6px 10px;background:#F3EEE2;color:var(--navy)}
+.filings-t th{font-size:10.5px;padding:6px 10px;background:#1E242C;color:var(--navy)}
 .filings-t td{padding:6px 10px;font-size:12.5px}
 .filings-t td.mono{font-family:ui-monospace,Menlo,monospace;white-space:nowrap}
 .filings-note{font:11.5px/1.5 -apple-system,sans-serif;color:var(--mute);
   padding:7px 10px 8px;border-top:1px solid var(--rule)}
 .scroll{overflow-x:auto}
-table{width:100%;border-collapse:collapse;background:#fff;
+table{width:100%;border-collapse:collapse;background:#171C22;
       border:1px solid var(--rule);border-radius:8px;overflow:hidden}
 th{background:var(--navy);color:var(--cream);text-align:left;padding:9px 11px;
    font:600 11.5px/1.3 -apple-system,sans-serif;text-transform:uppercase;
@@ -168,70 +169,77 @@ td{padding:10px 11px;border-top:1px solid var(--rule);font-size:14.5px;
    vertical-align:top}
 th.r,td.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .note{font-size:14px;color:var(--mute)}
-.sample-note{background:#FBF4E4;border:1px solid var(--gold);border-radius:9px;
+.sample-note{background:#1E242C;border:1px solid var(--gold);border-radius:9px;
   padding:14px 17px;margin:22px 0 6px;font:14.5px/1.6 -apple-system,sans-serif}
 .sample-note a{color:var(--navy);font-weight:700}
-.rests ul{font-size:14px;color:#333}
+.rests ul{font-size:14px;color:#E6E9EE}
 footer{border-top:1px solid var(--rule);padding:18px 0 40px;
        font:12.5px/1.6 -apple-system,sans-serif;color:var(--mute)}
-code{background:#F0EADC;padding:1px 5px;border-radius:3px}
-@media print{header{background:#fff;color:var(--ink)}
+code{background:#1E242C;padding:1px 5px;border-radius:3px}
+@media print{header{background:#171C22;color:var(--ink)}
              header h1,.dates b{color:var(--ink)}
              .first{break-inside:avoid}.play{break-inside:avoid}}
 
 .adv-web{display:block;padding:7px 14px 0;font:12.5px/1.5 -apple-system,sans-serif;
   color:var(--mute);cursor:pointer;user-select:none}
 .adv-web input{vertical-align:-2px;margin-right:5px}
-.adv-web-note{color:#9AA3B2}
+.adv-web-note{color:#8E96A3}
 /* Armed must be unmissable: a restored tick once hid in plain sight and
    every question on the page quietly went to the web. */
-.adv-web:has(input:checked){color:#7A2E12;font-weight:700}
-.adv-web:has(input:checked) .adv-web-note{color:#A0522D;font-weight:400}
+.adv-web:has(input:checked){color:#FF6B5B;font-weight:700}
+.adv-web:has(input:checked) .adv-web-note{color:#FF6B5B;font-weight:400}
 .askplay{margin-top:10px;background:none;border:1px solid var(--rule);
   color:var(--mute);border-radius:6px;padding:5px 10px;cursor:pointer;
   font:12.5px/1 -apple-system,sans-serif}
 .askplay:hover{border-color:var(--navy);color:var(--navy)}
+.adv-day{text-align:center;font:11px -apple-system,sans-serif;color:#8E96A3;
+  margin:10px 0 2px;letter-spacing:.06em;text-transform:uppercase}
+.adv-meta{font:11px -apple-system,sans-serif;color:var(--mute);margin:8px 6px 2px;
+  text-align:right}
 .adv-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 0}
-.adv-chip{background:#fff;border:1px solid var(--rule);border-radius:14px;
+.adv-chip{background:#171C22;border:1px solid var(--rule);border-radius:14px;
   padding:5px 11px;font:12.5px/1.3 -apple-system,sans-serif;color:var(--navy);
   cursor:pointer;text-align:left}
 .adv-chip:hover{border-color:var(--navy)}
 .adv-msg.draft{display:flex;gap:10px;align-items:center;flex-wrap:wrap;
-  background:#FFF6DF;border:1px solid #E8D39A}
+  background:#1E242C;border:1px solid #3A4250}
 .adv-msg.draft span{flex:1;min-width:160px}
 .adv-msg.draft a.takeit{text-decoration:none;display:inline-block}
-.takeit.alt{background:#fff;color:var(--navy);border:1px solid var(--rule)}
-.adv-msg.offer{display:flex;gap:10px;align-items:center;background:#EAF3EC;
-  border:1px solid #1F7A4D;font-size:14px}
+.takeit.alt{background:#171C22;color:var(--navy);border:1px solid var(--rule)}
+.adv-msg.offer{display:flex;gap:10px;align-items:center;background:#1E242C;
+  border:1px solid #5FD3A6;font-size:14px}
 .adv-msg.offer span{flex:1}
-.takeit{background:#1F7A4D;color:#fff;border:0;border-radius:6px;
+.takeit{background:#5FD3A6;color:#171C22;border:0;border-radius:6px;
   padding:6px 12px;cursor:pointer;font:600 13px -apple-system,sans-serif;
   white-space:nowrap}
 .takeit[disabled]{opacity:.6;cursor:default}
 .flagit{margin-top:10px;margin-left:8px;background:none;
   border:1px solid var(--rule);color:var(--mute);border-radius:6px;
   padding:5px 10px;cursor:pointer;font:12.5px/1 -apple-system,sans-serif}
-.flagit:hover{border-color:#C2703B;color:#C2703B}
+.flagit:hover{border-color:#FF6B5B;color:#FF6B5B}
 .flagit[disabled]{opacity:.6;cursor:default}
 .anote{margin:7px 0 0 28px}
 .notefield{width:100%;max-width:560px;border:1px solid var(--rule);
-  border-radius:6px;padding:6px 9px;font:13.5px/1.4 inherit;background:#fff}
+  border-radius:6px;padding:6px 9px;font:13.5px/1.4 inherit;background:#171C22}
 .addaction{display:flex;gap:8px;margin-top:14px;
   border-top:1px solid var(--rule);padding-top:14px}
 .addaction input{flex:1;border:1px solid var(--rule);border-radius:6px;
   padding:7px 10px;font:14px/1.4 inherit}
 .addaction button{background:var(--navy);color:var(--cream);border:0;
   border-radius:6px;padding:0 16px;cursor:pointer;font:600 14px inherit}
-.savednote{margin-top:9px;font:13px -apple-system,sans-serif;color:#1F7A4D}
+.savednote{margin-top:9px;font:13px -apple-system,sans-serif;color:#5FD3A6}
+section.since ul.since{margin:8px 0 0;padding-left:20px;font-size:15px}
+section.since li{margin:4px 0}
+.since-quiet{color:var(--mute)}
 td.rev{white-space:nowrap}
 .tag{display:inline-block;padding:0 .45em;border-radius:3px;font-size:.8em;font-weight:600;white-space:nowrap;border:1px solid currentColor}
-.tag.on{color:#1d6b2f}.tag.off{color:#6b6b6b}.tag.warn{color:#8a4b00}
-td.role{white-space:nowrap;color:var(--muted,#6b6b6b);font-size:.86em}
-td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
+.tag.on{color:#5FD3A6}.tag.off{color:#8E96A3}.tag.warn{color:#F2B35C}
+td.role{white-space:nowrap;color:var(--muted,#8E96A3);font-size:.86em}
+td.role.lead{color:var(--accent,#F2B35C);font-weight:600}
 .reveal{background:none;border:1px solid var(--rule);color:var(--navy);
   border-radius:6px;padding:4px 10px;cursor:pointer;
   font:12.5px/1 -apple-system,sans-serif}
-.reveal:hover{border-color:var(--navy);background:#fff}
+.reveal:hover{border-color:var(--navy);background:#171C22}
 .reveal[disabled]{opacity:.6;cursor:default}
 .revealed{font:13px ui-monospace,Menlo,monospace;color:var(--navy)}
 .advisor{position:fixed;right:18px;bottom:18px;z-index:50;
@@ -243,7 +251,7 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
    panel has to opt back out explicitly or it renders open on load. */
 .adv-panel[hidden]{display:none}
 .adv-panel{width:min(620px,calc(100vw - 36px));height:min(720px,82vh);
-  background:#fff;border:1px solid var(--rule);border-radius:12px;
+  background:#171C22;border:1px solid var(--rule);border-radius:12px;
   box-shadow:0 10px 40px rgba(11,18,32,.22);display:flex;flex-direction:column;
   overflow:hidden}
 .adv-head{display:flex;align-items:center;gap:9px;padding:11px 14px;
@@ -256,10 +264,10 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
   padding-left:10px;margin-bottom:12px}
 .adv-msg{margin:9px 0;padding:10px 12px;border-radius:9px;white-space:pre-wrap}
 .adv-msg.me{background:var(--navy);color:var(--cream);margin-left:36px}
-.adv-msg.them{background:#fff;border:1px solid var(--rule)}
+.adv-msg.them{background:#171C22;border:1px solid var(--rule)}
 .adv-msg.pending{color:var(--mute);font-style:italic}
-.adv-msg.error{background:#F7E3E3;border-color:#C2703B}
-.adv-msg.note{background:#EAF3EC;border-color:#1F7A4D;font-size:13px}
+.adv-msg.error{background:#2A1B1B;border-color:#FF6B5B}
+.adv-msg.note{background:#1E242C;border-color:#5FD3A6;font-size:13px}
 .adv-form{display:flex;gap:8px;padding:11px;border-top:1px solid var(--rule)}
 .adv-form textarea{flex:1;resize:none;border:1px solid var(--rule);
   border-radius:7px;padding:8px 10px;font:14px/1.4 inherit}
@@ -269,7 +277,7 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
   border-radius:7px;width:38px;height:38px;flex:0 0 38px;align-self:flex-end;
   cursor:pointer;font:600 17px/1 inherit;display:flex;align-items:center;
   justify-content:center}
-.adv-form button:hover:not(:disabled){background:#16233A}
+.adv-form button:hover:not(:disabled){background:#1E242C}
 .adv-form button:disabled{opacity:.5;cursor:default}
 .advisor.wide .adv-panel{width:min(1080px,calc(100vw - 36px));height:min(900px,92vh)}
 .adv-size{background:none;border:0;color:var(--cream);cursor:pointer;
@@ -283,7 +291,7 @@ td.role.lead{color:var(--accent,#7a4b00);font-weight:600}
 .adv-msg.them b{color:var(--navy)}
 .adv-msg.them ul{margin:6px 0 9px;padding-left:20px}
 .adv-msg.them li{margin:3px 0}
-.adv-msg.them code{background:#F0EADC;padding:1px 5px;border-radius:3px;
+.adv-msg.them code{background:#1E242C;padding:1px 5px;border-radius:3px;
   font:12.5px ui-monospace,Menlo,monospace}
 @media print{.advisor,.askplay{display:none}}
 
@@ -295,6 +303,110 @@ table.sortable th[aria-sort="ascending"] .sort-ind,
 table.sortable th[aria-sort="descending"] .sort-ind{opacity:1}
 table.sortable th.no-sort{cursor:auto;text-decoration:none}
 @media print{table.sortable th{cursor:auto}.sort-ind{display:none!important}}
+
+/* The write layer: the page's own look, nothing new. */
+.istatus{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;
+  font:13px/1 -apple-system,sans-serif;color:#8E96A3}
+.istatus b{color:var(--cream)}
+.istatus select,.istatus input{border:1px solid #3A4250;background:#1E242C;
+  color:var(--cream);border-radius:6px;padding:4px 7px;font:13px inherit}
+.istatus input{width:200px}
+.istatus button{background:var(--gold);color:var(--navy);border:0;border-radius:6px;
+  padding:5px 10px;font:600 12px inherit;cursor:pointer}
+.istatus-by{color:#8E96A3}
+.ilog,.ihold,.irevise{margin-top:10px;margin-left:8px;background:none;border:1px solid var(--rule);
+  color:var(--mute);border-radius:6px;padding:5px 10px;cursor:pointer;
+  font:12.5px/1 -apple-system,sans-serif}
+.ilog:hover,.ihold:hover,.irevise:hover{border-color:var(--navy);color:var(--navy)}
+.irevise{border-color:var(--gold);color:var(--navy)}
+.iform{margin-top:10px;border:1px solid var(--rule);border-radius:8px;
+  padding:10px 12px;background:#171C22;font:13.5px/1.4 -apple-system,sans-serif}
+.iform .irow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
+.iform .irow:first-child{margin-top:0}
+.iform label{display:inline-flex;gap:5px;align-items:center;color:#8E96A3}
+.iform input[type=text],.iform input[type=date],.iform input[list],.iform select{
+  border:1px solid var(--rule);border-radius:6px;padding:6px 8px;font:13.5px inherit;
+  background:#171C22;min-width:120px}
+.iform input[type=text]{flex:1;min-width:180px}
+.iform .ipriv{color:var(--mute);font-size:12.5px}
+.iform button[type=submit]{background:var(--navy);color:var(--cream);border:0;
+  border-radius:6px;padding:7px 14px;cursor:pointer;font:600 13px inherit}
+.iform .icancel{background:none;border:1px solid var(--rule);border-radius:6px;
+  padding:6px 10px;cursor:pointer;color:var(--mute);font:13px inherit}
+.iknown .ik{border-top:1px solid var(--rule);padding:10px 0}
+.iknown .ik:first-child{border-top:0}
+.iknown .ik b{color:var(--navy)}
+.iknown .ik .m{font:12.5px/1.5 -apple-system,sans-serif;color:var(--mute)}
+.iknown .ik.fu{display:flex;gap:10px;align-items:flex-start}
+.iknown .ik.fu input{margin-top:4px}
+.iknown .ik.fu.done b{text-decoration:line-through;color:var(--mute)}
+.iknown .departed b{color:#FF6B5B}
+.iknown h3{font-size:15px;margin:14px 0 4px}
+.iknown .empty{color:var(--mute);font:13.5px/1.5 -apple-system,sans-serif}
+.ijournal{margin:6px 0 14px;font:13.5px/1.5 -apple-system,sans-serif}
+.ijournal textarea{width:100%;max-width:720px;border:1px solid var(--rule);border-radius:6px;
+  padding:8px 10px;font:13.5px/1.45 inherit;background:#171C22;display:block}
+.ijournal .irow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.ijournal button{background:var(--navy);color:var(--cream);border:0;border-radius:6px;
+  padding:7px 14px;cursor:pointer;font:600 13px inherit}
+.ijournal button[disabled]{opacity:.6;cursor:default}
+.ijournal .ipriv{color:var(--mute);font-size:12.5px;display:inline-flex;gap:5px;align-items:center}
+.ijournal .m{color:var(--mute);font-size:12.5px}
+.ij{border-top:1px solid var(--rule);padding:9px 0}
+.ij .ijt{white-space:pre-wrap;color:#E6E9EE;margin-top:2px}
+.ij .ijrows{margin-top:4px;color:var(--mute);font-size:12.5px}
+.ij .ijrows div{padding-left:4px}
+.ijold{margin-top:6px}
+.ijold summary{cursor:pointer;color:var(--navy);font-weight:600;font-size:13px}
+.ijprops .ipsave{margin-top:6px}
+.iimport{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px;
+  font:13.5px/1.5 -apple-system,sans-serif}
+.iimport summary{cursor:pointer;color:var(--navy);font-weight:600}
+.iimport .m{color:var(--mute);font-size:12.5px}
+.iimport textarea{width:100%;max-width:720px;border:1px solid var(--rule);border-radius:6px;
+  padding:8px 10px;font:13.5px/1.45 inherit;background:#171C22;margin-top:6px}
+.iimport button{background:var(--navy);color:var(--cream);border:0;border-radius:6px;
+  padding:7px 14px;cursor:pointer;font:600 13px inherit}
+.iimport button[disabled]{opacity:.6;cursor:default}
+.iprop{border-top:1px solid var(--rule);padding:8px 0}
+.iprop label{display:flex;gap:9px;align-items:flex-start;cursor:pointer}
+.iprop input{margin-top:4px}
+.iprop .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.iprop .m{display:block;color:var(--mute);font-size:12.5px}
+.ileft{margin-top:10px;color:var(--mute);font-size:12.5px}
+.ileft li{margin:2px 0}
+.who .p.gone > b{text-decoration:line-through;color:var(--mute)}
+.who .p.gone .gone-note{color:#FF6B5B}
+tr.gone td:nth-child(2){text-decoration:line-through;color:var(--mute)}
+@media print{.ilog,.ihold,.irevise,.ijournal textarea,.ijournal button,.iform,.istatus select,.istatus input,.istatus button{display:none!important}}
+
+:root{--navy:#E6E9EE;--gold:#F2B35C;--cream:#101418;--ink:#E6E9EE;--rule:#262C35;--mute:#8E96A3;
+      --panel:#171C22;--panel2:#1E242C;--line:#3A4250;--mint:#5FD3A6;--mintink:#0B1A14;--coral:#FF6B5B}
+html{color-scheme:dark}
+body{font-family:"Work Sans",system-ui,sans-serif;font-size:14.5px}
+header{background:var(--panel);color:var(--ink);border-bottom:1px solid var(--rule)}
+th{background:var(--panel2);color:var(--ink)}
+nav.jump{background:var(--panel);border-bottom:1px solid var(--rule)}
+.hint:hover::after,.hint:focus::after{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+.adv-head{background:var(--panel2);color:var(--ink)}
+.adv-close,.adv-size{color:var(--ink)}
+.adv-toggle,.adv-form button,.takeit,.istatus button,.iform button[type=submit],.iimport button,.ijournal button,.ijprops .ipsave{background:var(--mint);color:var(--mintink)}
+.adv-msg.me{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+.adv-chip{color:var(--ink)}
+.dates b,.istatus b,.istatus select,.istatus input{color:var(--ink)}
+.addaction button{background:var(--mint);color:var(--mintink)}
+.revealed,a{color:var(--mint)}
+code{color:var(--gold)}
+.tile,.fact,.play,.card,.first{border-color:var(--rule)}
+@media print{
+  :root{--navy:#0B1220;--gold:#E3B341;--cream:#fff;--ink:#1B1F27;--rule:#D9CDB4;--mute:#6B7280}
+  html{color-scheme:light}
+  body{background:#fff;color:#1B1F27;font-family:Georgia,'Iowan Old Style',serif}
+  header{background:#0B1220;color:#FAF6ED}
+  th{background:#0B1220;color:#FAF6ED}
+  .tile,.fact,.play,.card,.first,table,details.more>summary,.play .why,.revised,.src,details.filings{background:#fff;color:#1B1F27}
+  a,.revealed{color:#0B1220}
+}
 </style>
 </head>
 <body data-runbook="rb_sample_dept_of_parks_recreation" data-tenant="sample">
@@ -302,8 +414,8 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <div class="eyebrow">Account Runbook · INSIGHT PUBLIC SECTOR INC</div>
 <h1>Dept of Parks &amp; Recreation</h1>
 <div class="dates">
-<span><b>As of</b> 2026-09-11</span>
-<span><b>Next refresh</b> 2026-10-11</span>
+<span><b>As of</b> 2026-09-20</span>
+<span><b>Next refresh</b> 2026-10-20</span>
 <span class="state s-active">Active</span>
 </div></header></div>
 <nav class="jump" aria-label="Sections"><div class="wrap"><a href="#s-this-quarter">Now</a><a href="#s-plays">Plays</a><a href="#s-ahead-of-the-filing">Ahead</a><a href="#s-forward-demand">Demand</a><a href="#s-where-you-stand">Position</a><a href="#s-renewal-calendar">Renewals</a><a href="#s-the-stack-by-layer">Stack</a><a href="#s-people">People</a><a href="#s-people">Reference</a></div></nav><main class="wrap">
@@ -313,17 +425,17 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <ol class="actions">
 <li data-action="act-play-renewals"><label>
 <span class="atitle">Confirm the renewal owner for the 2026-11-04 order.</span></label>
-<div class="ameta">Due 2026-12-10 · Protect $762 of your own paper ending 2026-11-04 · <a class="toplay" href="#play-renewals">play 1</a></div>
+<div class="ameta">Due 2026-12-19 · Protect $762 of your own paper ending 2026-11-04 · <a class="toplay" href="#play-renewals">play 1</a></div>
 <details class="filings"><summary>1 filing · PO 121214</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000121214">121214</td><td>2025-11-18</td><td>INSIGHT PUBLIC SECTOR INC</td><td>C25010006 Storage &amp; File-share service</td><td class="r">$763</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
 </li>
 <li data-action="act-play-successor-software-licensing"><label>
 <span class="atitle">One call about Software &amp; Licensing: ask who took it and why.</span></label>
-<div class="ameta">Due 2026-12-10 · Ask what happened to Software &amp; Licensing · <a class="toplay" href="#play-successor-software-licensing">play 2</a></div>
+<div class="ameta">Due 2026-12-19 · Ask what happened to Software &amp; Licensing · <a class="toplay" href="#play-successor-software-licensing">play 2</a></div>
 <details class="filings"><summary>2 filings · PO 130132, 129234</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000130132">130132</td><td>2026-06-30</td><td>SYSTEM SOLUTIONS DVBE INC</td><td>C25010011- ESRI Enterprise Software, Contract term: 6/30/2026 - 6/29/2027</td><td class="r">$1,584,000</td></tr><tr><td class="mono" title="as filed: 0000000000000000000129234">129234</td><td>2026-07-01</td><td>HTC GLOBAL SERVICES INC</td><td>C25550019 eGrams database FY25</td><td class="r">$261,000</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
 </li>
 <li data-action="act-play-successor-end-user-computing"><label>
 <span class="atitle">One call about End User Computing: ask who took it and why.</span></label>
-<div class="ameta">Due 2026-12-10 · Ask what happened to End User Computing · <a class="toplay" href="#play-successor-end-user-computing">play 3</a></div>
+<div class="ameta">Due 2026-12-19 · Ask what happened to End User Computing · <a class="toplay" href="#play-successor-end-user-computing">play 3</a></div>
 <details class="filings"><summary>2 filings · PO 60954, 61198</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000060954">60954</td><td>2026-08-10</td><td>MOTOROLA SOLUTIONS INC</td><td>S26856101 - PORTABLE ANTENNA, WHIP, ALL BAND/ GPS</td><td class="r">$21,302</td></tr><tr><td class="mono" title="as filed: 0000061198">61198</td><td>2026-08-24</td><td>ADVANCED TECHNICAL SOLUTIONS</td><td>S26073015 FRONTIER COMPUTER CORP: Peplink Co-Term Warranty Order</td><td class="r">$17,425</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details>
 </li>
 </ol>
@@ -396,7 +508,7 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 </div>
 <h3>Also worth asking</h3>
 <p class="note">Questions with no play behind them yet: a request no order names, a hearing inside the window.</p>
-<div class="card"><b>Who owns Next Generation Recreational Sales and Reservation Management System Solution (R, and what stage is it at?</b><div class="q">Requested in 2024-25, $30,540,712, and no purchase order in this department names it yet.</div><div class="chg">If answered: A named owner and a stage turn a request into a dated window. At Stage 2, TL 23-03 (Update to Cloud Computing Policy – Cloud Smart) requires a cloud assessment before any award.</div></div>
+<div class="card"><b>Who owns Next Generation Recreational Sales and Reservation Management System Solution (R, and what stage is it at?</b><div class="q">Requested in 2024-25, $30,540,712, and no purchase order in this department names it yet.</div><div class="chg">If answered: A named owner and a stage turn a request into a dated window. At Stage 2, TL 23-03 (Update to Cloud Computing Policy – Cloud Smart) requires a cloud assessment before any award.</div><div class="who"><div class="who-h">Who to call</div><div class="p matched"><b>Chief, Facilities Management Division</b> <span class="muted">name and contact information in the licensed edition</span><div class="p-note">Chief, Facilities Management Division. Their title in the contact record names this category. That is a directory match, not a filing.</div></div></div></div>
 </section>
 <section id="s-ahead-of-the-filing"><h2>Ahead of the filing</h2>
 <p class="lede">Analyses and policy that come before a budget request: the Legislative Analyst&#x27;s reviews that name this department, and the Department of Technology&#x27;s letters that bind every department. Each row is the source&#x27;s own published title, linked, fetched weekly. These are not filings. No figure in this runbook rests on them, and nothing is inferred from them beyond that they exist and when.</p>
@@ -448,13 +560,20 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 </section>
 <section id="s-forward-demand"><h2>Forward demand</h2>
 <p class="lede">Budget asked for, not yet spent. Scoped by department and never by category — a budget request predates the purchase that would classify it.</p>
-<div class="scroll"><table class="sortable"><tr><th>Source</th><th>What</th><th>Filed in</th><th>Requested</th><th>Confidence</th></tr><tr><td>Bcp</td><td>Next Generation Recreational Sales and Reservation Management System Solution (R2S2 Next</td><td>2024-25</td><td>$30,540,712</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Picacho SRA: Park Power System Upgrade</td><td>2023-24, 2022-23, 2021-22, 2018-19</td><td>$2,123</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Humboldt Redwoods State Park: Founders Grove Parking Lot &amp; Restroom Replacement</td><td>2023-24</td><td>$1,347</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Kings Beach SRA: Recreational Pier Replacement and Support Buildings</td><td>2023-24, 2022-23</td><td>$1,046</td><td>confirmed</td></tr></table></div>
-<details class="filings"><summary>6 older requests, last filed more than three years ago</summary>
-<div class="scroll"><table class="sortable"><tr><th>Source</th><th>What</th><th>Filed in</th><th>Requested</th><th>Confidence</th></tr><tr><td>Bcp</td><td>San Luis Reservoir SRA- San Luis Ramp Replacement and Parking Improvements</td><td>2019-20, 2018-19, 2017-18</td><td>$2,042,000</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Statewide: Museum Collection Storage Facility Acquisition</td><td>2020-21</td><td>$15,000</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Statewide: SP System Acquisition Program</td><td>2021-22, 2020-21</td><td>$12,600</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Torrey Pines SNR: Sewer and Utility Modernization</td><td>2020-21</td><td>$3,317</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Ocotillo Wells SVRA: Holmes Camp Water System Upgrade</td><td>2019-20, 2018-19, 2017-18</td><td>$1,186</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Lake Del Valle SRA: Boat Ramp Replacement</td><td>2019-20, 2017-18</td><td>$940</td><td>confirmed</td></tr></table></div>
+<div class="scroll"><table class="sortable"><tr><th>Source</th><th>What</th><th>Filed in</th><th>Requested</th><th>Trigger</th><th>Confidence</th></tr><tr><td>Bcp</td><td>Next Generation Recreational Sales and Reservation Management System Solution (R2S2 Next</td><td>2024-25</td><td>$30,540,712</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Reversion: Special Legislation Items</td><td>2023-24</td><td>$3,186,888 (largest figure in the filing)</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Picacho SRA: Park Power System Upgrade</td><td>2023-24, 2022-23, 2021-22, 2018-19</td><td>$2,123</td><td>migration, sole source</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Humboldt Redwoods State Park: Founders Grove Parking Lot &amp; Restroom Replacement</td><td>2023-24</td><td>$1,347</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Kings Beach SRA: Recreational Pier Replacement and Support Buildings</td><td>2023-24, 2022-23</td><td>$1,046</td><td>migration</td><td>confirmed</td></tr></table></div>
+<details class="filings"><summary>7 older requests, last filed more than three years ago</summary>
+<div class="scroll"><table class="sortable"><tr><th>Source</th><th>What</th><th>Filed in</th><th>Requested</th><th>Trigger</th><th>Confidence</th></tr><tr><td>Bcp</td><td>MR Infrastructure Package – One-Time Deferred Maintenance</td><td>2021-22</td><td>$388,000,000 (largest figure in the filing)</td><td>migration, obsolescence</td><td>likely</td></tr><tr><td>Bcp</td><td>Law Enforcement Records Management System License Renewal</td><td>2021-22</td><td>$1,700,000 (largest figure in the filing)</td><td>cloud, migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Statewide: SP System Acquisition Program</td><td>2021-22, 2020-21</td><td>$12,600</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Statewide: Museum Collection Storage Facility Acquisition</td><td>2020-21</td><td>$15,000</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Torrey Pines SNR: Sewer and Utility Modernization</td><td>2020-21</td><td>$3,317</td><td>migration</td><td>confirmed</td></tr><tr><td>Bcp</td><td>Data Tickets</td><td>2019-20</td><td>$3,000,000 (largest figure in the filing)</td><td>—</td><td>confirmed</td></tr><tr><td>Bcp</td><td>San Luis Reservoir SRA- San Luis Ramp Replacement and Parking Improvements</td><td>2019-20, 2018-19, 2017-18</td><td>$2,042,000</td><td>migration, recompete</td><td>confirmed</td></tr></table></div>
 </details>
+<h3>What the timing means</h3>
+<div class="fact"><b>Next Generation Recreational Sales and Reservation Management System S</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>Reversion: Special Legislation Items</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>MR Infrastructure Package – One-Time Deferred Maintenance</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>Law Enforcement Records Management System License Renewal</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<div class="fact"><b>Data Tickets</b> — Stage 1 — business analysis. The department is defining the problem. Nothing to bid on yet; the window is education and relationship.</div>
+<p class="note">Stages are gates of <a href="https://cdt.ca.gov/policy/simm/" target="_blank" rel="noopener noreferrer">SIMM 19 — Project Approval Lifecycle (PAL) and GenAI Project Delivery Lifecycle</a>, from CDT's published tracker.</p>
 </section>
 <section id="s-where-you-stand"><h2>Where you stand</h2>
-<p class="big">In the last 5 years Dept of Parks &amp; Recreation has filed $150,759,155 across 2,240 purchase orders with 324 suppliers. You hold $4,022,692 of it — 2.7%.</p>
+<p class="big">In the last 5 years Dept of Parks &amp; Recreation has filed $150,625,445 across 2,234 purchase orders with 322 suppliers. You hold $4,022,692 of it — 2.7%.</p>
 <p class="lede">Since your first order here in 2017: $5,056,971 across 45 orders, 1.9% of the department&#x27;s $262,133,292.</p>
 <div class="tiles">
 <div class="tile"><div class="v">42</div><div class="l">your purchase orders, last 5 years</div></div>
@@ -470,7 +589,7 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <div class="card"><b>End User Computing</b> — MOTOROLA SOLUTIONS INC holds $21,302<div class="q">MOTOROLA SOLUTIONS INC has been on the paper for End User Computing here since your last order in 2026-06-30. Worth asking whether that moved, or whether it ran through a vehicle that does not show in these filings.</div><details class="filings"><summary>5 filings · PO 60954, 61198, 60955, 61024 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000060954">60954</td><td>2026-08-10</td><td>MOTOROLA SOLUTIONS INC</td><td>S26856101 - PORTABLE ANTENNA, WHIP, ALL BAND/ GPS</td><td class="r">$21,302</td></tr><tr><td class="mono" title="as filed: 0000061198">61198</td><td>2026-08-24</td><td>ADVANCED TECHNICAL SOLUTIONS</td><td>S26073015 FRONTIER COMPUTER CORP: Peplink Co-Term Warranty Order</td><td class="r">$17,425</td></tr><tr><td class="mono" title="as filed: 0000060955">60955</td><td>2026-08-10</td><td>TECHNOLOGY INTEGRATION GROUP</td><td>S26073004- Dell Pro Dock - WD25 with 3Y Basic Hardware Service with Advance Exchange after</td><td class="r">$17,091</td></tr><tr><td class="mono" title="as filed: 0000061024">61024</td><td>2026-08-12</td><td>TECHNOLOGY INTEGRATION GROUP</td><td>S26740016 - Dell Pro Max 16 Plus (MB16250) XCTO Base</td><td class="r">$4,922</td></tr><tr><td class="mono" title="as filed: 0000061103">61103</td><td>2026-08-18</td><td>TECHNOLOGY INTEGRATION GROUP</td><td>S26802018 Dell Pro Plus (PB 16250) XCTO Base</td><td class="r">$2,479</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></div>
 </div><div class="merged"><h3>Whitespace in this department</h3>
 <p class="lede">Scoped to Dept of Parks &amp; Recreation deliberately. Ranking across all departments is a Territory Scan, and it is sold separately.</p>
-<div class="scroll"><table class="sortable"><tr><th>Category</th><th class="r">Department buys</th><th class="r">You have sold elsewhere</th><th>Held today by</th></tr><tr><td>Professional &amp; Managed Services</td><td class="r">$8,127,384</td><td class="r">$67,882,855</td><td>NEWPORT TECH CONSULT SVC INC, TRINITY TECHNOLOGY GROUP INC</td></tr><tr><td>Network Infrastructure</td><td class="r">$4,050,785</td><td class="r">$1,133,090</td><td>INTERVISION SYSTEMS LLC, NWN SOLUTIONS CORPORATION</td></tr><tr><td>Uncategorized</td><td class="r">$3,570,529</td><td class="r">$5,852,184</td><td>TEAMSOS, DEPT OF WATER RESOURCES</td></tr><tr><td>Storage</td><td class="r">$2,008,164</td><td class="r">$58,946</td><td>COMPUTACENTER UNITED STATES, DEPT OF WATER RESOURCES</td></tr><tr><td>Non-IT / Facilities</td><td class="r">$1,657,823</td><td class="r">$134</td><td>NEWPORT TECH CONSULT SVC INC, ELAVON INC</td></tr><tr><td>Physical Security &amp; Surveillance</td><td class="r">$1,443,625</td><td class="r">$651</td><td>FLOCK GROUP INC, TEC-COM LOW VOLTAGE SOLS INC</td></tr><tr><td>Print &amp; Imaging</td><td class="r">$1,369,023</td><td class="r">$175,145</td><td>XEROX CORPORATION, NWN CORPORATION</td></tr><tr><td>Security &amp; Identity</td><td class="r">$1,189,554</td><td class="r">$529,491</td><td>PYRAMID COMMUNICATIONS, SILVERADO AVIONICS INC</td></tr><tr><td>Support &amp; Maintenance</td><td class="r">$1,074,928</td><td class="r">$18,232,568</td><td>GALLERY SYSTEMS INC, ELAVON INC</td></tr><tr><td>Mobility &amp; Telecom</td><td class="r">$924,625</td><td class="r">— not proven</td><td>MOTOROLA SOLUTIONS INC, PACIFIC PARKING SYSTEMS INC</td></tr></table></div>
+<div class="scroll"><table class="sortable"><tr><th>Category</th><th class="r">Department buys</th><th class="r">You have sold elsewhere</th><th>Held today by</th></tr><tr><td>Professional &amp; Managed Services</td><td class="r">$8,127,384</td><td class="r">$67,882,855</td><td>NEWPORT TECH CONSULT SVC INC, TRINITY TECHNOLOGY GROUP INC</td></tr><tr><td>Network Infrastructure</td><td class="r">$4,050,785</td><td class="r">$1,133,090</td><td>INTERVISION SYSTEMS LLC, NWN SOLUTIONS CORPORATION</td></tr><tr><td>Uncategorized</td><td class="r">$3,561,093</td><td class="r">$5,852,184</td><td>TEAMSOS, DEPT OF WATER RESOURCES</td></tr><tr><td>Storage</td><td class="r">$2,008,164</td><td class="r">$58,946</td><td>COMPUTACENTER UNITED STATES, DEPT OF WATER RESOURCES</td></tr><tr><td>Non-IT / Facilities</td><td class="r">$1,657,823</td><td class="r">$134</td><td>NEWPORT TECH CONSULT SVC INC, ELAVON INC</td></tr><tr><td>Physical Security &amp; Surveillance</td><td class="r">$1,441,970</td><td class="r">$651</td><td>FLOCK GROUP INC, TEC-COM LOW VOLTAGE SOLS INC</td></tr><tr><td>Print &amp; Imaging</td><td class="r">$1,359,925</td><td class="r">$175,145</td><td>XEROX CORPORATION, NWN CORPORATION</td></tr><tr><td>Security &amp; Identity</td><td class="r">$1,184,010</td><td class="r">$529,491</td><td>PYRAMID COMMUNICATIONS, SILVERADO AVIONICS INC</td></tr><tr><td>Support &amp; Maintenance</td><td class="r">$1,074,928</td><td class="r">$18,232,568</td><td>GALLERY SYSTEMS INC, ELAVON INC</td></tr><tr><td>Mobility &amp; Telecom</td><td class="r">$921,511</td><td class="r">— not proven</td><td>MOTOROLA SOLUTIONS INC, PACIFIC PARKING SYSTEMS INC</td></tr></table></div>
 </div><div class="merged"><h3>Contract routes</h3>
 <p class="lede">Before technical fit and before incumbency: is there a vehicle, and are you on it?</p>
 <div class="scroll"><table class="sortable"><tr><th>Vehicle</th><th>What it is</th><th>You?</th><th>Holders</th></tr><tr><td>STPD-SW-1311-01</td><td>—</td><td>—</td><td>MOTOROLA SOLUTIONS INC</td></tr><tr><td>3-15-70-3013B</td><td>CMAS</td><td>—</td><td>VF PARTNERS LLC</td></tr><tr><td>5-22-70-22-02</td><td>IT consulting MSA</td><td>—</td><td>FIRST DATA MERCHANT SVCS LLC</td></tr><tr><td>1-17-70-02A</td><td>Statewide contract</td><td>—</td><td>PC SPECIALISTS LLC</td></tr><tr><td>SLP-19-70-0220I</td><td>Software Licensing Program</td><td>—</td><td>VISIONARY INTEGRATION PROF LLC</td></tr><tr><td>1-19-70-19B-1</td><td>Statewide contract</td><td>—</td><td>NWN SOLUTIONS CORPORATION</td></tr><tr><td>5-22-70-25-207</td><td>TDDC MSA</td><td>—</td><td>NEWPORT TECH CONSULT SVC INC</td></tr><tr><td>5167010-076</td><td>—</td><td>—</td><td>GLOBAL BLUE DVBE INC</td></tr></table></div>
@@ -478,8 +597,6 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <section id="s-renewal-calendar"><h2>Renewal calendar</h2>
 <p class="lede">Every dated term here ending in the next twelve months, in the order they fall due. A renewal is a growth conversation: each row carries the manufacturer the paper names, the term, who carried it, whether you have held the category here before, and what the same supplier sold beside it. Filed end dates only — where a purchase order carries the same start and end date that is a delivery date, not a term, and it is excluded.</p>
 <div class="scroll"><table class="sortable"><tr><th>Ends</th><th>Term</th><th>What</th><th>Manufacturer</th><th>Carried by</th><th>You</th><th>Beside it</th><th class="r">Amount</th></tr>
-<tr><td>2026-09-16</td><td>27 mo</td><td>C23740037 - Agents of Discovery IT Subscription - HSSSHM<div class="p-note">Software &amp; Licensing through AGENTS OF DISCOVERY, ending 2026-09-16. You supply Software &amp; Licensing here now (last order 2026-06-29); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 104274</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000104274">104274</td><td>2024-06-25</td><td>AGENTS OF DISCOVERY</td><td>C23740037 - Agents of Discovery IT Subscription - HSSSHM</td><td class="r">$9,999</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>AGENTS OF DISCOVERY</td><td><span class="muted">held Software &amp; Licensing here, last 2026-06-29</span></td><td class="p-note">$9,999 C23554024 Educational Website; $9,999 C23910008-educational app</td><td class="r">$9,999</td></tr>
-<tr><td>2026-09-19</td><td>12 mo</td><td>C25925029 - Digital Signage<div class="p-note">Audio Visual &amp; Conferencing through VISTIFY INC, ending 2026-09-19. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 120487</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000120487">120487</td><td>2025-09-22</td><td>VISTIFY INC</td><td>C25925029 - Digital Signage</td><td class="r">$6,729</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>VISTIFY INC</td><td>—</td><td class="p-note">—</td><td class="r">$6,729</td></tr>
 <tr><td>2026-09-30</td><td>12 mo</td><td>C25690005 - Law Enforcement Program Access<div class="p-note">Software &amp; Licensing through COUNTY OF SACRAMENTO, ending 2026-09-30. You supply Software &amp; Licensing here now (last order 2026-06-29); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 120519</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000120519">120519</td><td>2025-10-01</td><td>COUNTY OF SACRAMENTO</td><td>C25690005 - Law Enforcement Program Access</td><td class="r">$1,560</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>COUNTY OF SACRAMENTO</td><td><span class="muted">held Software &amp; Licensing here, last 2026-06-29</span></td><td class="p-note">—</td><td class="r">$1,560</td></tr>
 <tr><td>2026-09-30</td><td>20 mo</td><td>C23073008- SCADA services<div class="p-note">End User Computing through SIERRA CONTROLS LLC, ending 2026-09-30. You supply End User Computing here now (last order 2026-06-30); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 101895</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000101895">101895</td><td>2025-01-14</td><td>SIERRA CONTROLS LLC</td><td>C23073008- SCADA services</td><td class="r">$499,260</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>SIERRA CONTROLS LLC</td><td><span class="muted">held End User Computing here, last 2026-06-30</span></td><td class="p-note">—</td><td class="r">$499,260</td></tr>
 <tr><td>2026-09-30</td><td>25 mo</td><td>C23910009-2024<div class="p-note">Software &amp; Licensing through TIMECLOCK PLUS LLC, ending 2026-09-30. You supply Software &amp; Licensing here now (last order 2026-06-29); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 102056</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000102056">102056</td><td>2024-09-12</td><td>TIMECLOCK PLUS LLC</td><td>C23910009-2024</td><td class="r">$9,460</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>TIMECLOCK PLUS LLC</td><td><span class="muted">held Software &amp; Licensing here, last 2026-06-29</span></td><td class="p-note">$1,380 C24935000 Online Scheduling Service</td><td class="r">$9,460</td></tr>
@@ -492,7 +609,7 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <tr><td>2026-11-30</td><td>12 mo</td><td>C23073006 - IV&amp;V for R2S2<div class="p-note">Professional &amp; Managed Services through LCS TECHNOLOGIES INC, ending 2026-11-30. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 103567</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000103567">103567</td><td>2025-11-26</td><td>LCS TECHNOLOGIES INC</td><td>C23073006 - IV&amp;V for R2S2</td><td class="r">$788,400</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>LCS TECHNOLOGIES INC</td><td>—</td><td class="p-note">—</td><td class="r">$788,400</td></tr>
 <tr><td>2026-12-08</td><td>12 mo</td><td>C25690009 - postage meter rental &amp; maintenance services<div class="p-note">Print &amp; Imaging through PITNEY BOWES INC, ending 2026-12-08. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 122162</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000122162">122162</td><td>2025-12-09</td><td>PITNEY BOWES INC</td><td>C25690009 - postage meter rental &amp; maintenance services</td><td class="r">$1,699</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>PITNEY BOWES INC</td><td>—</td><td class="p-note">$236 S25720096- SendPro C200/C300/C400 Red Ink Ctg # SL</td><td class="r">$1,699</td></tr>
 </table></div>
-<details class="more"><summary>56 more in the year, through 2027-09-05</summary>
+<details class="more"><summary>57 more in the year, through 2027-09-17</summary>
 <div class="scroll"><table class="sortable"><tr><th>Ends</th><th>Term</th><th>What</th><th>Manufacturer</th><th>Carried by</th><th>You</th><th>Beside it</th><th class="r">Amount</th></tr>
 <tr><td>2026-12-31</td><td>25 mo</td><td>C24706004-2024<div class="p-note">Professional &amp; Managed Services through RIGHT ANGLE DESIGN INC, ending 2026-12-31. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 109194</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000109194">109194</td><td>2024-11-22</td><td>RIGHT ANGLE DESIGN INC</td><td>C24706004-2024</td><td class="r">$3,750</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>RIGHT ANGLE DESIGN INC</td><td>—</td><td class="p-note">—</td><td class="r">$3,750</td></tr>
 <tr><td>2027-01-23</td><td>12 mo</td><td>C25863024 - Renewal AutoCAD Software Subscription Services for NORTHERN SERVICE CENTER for<div class="p-note">Software &amp; Licensing through ABLEGOV INC, ending 2027-01-23. You supply Software &amp; Licensing here now (last order 2026-06-29); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 125295</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000125295">125295</td><td>2026-01-28</td><td>ABLEGOV INC</td><td>C25863024 - Renewal AutoCAD Software Subscription Services for NORTHERN SERVICE CENTER for</td><td class="r">$75,790</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>ABLEGOV INC</td><td><span class="muted">held Software &amp; Licensing here, last 2026-06-29</span></td><td class="p-note">$20,546 S25073045 -Device42 IT Operations Management - Qty; $4,821 C25073002 - Splashtop Enterprise Support License (</td><td class="r">$75,790</td></tr>
@@ -521,12 +638,14 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <tr><td>2027-05-31</td><td>23 mo</td><td>C22740003 - Electronic Payment Processing<div class="p-note">End User Computing through ELAVON INC, ending 2027-05-31. You supply End User Computing here now (last order 2026-06-30); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 83824</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000083824">83824</td><td>2025-07-15</td><td>ELAVON INC</td><td>C22740003 - Electronic Payment Processing</td><td class="r">$5,000</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>ELAVON INC</td><td><span class="muted">held End User Computing here, last 2026-06-30</span></td><td class="p-note">$1,020,000 C22925004 Electronic payment processing services; $175,000 C22720023- E-pay Services</td><td class="r">$5,000</td></tr>
 <tr><td>2027-06-01</td><td>22 mo</td><td>C2460004- Bank Card Payment Machines<div class="p-note">Non-IT / Facilities through ELAVON INC, ending 2027-06-01. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 108091</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000108091">108091</td><td>2025-07-17</td><td>ELAVON INC</td><td>C2460004- Bank Card Payment Machines</td><td class="r">$7,800</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>ELAVON INC</td><td>—</td><td class="p-note">$1,020,000 C22925004 Electronic payment processing services; $175,000 C22720023- E-pay Services</td><td class="r">$7,800</td></tr>
 <tr><td>2027-06-01</td><td>23 mo</td><td>C22635022-Electronic Payment Acceptance Services<div class="p-note">Non-IT / Facilities through ELAVON INC, ending 2027-06-01. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 90131</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000090131">90131</td><td>2025-07-16</td><td>ELAVON INC</td><td>C22635022-Electronic Payment Acceptance Services</td><td class="r">$16,800</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>ELAVON INC</td><td>—</td><td class="p-note">$1,020,000 C22925004 Electronic payment processing services; $175,000 C22720023- E-pay Services</td><td class="r">$16,800</td></tr>
+<tr><td>2027-06-01</td><td>45 mo</td><td>C22010009 Credit/Debit Card Processing<div class="p-note">Non-IT / Facilities through FIRST DATA MERCHANT SVCS LLC, ending 2027-06-01. Not a line you carry; the question is what was bought beside it.</div><details class="filings"><summary>1 filing · PO 92946</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000092946">92946</td><td>2023-08-22</td><td>FIRST DATA MERCHANT SVCS LLC</td><td>C22010009 Credit/Debit Card Processing</td><td class="r">$8,400,000</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>FIRST DATA MERCHANT SVCS LLC</td><td>—</td><td class="p-note">—</td><td class="r">$8,400,000</td></tr>
+<tr><td>2027-06-01</td><td>22 mo</td><td>C23935008 Special Events 1935 Credit Card<div class="p-note">End User Computing through ELAVON INC, ending 2027-06-01. You supply End User Computing here now (last order 2026-06-30); this is another supplier&#x27;s term in the same category. Ask who quotes the renewal and when.</div><details class="filings"><summary>1 filing · PO 89748</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000000000000000000089748">89748</td><td>2025-07-22</td><td>ELAVON INC</td><td>C23935008 Special Events 1935 Credit Card</td><td class="r">$22,000</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover.</div></details></td><td>—</td><td>ELAVON INC</td><td><span class="muted">held End User Computing here, last 2026-06-30</span></td><td class="p-note">$1,020,000 C22925004 Electronic payment processing services; $175,000 C22720023- E-pay Services</td><td class="r">$22,000</td></tr>
 </table></div></details>
-<p class="note">29 more in the year — ask the advisor.</p>
+<p class="note">28 more in the year — ask the advisor.</p>
 <p class="note">1 of these are yours, worth $763.</p>
 </section>
 <section id="s-the-stack-by-layer"><h2>The stack, by layer</h2>
-<p class="lede">What this department runs, by the budget each product competes for, on the last 5 years (since 2021-09-11). A manufacturer appears only where a line item names one of its products, so every figure is a floor and the share is of what the paper names at that layer, not of everything bought there. Supplier is the reseller who carried it. A purchase record, not an install base.</p>
+<p class="lede">What this department runs, by the budget each product competes for, on the last 5 years (since 2021-09-20). A manufacturer appears only where a line item names one of its products, so every figure is a floor and the share is of what the paper names at that layer, not of everything bought there. Supplier is the reseller who carried it. A purchase record, not an install base.</p>
 <h3>Network infrastructure <span class="muted">— $3,900,768 named across 35 orders</span></h3>
 <div class="scroll"><table class="sortable"><tr><th>Manufacturer</th><th class="r">Share</th><th class="r">Spent</th><th class="r">POs</th><th>First</th><th>Last</th><th>Carried by</th><th>Reading</th></tr>
 <tr><td><b>Cisco Systems</b><div class="p-note">Cisco Catalyst / Nexus</div></td><td class="r">74%</td><td class="r">$2,886,715</td><td class="r">13</td><td>2016-06-07</td><td>2026-06-03</td><td>NWN SOLUTIONS CORPORATION, DHENALI INC, EPLUS TECHNOLOGY INC</td><td>—<details class="filings"><summary>5 filings · PO 41446, 48490, 42069 +1 more</summary><table class="filings-t"><tr><th>PO</th><th>Filed</th><th>Supplier</th><th>What</th><th class="r">Amount</th></tr><tr><td class="mono" title="as filed: 0000041446">41446</td><td>2023-05-11</td><td>—</td><td>—</td><td class="r">$1,998,175</td></tr><tr><td class="mono" title="as filed: 0000048490">48490</td><td>2024-06-10</td><td>—</td><td>—</td><td class="r">$451,938</td></tr><tr><td class="mono" title="as filed: 0000042069">42069</td><td>2023-06-06</td><td>—</td><td>—</td><td class="r">$407,891</td></tr></table><div class="filings-note">Public record: eSCPRS via Cal eProcure. To check one, search its purchase order number in the SCPRS search on caleprocure.ca.gov; exports pad numbers with leading zeros, so the number exactly as filed is shown on hover. 2 further filing(s) behind this figure are not listed.</div></details></td></tr>
@@ -657,12 +776,12 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 <details class="more"><summary>30 manufacturers, by spend</summary>
 <div class="scroll"><table class="sortable"><tr><th>Manufacturer</th><th class="r">Spend</th><th class="r">POs</th><th>Products seen</th></tr><tr><td>Dell Technologies</td><td class="r">$7,983,227</td><td class="r">447</td><td>Dell Compellent, Dell EMC (legacy branding), Dell PowerEdge, Dell Powe</td></tr><tr><td>Cisco Systems</td><td class="r">$3,993,888</td><td class="r">30</td><td>Cisco Catalyst / Nexus, Cisco Firepower</td></tr><tr><td>ServiceNow</td><td class="r">$2,387,784</td><td class="r">6</td><td>ServiceNow</td></tr><tr><td>Cisco Meraki</td><td class="r">$1,768,021</td><td class="r">12</td><td>Cisco Meraki</td></tr><tr><td>Motorola Solutions</td><td class="r">$1,153,099</td><td class="r">36</td><td>Motorola Solutions radio</td></tr><tr><td>Rubrik</td><td class="r">$963,672</td><td class="r">4</td><td>Rubrik Security Cloud</td></tr><tr><td>F5</td><td class="r">$919,214</td><td class="r">2</td><td>F5 BIG-IP</td></tr><tr><td>SailPoint</td><td class="r">$602,426</td><td class="r">1</td><td>SailPoint Identity Security Cloud</td></tr><tr><td>Adobe</td><td class="r">$512,308</td><td class="r">8</td><td>Adobe Creative Cloud / Acrobat</td></tr><tr><td>Citrix</td><td class="r">$335,832</td><td class="r">6</td><td>Citrix ADC (NetScaler), Citrix Virtual Apps and Desktops</td></tr><tr><td>Quest Software</td><td class="r">$327,836</td><td class="r">8</td><td>Quest KACE / Foglight</td></tr><tr><td>Ubiquiti</td><td class="r">$295,225</td><td class="r">13</td><td>Ubiquiti UniFi</td></tr><tr><td>Xerox</td><td class="r">$226,468</td><td class="r">6</td><td>Xerox</td></tr><tr><td>Sharp</td><td class="r">$217,741</td><td class="r">55</td><td>Sharp MFP</td></tr><tr><td>Microsoft</td><td class="r">$151,765</td><td class="r">17</td><td>Microsoft Azure, Microsoft Entra ID, Microsoft Power Platform, Microso</td></tr><tr><td>Canon</td><td class="r">$124,683</td><td class="r">35</td><td>Canon imageRUNNER</td></tr><tr><td>Hewlett Packard Enterprise</td><td class="r">$100,630</td><td class="r">2</td><td>HPE Aruba</td></tr><tr><td>Axis Communications</td><td class="r">$90,008</td><td class="r">14</td><td>Axis Communications</td></tr><tr><td>Cradlepoint</td><td class="r">$88,724</td><td class="r">9</td><td>Cradlepoint</td></tr><tr><td>Poly</td><td class="r">$64,503</td><td class="r">4</td><td>Poly / Polycom</td></tr><tr><td>Juniper Networks</td><td class="r">$61,465</td><td class="r">1</td><td>Juniper EX / QFX</td></tr><tr><td>SolarWinds</td><td class="r">$61,014</td><td class="r">9</td><td>SolarWinds Observability (Orion)</td></tr><tr><td>Verint</td><td class="r">$57,325</td><td class="r">2</td><td>Verint workforce engagement / Audiolog</td></tr><tr><td>Milestone Systems</td><td class="r">$46,479</td><td class="r">5</td><td>Milestone XProtect</td></tr><tr><td>VMware</td><td class="r">$42,715</td><td class="r">2</td><td>VMware vSphere</td></tr><tr><td>Ricoh</td><td class="r">$26,095</td><td class="r">8</td><td>Ricoh MFP</td></tr><tr><td>Kyocera</td><td class="r">$24,327</td><td class="r">19</td><td>Kyocera</td></tr><tr><td>Panasonic</td><td class="r">$20,794</td><td class="r">10</td><td>Panasonic Toughbook</td></tr><tr><td>Crestron</td><td class="r">$14,714</td><td class="r">3</td><td>Crestron</td></tr><tr><td>Cloudflare</td><td class="r">$12,666</td><td class="r">1</td><td>Cloudflare</td></tr></table></div>
 </details>
-<p class="note">Products last bought in the last 5 years (since 2021-09-11). 15 more were last bought before that; ask the advisor for them.</p>
+<p class="note">Products last bought in the last 5 years (since 2021-09-20). 15 more were last bought before that; ask the advisor for them.</p>
 </section>
 <section id="s-products-detected"><h2>Products detected</h2>
 <p class="lede"><b>Do not add these together.</b> Product patterns overlap, so one line item can match two products from the same manufacturer. Use the manufacturer totals above for any question about a vendor&rsquo;s total.</p>
 <details class="more"><summary>40 products detected</summary>
-<div class="scroll"><table class="sortable"><tr><th>Product</th><th>Layer</th><th class="r">Spent on it</th><th class="r">In orders worth</th><th>Last</th><th>Carried by</th></tr><tr><td>Dell client hardware</td><td>euc_hardware</td><td class="r">$7,262,320</td><td class="r">$10,252,526</td><td>2026-08-13</td><td>PC SPECIALISTS LLC, GRANITE DATA SOLUTIONS</td></tr><tr><td>Cisco Catalyst / Nexus</td><td>network</td><td class="r">$3,705,223</td><td class="r">$4,778,874</td><td>2026-06-03</td><td>NWN SOLUTIONS CORPORATION, DHENALI INC</td></tr><tr><td>ServiceNow</td><td>itsm</td><td class="r">$2,387,784</td><td class="r">$3,705,481</td><td>2026-06-28</td><td>TABORDA SOLUTIONS INC, HF TECH SERVICES INC</td></tr><tr><td>Microsoft SQL Server</td><td>database</td><td class="r">$118,861</td><td class="r">$3,207,489</td><td>2026-01-01</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>Cisco Meraki</td><td>network</td><td class="r">$1,768,021</td><td class="r">$2,099,136</td><td>2026-06-17</td><td>NWN SOLUTIONS CORPORATION, CISCO SYSTEMS INC</td></tr><tr><td>Dell PowerEdge</td><td>server</td><td class="r">$661,121</td><td class="r">$2,005,229</td><td>2026-02-10</td><td>PC SPECIALISTS LLC, NWN SOLUTIONS CORPORATION</td></tr><tr><td>Motorola Solutions radio</td><td>mobility</td><td class="r">$1,153,099</td><td class="r">$1,839,479</td><td>2026-03-10</td><td>MOTOROLA SOLUTIONS INC, 49ER COMMUNICATIONS INC</td></tr><tr><td>Juniper EX / QFX</td><td>network</td><td class="r">$61,465</td><td class="r">$1,538,147</td><td>2026-06-04</td><td>INTERVISION SYSTEMS LLC</td></tr><tr><td>SailPoint Identity Security Cloud</td><td>identity</td><td class="r">$602,426</td><td class="r">$1,470,000</td><td>2026-04-01</td><td>TABORDA SOLUTIONS INC</td></tr><tr><td>Rubrik Security Cloud</td><td>backup_software</td><td class="r">$963,672</td><td class="r">$1,193,266</td><td>2025-10-22</td><td>NWN SOLUTIONS CORPORATION, ENTERPRISE NETWORKING SOLS INC</td></tr><tr><td>Dell PowerStore</td><td>primary_array</td><td class="r">$42,262</td><td class="r">$1,047,530</td><td>2025-06-30</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>Cisco Firepower</td><td>firewall</td><td class="r">$288,664</td><td class="r">$815,103</td><td>2025-06-11</td><td>NWN SOLUTIONS CORPORATION, DHENALI INC</td></tr><tr><td>Citrix Virtual Apps and Desktops</td><td>virtualisation</td><td class="r">$335,832</td><td class="r">$740,908</td><td>2024-05-16</td><td>NETWORK DESIGN ASSOCIATES INC, ENTISYS360</td></tr><tr><td>F5 BIG-IP</td><td>adc</td><td class="r">$919,214</td><td class="r">$616,751</td><td>2025-03-21</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>Adobe Creative Cloud / Acrobat</td><td>creative</td><td class="r">$512,308</td><td class="r">$537,527</td><td>2022-07-28</td><td>ABLEGOV INC, SHI INTERNATIONAL CORP</td></tr><tr><td>Xerox</td><td>print</td><td class="r">$226,468</td><td class="r">$432,135</td><td>2026-07-27</td><td>XEROX CORPORATION, ENCOMPASS</td></tr><tr><td>Ubiquiti UniFi</td><td>network</td><td class="r">$295,225</td><td class="r">$347,247</td><td>2023-03-23</td><td>ADVANCED TECHNICAL SOLUTIONS, DHENALI INC</td></tr><tr><td>Quest KACE / Foglight</td><td>uem</td><td class="r">$327,836</td><td class="r">$327,836</td><td>2025-11-12</td><td>ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Sharp MFP</td><td>print</td><td class="r">$217,741</td><td class="r">$327,501</td><td>2026-08-06</td><td>SMILE BUSINESS PRODUCTS INC, FLEXTG LLC</td></tr><tr><td>Canon imageRUNNER</td><td>print</td><td class="r">$124,683</td><td class="r">$176,137</td><td>2026-08-06</td><td>RAY MORGAN COMPANY, B &amp; H PHOTO &amp; VIDEO INC</td></tr><tr><td>Verint workforce engagement / Audiolog</td><td>contact_center</td><td class="r">$57,325</td><td class="r">$164,148</td><td>2022-12-06</td><td>CAPTURE TECHNOLOGIES INC</td></tr><tr><td>Microsoft Azure</td><td>cloud_platform</td><td class="r">$7,325</td><td class="r">$163,493</td><td>2024-10-14</td><td>NATIX INC, ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Microsoft Entra ID</td><td>identity</td><td class="r">$7,325</td><td class="r">$163,493</td><td>2024-10-14</td><td>NATIX INC, ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Poly / Polycom</td><td>av_conferencing</td><td class="r">$64,503</td><td class="r">$152,694</td><td>2025-03-10</td><td>MERGENT SYSTEMS INC, AMAZON COM LLC</td></tr><tr><td>Axis Communications</td><td>physical_security</td><td class="r">$90,008</td><td class="r">$136,326</td><td>2026-05-12</td><td>TEC-COM LOW VOLTAGE SOLS INC, EYEP SOLUTIONS</td></tr><tr><td>Citrix ADC (NetScaler)</td><td>adc</td><td class="r">$6,700</td><td class="r">$112,160</td><td>2022-03-17</td><td>ENTISYS360</td></tr><tr><td>Cradlepoint</td><td>network</td><td class="r">$88,724</td><td class="r">$110,696</td><td>2022-12-21</td><td>INDUSTRIAL NETWORKING SOL, ACUITY TECHNICAL SOLUTIONS LLC</td></tr><tr><td>SolarWinds Observability (Orion)</td><td>network_monitoring</td><td class="r">$61,014</td><td class="r">$61,014</td><td>2025-11-19</td><td>SOLARWINDS INC, ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Milestone XProtect</td><td>physical_security</td><td class="r">$46,479</td><td class="r">$60,817</td><td>2026-03-23</td><td>TEC-COM LOW VOLTAGE SOLS INC, TEC-COM</td></tr><tr><td>Ricoh MFP</td><td>print</td><td class="r">$26,095</td><td class="r">$55,393</td><td>2026-04-17</td><td>RICOH USA INC, RAY MORGAN COMPANY</td></tr><tr><td>Logitech Rally</td><td>av_conferencing</td><td class="r">$11,158</td><td class="r">$51,736</td><td>2022-05-13</td><td>GRANITE DATA SOLUTIONS</td></tr><tr><td>Microsoft Power Platform</td><td>devtools</td><td class="r">$25,579</td><td class="r">$50,238</td><td>2026-06-29</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>VMware vSphere</td><td>virtualisation</td><td class="r">$42,715</td><td class="r">$44,449</td><td>2021-11-10</td><td>DHENALI INC</td></tr><tr><td>Crestron</td><td>av_conferencing</td><td class="r">$14,714</td><td class="r">$39,360</td><td>2024-03-22</td><td>EKC ENTERPRISES INC</td></tr><tr><td>Panasonic Toughbook</td><td>mobility</td><td class="r">$20,794</td><td class="r">$28,426</td><td>2026-03-20</td><td>RIDGELINE TECHNOLOGY, B &amp; H PHOTO &amp; VIDEO INC</td></tr><tr><td>Kyocera</td><td>print</td><td class="r">$24,327</td><td class="r">$27,560</td><td>2026-06-04</td><td>WIZIX TECHNOLOGY GROUP INC, VERIZON WIRELESS</td></tr><tr><td>Dell EMC (legacy branding)</td><td>primary_array</td><td class="r">$2,844</td><td class="r">$13,779</td><td>2026-06-19</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>Dell Compellent</td><td>primary_array</td><td class="r">$16,497</td><td class="r">$13,294</td><td>2025-05-13</td><td>USABLUEBOOK, HACH COMPANY</td></tr><tr><td>Cloudflare</td><td>waf</td><td class="r">$12,666</td><td class="r">$12,666</td><td>2026-04-20</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>HPE Aruba</td><td>network</td><td class="r">$100,630</td><td class="r">$9,339</td><td>2022-07-27</td><td>GRANITE DATA SOLUTIONS, STAMPS COM</td></tr></table></div>
+<div class="scroll"><table class="sortable"><tr><th>Product</th><th>Layer</th><th class="r">Spent on it</th><th class="r">In orders worth</th><th>Last</th><th>Carried by</th></tr><tr><td>Dell client hardware</td><td>euc_hardware</td><td class="r">$7,262,320</td><td class="r">$10,252,526</td><td>2026-08-13</td><td>PC SPECIALISTS LLC, GRANITE DATA SOLUTIONS</td></tr><tr><td>Cisco Catalyst / Nexus</td><td>network</td><td class="r">$3,705,223</td><td class="r">$4,778,874</td><td>2026-06-03</td><td>NWN SOLUTIONS CORPORATION, DHENALI INC</td></tr><tr><td>Microsoft SQL Server</td><td>database</td><td class="r">$118,861</td><td class="r">$3,207,489</td><td>2026-01-01</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>ServiceNow</td><td>itsm</td><td class="r">$2,387,784</td><td class="r">$3,705,481</td><td>2026-06-28</td><td>HF TECH SERVICES INC, OUTRIDER TECH LLC</td></tr><tr><td>Dell PowerEdge</td><td>server</td><td class="r">$661,121</td><td class="r">$2,005,229</td><td>2026-02-10</td><td>PC SPECIALISTS LLC, NWN SOLUTIONS CORPORATION</td></tr><tr><td>Motorola Solutions radio</td><td>mobility</td><td class="r">$1,153,099</td><td class="r">$1,839,479</td><td>2026-03-10</td><td>MOTOROLA SOLUTIONS INC, 49ER COMMUNICATIONS INC</td></tr><tr><td>Cisco Meraki</td><td>network</td><td class="r">$1,768,021</td><td class="r">$2,099,136</td><td>2026-06-17</td><td>NWN SOLUTIONS CORPORATION, CISCO SYSTEMS INC</td></tr><tr><td>Juniper EX / QFX</td><td>network</td><td class="r">$61,465</td><td class="r">$1,538,147</td><td>2026-06-04</td><td>INTERVISION SYSTEMS LLC</td></tr><tr><td>SailPoint Identity Security Cloud</td><td>identity</td><td class="r">$602,426</td><td class="r">$1,470,000</td><td>2026-04-01</td><td>TABORDA SOLUTIONS INC</td></tr><tr><td>Dell PowerStore</td><td>primary_array</td><td class="r">$42,262</td><td class="r">$1,047,530</td><td>2025-06-30</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>Rubrik Security Cloud</td><td>backup_software</td><td class="r">$963,672</td><td class="r">$1,193,266</td><td>2025-10-22</td><td>NWN SOLUTIONS CORPORATION, ENTERPRISE NETWORKING SOLS INC</td></tr><tr><td>Citrix Virtual Apps and Desktops</td><td>virtualisation</td><td class="r">$335,832</td><td class="r">$740,908</td><td>2024-05-16</td><td>NETWORK DESIGN ASSOCIATES INC, ENTISYS360</td></tr><tr><td>Adobe Creative Cloud / Acrobat</td><td>creative</td><td class="r">$512,308</td><td class="r">$537,527</td><td>2022-07-28</td><td>ABLEGOV INC, SHI INTERNATIONAL CORP</td></tr><tr><td>Cisco Firepower</td><td>firewall</td><td class="r">$288,664</td><td class="r">$815,103</td><td>2025-06-11</td><td>DHENALI INC, NWN SOLUTIONS CORPORATION</td></tr><tr><td>Xerox</td><td>print</td><td class="r">$226,468</td><td class="r">$432,135</td><td>2026-07-27</td><td>XEROX CORPORATION, ENCOMPASS</td></tr><tr><td>F5 BIG-IP</td><td>adc</td><td class="r">$919,214</td><td class="r">$616,751</td><td>2025-03-21</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>Quest KACE / Foglight</td><td>uem</td><td class="r">$327,836</td><td class="r">$327,836</td><td>2025-11-12</td><td>ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Ubiquiti UniFi</td><td>network</td><td class="r">$295,225</td><td class="r">$347,247</td><td>2023-03-23</td><td>ADVANCED TECHNICAL SOLUTIONS, DOUBLERADIUS INC</td></tr><tr><td>Sharp MFP</td><td>print</td><td class="r">$217,741</td><td class="r">$327,501</td><td>2026-08-06</td><td>SMILE BUSINESS PRODUCTS INC, COASTAL BUSINESS SYSTEMS INC</td></tr><tr><td>Canon imageRUNNER</td><td>print</td><td class="r">$124,683</td><td class="r">$176,137</td><td>2026-08-06</td><td>RAY MORGAN COMPANY, B &amp; H PHOTO &amp; VIDEO INC</td></tr><tr><td>Verint workforce engagement / Audiolog</td><td>contact_center</td><td class="r">$57,325</td><td class="r">$164,148</td><td>2022-12-06</td><td>CAPTURE TECHNOLOGIES INC</td></tr><tr><td>Poly / Polycom</td><td>av_conferencing</td><td class="r">$64,503</td><td class="r">$152,694</td><td>2025-03-10</td><td>MERGENT SYSTEMS INC, AMAZON COM LLC</td></tr><tr><td>Cradlepoint</td><td>network</td><td class="r">$88,724</td><td class="r">$110,696</td><td>2022-12-21</td><td>INDUSTRIAL NETWORKING SOL, ACUITY TECHNICAL SOLUTIONS LLC</td></tr><tr><td>HPE Aruba</td><td>network</td><td class="r">$100,630</td><td class="r">$9,339</td><td>2022-07-27</td><td>STAMPS COM, GRANITE DATA SOLUTIONS</td></tr><tr><td>Axis Communications</td><td>physical_security</td><td class="r">$90,008</td><td class="r">$136,326</td><td>2026-05-12</td><td>TEC-COM LOW VOLTAGE SOLS INC, EYEP SOLUTIONS</td></tr><tr><td>SolarWinds Observability (Orion)</td><td>network_monitoring</td><td class="r">$61,014</td><td class="r">$61,014</td><td>2025-11-19</td><td>SOLARWINDS INC, ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Ricoh MFP</td><td>print</td><td class="r">$26,095</td><td class="r">$55,393</td><td>2026-04-17</td><td>RICOH USA INC, RAY MORGAN COMPANY</td></tr><tr><td>Milestone XProtect</td><td>physical_security</td><td class="r">$46,479</td><td class="r">$60,817</td><td>2026-03-23</td><td>TEC-COM LOW VOLTAGE SOLS INC, EYEP SOLUTIONS INC</td></tr><tr><td>Crestron</td><td>av_conferencing</td><td class="r">$14,714</td><td class="r">$39,360</td><td>2024-03-22</td><td>EKC ENTERPRISES INC</td></tr><tr><td>Microsoft Power Platform</td><td>devtools</td><td class="r">$25,579</td><td class="r">$50,238</td><td>2026-06-29</td><td>INSIGHT PUBLIC SECTOR INC</td></tr><tr><td>Kyocera</td><td>print</td><td class="r">$24,327</td><td class="r">$27,560</td><td>2026-06-04</td><td>WIZIX TECHNOLOGY GROUP INC, VERIZON WIRELESS</td></tr><tr><td>Panasonic Toughbook</td><td>mobility</td><td class="r">$20,794</td><td class="r">$28,426</td><td>2026-03-20</td><td>RIDGELINE TECHNOLOGY, B &amp; H PHOTO &amp; VIDEO INC</td></tr><tr><td>Dell EMC (legacy branding)</td><td>primary_array</td><td class="r">$2,844</td><td class="r">$13,779</td><td>2026-06-19</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>Dell Compellent</td><td>primary_array</td><td class="r">$16,497</td><td class="r">$13,294</td><td>2025-05-13</td><td>USABLUEBOOK, HACH COMPANY</td></tr><tr><td>Cloudflare</td><td>waf</td><td class="r">$12,666</td><td class="r">$12,666</td><td>2026-04-20</td><td>COMPUTACENTER UNITED STATES</td></tr><tr><td>Logitech Rally</td><td>av_conferencing</td><td class="r">$11,158</td><td class="r">$51,736</td><td>2022-05-13</td><td>GRANITE DATA SOLUTIONS</td></tr><tr><td>VMware vSphere</td><td>virtualisation</td><td class="r">$42,715</td><td class="r">$44,449</td><td>2021-11-10</td><td>DHENALI INC</td></tr><tr><td>Citrix ADC (NetScaler)</td><td>adc</td><td class="r">$6,700</td><td class="r">$112,160</td><td>2022-03-17</td><td>ENTISYS360</td></tr><tr><td>Microsoft Azure</td><td>cloud_platform</td><td class="r">$7,325</td><td class="r">$163,493</td><td>2024-10-14</td><td>NATIX INC, ADVANCED TECHNICAL SOLUTIONS</td></tr><tr><td>Microsoft Entra ID</td><td>identity</td><td class="r">$7,325</td><td class="r">$163,493</td><td>2024-10-14</td><td>NATIX INC, ADVANCED TECHNICAL SOLUTIONS</td></tr></table></div>
 </details>
 <p class="note">3 more detected — ask the advisor.</p>
 </section>
@@ -768,7 +887,7 @@ table.sortable th.no-sort{cursor:auto;text-decoration:none}
 })();
 </script>
 
-<footer><div class="wrap">Golden State Signal · built from public California filings — Cal eProcure, eSCPRS, FI$Cal. Independent, and not affiliated with any manufacturer or reseller. Snapshot <code>rb_sample_dept_of_parks_recreation</code>, generated 2026-09-11.</div></footer>
+<footer><div class="wrap">Golden State Signal · built from public California filings — Cal eProcure, eSCPRS, FI$Cal. Independent, and not affiliated with any manufacturer or reseller. Snapshot <code>rb_sample_dept_of_parks_recreation</code>, generated 2026-09-20.</div></footer>
 <script>
 (function () {
   var DATE = /^\d{4}-\d{2}-\d{2}/;
