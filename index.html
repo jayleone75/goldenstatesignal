@@ -146,6 +146,15 @@
   .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
   .js .reveal.in-view{opacity:1;transform:translateY(0);}
   .reveal-stagger.in-view{transition-delay:var(--d,0ms);}
+  /* Signal Flow: the animation under the headline. The frame is the desk's
+     charcoal on the site's navy, deliberately, so it reads as the product. */
+  .flow{margin:48px auto 0;max-width:1120px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.4);background:#101418;position:relative;z-index:2;}
+  .flow svg{display:block;width:100%;height:auto;}
+  .flow svg.flow-static{display:none;}
+  .flow-cap{max-width:1120px;margin:14px auto 0;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px;position:relative;z-index:2;}
+  .flow-cap .mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em;}
+  @media (prefers-reduced-motion: reduce){.flow svg.flow-anim{display:none;}.flow svg.flow-static{display:block;}}
+  @media (max-width:640px){.flow{margin-top:32px;border-radius:10px;}.flow-cap{flex-direction:column;gap:4px;}}
 </style>
 </head>
 <body>
@@ -175,6 +184,236 @@
     <h1>Cut through the noise.<br><em>Define the signal.</em></h1>
     <p class="sub">California publishes every stage of its own buying cycle in a different place and never joins them up. We do, and hand you the call. Here is one, real, from a runbook built for a security manufacturer at the Department of Public Health.</p>
   </div>
+<!-- signal-flow:start -->
+<div class="wrap">
+<div class="flow">
+<svg class="flow-anim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Ten public California data sources flowing into one Account Runbook" font-family="Inter, Arial, sans-serif">
+<defs>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#5FD3A6" stop-opacity=".35"/><stop offset="1" stop-color="#5FD3A6" stop-opacity="0"/>
+</radialGradient>
+<filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#101418"/>
+<path id="p0" d="M338,150 C660,150 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,150 C660,150 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.12s" begin="-0.45s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.11s" begin="-1.95s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p0"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.11s" begin="-1.95s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p0"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.55s" begin="-3.21s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p0"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.55s" begin="-3.21s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p0"/></animateMotion></circle>
+<path id="p1" d="M338,216 C660,216 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,216 C660,216 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="2.69s" begin="-1.52s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.65s" begin="-0.11s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p1"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.65s" begin="-0.11s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p1"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.14s" begin="-1.81s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p1"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.14s" begin="-1.81s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p1"/></animateMotion></circle>
+<path id="p2" d="M338,282 C660,282 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,282 C660,282 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.28s" begin="-2.48s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.33s" begin="-0.37s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p2"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.33s" begin="-0.37s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p2"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="4.42s" begin="-3.48s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p2"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="4.42s" begin="-3.48s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p2"/></animateMotion></circle>
+<path id="p3" d="M338,348 C660,348 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,348 C660,348 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.52s" begin="-1.19s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.07s" begin="-2.93s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p3"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.07s" begin="-2.93s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p3"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.43s" begin="-4.18s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p3"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.43s" begin="-4.18s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p3"/></animateMotion></circle>
+<path id="p4" d="M338,414 C660,414 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,414 C660,414 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="2.83s" begin="-0.35s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="4.22s" begin="-0.93s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p4"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="4.22s" begin="-0.93s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p4"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.87s" begin="-2.14s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p4"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.87s" begin="-2.14s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p4"/></animateMotion></circle>
+<path id="p5" d="M338,480 C660,480 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,480 C660,480 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.62s" begin="-1.12s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.09s" begin="-1.64s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p5"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.09s" begin="-1.64s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p5"/></animateMotion></circle>
+<circle r="7" fill="#5FD3A6" filter="url(#blur)" opacity=".8"><animateMotion dur="3.31s" begin="-1.78s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p5"/></animateMotion></circle>
+<circle r="3" fill="#5FD3A6"><animateMotion dur="3.31s" begin="-1.78s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p5"/></animateMotion></circle>
+<path id="p6" d="M338,546 C660,546 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,546 C660,546 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.69s" begin="-1.28s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="3.88s" begin="-0.94s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p6"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="3.88s" begin="-0.94s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p6"/></animateMotion></circle>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="3.45s" begin="-2.96s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p6"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="3.45s" begin="-2.96s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p6"/></animateMotion></circle>
+<path id="p7" d="M338,612 C660,612 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,612 C660,612 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.87s" begin="-2.10s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="3.86s" begin="-0.73s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p7"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="3.86s" begin="-0.73s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p7"/></animateMotion></circle>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="4.31s" begin="-3.18s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p7"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="4.31s" begin="-3.18s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p7"/></animateMotion></circle>
+<path id="p8" d="M338,678 C660,678 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,678 C660,678 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="3.77s" begin="-0.86s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="3.18s" begin="-2.94s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p8"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="3.18s" begin="-2.94s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p8"/></animateMotion></circle>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="4.14s" begin="-2.85s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p8"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="4.14s" begin="-2.85s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p8"/></animateMotion></circle>
+<path id="p9" d="M338,744 C660,744 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<path d="M338,744 C660,744 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 900" stroke-opacity=".9"><animate attributeName="stroke-dashoffset" from="936" to="0" dur="2.84s" begin="-1.47s" repeatCount="indefinite"/></path>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="4.00s" begin="-0.12s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p9"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="4.00s" begin="-0.12s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p9"/></animateMotion></circle>
+<circle r="7" fill="#F2B35C" filter="url(#blur)" opacity=".8"><animateMotion dur="3.86s" begin="-3.89s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p9"/></animateMotion></circle>
+<circle r="3" fill="#F2B35C"><animateMotion dur="3.86s" begin="-3.89s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".4 0 .6 1"><mpath href="#p9"/></animateMotion></circle>
+<circle cx="330" cy="150" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="158" text-anchor="end" font-size="22" fill="#E6E9EE">Policy letters</text>
+<circle cx="330" cy="216" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="224" text-anchor="end" font-size="22" fill="#E6E9EE">CDT reports</text>
+<circle cx="330" cy="282" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="290" text-anchor="end" font-size="22" fill="#E6E9EE">Budget requests</text>
+<circle cx="330" cy="348" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="356" text-anchor="end" font-size="22" fill="#E6E9EE">Budget hearings</text>
+<circle cx="330" cy="414" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="422" text-anchor="end" font-size="22" fill="#E6E9EE">CDT projects</text>
+<circle cx="330" cy="480" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="488" text-anchor="end" font-size="22" fill="#E6E9EE">Solicitations</text>
+<circle cx="330" cy="546" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="554" text-anchor="end" font-size="22" fill="#E6E9EE">Purchase orders</text>
+<circle cx="330" cy="612" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="620" text-anchor="end" font-size="22" fill="#E6E9EE">Payments</text>
+<circle cx="330" cy="678" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="686" text-anchor="end" font-size="22" fill="#E6E9EE">Contract routes</text>
+<circle cx="330" cy="744" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="752" text-anchor="end" font-size="22" fill="#E6E9EE">Job postings</text>
+<path d="M1060,470 L1110,470" stroke="#5FD3A6" stroke-width="4" stroke-linecap="round"/>
+<circle cx="1060" cy="470" r="9" fill="#5FD3A6"/>
+<circle cx="1060" cy="470" r="60" fill="url(#glow)"><animate attributeName="r" values="40;70;40" dur="2.4s" repeatCount="indefinite"/></circle>
+<rect x="1110" y="250" width="420" height="440" rx="20" fill="#171C22" stroke="#5FD3A6" stroke-width="2"/>
+<text x="1142" y="302" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="2" fill="#5FD3A6">DMV · ACCOUNT RUNBOOK</text>
+<text x="1142" y="342" font-size="30" font-weight="600" fill="#E6E9EE">This quarter</text>
+<text x="1142" y="372" font-size="16" fill="#8E96A3">Every line cites the filing behind it</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.12;0.20;.92;1" dur="8s" repeatCount="indefinite"/>
+<rect x="1142" y="400" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="400" width="5" height="62" rx="2" fill="#FF6B5B"/>
+<text x="1164" y="424" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#FF6B5B">ACT NOW</text>
+<text x="1164" y="448" font-size="18" fill="#E6E9EE">Exstream renewal ends Oct 31</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.22;0.30;.92;1" dur="8s" repeatCount="indefinite"/>
+<rect x="1142" y="478" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="478" width="5" height="62" rx="2" fill="#F2B35C"/>
+<text x="1164" y="502" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#F2B35C">THIS QUARTER</text>
+<text x="1164" y="526" font-size="18" fill="#E6E9EE">DXP re-plan: find the owner</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.32;0.40;.92;1" dur="8s" repeatCount="indefinite"/>
+<rect x="1142" y="556" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="556" width="5" height="62" rx="2" fill="#5FD3A6"/>
+<text x="1164" y="580" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#5FD3A6">WATCH</text>
+<text x="1164" y="604" font-size="18" fill="#E6E9EE">mDL pilot at PAL Stage 1</text>
+</g>
+<rect x="1142" y="628" width="356" height="40" rx="20" fill="none" stroke="#262C35"/>
+<text x="1162" y="654" font-size="16" fill="#8E96A3">Ask the advisor</text>
+<circle cx="1476" cy="648" r="8" fill="#5FD3A6"/>
+<circle cx="80" cy="842" r="6" fill="#5FD3A6"/><text x="96" y="849" font-size="18" fill="#8E96A3">Ahead of the order</text>
+<circle cx="300" cy="842" r="6" fill="#F2B35C"/><text x="316" y="849" font-size="18" fill="#8E96A3">The record</text>
+<text x="1530" y="849" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="2" fill="#8E96A3">GOLDEN STATE SIGNAL</text>
+</svg>
+<svg class="flow-static" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Ten public California data sources flowing into one Account Runbook" font-family="Inter, Arial, sans-serif">
+<rect width="1600" height="900" fill="#101418"/>
+<path id="s-p0" d="M338,150 C660,150 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="609.0" cy="240.2" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="609.0" cy="240.2" r="3.5" fill="#5FD3A6"/>
+<circle cx="834.1" cy="408.8" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="834.1" cy="408.8" r="3.5" fill="#5FD3A6"/>
+<path id="s-p1" d="M338,216 C660,216 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="651.7" cy="312.8" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="651.7" cy="312.8" r="3.5" fill="#5FD3A6"/>
+<circle cx="801.6" cy="405.3" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="801.6" cy="405.3" r="3.5" fill="#5FD3A6"/>
+<path id="s-p2" d="M338,282 C660,282 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="693.1" cy="373.2" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="693.1" cy="373.2" r="3.5" fill="#5FD3A6"/>
+<circle cx="770.5" cy="409.2" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="770.5" cy="409.2" r="3.5" fill="#5FD3A6"/>
+<path id="s-p3" d="M338,348 C660,348 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="609.0" cy="382.4" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="609.0" cy="382.4" r="3.5" fill="#5FD3A6"/>
+<circle cx="740.3" cy="421.7" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="740.3" cy="421.7" r="3.5" fill="#5FD3A6"/>
+<path id="s-p4" d="M338,414 C660,414 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="651.7" cy="435.3" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="651.7" cy="435.3" r="3.5" fill="#5FD3A6"/>
+<circle cx="834.1" cy="459.3" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="834.1" cy="459.3" r="3.5" fill="#5FD3A6"/>
+<path id="s-p5" d="M338,480 C660,480 730,470 1060,470" fill="none" stroke="#5FD3A6" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="693.1" cy="475.1" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="693.1" cy="475.1" r="3.5" fill="#5FD3A6"/>
+<circle cx="801.6" cy="472.5" r="8" fill="#5FD3A6" opacity=".18"/>
+<circle cx="801.6" cy="472.5" r="3.5" fill="#5FD3A6"/>
+<path id="s-p6" d="M338,546 C660,546 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="609.0" cy="524.6" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="609.0" cy="524.6" r="3.5" fill="#F2B35C"/>
+<circle cx="770.5" cy="494.6" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="770.5" cy="494.6" r="3.5" fill="#F2B35C"/>
+<path id="s-p7" d="M338,612 C660,612 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="651.7" cy="557.9" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="651.7" cy="557.9" r="3.5" fill="#F2B35C"/>
+<circle cx="740.3" cy="526.2" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="740.3" cy="526.2" r="3.5" fill="#F2B35C"/>
+<path id="s-p8" d="M338,678 C660,678 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="693.1" cy="577.1" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="693.1" cy="577.1" r="3.5" fill="#F2B35C"/>
+<circle cx="834.1" cy="509.8" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="834.1" cy="509.8" r="3.5" fill="#F2B35C"/>
+<path id="s-p9" d="M338,744 C660,744 730,470 1060,470" fill="none" stroke="#F2B35C" stroke-opacity=".3" stroke-width="2"/>
+<circle cx="609.0" cy="666.8" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="609.0" cy="666.8" r="3.5" fill="#F2B35C"/>
+<circle cx="801.6" cy="539.8" r="8" fill="#F2B35C" opacity=".18"/>
+<circle cx="801.6" cy="539.8" r="3.5" fill="#F2B35C"/>
+<circle cx="330" cy="150" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="158" text-anchor="end" font-size="22" fill="#E6E9EE">Policy letters</text>
+<circle cx="330" cy="216" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="224" text-anchor="end" font-size="22" fill="#E6E9EE">CDT reports</text>
+<circle cx="330" cy="282" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="290" text-anchor="end" font-size="22" fill="#E6E9EE">Budget requests</text>
+<circle cx="330" cy="348" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="356" text-anchor="end" font-size="22" fill="#E6E9EE">Budget hearings</text>
+<circle cx="330" cy="414" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="422" text-anchor="end" font-size="22" fill="#E6E9EE">CDT projects</text>
+<circle cx="330" cy="480" r="7" fill="#101418" stroke="#5FD3A6" stroke-width="2.5"/>
+<text x="306" y="488" text-anchor="end" font-size="22" fill="#E6E9EE">Solicitations</text>
+<circle cx="330" cy="546" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="554" text-anchor="end" font-size="22" fill="#E6E9EE">Purchase orders</text>
+<circle cx="330" cy="612" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="620" text-anchor="end" font-size="22" fill="#E6E9EE">Payments</text>
+<circle cx="330" cy="678" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="686" text-anchor="end" font-size="22" fill="#E6E9EE">Contract routes</text>
+<circle cx="330" cy="744" r="7" fill="#101418" stroke="#F2B35C" stroke-width="2.5"/>
+<text x="306" y="752" text-anchor="end" font-size="22" fill="#E6E9EE">Job postings</text>
+<path d="M1060,470 L1110,470" stroke="#5FD3A6" stroke-width="4" stroke-linecap="round"/>
+<circle cx="1060" cy="470" r="9" fill="#5FD3A6"/>
+<rect x="1110" y="250" width="420" height="440" rx="20" fill="#171C22" stroke="#5FD3A6" stroke-width="2"/>
+<text x="1142" y="302" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="2" fill="#5FD3A6">DMV · ACCOUNT RUNBOOK</text>
+<text x="1142" y="342" font-size="30" font-weight="600" fill="#E6E9EE">This quarter</text>
+<text x="1142" y="372" font-size="16" fill="#8E96A3">Every line cites the filing behind it</text>
+<g>
+<rect x="1142" y="400" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="400" width="5" height="62" rx="2" fill="#FF6B5B"/>
+<text x="1164" y="424" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#FF6B5B">ACT NOW</text>
+<text x="1164" y="448" font-size="18" fill="#E6E9EE">Exstream renewal ends Oct 31</text>
+</g>
+<g>
+<rect x="1142" y="478" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="478" width="5" height="62" rx="2" fill="#F2B35C"/>
+<text x="1164" y="502" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#F2B35C">THIS QUARTER</text>
+<text x="1164" y="526" font-size="18" fill="#E6E9EE">DXP re-plan: find the owner</text>
+</g>
+<g>
+<rect x="1142" y="556" width="356" height="62" rx="10" fill="#101418" stroke="#262C35"/>
+<rect x="1142" y="556" width="5" height="62" rx="2" fill="#5FD3A6"/>
+<text x="1164" y="580" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#5FD3A6">WATCH</text>
+<text x="1164" y="604" font-size="18" fill="#E6E9EE">mDL pilot at PAL Stage 1</text>
+</g>
+<rect x="1142" y="628" width="356" height="40" rx="20" fill="none" stroke="#262C35"/>
+<text x="1162" y="654" font-size="16" fill="#8E96A3">Ask the advisor</text>
+<circle cx="1476" cy="648" r="8" fill="#5FD3A6"/>
+<circle cx="80" cy="842" r="6" fill="#5FD3A6"/><text x="96" y="849" font-size="18" fill="#8E96A3">Ahead of the order</text>
+<circle cx="300" cy="842" r="6" fill="#F2B35C"/><text x="316" y="849" font-size="18" fill="#8E96A3">The record</text>
+<text x="1530" y="849" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="2" fill="#8E96A3">GOLDEN STATE SIGNAL</text>
+</svg>
+</div>
+<div class="flow-cap"><span>Ten public sources the state never joins up, flowing into one department's runbook. Every line on the right cites the filing behind it.</span><span class="mono">DMV · illustrative · read Sep 2026</span></div>
+</div>
+<!-- signal-flow:end -->
 </section>
 
 <div class="wrap path-wrap" id="runbook">
