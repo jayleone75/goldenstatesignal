@@ -62,6 +62,11 @@ if ($LASTEXITCODE -ne 0) {
 $homepage = Join-Path $Project "output\site-preview\index.html"
 $demoItems = @("index.html", "sample-brief.html", "sample-runbook.html",
                "sample-runbook-oem.html", "assets", "data")
+# The public department pages (one per department, plus the index), written
+# by pipeline/make_public_pages.py at the end of the Monday purchase pull.
+# Mirrored, not merely copied, so a department that drops off loses its page.
+$deptSrc = Join-Path $Project "output\site-preview\departments"
+$deptDst = Join-Path $Site "departments"
 
 if (-not $SkipRefresh) {
     if (-not (Test-Path $Project)) {
@@ -89,6 +94,16 @@ if (-not $SkipRefresh) {
         Get-ChildItem $dstData -File | Where-Object { $keep -notcontains $_.Name } |
           ForEach-Object {
               Write-Host "   removing superseded $($_.Name)" -ForegroundColor Yellow
+              Remove-Item $_.FullName -Force
+          }
+    }
+    if (Test-Path $deptSrc) {
+        if (-not (Test-Path $deptDst)) { New-Item -ItemType Directory $deptDst | Out-Null }
+        Copy-Item (Join-Path $deptSrc "*") $deptDst -Force
+        $keepPages = Get-ChildItem $deptSrc -File | ForEach-Object { $_.Name }
+        Get-ChildItem $deptDst -File | Where-Object { $keepPages -notcontains $_.Name } |
+          ForEach-Object {
+              Write-Host "   removing superseded departments\$($_.Name)" -ForegroundColor Yellow
               Remove-Item $_.FullName -Force
           }
     }
@@ -205,3 +220,4 @@ Write-Host ""
 Write-Host "Published. GitHub Pages usually takes a minute to update." -ForegroundColor Green
 Write-Host "   https://goldenstatesignal.com/"
 Write-Host "   https://goldenstatesignal.com/demo/"
+Write-Host "   https://goldenstatesignal.com/departments/"
