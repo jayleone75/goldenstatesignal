@@ -51,7 +51,7 @@
   .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--paper);font-size:16.5px;}
   .logo-mark{width:26px;height:26px;flex:none;}
   .nav-links{display:flex;gap:30px;font-size:14.5px;font-weight:500;color:var(--muted);}
-  .nav-links a{transition:color .2s;} .nav-links a:hover{color:var(--gold);}
+  .nav-links a{transition:color .2s;white-space:nowrap;} .nav-links a:hover{color:var(--gold);}
   .nav-cta{background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:10px 18px;border-radius:7px;transition:background .2s,transform .2s;white-space:nowrap;}
   .nav-cta:hover{background:#f0c257;transform:translateY(-1px);}
   @media (max-width:760px){ .nav-links{display:none;} .logo{font-size:14.5px;white-space:nowrap;} .nav-cta{font-size:13px;padding:9px 14px;} nav{padding:14px 18px;} }
@@ -66,6 +66,17 @@
 
   /* THE PATH */
   .path-wrap{padding:36px 0 18px;position:relative;z-index:2;}
+  /* How it reads a department: four steps, forward signal first. */
+  .wf-wrap{padding:40px 0 8px;position:relative;z-index:2;}
+  .wf{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+  .wf .st{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:20px 20px 18px;position:relative;}
+  .wf .st .k{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+  .wf .st h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;color:#fff;margin-bottom:8px;letter-spacing:-.01em;}
+  .wf .st p{font-size:14px;line-height:1.55;color:var(--muted);}
+  .wf .st .src{margin-top:12px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;line-height:1.6;color:#C9D2E2;}
+  .wf .st.last{background:var(--gold);border-color:var(--gold);} .wf .st.last .k{color:var(--gold-ink);} .wf .st.last h3{color:var(--navy);} .wf .st.last p{color:#3A3222;} .wf .st.last .src{color:var(--navy);}
+  @media (max-width:980px){ .wf{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .wf{grid-template-columns:1fr;} }
   .path-label{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
   .path-label .l{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
   .path-label .r{font-size:12px;color:var(--muted-dark);}
@@ -119,6 +130,10 @@
   @media (max-width:860px){ .feat-grid{grid-template-columns:1fr;} }
 
   .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .tier-grid.four{grid-template-columns:repeat(4,1fr);gap:18px;}
+  .tier-card.actnow{border-top:4px solid var(--poppy);} .tier-card.quarter{border-top:4px solid var(--gold-deep);} .tier-card.onecall{border-top:4px solid #2E7D5B;} .tier-card.seed{border-top:4px dashed var(--muted-dark);}
+  .tier-card.actnow .tier-badge{background:#3D1E14;color:#F5A58C;} .tier-card.quarter .tier-badge{background:#3A2E12;color:var(--gold);} .tier-card.onecall .tier-badge{background:#163A2A;color:#9FE3BE;} .tier-card.seed .tier-badge{background:#1E2633;color:#C9D2E2;}
+  @media (max-width:980px){ .tier-grid.four{grid-template-columns:1fr 1fr;} }
   .tier-card{border-radius:14px;padding:28px;background:var(--navy-2);border:1px solid var(--line);}
   .tier-card.confirmed{border-top:4px solid #2E7D5B;} .tier-card.publicized{border-top:4px solid var(--gold-deep);} .tier-card.inferred{border-top:4px dashed var(--poppy);}
   .tier-badge{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:14px;font-family:'Inter',sans-serif;}
@@ -167,10 +182,10 @@
       Golden State Signal
     </a>
     <div class="nav-links">
-      <a href="#runbook">The Runbook</a>
-      <a href="#why">Why It Holds</a>
-      <a href="#who-its-for">Who It's For</a>
-      <a href="/demo/">Live Demo</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#runbook">The Chain</a>
+      <a href="/departments/">Departments</a>
+      <a href="/demo/">Demo</a>
       <a href="#about">About</a>
     </div>
     <a class="nav-cta" href="mailto:jay@goldenstatesignal.com?subject=Golden%20State%20Signal%20%E2%80%94%20Account%20Runbook">Request a Runbook</a>
@@ -180,9 +195,9 @@
 <section class="hero" id="top">
   <svg class="hero-bg-shape" viewBox="0 0 200 200" fill="none"><path d="M60 10 L90 15 L100 40 L130 50 L140 90 L120 130 L100 190 L70 170 L60 120 L40 100 L30 60 Z" fill="#E3B341"/></svg>
   <div class="wrap hero-inner">
-    <span class="eyebrow">From a filing to a phone call</span>
+    <span class="eyebrow">From a public signal to a phone call</span>
     <h1>Cut through the noise.<br><em>Define the signal.</em></h1>
-    <p class="sub">California publishes every stage of its own buying cycle in a different place and never joins them up. We do, and hand you the call. Here is one, real, from a runbook built for a security manufacturer at the Department of Public Health.</p>
+    <p class="sub">California says what it is about to buy long before it buys it: in audits, oversight ratings, budget requests and project approvals, each published in a different place and never joined up. We read those first, then the purchase record, and hand you the call. The flow below is one department; the chain under it is one real play.</p>
   </div>
 <!-- signal-flow:start -->
 <div class="wrap">
@@ -415,40 +430,72 @@
 </div>
 <!-- signal-flow:end -->
 </section>
+<div class="wrap wf-wrap" id="workflow">
+  <div class="path-label">
+    <span class="l">How a department is read, in order</span>
+    <span class="r mono">Forward signal first · the purchase record last · every step a public source</span>
+  </div>
+  <div class="wf">
+    <div class="st reveal reveal-stagger" style="--d:0ms">
+      <span class="k">01 · Listen</span>
+      <h3>What the state has said</h3>
+      <p>An audit in progress, a high-risk designation, an oversight rating, a budget hearing, a CDT policy letter. The earliest public sign that a department is about to spend, and the one every seller skips.</p>
+      <div class="src">State Auditor · LAO · CDT reports · budget subcommittees · appointments</div>
+    </div>
+    <div class="st reveal reveal-stagger" style="--d:120ms">
+      <span class="k">02 · Follow the money</span>
+      <h3>What they have asked to spend</h3>
+      <p>The department's own budget change proposal, the project it became on CDT's approval lifecycle, and the oversight rating it carries now. Requested, never called funded until it is.</p>
+      <div class="src">BCP → PAL stage → IPOR rating → solicitation</div>
+    </div>
+    <div class="st reveal reveal-stagger" style="--d:240ms">
+      <span class="k">03 · Check the record</span>
+      <h3>What they actually bought</h3>
+      <p>Every purchase order and line item: which manufacturer is on the paper, through which reseller, on which contract, and when the term ends. A floor, not an install base.</p>
+      <div class="src">271,521 purchase orders · 971,666 line items · contract routes</div>
+    </div>
+    <div class="st last reveal reveal-stagger" style="--d:360ms">
+      <span class="k">04 · Make the call</span>
+      <h3>A dated play, a named owner</h3>
+      <p>The three joined into one action, tiered by the dates, with the buyer of record and the program owner who spoke on it. The signal says when; the record says to whom.</p>
+      <div class="src">ACT NOW · THIS QUARTER · ONE CALL AWAY · PLANT THE SEED</div>
+    </div>
+  </div>
+</div>
 
 <div class="wrap path-wrap" id="runbook">
   <div class="path-label">
-    <span class="l">One real chain, every step a public filing</span>
-    <span class="r mono">Account Runbook · Employment Development Dept · backup and recovery · as of Sep 17, 2026</span>
+    <span class="l">One real chain, every step a public source, in the order it is read</span>
+    <span class="r mono">Account Runbook · Employment Development Dept · backup and recovery · signals read Oct 12, 2026 · record as of Sep 17, 2026</span>
   </div>
   <div class="path">
     <div class="panel p1 reveal reveal-stagger" style="--d:0ms">
-      <span class="step">01 · What is on the record</span>
-      <h3>$7,901,929 of backup and recovery, across 49 filed orders</h3>
-      <p>Eight products from eight vendors, four of them holding most of it. Detected from the state's own line text, whatever reseller carried it, and credited to the lines that name each product. A floor, not a total.</p>
-      <div class="rec">Cohesity DataProtect subscription · PO 92372 · $2,178,625 · filed Jun 9, 2023 · carried by SLED IT Solutions · Software Licensing Program SLP-21-70-0134H</div>
+      <span class="step">01 · What the state has said</span>
+      <h3>On the Auditor's high-risk list, two audits of the benefit system in progress, and the Legislature has heard the modernization</h3>
+      <p>The State Auditor kept EDD on its high-risk list in December and opened two audits of the unemployment program, expected Summer 2027. The Legislative Analyst reviewed the benefit-system modernization in February. A department under that much published scrutiny is a department that will be made to spend.</p>
+      <div class="rec">State Auditor 2025-601 · high-risk designation kept · Dec 11, 2025 &nbsp;·&nbsp; 2026-602 and 2026-117 · audits in progress · expected Summer 2027 &nbsp;·&nbsp; LAO · Feb 24, 2026 · "Overview of Efforts to Modernize EDD's Benefit Systems"</div>
     </div>
     <div class="panel p2 reveal reveal-stagger" style="--d:120ms">
-      <span class="step">02 · What the dates say</span>
-      <h3>Fourteen orders in two years, and the large ones are renewals</h3>
-      <p>$2.18M since September 2024: an Enterprise Vault renewal in March, an M365 backup renewal in January, and eleven smaller ones. The estate is being kept running. That is a reading of filed titles, not a verdict on the machine room.</p>
-      <div class="rec">Newest order · PO 23353 · $2,550 · filed Aug 13, 2026 · a Veeam subscription renewal · Fair and Reasonable, competitive</div>
+      <span class="step">02 · What they have asked to spend</span>
+      <h3>$834.6M requested for EDDNext, and $817.6M of it already in implementation, rated Yellow</h3>
+      <p>The department's own budget change proposal and the state's project tracker, two filings that agree, with an oversight rating that moved from Green to Yellow on Sep 21, 2026. Neither names a backup product. That gap is what the call is about.</p>
+      <div class="rec">BCP 8707 · FY 2026-27 · $834,615,032 &nbsp;·&nbsp; CDT project 7100-222 · $817,579,560 · in implementation · Yellow as of Oct 12, 2026</div>
     </div>
     <div class="panel p3 reveal reveal-stagger" style="--d:240ms">
-      <span class="step">03 · What they have said they will spend</span>
-      <h3>$834.6M requested for EDDNext, and $817.6M of it already in implementation</h3>
-      <p>The department's own budget change proposal and the state's project tracker, two filings that agree, rated Green. Neither names a backup product. That gap is what the call is about.</p>
-      <div class="rec">BCP 8707 · FY 2026-27 · $834,615,032 &nbsp;·&nbsp; CDT project 7100-222 · $817,579,560 · in implementation (Green)</div>
+      <span class="step">03 · What is on the record</span>
+      <h3>$7,901,929 of backup and recovery across 49 filed orders, and the recent ones are renewals</h3>
+      <p>Eight products from eight vendors, detected from the state's own line text whatever reseller carried it. Fourteen orders in two years, the large ones renewals: the estate is being kept running, not rebuilt. A reading of filed titles, not a verdict on the machine room.</p>
+      <div class="rec">Cohesity DataProtect · PO 92372 · $2,178,625 · Jun 9, 2023 · SLP-21-70-0134H &nbsp;·&nbsp; newest · PO 23353 · $2,550 · Aug 13, 2026 · a Veeam renewal</div>
     </div>
     <div class="panel p4 reveal reveal-stagger" style="--d:360ms">
       <span class="step">04 · The call</span>
       <h3>Ask whether the refresh is funded, deferred, or headed off-premises</h3>
-      <p>The one thing no filing answers, next to a build of that size. So the play is tiered honestly: one call away, not act now. The runbook names the buyer of record who signed the newest order.</p>
+      <p>The one thing no filing answers, next to a build that size under that much scrutiny. So the play is tiered honestly: one call away, not act now. The runbook names the program owner and the buyer of record who signed the newest order.</p>
       <div class="rec">ONE CALL AWAY · ARCHITECTURAL · buyer of record named in the licensed edition · next refresh Oct 17, 2026</div>
     </div>
   </div>
   <div class="path-note">
-    <span>Every step above is a public filing you can check by its purchase order number or its budget reference. A manufacturer and the reseller who carries it read the same chain from opposite sides.</span>
+    <span>Every step above is a public source you can check by its report number, its budget reference or its purchase order number. The order matters: the signal says when a department will move, the record says who already holds its paper.</span>
     <a href="/demo/sample-runbook-oem.html">See a complete runbook →</a>
   </div>
 
@@ -456,7 +503,7 @@
     <div class="proof-nums">
       <div class="reveal"><div class="n display" data-target="271521" data-format="int">271,521</div><div class="l">purchase orders, 2007 to 2026</div></div>
       <div class="reveal"><div class="n display" data-target="50.74" data-format="billion" data-decimals="2">$50.74B</div><div class="l">of state spend, every dollar filed</div></div>
-      <div class="reveal"><div class="n display" data-target="7" data-format="int">7</div><div class="l">public sources joined into one demand chain</div></div>
+      <div class="reveal"><div class="n display" data-target="10" data-format="int">10</div><div class="l">public sources joined into one demand chain</div></div>
       <div class="integrity" style="grid-column:1 / -1;"><b>176</b> departments &nbsp;·&nbsp; <b>11,428</b> suppliers &nbsp;·&nbsp; <b>971,666</b> line items &nbsp;·&nbsp; every purchase order carries a category label &nbsp;·&nbsp; <b>0</b> duplicates</div>
     </div>
     <div class="proof-cta reveal">
@@ -474,7 +521,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">What a runbook is</span>
       <h2>A live account workspace, <em>not a document that gets emailed.</em></h2>
-      <p>One runbook is one California department, owned by one named rep, behind a login, with an advisor inside it that answers from the filings. Built for a manufacturer, it shows where your product is, who is taking your ground, and which partner to move through. Built for a reseller, it shows your book, your renewals, and the whitespace beside them.</p>
+      <p>One runbook is one California department, owned by one named rep, behind a login, with an advisor inside it that answers from the filings. It opens on what is coming: the projects the state has announced, the audit responses that name a purchase, the terms ending soonest. Built for a manufacturer, it then shows where your product sits on the record and which partner to move through. Built for a reseller, it shows your book, your renewals, and the whitespace beside them.</p>
     </div>
     <div class="feat-grid">
       <div class="feat reveal reveal-stagger" style="--d:0ms"><h4>Hosted and gated</h4><p>Per-user identity, verified against the signing keys. Not a shared password. A change to a play is traceable to the rep who caused it.</p></div>
@@ -504,16 +551,17 @@
 <section class="pad dark-2" id="how-it-works">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">The Evidence Rule</span>
-      <h2>Three tiers. <em>One rule.</em></h2>
-      <p>A guess never wears the badge of a fact. Every finding is labeled by how certain it actually is.</p>
+      <span class="eyebrow">The Timing Rule</span>
+      <h2>Four tiers. <em>One rule.</em></h2>
+      <p>A play's tier is set by dated public facts, forward signal first, never by a model's enthusiasm. A guess never wears the badge of a fact.</p>
     </div>
-    <div class="tier-grid">
-      <div class="tier-card confirmed reveal reveal-stagger" style="--d:0ms"><span class="tier-badge">Confirmed</span><h3>On the record</h3><p>A dated term sits directly on the purchase filing itself. No inference required. It's already written down.</p></div>
-      <div class="tier-card publicized reveal reveal-stagger" style="--d:120ms"><span class="tier-badge">Publicized</span><h3>Vendor-confirmed</h3><p>A manufacturer's own end-of-life or end-of-support bulletin, sourced and dated, even when it's not in the filing.</p></div>
-      <div class="tier-card inferred reveal reveal-stagger" style="--d:240ms"><span class="tier-badge">Inferred</span><h3>Worth asking about</h3><p>An absent purchase order is a question, not a finding. Old enough to warrant a call, and we hand you the question, never a date we can't stand behind.</p></div>
+    <div class="tier-grid four">
+      <div class="tier-card actnow reveal reveal-stagger" style="--d:0ms"><span class="tier-badge">Act now</span><h3>The state has moved</h3><p>A funded project at the stage where vendors engage, an audit response that names the purchase, or a term ending inside the quarter. Dated, cited, and already late for anyone who waited for the RFP.</p></div>
+      <div class="tier-card quarter reveal reveal-stagger" style="--d:100ms"><span class="tier-badge">This quarter</span><h3>Requested, not yet bought</h3><p>A budget request on file, a project on CDT's list, an audit in progress. Requested is never called funded. The owner is findable now; the money is not spendable yet.</p></div>
+      <div class="tier-card onecall reveal reveal-stagger" style="--d:200ms"><span class="tier-badge">One call away</span><h3>The record raises a question</h3><p>An ageing estate beside a funded build, a competitor's term with no renewal yet on paper. No filing answers it. We hand you the question, never a date we cannot stand behind.</p></div>
+      <div class="tier-card seed reveal reveal-stagger" style="--d:300ms"><span class="tier-badge">Plant the seed</span><h3>Bought inside two years</h3><p>An incumbent renewed recently. The quote window has not opened, and the play says when it does rather than asking for anything before it.</p></div>
     </div>
-    <div class="rule-line reveal">"Never presented as a date. Always presented as a reason to call."</div>
+    <div class="rule-line reveal">"Every date wears its evidence: on the filing, in a vendor's bulletin, or handed to you as a question."</div>
   </div>
 </section>
 
@@ -525,8 +573,8 @@
       <p>The same filing means something different depending on who's reading it. Golden State Signal adjusts the angle accordingly.</p>
     </div>
     <div class="seat-grid">
-      <div class="seat-card reveal reveal-stagger" style="--d:0ms"><span class="seat-num">01 · OEM</span><h3>Manufacturer sales directors</h3><p>See where your product is on the record, which competitor arrived after you, when their paper renews, and which partner is your warm path in. <a href="/demo/sample-runbook-oem.html" style="color:var(--gold);">The sample above is this seat.</a></p></div>
-      <div class="seat-card reveal reveal-stagger" style="--d:120ms"><span class="seat-num">02 · Channel</span><h3>Reseller sales leadership</h3><p>See which accounts on your team's book have gone quiet, which statewide contracts you already hold paper on, and where you have relationship but no revenue yet. <a href="/demo/sample-runbook.html" style="color:var(--gold);">A reseller sample.</a></p></div>
+      <div class="seat-card reveal reveal-stagger" style="--d:0ms"><span class="seat-num">01 · OEM</span><h3>Manufacturer sales directors</h3><p>See which funded projects touch your layer before the solicitation exists, then where your product is on the record, which competitor arrived after you, when their paper renews, and which partner is your warm path in. <a href="/demo/sample-runbook-oem.html" style="color:var(--gold);">The sample above is this seat.</a></p></div>
+      <div class="seat-card reveal reveal-stagger" style="--d:120ms"><span class="seat-num">02 · Channel</span><h3>Reseller sales leadership</h3><p>See which of your departments the state has just told to spend, which accounts on your book have gone quiet, which statewide contracts you already hold paper on, and where you have relationship but no revenue yet. <a href="/demo/sample-runbook.html" style="color:var(--gold);">A reseller sample.</a></p></div>
       <div class="seat-card reveal reveal-stagger" style="--d:240ms"><span class="seat-num">03 · Independent</span><h3>Independent consultants</h3><p>Open a first conversation with an account-specific angle and a named buyer of record, not a cold pitch.</p></div>
     </div>
   </div>
@@ -557,6 +605,7 @@
   <div class="wrap footer-inner">
     <div>&copy; 2026 Golden State Signal. Independent. Public sources only.</div>
     <div style="display:flex;gap:22px;">
+      <a href="/departments/">Departments</a>
       <a href="/demo/">Live Demo</a>
       <a href="mailto:jay@goldenstatesignal.com">jay@goldenstatesignal.com</a>
     </div>
