@@ -1,20 +1,20 @@
 {
- "updated": "2026-10-15",
+ "updated": "2026-10-19",
  "index": "https://goldenstatesignal.com/departments/",
  "departments": [
   {
    "filed_as": "Department of Social Services",
    "name": "Department of Social Services",
    "code": "5180",
-   "spend_5y": 5399580991,
-   "orders_5y": 1700,
+   "spend_5y": 5399589642,
+   "orders_5y": 1701,
    "url": "https://goldenstatesignal.com/departments/department-of-social-services.html"
   },
   {
    "filed_as": "Department of Technology",
    "name": "Department of Technology",
    "code": "7502",
-   "spend_5y": 5325753245,
+   "spend_5y": 5327975932,
    "orders_5y": 2625,
    "url": "https://goldenstatesignal.com/departments/department-of-technology.html"
   },
@@ -22,31 +22,31 @@
    "filed_as": "Ofc Technology and Solutions I",
    "name": "Office of Technology and Solutions Integration",
    "code": "0531",
-   "spend_5y": 3389732687,
-   "orders_5y": 992,
+   "spend_5y": 3389692114,
+   "orders_5y": 990,
    "url": "https://goldenstatesignal.com/departments/office-of-technology-and-solutions-integration.html"
   },
   {
    "filed_as": "Employment Development Dept",
    "name": "Employment Development Department",
    "code": "7100",
-   "spend_5y": 1791147904,
-   "orders_5y": 2968,
+   "spend_5y": 1788147514,
+   "orders_5y": 2967,
    "url": "https://goldenstatesignal.com/departments/employment-development-department.html"
   },
   {
    "filed_as": "State Dept Hlth Care Services",
    "name": "Department of Health Care Services",
    "code": "4260",
-   "spend_5y": 1603813982,
-   "orders_5y": 1377,
+   "spend_5y": 1603332998,
+   "orders_5y": 1374,
    "url": "https://goldenstatesignal.com/departments/department-of-health-care-services.html"
   },
   {
    "filed_as": "Dept of Corrections & Rehab",
    "name": "Department of Corrections and Rehabilitation",
    "code": "5225",
-   "spend_5y": 1393172324,
+   "spend_5y": 1393383624,
    "orders_5y": 6843,
    "url": "https://goldenstatesignal.com/departments/department-of-corrections-and-rehabilitation.html"
   },
@@ -54,88 +54,88 @@
    "filed_as": "Department of Public Health",
    "name": "Department of Public Health",
    "code": "4265",
-   "spend_5y": 1307992050,
-   "orders_5y": 2407,
+   "spend_5y": 1307562539,
+   "orders_5y": 2411,
    "url": "https://goldenstatesignal.com/departments/department-of-public-health.html"
   },
   {
    "filed_as": "Franchise Tax Board",
    "name": "Franchise Tax Board",
    "code": "7730",
-   "spend_5y": 1150873973,
-   "orders_5y": 1568,
+   "spend_5y": 1150883758,
+   "orders_5y": 1569,
    "url": "https://goldenstatesignal.com/departments/franchise-tax-board.html"
   },
   {
    "filed_as": "Department of Motor Vehicles",
    "name": "Department of Motor Vehicles",
    "code": "2740",
-   "spend_5y": 1020390639,
-   "orders_5y": 1620,
+   "spend_5y": 1020610442,
+   "orders_5y": 1617,
    "url": "https://goldenstatesignal.com/departments/department-of-motor-vehicles.html"
   },
   {
    "filed_as": "Office of Emergency Services",
    "name": "Office of Emergency Services",
    "code": "0690",
-   "spend_5y": 985711597,
-   "orders_5y": 2112,
+   "spend_5y": 985714897,
+   "orders_5y": 2113,
    "url": "https://goldenstatesignal.com/departments/office-of-emergency-services.html"
   },
   {
    "filed_as": "State Controller",
    "name": "State Controller",
    "code": "0840",
-   "spend_5y": 981794332,
-   "orders_5y": 1020,
+   "spend_5y": 981844032,
+   "orders_5y": 1025,
    "url": "https://goldenstatesignal.com/departments/state-controller.html"
   },
   {
    "filed_as": "Department of Transportation",
    "name": "Department of Transportation",
    "code": "2660",
-   "spend_5y": 842693747,
-   "orders_5y": 6825,
+   "spend_5y": 842693089,
+   "orders_5y": 6823,
    "url": "https://goldenstatesignal.com/departments/department-of-transportation.html"
   },
   {
    "filed_as": "Judicial Branch",
    "name": "Judicial Branch",
    "code": "0250",
-   "spend_5y": 625709285,
-   "orders_5y": 3345,
+   "spend_5y": 625759454,
+   "orders_5y": 3344,
    "url": "https://goldenstatesignal.com/departments/judicial-branch.html"
   },
   {
    "filed_as": "CA Health Benefit Exchange",
    "name": "Covered California (Health Benefit Exchange)",
    "code": "4800",
-   "spend_5y": 600852938,
-   "orders_5y": 1369,
+   "spend_5y": 600852288,
+   "orders_5y": 1367,
    "url": "https://goldenstatesignal.com/departments/covered-california.html"
   },
   {
    "filed_as": "Department of State Hospitals",
    "name": "Department of State Hospitals",
    "code": "4440",
-   "spend_5y": 561076918,
-   "orders_5y": 1770,
+   "spend_5y": 560860332,
+   "orders_5y": 1769,
    "url": "https://goldenstatesignal.com/departments/department-of-state-hospitals.html"
   },
   {
    "filed_as": "CAL FIRE",
    "name": "CAL FIRE (Department of Forestry and Fire Protection)",
    "code": "3540",
-   "spend_5y": 441467730,
-   "orders_5y": 14249,
+   "spend_5y": 442886755,
+   "orders_5y": 14256,
    "url": "https://goldenstatesignal.com/departments/cal-fire.html"
   },
   {
    "filed_as": "Department of Justice",
    "name": "Department of Justice",
    "code": "0820",
-   "spend_5y": 369875946,
-   "orders_5y": 3689,
+   "spend_5y": 369865201,
+   "orders_5y": 3684,
    "url": "https://goldenstatesignal.com/departments/department-of-justice.html"
   },
   {
@@ -150,40 +150,40 @@
    "filed_as": "Public Utilities Commission",
    "name": "Public Utilities Commission",
    "code": "8660",
-   "spend_5y": 327855539,
-   "orders_5y": 1447,
+   "spend_5y": 327853050,
+   "orders_5y": 1445,
    "url": "https://goldenstatesignal.com/departments/public-utilities-commission.html"
   },
   {
    "filed_as": "Department of Water Resources",
    "name": "Department of Water Resources",
    "code": "3860",
-   "spend_5y": 324077627,
-   "orders_5y": 3600,
+   "spend_5y": 324013404,
+   "orders_5y": 3598,
    "url": "https://goldenstatesignal.com/departments/department-of-water-resources.html"
   },
   {
    "filed_as": "Dept of Industrial Relations",
    "name": "Department of Industrial Relations",
    "code": "7350",
-   "spend_5y": 317759314,
-   "orders_5y": 1920,
+   "spend_5y": 318150320,
+   "orders_5y": 1921,
    "url": "https://goldenstatesignal.com/departments/department-of-industrial-relations.html"
   },
   {
    "filed_as": "Dept of the CA Highway Patrol",
    "name": "California Highway Patrol",
    "code": "2720",
-   "spend_5y": 309650848,
-   "orders_5y": 2035,
+   "spend_5y": 310930700,
+   "orders_5y": 2037,
    "url": "https://goldenstatesignal.com/departments/california-highway-patrol.html"
   },
   {
    "filed_as": "State Air Resources Board",
    "name": "California Air Resources Board",
    "code": "3900",
-   "spend_5y": 299291596,
-   "orders_5y": 1718,
+   "spend_5y": 299515970,
+   "orders_5y": 1709,
    "url": "https://goldenstatesignal.com/departments/california-air-resources-board.html"
   },
   {
@@ -198,15 +198,15 @@
    "filed_as": "Department of General Services",
    "name": "Department of General Services",
    "code": "7760",
-   "spend_5y": 240489775,
-   "orders_5y": 1913,
+   "spend_5y": 240492477,
+   "orders_5y": 1914,
    "url": "https://goldenstatesignal.com/departments/department-of-general-services.html"
   },
   {
    "filed_as": "Dept of Child Support Services",
    "name": "Department of Child Support Services",
    "code": "5175",
-   "spend_5y": 212764296,
+   "spend_5y": 212766066,
    "orders_5y": 969,
    "url": "https://goldenstatesignal.com/departments/department-of-child-support-services.html"
   },
@@ -214,16 +214,16 @@
    "filed_as": "Department of Consumer Affairs",
    "name": "Department of Consumer Affairs",
    "code": "1111",
-   "spend_5y": 183706538,
-   "orders_5y": 3011,
+   "spend_5y": 183610464,
+   "orders_5y": 3012,
    "url": "https://goldenstatesignal.com/departments/department-of-consumer-affairs.html"
   },
   {
    "filed_as": "Dept of Parks & Recreation",
    "name": "Department of Parks and Recreation",
    "code": "3790",
-   "spend_5y": 150376098,
-   "orders_5y": 2254,
+   "spend_5y": 149872839,
+   "orders_5y": 2253,
    "url": "https://goldenstatesignal.com/departments/department-of-parks-and-recreation.html"
   },
   {
@@ -238,40 +238,40 @@
    "filed_as": "Dept of Tax and Fee Admin",
    "name": "Department of Tax and Fee Administration",
    "code": "7600",
-   "spend_5y": 142642320,
-   "orders_5y": 1572,
+   "spend_5y": 142642176,
+   "orders_5y": 1571,
    "url": "https://goldenstatesignal.com/departments/department-of-tax-and-fee-administration.html"
   },
   {
    "filed_as": "Health Care Access and Informa",
    "name": "Department of Health Care Access and Information",
    "code": "4140",
-   "spend_5y": 139647330,
-   "orders_5y": 610,
+   "spend_5y": 139687442,
+   "orders_5y": 612,
    "url": "https://goldenstatesignal.com/departments/department-of-health-care-access-and-information.html"
   },
   {
    "filed_as": "Secretary of State",
    "name": "Secretary of State",
    "code": "0890",
-   "spend_5y": 139013201,
-   "orders_5y": 1019,
+   "spend_5y": 139179302,
+   "orders_5y": 1022,
    "url": "https://goldenstatesignal.com/departments/secretary-of-state.html"
   },
   {
    "filed_as": "Department of Fish & Wildlife",
    "name": "Department of Fish and Wildlife",
    "code": "3600",
-   "spend_5y": 134863237,
-   "orders_5y": 2711,
+   "spend_5y": 134740422,
+   "orders_5y": 2706,
    "url": "https://goldenstatesignal.com/departments/department-of-fish-and-wildlife.html"
   },
   {
    "filed_as": "State Water Resources Control",
    "name": "State Water Resources Control Board",
    "code": "3940",
-   "spend_5y": 130536136,
-   "orders_5y": 821,
+   "spend_5y": 130549027,
+   "orders_5y": 822,
    "url": "https://goldenstatesignal.com/departments/state-water-resources-control-board.html"
   },
   {
@@ -286,64 +286,64 @@
    "filed_as": "Housing & Community Developmnt",
    "name": "Department of Housing and Community Development",
    "code": "2240",
-   "spend_5y": 89640628,
-   "orders_5y": 667,
+   "spend_5y": 89640562,
+   "orders_5y": 666,
    "url": "https://goldenstatesignal.com/departments/department-of-housing-and-community-development.html"
   },
   {
    "filed_as": "Dept of Veterans Affairs",
    "name": "Department of Veterans Affairs (CalVet)",
    "code": "8955",
-   "spend_5y": 85959645,
-   "orders_5y": 1772,
+   "spend_5y": 85932702,
+   "orders_5y": 1770,
    "url": "https://goldenstatesignal.com/departments/department-of-veterans-affairs.html"
   },
   {
    "filed_as": "Department of Education",
    "name": "Department of Education",
    "code": "6100",
-   "spend_5y": 80061464,
-   "orders_5y": 1640,
+   "spend_5y": 80009572,
+   "orders_5y": 1639,
    "url": "https://goldenstatesignal.com/departments/department-of-education.html"
   },
   {
    "filed_as": "Department of Insurance",
    "name": "Department of Insurance",
    "code": "0845",
-   "spend_5y": 76489308,
-   "orders_5y": 1554,
+   "spend_5y": 76399075,
+   "orders_5y": 1547,
    "url": "https://goldenstatesignal.com/departments/department-of-insurance.html"
   },
   {
    "filed_as": "Dept of Food & Agriculture",
    "name": "Department of Food and Agriculture",
    "code": "8570",
-   "spend_5y": 72835286,
-   "orders_5y": 1249,
+   "spend_5y": 72833787,
+   "orders_5y": 1252,
    "url": "https://goldenstatesignal.com/departments/department-of-food-and-agriculture.html"
   },
   {
    "filed_as": "Department of Conservation",
    "name": "Department of Conservation",
    "code": "3480",
-   "spend_5y": 68257798,
-   "orders_5y": 601,
+   "spend_5y": 68461259,
+   "orders_5y": 603,
    "url": "https://goldenstatesignal.com/departments/department-of-conservation.html"
   },
   {
    "filed_as": "Dept. Toxic Substances Control",
    "name": "Department of Toxic Substances Control",
    "code": "3960",
-   "spend_5y": 62257239,
-   "orders_5y": 941,
+   "spend_5y": 62257824,
+   "orders_5y": 940,
    "url": "https://goldenstatesignal.com/departments/department-of-toxic-substances-control.html"
   },
   {
    "filed_as": "High Speed Rail Authority",
    "name": "High-Speed Rail Authority",
    "code": "2665",
-   "spend_5y": 60556072,
-   "orders_5y": 656,
+   "spend_5y": 60591234,
+   "orders_5y": 659,
    "url": "https://goldenstatesignal.com/departments/high-speed-rail-authority.html"
   },
   {
@@ -358,39 +358,39 @@
    "filed_as": "Dept of Finan Protec and Innov",
    "name": "Department of Financial Protection and Innovation",
    "code": "1701",
-   "spend_5y": 49313295,
-   "orders_5y": 957,
+   "spend_5y": 49313041,
+   "orders_5y": 956,
    "url": "https://goldenstatesignal.com/departments/department-of-financial-protection-and-innovation.html"
   },
   {
    "filed_as": "Sec., Environment Protection",
    "name": "California Environmental Protection Agency",
    "code": "0555",
-   "spend_5y": 49191535,
-   "orders_5y": 363,
+   "spend_5y": 49165821,
+   "orders_5y": 360,
    "url": "https://goldenstatesignal.com/departments/california-environmental-protection-agency.html"
   },
   {
    "filed_as": "Covered California",
    "name": "Covered California",
    "code": null,
-   "spend_5y": 48061412,
-   "orders_5y": 185,
+   "spend_5y": 48081932,
+   "orders_5y": 187,
    "url": "https://goldenstatesignal.com/departments/covered-california.html"
   },
   {
    "filed_as": "Dept of Managed Health Care",
    "name": "Department of Managed Health Care",
    "code": "4150",
-   "spend_5y": 47187170,
-   "orders_5y": 431,
+   "spend_5y": 47190791,
+   "orders_5y": 432,
    "url": "https://goldenstatesignal.com/departments/department-of-managed-health-care.html"
   },
   {
    "filed_as": "Sec., Gov't Operations Agency",
    "name": "Government Operations Agency",
    "code": "0511",
-   "spend_5y": 46458845,
+   "spend_5y": 46467103,
    "orders_5y": 293,
    "url": "https://goldenstatesignal.com/departments/government-operations-agency.html"
   },
@@ -398,16 +398,16 @@
    "filed_as": "Emergency Medical Service Auth",
    "name": "Emergency Medical Services Authority",
    "code": "4120",
-   "spend_5y": 44033520,
-   "orders_5y": 548,
+   "spend_5y": 44032065,
+   "orders_5y": 547,
    "url": "https://goldenstatesignal.com/departments/emergency-medical-services-authority.html"
   },
   {
    "filed_as": "Energy Resources Conservation",
    "name": "California Energy Commission",
    "code": "3360",
-   "spend_5y": 43058825,
-   "orders_5y": 1259,
+   "spend_5y": 43061116,
+   "orders_5y": 1260,
    "url": "https://goldenstatesignal.com/departments/california-energy-commission.html"
   },
   {
@@ -422,16 +422,16 @@
    "filed_as": "Office of Energy Infrastructur",
    "name": "Office of Energy Infrastructure Safety",
    "code": "3355",
-   "spend_5y": 39696916,
-   "orders_5y": 269,
+   "spend_5y": 39687936,
+   "orders_5y": 268,
    "url": "https://goldenstatesignal.com/departments/office-of-energy-infrastructure-safety.html"
   },
   {
    "filed_as": "Gov's Off of Lnd Use & Clmt In",
    "name": "Governor's Office of Land Use and Climate Innovation",
    "code": "0650",
-   "spend_5y": 38474148,
-   "orders_5y": 441,
+   "spend_5y": 38781073,
+   "orders_5y": 443,
    "url": "https://goldenstatesignal.com/departments/governor-s-office-of-land-use-and-climate-innovation.html"
   },
   {
@@ -446,63 +446,63 @@
    "filed_as": "Dept of Pesticide Regulation",
    "name": "Department of Pesticide Regulation",
    "code": "3930",
-   "spend_5y": 29054633,
-   "orders_5y": 682,
+   "spend_5y": 29052905,
+   "orders_5y": 683,
    "url": "https://goldenstatesignal.com/departments/department-of-pesticide-regulation.html"
   },
   {
    "filed_as": "Department of Human Resources",
    "name": "Department of Human Resources (CalHR)",
    "code": "7501",
-   "spend_5y": 28078019,
-   "orders_5y": 719,
+   "spend_5y": 28083089,
+   "orders_5y": 716,
    "url": "https://goldenstatesignal.com/departments/department-of-human-resources.html"
   },
   {
    "filed_as": "CA State Library",
    "name": "California State Library",
    "code": "6120",
-   "spend_5y": 26570530,
-   "orders_5y": 705,
+   "spend_5y": 26567060,
+   "orders_5y": 704,
    "url": "https://goldenstatesignal.com/departments/california-state-library.html"
   },
   {
    "filed_as": "Civil Rights Department",
    "name": "Civil Rights Department",
    "code": "1700",
-   "spend_5y": 25230310,
-   "orders_5y": 496,
+   "spend_5y": 25234941,
+   "orders_5y": 497,
    "url": "https://goldenstatesignal.com/departments/civil-rights-department.html"
   },
   {
    "filed_as": "Dept. Alcoholic Beverage Cntrl",
    "name": "Department of Alcoholic Beverage Control",
    "code": "2100",
-   "spend_5y": 24910043,
-   "orders_5y": 682,
+   "spend_5y": 24916385,
+   "orders_5y": 684,
    "url": "https://goldenstatesignal.com/departments/department-of-alcoholic-beverage-control.html"
-  },
-  {
-   "filed_as": "Military Department",
-   "name": "California Military Department",
-   "code": "8940",
-   "spend_5y": 24355232,
-   "orders_5y": 509,
-   "url": "https://goldenstatesignal.com/departments/california-military-department.html"
   },
   {
    "filed_as": "Sec., Health & Human Services",
    "name": "Health and Human Services Agency",
    "code": "0530",
-   "spend_5y": 23734391,
-   "orders_5y": 283,
+   "spend_5y": 23733874,
+   "orders_5y": 282,
    "url": "https://goldenstatesignal.com/departments/health-and-human-services-agency.html"
+  },
+  {
+   "filed_as": "Military Department",
+   "name": "California Military Department",
+   "code": "8940",
+   "spend_5y": 23705912,
+   "orders_5y": 508,
+   "url": "https://goldenstatesignal.com/departments/california-military-department.html"
   },
   {
    "filed_as": "State Treasurer",
    "name": "State Treasurer",
    "code": "0950",
-   "spend_5y": 22016222,
+   "spend_5y": 22019548,
    "orders_5y": 624,
    "url": "https://goldenstatesignal.com/departments/state-treasurer.html"
   },
@@ -510,8 +510,8 @@
    "filed_as": "Community Srvcs & Development",
    "name": "Department of Community Services and Development",
    "code": "4700",
-   "spend_5y": 20921584,
-   "orders_5y": 237,
+   "spend_5y": 20929142,
+   "orders_5y": 239,
    "url": "https://goldenstatesignal.com/departments/department-of-community-services-and-development.html"
   },
   {
@@ -534,40 +534,40 @@
    "filed_as": "First 5 California",
    "name": "First 5 California",
    "code": "4250",
-   "spend_5y": 17070252,
-   "orders_5y": 97,
+   "spend_5y": 17072339,
+   "orders_5y": 98,
    "url": "https://goldenstatesignal.com/departments/first-5-california.html"
   },
   {
    "filed_as": "CA Conservation Corps",
    "name": "California Conservation Corps",
    "code": "3340",
-   "spend_5y": 16716670,
-   "orders_5y": 2045,
+   "spend_5y": 16716554,
+   "orders_5y": 2043,
    "url": "https://goldenstatesignal.com/departments/california-conservation-corps.html"
   },
   {
    "filed_as": "California Department of Aging",
    "name": "California Department of Aging",
    "code": "4170",
-   "spend_5y": 14728640,
-   "orders_5y": 283,
+   "spend_5y": 14979699,
+   "orders_5y": 285,
    "url": "https://goldenstatesignal.com/departments/california-department-of-aging.html"
   },
   {
    "filed_as": "Department of Finance",
    "name": "Department of Finance",
    "code": "8860",
-   "spend_5y": 14495777,
-   "orders_5y": 415,
+   "spend_5y": 14500838,
+   "orders_5y": 417,
    "url": "https://goldenstatesignal.com/departments/department-of-finance.html"
   },
   {
    "filed_as": "Bus & Consumer Services Agency",
    "name": "Business, Consumer Services and Housing Agency",
    "code": "0515",
-   "spend_5y": 14322700,
-   "orders_5y": 88,
+   "spend_5y": 14323000,
+   "orders_5y": 89,
    "url": "https://goldenstatesignal.com/departments/business-consumer-services-and-housing-agency.html"
   },
   {
@@ -582,8 +582,8 @@
    "filed_as": "Department of Real Estate",
    "name": "Department of Real Estate",
    "code": "2320",
-   "spend_5y": 11972516,
-   "orders_5y": 422,
+   "spend_5y": 11969896,
+   "orders_5y": 421,
    "url": "https://goldenstatesignal.com/departments/department-of-real-estate.html"
   },
   {
@@ -595,20 +595,20 @@
    "url": "https://goldenstatesignal.com/departments/california-institute-for-regenerative-medicine.html"
   },
   {
-   "filed_as": "Victim Compensation Board, CA",
-   "name": "California Victim Compensation Board",
-   "code": "7870",
-   "spend_5y": 10305741,
-   "orders_5y": 358,
-   "url": "https://goldenstatesignal.com/departments/california-victim-compensation-board.html"
-  },
-  {
    "filed_as": "Behavioral Hlth Svcs Ovrst Acn",
    "name": "Behavioral Health Services Oversight and Accountability Commission",
    "code": "4560",
    "spend_5y": 10288444,
    "orders_5y": 159,
    "url": "https://goldenstatesignal.com/departments/behavioral-health-services-oversight-and-accountability-commission.html"
+  },
+  {
+   "filed_as": "Victim Compensation Board, CA",
+   "name": "California Victim Compensation Board",
+   "code": "7870",
+   "spend_5y": 10256880,
+   "orders_5y": 356,
+   "url": "https://goldenstatesignal.com/departments/california-victim-compensation-board.html"
   },
   {
    "filed_as": "Office of Tax Appeals",
@@ -622,16 +622,16 @@
    "filed_as": "Fair Political Practices Comm",
    "name": "Fair Political Practices Commission",
    "code": "8620",
-   "spend_5y": 8629339,
-   "orders_5y": 258,
+   "spend_5y": 8626844,
+   "orders_5y": 257,
    "url": null
   },
   {
    "filed_as": "Business & Economic Developmnt",
    "name": "Business and Economic Development",
    "code": "0509",
-   "spend_5y": 7898365,
-   "orders_5y": 289,
+   "spend_5y": 7888188,
+   "orders_5y": 288,
    "url": null
   },
   {
@@ -659,19 +659,19 @@
    "url": null
   },
   {
-   "filed_as": "State Lands Commission",
-   "name": "State Lands Commission",
-   "code": "3560",
-   "spend_5y": 5666265,
-   "orders_5y": 267,
-   "url": null
-  },
-  {
    "filed_as": "California Privacy Protection",
    "name": "California Privacy Protection",
    "code": "1703",
    "spend_5y": 5623809,
    "orders_5y": 83,
+   "url": null
+  },
+  {
+   "filed_as": "State Lands Commission",
+   "name": "State Lands Commission",
+   "code": "3560",
+   "spend_5y": 5559811,
+   "orders_5y": 264,
    "url": null
   },
   {
@@ -686,8 +686,8 @@
    "filed_as": "Exposition Park",
    "name": "Exposition Park",
    "code": "3100",
-   "spend_5y": 5334457,
-   "orders_5y": 271,
+   "spend_5y": 5346263,
+   "orders_5y": 272,
    "url": null
   },
   {
@@ -715,11 +715,19 @@
    "url": null
   },
   {
+   "filed_as": "California Military Department",
+   "name": "California Military Department",
+   "code": null,
+   "spend_5y": 4074653,
+   "orders_5y": 92,
+   "url": null
+  },
+  {
    "filed_as": "Public Employment Relations Bd",
    "name": "Public Employment Relations Board",
    "code": "7320",
-   "spend_5y": 4049346,
-   "orders_5y": 325,
+   "spend_5y": 4049193,
+   "orders_5y": 323,
    "url": null
   },
   {
@@ -736,14 +744,6 @@
    "code": "7300",
    "spend_5y": 3988254,
    "orders_5y": 219,
-   "url": null
-  },
-  {
-   "filed_as": "California Military Department",
-   "name": "California Military Department",
-   "code": null,
-   "spend_5y": 3834653,
-   "orders_5y": 91,
    "url": null
   },
   {
@@ -774,16 +774,16 @@
    "filed_as": "School for the Deaf-Fremont",
    "name": "School for the Deaf-Fremont",
    "code": "6240",
-   "spend_5y": 3486472,
-   "orders_5y": 419,
+   "spend_5y": 3487942,
+   "orders_5y": 420,
    "url": null
   },
   {
    "filed_as": "State Personnel Board",
    "name": "State Personnel Board",
    "code": "7503",
-   "spend_5y": 3240216,
-   "orders_5y": 118,
+   "spend_5y": 3238164,
+   "orders_5y": 115,
    "url": null
   },
   {
@@ -806,7 +806,7 @@
    "filed_as": "CA Tahoe Conservancy",
    "name": "California Tahoe Conservancy",
    "code": "3125",
-   "spend_5y": 2828115,
+   "spend_5y": 2828580,
    "orders_5y": 186,
    "url": null
   },
@@ -814,16 +814,16 @@
    "filed_as": "Env'l Health Hazard Assessment",
    "name": "Env'l Health Hazard Assessment",
    "code": "3980",
-   "spend_5y": 2818872,
-   "orders_5y": 293,
+   "spend_5y": 2819222,
+   "orders_5y": 294,
    "url": null
   },
   {
    "filed_as": "School for the Deaf-Riverside",
    "name": "School for the Deaf-Riverside",
    "code": "6250",
-   "spend_5y": 2744696,
-   "orders_5y": 329,
+   "spend_5y": 2733700,
+   "orders_5y": 326,
    "url": null
   },
   {
@@ -870,8 +870,8 @@
    "filed_as": "State Summer School for Arts",
    "name": "State Summer School for Arts",
    "code": "6255",
-   "spend_5y": 1846528,
-   "orders_5y": 74,
+   "spend_5y": 1854211,
+   "orders_5y": 75,
    "url": null
   },
   {
@@ -910,8 +910,8 @@
    "filed_as": "CA School for the Blind",
    "name": "California School for the Blind",
    "code": "6200",
-   "spend_5y": 1507942,
-   "orders_5y": 255,
+   "spend_5y": 1510420,
+   "orders_5y": 253,
    "url": null
   },
   {
@@ -935,15 +935,15 @@
    "name": "California Gambling Control Commission",
    "code": "0855",
    "spend_5y": 1184314,
-   "orders_5y": 106,
+   "orders_5y": 105,
    "url": null
   },
   {
    "filed_as": "State Coastal Conservancy",
    "name": "State Coastal Conservancy",
    "code": "3760",
-   "spend_5y": 1184141,
-   "orders_5y": 174,
+   "spend_5y": 1179856,
+   "orders_5y": 173,
    "url": null
   },
   {
@@ -1179,19 +1179,19 @@
    "url": null
   },
   {
+   "filed_as": "\"Little Hoover\" Commission",
+   "name": "\"Little Hoover\" Commission",
+   "code": "8780",
+   "spend_5y": 99368,
+   "orders_5y": 30,
+   "url": null
+  },
+  {
    "filed_as": "California ABLE Act Board",
    "name": "California ABLE Act Board",
    "code": "0981",
    "spend_5y": 97947,
    "orders_5y": 26,
-   "url": null
-  },
-  {
-   "filed_as": "\"Little Hoover\" Commission",
-   "name": "\"Little Hoover\" Commission",
-   "code": "8780",
-   "spend_5y": 97722,
-   "orders_5y": 29,
    "url": null
   },
   {
@@ -1238,8 +1238,8 @@
    "filed_as": "San Diego River Conservancy",
    "name": "San Diego River Conservancy",
    "code": "3845",
-   "spend_5y": 62101,
-   "orders_5y": 16,
+   "spend_5y": 62747,
+   "orders_5y": 17,
    "url": null
   },
   {
