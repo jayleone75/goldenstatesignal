@@ -38,6 +38,15 @@ $Project = Join-Path (Split-Path $Site -Parent) "ca-procurement-intel"
 
 Set-Location $Site
 
+# Unattended git must never wait on a human. In the hidden window the
+# scheduled task runs in, git sees a console, so a diff can open a pager
+# that waits for a keypress, and a credential miss opens a prompt nobody
+# answers. Oct 19 and Oct 20, 2026: two runs stalled right after the privacy
+# check, at the first git command that prints, and were killed at the time
+# limit. Both settings are harmless in an interactive run.
+$env:GIT_PAGER = 'cat'
+$env:GIT_TERMINAL_PROMPT = '0'
+
 function Fail($text) {
     Write-Host $text -ForegroundColor Red
     exit 1
