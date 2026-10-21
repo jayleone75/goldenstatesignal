@@ -154,7 +154,7 @@ if ($bad.Count -gt 0) {
 # Interactive runs are warned; the unattended run refuses, because nobody is
 # there to look.
 $expectedRoot = @('index.html', 'CNAME', 'README.md', 'publish.ps1', '.gitignore',
-                  'gss-og-card.png')
+                  'gss-og-card.png', 'install-publish-task.ps1')
 # Old homepage drafts (index_v1.html, indexv2.html, index_5.html...) were
 # uploaded through the GitHub web UI and are already live; they are not
 # strays, though each one is a public URL and worth pruning by hand.
