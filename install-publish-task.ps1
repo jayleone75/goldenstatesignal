@@ -57,6 +57,10 @@ $action = New-ScheduledTaskAction -Execute 'powershell.exe' `
     -WorkingDirectory $PSScriptRoot
 
 $trigger = New-ScheduledTaskTrigger -Daily -At $At
+# New-ScheduledTaskTrigger stores the time with today's UTC offset, so the task
+# would fire at the same UTC instant all year and drift an hour at every DST
+# change (it did, Nov 2026). A boundary with no offset means local wall-clock.
+$trigger.StartBoundary = ([DateTime]::Parse($trigger.StartBoundary)).ToString('yyyy-MM-ddTHH:mm:ss')
 
 $settings = New-ScheduledTaskSettingsSet `
     -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
